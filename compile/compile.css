@@ -4015,6 +4015,7 @@ input[type=submit]:active, a.btn_all:active {
 .tac li {
     display: inline;
     display: inline-block;
+    vertical-align: top;
     zoom: 1;
     text-align: center
 }
@@ -4160,14 +4161,32 @@ input[type=submit]:active, a.btn_all:active {
     font-family: 'opensans-light_1';
     color: #fff;
     text-decoration: none;
-    padding: 12px;
+    padding: 21px 12px;
     font-size: 13px;
     text-transform: uppercase;
     position: relative
 }
 
+.bottom-menu ul .double-string a {
+    text-decoration: underline;
+    padding: 0;
+    text-transform: none;
+
+}
+.double-string {
+    padding: 12px;
+}
+.double-string p {
+    font-family: 'opensans-light_1';
+    color: #fff;
+}
+
 .bottom-menu ul li a:hover {
     background: rgba(255, 255, 255, 0.2)
+}
+.bottom-menu ul .double-string  a:hover {
+    text-decoration: none;
+    background: none;
 }
 
 .bottom-menu ul li a:hover span {
