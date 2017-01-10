@@ -37,7 +37,7 @@ $(document).ready(function(){
 
         $.ajax({
           method: "POST",
-          url: "/loadslide.php",
+          url: "js/loadslide.php",
           data: {'index': $(slide).data('slide')},
           success: function(data) {
             $(slide).html(data).addClass('loaded');

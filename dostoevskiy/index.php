@@ -78,7 +78,7 @@
                 <div class="stat__table-cell">00001</div>
                 <div class="stat__table-cell">2016-02-08T09:37</div>
                 <div class="stat__table-cell">+7 (099) 222-5555</div>
-                <div class="stat__table-cell">Сергей</div>
+                <div class="stat__table-cell">Иван</div>
                 <div class="stat__table-cell">Иконка "Делаем быстро"</div>
             </div>
 
@@ -86,16 +86,13 @@
                 <div class="stat__table-cell">00002</div>
                 <div class="stat__table-cell">2016-02-11T18:37</div>
                 <div class="stat__table-cell">+7 (044) 222-5555</div>
-                <div class="stat__table-cell">Иван</div>
+                <div class="stat__table-cell">Сергей</div>
                 <div class="stat__table-cell">Хеддер "Тарифы"</div>
             </div>
         </div>
         
     </div><!--stat__table-->
-    <script
-            src="https://code.jquery.com/jquery-1.9.1.min.js"
-            integrity="sha256-wS9gmOZBqsqWxgIVgA8Y9WcQOa7PgSIX+rPA0VL2rbQ="
-            crossorigin="anonymous"></script>
+    <script src="../js/jquery-1.9.1.min.js"></script>
     <script>
         var tableGrid = document.querySelector('.stat__table');
 
