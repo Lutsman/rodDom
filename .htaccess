@@ -1,0 +1,5 @@
+<IfModule mod_headers.c>
+  <FilesMatch "\.(js)$">
+    Header append Vary: Accept-Encoding
+  </FilesMatch>
+</IfModule>
