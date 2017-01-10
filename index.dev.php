@@ -1216,87 +1216,11 @@ ob_start(); ?>
     </div> -->
 
 
-    <!--[if lt IE 9]>
-    <script src="bower_components/html5shiv/es5-shim.min.js"></script>
-    <script src="bower_components/html5shiv/html5shiv.min.js"></script>
-    <script src="bower_components/html5shiv/html5shiv-printshiv.min.js"></script>
-    <script src="bower_components/respond/respond.min.js"></script>
-    <![endif]-->
-
     <!-- Load Scripts -->
 
 
     <script type="text/javascript" src="compile/compile.js?<?= filemtime('compile/compile.js') ?>" async></script>
 
 
-<!--    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript">
-        (function (d, w, c) {
-            (w[c] = w[c] || []).push(function () {
-                try {
-                    w.yaCounter36217330 = new Ya.Metrika({
-                        id: 36217330,
-                        clickmap: true,
-                        trackLinks: true,
-                        accurateTrackBounce: true,
-                        webvisor: true
-                    });
-                } catch (e) {
-                }
-            });
-
-            var n = d.getElementsByTagName("script")[0],
-                s = d.createElement("script"),
-                f = function () {
-                    n.parentNode.insertBefore(s, n);
-                };
-            s.type = "text/javascript";
-            s.async = true;
-            s.src = "https://mc.yandex.ru/metrika/watch.js";
-
-            if (w.opera == "[object Opera]") {
-                d.addEventListener("DOMContentLoaded", f, false);
-            } else {
-                f();
-            }
-        })(document, window, "yandex_metrika_callbacks");
-    </script>
-    <noscript>
-        <div><img src="https://mc.yandex.ru/watch/36217330" style="position:absolute; left:-9999px;" alt=""/></div>
-    </noscript>
-    <!-- /Yandex.Metrika counter -->
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function () {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-        ga('create', 'UA-75364947-1', 'auto');
-        ga('send', 'pageview');
-
-    </script>
-
-    <!-- RedConnect -->
-    <script id="rhlpscrtg" type="text/javascript" charset="utf-8" async="async"
-            src="https://web.redhelper.ru/service/main.js?c=fieldofdream"></script>
-    <div style="display: none"><a class="rc-copyright"
-                                  href="http://redconnect.ru">Обратный звонок RedConnect</a></div>
-    <!--/RedConnect -->
-
-    <script
-        type="text/javascript">(window.Image ? (new Image()) : document.createElement('img')).src = location.protocol + '//vk.com/rtrg?r=mJlh8jC*OMlMsDC/9Y4Bjfj66opPUVIBkKHM7vWV3IZytRIzk4Wc6qQaf6di72ja2SFN9j5j0Xg1ukLyrcjex2OdnXEzs/ecEqSmkyYPAix977A8f1B0Igz07suQRVInR2VX9MjTQ/gVv0vdQZfFlMcDphDiw0h5bJJ3yqNXgLM-&pixel_id=1000049644';</script>-->
     </body>
     </html>
-<?php
-$c = preg_replace('/ +/', ' ', str_replace(array("\r", "\n", "\t"), '', preg_replace('/<!--(.)*?-->/', '', ob_get_contents())));
-ob_end_clean();
-//$c = str_replace('<script type="text/javascript" src="compile/compile.js?'.filemtime('compile/compile.js').'"></script>','<script>'.str_replace('<script></script>','',file_get_contents('compile/compile.js')).'</script>',$c);
-echo $c;
-?>
