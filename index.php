@@ -42,7 +42,7 @@ ob_start(); ?>
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
 	<style><?php echo file_get_contents('compile/compile.css'); ?></style>
 
-
+    <link rel="stylesheet" href="css/popup.css">
 </head>
 <body>
 <div class="globalWrapper cf">
@@ -55,7 +55,7 @@ ob_start(); ?>
 			</div>
 			<div class="flr">
 				<div class="text">
-					<p class="text_bebasreg white txt_46"><a class="topphone" href="callto:+79267633549">+7 (926) 763-35-49</a></p>
+					<p class="text_bebasreg white txt_46"><a class="topphone" href="#popup__call-back">+7 (926) 763-35-49</a></p>
 					<div class="cf"></div>
 					<!-- <div class="share_block">
 						<div class="ya-share2" data-services="vkontakte,facebook,odnoklassniki,viber,whatsapp"></div>
@@ -1031,6 +1031,27 @@ ob_start(); ?>
 		<input type="submit" value="Добавить отзыв" class="trans">
 	</form>
 </div> -->
+
+<div id="popup__call-back" class="popup__call-back">
+	<h3 class="txt_40 text_bebasreg">Заказать звонок</h3>
+	<div>
+		<div>
+			<img src="" alt="фото">
+			<p class="title">Мария</p>
+			<p>Менеджер по подбору курсов</p>
+		</div>
+		<h4 class="txt_20 text_sanslight1">Закажите звонок и мы свяжемся с Вами в ближайшее время.</h4>
+	</div>
+
+	<div>
+		<form class="call-back__form" action="" method="post" novalidate="novalidate">
+			<input type="text" name="name" placeholder="Фамилия и Имя">
+			<input type="tel" name="phone" placeholder="Введите телефон">
+			<input class="trans" type="submit" value="Отправить заявку">
+		</form>
+	</div>
+
+</div>
 
 
 <!--[if lt IE 9]>
