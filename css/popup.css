@@ -171,6 +171,7 @@ div::after, nav::after, ul::after, form::after {
     width: 105px;
     height: 180px;
     padding-top: 35px;
+    font-size: 16px;
     color: #000;
     text-align: center;
     background-color: #fff;
@@ -253,7 +254,7 @@ div::after, nav::after, ul::after, form::after {
   width: 160px;
   height: 40px;
   padding: 0;
-  margin: 15px;
+  margin: 15px 20px;
   line-height: 36px;
   color: #ffc000;
   text-align: center;
