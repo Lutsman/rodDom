@@ -81,7 +81,7 @@ div, nav, ul, form {
     }
 }
 
-.popup__call-back {
+.popup__call-back, .popup__quickly-do, .popup__ready-packages, .popup__price-order {
     width: 600px;
     > div {
         width: 50%;
@@ -251,7 +251,7 @@ div, nav, ul, form {
         p {
             margin-bottom: 15px;
             opacity: 0;
-            @include transition(opacity 0.5s ease-in-out);
+            @include transition(opacity 0.6s ease-in-out);
         }
     }
     figure {
@@ -316,24 +316,4 @@ div, nav, ul, form {
         left: 50%;
         @include transform(translate3d(-50%, -50%, 0));
     }
-}
-
-/*delay*/
-.tr-delay-4 {
-    @include transition-delay(0.4s);
-}
-.tr-delay-8 {
-    @include transition-delay(0.8s);
-}
-.tr-delay-12 {
-    @include transition-delay(1.2s);
-}
-.tr-delay-16 {
-    @include transition-delay(1.6s);
-}
-.tr-delay-20 {
-    @include transition-delay(2.0s);
-}
-.tr-delay-24 {
-    @include transition-delay(2.4s);
 }

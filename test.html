@@ -110,7 +110,7 @@
             <div class="cf"></div>
             <ul class="tac">
                 <li>
-                    <a href="#">
+                    <a href="#popup__quickly-do" data-role="lightbox">
                         <div class="icon-box">
                             <img src="images/icon_clock.png" width="56" height="56" alt="">
                         </div>
@@ -118,7 +118,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#popup__ready-packages" data-role="lightbox">
                         <div class="icon-box">
                             <img src="images/icon_note.png" width="63" height="65" alt="">
                         </div>
@@ -126,7 +126,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#popup__price-order" data-role="lightbox">
                         <div class="icon-box">
                             <img src="images/icon_money.png" width="65" height="38" alt="">
                         </div>
@@ -323,18 +323,18 @@
             </div>
 
             <div class="text-box">
-                <p class="tr-delay-4">Здравствуйте!</p>
-                <p class="tr-delay-8">Я каждый день помогаю мужчинам придумать сценарий встречи жены из роддома.</p>
-                <p class="tr-delay-12">Мы много делаем, при этом через сайт сложно передать, какую выписку мы можем для Вас организовать.
+                <p>Здравствуйте!</p>
+                <p>Я каждый день помогаю мужчинам придумать сценарий встречи жены из роддома.</p>
+                <p>Мы много делаем, при этом через сайт сложно передать, какую выписку мы можем для Вас организовать.
                     Только в разговоре по телефону удаётся подобрать сценарий под Ваши желания, ответить на вопросы,
                     рассказать, что мы можем предложить.</p>
-                <p class="tr-delay-16">Согласитесь, будет жалко, если Вы можете получить чудесный праздник, показать любимой, как Вы её любите,
+                <p>Согласитесь, будет жалко, если Вы можете получить чудесный праздник, показать любимой, как Вы её любите,
                     удивить гостей и с первых минут прослыть лучшим в мире отцом, но Вы решили это не делать только потому,
                     что не знали, на что мы способны.</p>
-                <p class="tr-delay-20">Предлагаю созвониться по телефону, это займёт 10-15 минут, зато у Вас будет вся нужная информация о том,
+                <p>Предлагаю созвониться по телефону, это займёт 10-15 минут, зато у Вас будет вся нужная информация о том,
                     как можно встретить супругу из роддома.</p>
 
-                <form class="order-call__form tr-delay-24" action="" method="post" novalidate="novalidate">
+                <form class="order-call__form" action="" method="post" novalidate="novalidate">
                     <input type="text" name="phone" placeholder="Введите ваш телефон">
                     <input class="trans" type="submit" value="Заказать звонок">
                 </form>
@@ -1411,6 +1411,78 @@
             <input type="text" name="name" placeholder="Фамилия и Имя">
             <input type="text" name="phone" placeholder="Введите телефон">
             <input class="trans" type="submit" value="Узнать больше о примерах">
+        </form>
+    </div>
+
+</div>
+
+<div id="popup__quickly-do" class="pop-up popup__quickly-do">
+    <h3>Делаем быстро</h3>
+
+    <div>
+        <div class="avatar">
+            <img src="images/avatar_manager.jpg" width="64" height="64" alt="фото">
+            <p class="title">Мария</p>
+            <p>Менеджер <br> по подбору курсов</p>
+        </div>
+        <p>Наш рекорд — подготовка выписки из роддома за один вечер! Срок подготовки выписки зависит от того, что вы
+            хотите организовать и то, насколько много у нас сейчас заказов. Оставьте свои контакты, и наш менеджер
+            оценит, в какой срок мы сможем подготовить для Вас выписку.</p>
+    </div>
+
+    <div>
+        <form class="popup__form" action="" method="post" novalidate="novalidate">
+            <input type="text" name="name" placeholder="Фамилия и Имя">
+            <input type="text" name="phone" placeholder="Введите телефон">
+            <input class="trans" type="submit" value="Заказать выписку">
+        </form>
+    </div>
+
+</div>
+
+<div id="popup__ready-packages" class="pop-up popup__ready-packages">
+    <h3>Готовые пакеты</h3>
+
+    <div>
+        <div class="avatar">
+            <img src="images/avatar_manager.jpg" width="64" height="64" alt="фото">
+            <p class="title">Мария</p>
+            <p>Менеджер <br> по подбору курсов</p>
+        </div>
+        <p>Мы подготовили для Вас 4 готовых пакета, которые пользуются большой популярностью. Пакеты отличатся ценой и
+            набором услуг, цена тарифов от 7900р до 29900р. Оставьте свои контакты, и наш менеджер поможет подобрать
+            подходящий Вам пакет.</p>
+    </div>
+
+    <div>
+        <form class="popup__form" action="" method="post" novalidate="novalidate">
+            <input type="text" name="name" placeholder="Фамилия и Имя">
+            <input type="text" name="phone" placeholder="Введите телефон">
+            <input class="trans" type="submit" value="Заказать выписку">
+        </form>
+    </div>
+
+</div>
+
+<div id="popup__price-order" class="pop-up popup__price-order">
+    <h3>От 7.900  р до 29.900  р</h3>
+
+    <div>
+        <div class="avatar">
+            <img src="images/avatar_manager.jpg" width="64" height="64" alt="фото">
+            <p class="title">Мария</p>
+            <p>Менеджер <br> по подбору курсов</p>
+        </div>
+        <p>Вы можете выбрать выписку по той цене, которая Вам подходит. Можно выбрать стандартный тариф или
+            самостоятельно собрать те услуги, которые вы хотите. Оставьте заявку, и наш менеджер поможет Вам подобрать
+            выписку.</p>
+    </div>
+
+    <div>
+        <form class="popup__form" action="" method="post" novalidate="novalidate">
+            <input type="text" name="name" placeholder="Фамилия и Имя">
+            <input type="text" name="phone" placeholder="Введите телефон">
+            <input class="trans" type="submit" value="Заказать выписку">
         </form>
     </div>
 

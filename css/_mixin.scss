@@ -12,10 +12,10 @@
 }
 
 @mixin transition-delay($transition-delay) {
-    -webkit-transition: $transition-delay;
-    -moz-transition: $transition-delay;
-    -o-transition: $transition-delay;
-    transition: $transition-delay;
+    -webkit-transition-delay: $transition-delay;
+    -moz-transition-delay: $transition-delay;
+    -o-transition-delay: $transition-delay;
+    transition-delay: $transition-delay;
 }
 
 @mixin border-radius($rads...) {
