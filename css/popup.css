@@ -174,7 +174,7 @@ div::after, nav::after, ul::after, form::after {
     color: #000;
     text-align: center;
     background-color: #fff;
-    border: 1px solid #e52b00;
+    border: 2px solid #e52b00;
     -moz-border-radius: 10px 10px 60px 60px;
     -webkit-border-radius: 10px 10px 60px 60px;
     border-radius: 10px 10px 60px 60px;
@@ -187,13 +187,12 @@ div::after, nav::after, ul::after, form::after {
     z-index: 2;
     right: 5px;
     bottom: 5px;
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     font-size: 18px;
     font-weight: bold;
     color: #fff;
-    line-height: 26px;
-    text-align: center;
+    line-height: 28px;
     background-color: #e52b00;
     border: 2px solid #fff;
     -moz-border-radius: 50%;
