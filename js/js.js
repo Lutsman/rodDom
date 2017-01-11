@@ -50,8 +50,14 @@ $(document).ready(function () {
     /*Fancybox*/
     (function () {
         var $fancyMenu = $('[data-role="lightbox-menu"]');
+        var $fancySimple = $('[data-role="lightbox"]');
 
         $('.fancybox-modal').fancybox({
+            padding: 0,
+            margin: [0, 70,0,70]
+        });
+
+        $fancySimple.fancybox({
             padding: 0,
             margin: [0, 70,0,70]
         });

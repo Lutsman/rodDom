@@ -2,6 +2,11 @@
 
 @import 'mixin';
 
+.hidden {
+    display: none !important;
+}
+
+
 div, nav, ul, form {
     &::after {
         content: '';
