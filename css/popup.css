@@ -162,6 +162,8 @@ div::after, nav::after, ul::after, form::after {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box; }
+    .manager-notification a:hover {
+      text-decoration: none; }
   .manager-notification .tea-bag {
     position: relative;
     z-index: 2;
@@ -179,8 +181,6 @@ div::after, nav::after, ul::after, form::after {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box; }
-    .manager-notification .tea-bag:hover {
-      text-decoration: none; }
   .manager-notification .number-posts {
     display: block;
     position: absolute;
@@ -269,6 +269,21 @@ div::after, nav::after, ul::after, form::after {
   .bottom-menu a.call-me:hover {
     color: #333;
     background: rgba(255, 192, 0, 0.9); }
+
+.icon-box {
+  position: relative;
+  z-index: 2;
+  height: 65px; }
+  .icon-box img {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate3d(-50%, -50%, 0);
+    -moz-transform: translate3d(-50%, -50%, 0);
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    -o-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0); }
 
 /*delay*/
 .tr-delay-4 {
