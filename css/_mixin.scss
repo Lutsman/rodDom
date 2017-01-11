@@ -11,6 +11,13 @@
     transition: $transitions;
 }
 
+@mixin transition-delay($transition-delay) {
+    -webkit-transition: $transition-delay;
+    -moz-transition: $transition-delay;
+    -o-transition: $transition-delay;
+    transition: $transition-delay;
+}
+
 @mixin border-radius($rads...) {
     -moz-border-radius: $rads;
     -webkit-border-radius: $rads;

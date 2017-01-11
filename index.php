@@ -55,19 +55,18 @@ ob_start(); ?>
     <div class="globalWrapper cf">
         <a id="vipiska"></a>
         <div class="header cf">
-            <div class="top">
+            <!--<div class="top">
                 <div class="resize cf">
                     <div class="fll">
                         <h1 class="text_bebasreg txt_46 yellow">Мужик - МЫ ТЕБЕ ПОМОЖЕМ!</h1>
                     </div>
                     <div class="flr">
                         <div class="text">
-                            <p class="text_bebasreg white txt_46"><a class="topphone" href="#popup__call-back">+7
-                                    (926) 763-35-49</a></p>
+                            <p class="text_bebasreg white txt_46"><a class="topphone" href="#popup__call-back">+7 (926) 763-35-49</a></p>
                             <div class="cf"></div>
-                            <!-- <div class="share_block">
+                            &lt;!&ndash; <div class="share_block">
                                 <div class="ya-share2" data-services="vkontakte,facebook,odnoklassniki,viber,whatsapp"></div>
-                            </div> -->
+                            </div> &ndash;&gt;
                             <div class="cf"></div>
 
                         </div>
@@ -77,7 +76,7 @@ ob_start(); ?>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
             <div class="bottom-menu">
                 <div class="resize">
                     <ul class="tac">
@@ -93,9 +92,15 @@ ob_start(); ?>
                         <li>
                             <a href="#f7">Контакты<span></span></a>
                         </li>
-                        <li class="double-string">
-                            <p>+7 (926) 763-35-49</p>
-                            <a href="#popup__call-back">Заказать звонок</a>
+                        <!-- <li class="double-string">
+                             <p>+7 (926) 763-35-49</p>
+                             <a href="#popup__call-back">Заказать звонок</a>
+                         </li>-->
+                        <li>
+                            <a class="top-phone" href="#popup__call-back">+7 (926) 763-35-49<span></span></a>
+                        </li>
+                        <li>
+                            <a href="#popup1" class="fancybox-modal call-me">Перезвоните мне!</a>
                         </li>
                     </ul>
                 </div>
@@ -137,6 +142,41 @@ ob_start(); ?>
                         <p>Оформление выписки <br/>от 7.900 руб.!</p>
                     </li>
                 </ul>
+            </div>
+        </div>
+
+        <!--Всплывающий блок-->
+        <div id="manager-message-1" class="manager-message active">
+            <div class="resize">
+                <div class="image-box">
+                    <figure>
+                        <img src="http://upp.syntone.ru/wp-content/uploads/2016/09/nadya2.png" width="260" height="260" alt="Фото">
+                        <figcaption>
+                            <p><b>Мария</b></p>
+                            <p>организатор</p>
+                            <p>выписок из роддома</p>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="text-box">
+                    <p class="tr-delay-4">Здравствуйте!</p>
+                    <p class="tr-delay-8">Я каждый день помогаю мужчинам придумать сценарий встречи жены из роддома.</p>
+                    <p class="tr-delay-12">Мы много делаем, при этом через сайт сложно передать, какую выписку мы можем для Вас организовать.
+                        Только в разговоре по телефону удаётся подобрать сценарий под Ваши желания, ответить на вопросы,
+                        рассказать, что мы можем предложить.</p>
+                    <p class="tr-delay-16">Согласитесь, будет жалко, если Вы можете получить чудесный праздник, показать любимой, как Вы её любите,
+                        удивить гостей и с первых минут прослыть лучшим в мире отцом, но Вы решили это не делать только потому,
+                        что не знали, на что мы способны.</p>
+                    <p class="tr-delay-20">Предлагаю созвониться по телефону, это займёт 10-15 минут, зато у Вас будет вся нужная информация о том,
+                        как можно встретить супругу из роддома.</p>
+
+                    <form class="order-call__form tr-delay-24" action="" method="post" novalidate="novalidate">
+                        <input type="text" name="phone" placeholder="Введите ваш телефон">
+                        <input class="trans" type="submit" value="Заказать звонок">
+                    </form>
+                </div>
+
             </div>
         </div>
 

@@ -15,6 +15,10 @@ div, nav, ul, form {
     }
 }
 
+.hidden {
+    display: none;
+}
+
 .pop-up {
     display: none;
     width: 810px;
@@ -212,4 +216,106 @@ div, nav, ul, form {
         @include border-radius(50%);
         @include box-sizing(border-box);
     }
+}
+
+.manager-message {
+    padding: 100px 0;
+
+    &.active {
+        .text-box p, .order-call__form {
+            opacity: 1;
+        }
+    }
+
+    p {
+        font-family: 'opensans-light_1', sans-serif;
+    }
+    .image-box, .text-box {
+        float: left;
+    }
+    .image-box {
+        width: 33%;
+    }
+    .text-box {
+        width: 67%;
+        p {
+            margin: 20px 0;
+            opacity: 0;
+            @include transition(opacity 0.5s ease-in-out);
+        }
+    }
+    figure {
+        width: 260px;
+        margin: 0;
+        font-size: 18px;
+        line-height: 20px;
+        text-align: center;
+
+        img {
+            margin-bottom: 20px;
+        }
+    }
+}
+.order-call__form {
+    opacity: 0;
+    @include transition(opacity 2s ease-in-out);
+
+    input {
+        float: left;
+        width: 49%;
+        + input {
+            margin-left: 2%;
+        }
+    }
+    input[type="text"]:not(#uptocall-phone) {
+        border-color: #646464;
+    }
+}
+
+.bottom-menu {
+    a.top-phone {
+        font-family: 'bebasneue_regular', sans-serif;
+        font-size: 20px;
+    }
+    a.call-me {
+        display: block;
+        width: 160px;
+        height: 30px;
+        padding: 0;
+        margin: 15px;
+        line-height: 26px;
+        font-family: 'bebasneue_regular', sans-serif;
+        font-size: 18px;
+        color: #ffc000;
+        text-align: center;
+        text-transform: uppercase;
+        border: 2px solid #ffc000;
+        @include border-radius(5px);
+        @include box-sizing(border-box);
+
+        &:hover {
+            color: #333;
+            background: rgba(255, 192, 0, 0.9);
+        }
+    }
+}
+
+/*delay*/
+.tr-delay-4 {
+    @include transition-delay(0.4s);
+}
+.tr-delay-8 {
+    @include transition-delay(0.8s);
+}
+.tr-delay-12 {
+    @include transition-delay(1.2s);
+}
+.tr-delay-16 {
+    @include transition-delay(1.6s);
+}
+.tr-delay-20 {
+    @include transition-delay(2.0s);
+}
+.tr-delay-24 {
+    @include transition-delay(2.4s);
 }
