@@ -1561,8 +1561,8 @@ ob_start(); ?>
     <!--Чайный пакетик-->
     <div class="manager-notification active" id="manager-message-bell">
         <a href="#manager-message-1">
-        <span class="tea-pocket">
-            <span class="number">1</span>
+        <span class="tea-bag">
+            <span class="number-posts">1</span>
         </span>
         </a>
     </div>

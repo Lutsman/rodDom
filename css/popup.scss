@@ -172,7 +172,7 @@ div, nav, ul, form {
         padding: 10px;
         @include box-sizing(border-box);
     }
-    .tea-pocket {
+    .tea-bag {
         position: relative;
         z-index: 2;
         display: block;
@@ -183,7 +183,7 @@ div, nav, ul, form {
         @include border-radius(10px 10px 60px 60px);
         @include box-sizing(border-box);
     }
-    .number {
+    .number-posts {
         display: block;
         position: absolute;
         z-index: 2;
