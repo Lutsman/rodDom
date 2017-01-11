@@ -97,7 +97,7 @@ ob_start(); ?>
                              <a href="#popup__call-back">Заказать звонок</a>
                          </li>-->
                         <li>
-                            <a class="top-phone" href="#popup__call-back">+7 (926) 763-35-49<span></span></a>
+                            <a class="top-phone" href="#popup__call-back" >+7 (926) 763-35-49<span></span></a>
                         </li>
                         <li>
                             <a href="#popup1" class="fancybox-modal call-me">Перезвоните мне!</a>

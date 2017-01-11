@@ -75,13 +75,24 @@ $(document).ready(function () {
 
         $teaBag.on('click', function (e) {
             e.preventDefault();
-
-            $(this).removeClass('active')
+            hideTeaBag();
         });
 
         function showTeaBag() {
             $teaBag.addClass('active');
-            console.log('show teabag')
+        }
+
+        function hideTeaBag() {
+            $teaBag.removeClass('active');
+
+            var targetEl = $teaBag.attr("href");
+            var destination = $(targetEl).offset().top;
+            if (destination < 0) {
+                destination = 0;
+            }
+            $('html, body').animate({scrollTop: destination - offset}, "slow", function () {
+
+            });
         }
     })();
 
