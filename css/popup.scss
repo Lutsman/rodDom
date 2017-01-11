@@ -186,6 +186,10 @@ div, nav, ul, form {
         display: block;
         padding: 10px;
         @include box-sizing(border-box);
+
+        &:hover {
+            text-decoration: none;
+        }
     }
     .tea-bag {
         position: relative;
@@ -200,10 +204,6 @@ div, nav, ul, form {
         border: 1px solid #e52b00;
         @include border-radius(10px 10px 60px 60px);
         @include box-sizing(border-box);
-
-        &:hover {
-            text-decoration: none;
-        }
     }
     .number-posts {
         display: block;
@@ -244,10 +244,10 @@ div, nav, ul, form {
         float: left;
     }
     .image-box {
-        width: 33%;
+        width: 34%;
     }
     .text-box {
-        width: 67%;
+        width: 66%;
         p {
             margin-bottom: 15px;
             opacity: 0;
@@ -261,7 +261,7 @@ div, nav, ul, form {
         text-align: center;
 
         img {
-            margin-bottom: 40px;
+            margin-bottom: 49px;
         }
     }
 }
@@ -302,6 +302,19 @@ div, nav, ul, form {
             color: #333;
             background: rgba(255, 192, 0, 0.9);
         }
+    }
+}
+
+.icon-box {
+    position: relative;
+    z-index: 2;
+    height: 65px;
+    img {
+        position: absolute;
+        z-index: 2;
+        top: 50%;
+        left: 50%;
+        @include transform(translate3d(-50%, -50%, 0));
     }
 }
 
