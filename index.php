@@ -104,7 +104,7 @@ ob_start(); ?>
         <div class="firstscreen cf">
             <div class="resize cf">
                 <h1 class="txt_86 yellow text_bebasreg">Оформление Выписки из Роддома</h1>
-                <h2 class="txt_40 text_bebasreg white">ВЕСЬ ГЕМОРРОЙ МЫ БЕРЕМ НА СЕБЯ!</h2>
+                <h2 class="txt_40 text_bebasreg white">ВСЮ ПОДГОТОВКУ МЫ БЕРЕМ НА СЕБЯ!</h2>
                 <form action="mailer.php" method="post" id="form1" class="flr bbox">
                     <p>Введите Ваше имя</p>
                     <input type="text" name="name">
@@ -1218,7 +1218,7 @@ ob_start(); ?>
 
         <div>
             <div class="avatar">
-                <img src="images/profile-userpic.jpg" width="75" height="75" alt="фото">
+                <img src="images/avatar_manager.jpg" width="64" height="64" alt="фото">
                 <p class="title">Мария</p>
                 <p>Менеджер <br> по подбору курсов</p>
             </div>
@@ -1229,7 +1229,7 @@ ob_start(); ?>
             <form class="popup__form" action="" method="post" novalidate="novalidate">
                 <input type="text" name="name" placeholder="Фамилия и Имя">
                 <input type="text" name="phone" placeholder="Введите телефон">
-                <input class="trans" type="submit" value="Отправить заявку">
+                <input class="trans" type="submit" value="Заказать звонок">
             </form>
         </div>
 
@@ -1395,7 +1395,7 @@ ob_start(); ?>
 
         <div>
             <div class="avatar">
-                <img src="images/profile-userpic.jpg" width="75" height="75" alt="фото">
+                <img src="images/avatar_manager.jpg" width="64" height="64" alt="фото">
                 <p class="title">Мария</p>
                 <p>Менеджер <br> по подбору курсов</p>
             </div>
@@ -1538,7 +1538,7 @@ ob_start(); ?>
 
         <div>
             <div class="avatar">
-                <img src="images/profile-userpic.jpg" width="75" height="75" alt="фото">
+                <img src="images/avatar_manager.jpg" width="64" height="64" alt="фото">
                 <p class="title">Мария</p>
                 <p>Менеджер <br> по подбору курсов</p>
             </div>
@@ -1556,6 +1556,15 @@ ob_start(); ?>
             </form>
         </div>
 
+    </div>
+
+    <!--Чайный пакетик-->
+    <div class="manager-notification active" id="manager-message-bell">
+        <a href="#manager-message-1">
+        <span class="tea-pocket">
+            <span class="number">1</span>
+        </span>
+        </a>
     </div>
 
 
