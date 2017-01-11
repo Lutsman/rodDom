@@ -1237,7 +1237,7 @@ ob_start(); ?>
 
     <div id="popup__rates" class="pop-up popup__rates">
         <div class="image-box">
-            <img src="images/popup_rates.jpg" width="470" height="507"  alt="img">
+            <img src="images/tarrifs_lightbox.jpg" width="506" height="547"  alt="img">
         </div>
 
         <div class="popup__content">
@@ -1260,7 +1260,7 @@ ob_start(); ?>
 
     <div id="popup__services1" class="pop-up popup__services">
         <div class="image-box">
-            <img src="images/popup_serv1.jpg" width="470" height="575"  alt="img">
+            <img src="images/service_lightbox_1.jpg" width="397" height="485"  alt="img">
         </div>
 
         <div class="popup__content">
@@ -1282,7 +1282,7 @@ ob_start(); ?>
     </div>
     <div id="popup__services2" class="pop-up popup__services">
         <div class="image-box">
-            <img src="images/popup_serv1.jpg" width="470" height="575"  alt="img">
+            <img src="images/service_lightbox_2.jpg" width="397" height="485"  alt="img">
         </div>
 
         <div class="popup__content">
@@ -1304,7 +1304,7 @@ ob_start(); ?>
     </div>
     <div id="popup__services3" class="pop-up popup__services">
         <div class="image-box">
-            <img src="images/popup_serv1.jpg" width="470" height="575"  alt="img">
+            <img src="images/service_lightbox_3.jpg" width="397" height="485"  alt="img">
         </div>
 
         <div class="popup__content">
@@ -1326,7 +1326,7 @@ ob_start(); ?>
     </div>
     <div id="popup__services4" class="pop-up popup__services">
         <div class="image-box">
-            <img src="images/popup_serv1.jpg" width="470" height="575"  alt="img">
+            <img src="images/service_lightbox_4.jpg" width="397" height="485"  alt="img">
         </div>
 
         <div class="popup__content">
@@ -1348,7 +1348,7 @@ ob_start(); ?>
     </div>
     <div id="popup__services5" class="pop-up popup__services">
         <div class="image-box">
-            <img src="images/popup_serv1.jpg" width="470" height="575"  alt="img">
+            <img src="images/service_lightbox_5.jpg" width="397" height="485"  alt="img">
         </div>
 
         <div class="popup__content">
@@ -1370,7 +1370,7 @@ ob_start(); ?>
     </div>
     <div id="popup__services6" class="pop-up popup__services">
         <div class="image-box">
-            <img src="images/popup_serv1.jpg" width="470" height="575"  alt="img">
+            <img src="images/service_lightbox_6.jpg" width="397" height="485"  alt="img">
         </div>
 
         <div class="popup__content">
@@ -1393,7 +1393,7 @@ ob_start(); ?>
     <div id="popup__services" class="pop-up popup__services">
         <h3>Услуги</h3>
 
-        <div>
+        <div class="info-block">
             <div class="avatar">
                 <img src="images/avatar_manager.jpg" width="64" height="64" alt="фото">
                 <p class="title">Мария</p>
@@ -1403,7 +1403,7 @@ ob_start(); ?>
                 сценарии торжественной встречи жены из роддома.</p>
         </div>
 
-        <div>
+        <div class="form-box">
             <form class="popup__form services__form" action="" method="post" novalidate="novalidate">
                 <input type="text" name="name" placeholder="Фамилия и Имя">
                 <input type="text" name="phone" placeholder="Введите телефон">
@@ -1415,7 +1415,7 @@ ob_start(); ?>
 
     <div id="popup__examples1" class="pop-up popup__examples">
         <div class="image-box">
-            <img src="images/popup_examples1.jpg" width="470" height="660"  alt="img">
+            <img src="images/job_example_1.jpg" width="506" height="708"  alt="Примеры работ">
         </div>
 
         <div class="popup__content">
@@ -1439,7 +1439,7 @@ ob_start(); ?>
     </div>
     <div id="popup__examples2" class="pop-up popup__examples">
         <div class="image-box">
-            <img src="images/popup_examples1.jpg" width="470" height="660"  alt="img">
+            <img src="images/job_example_2.jpg" width="506" height="708"  alt="Примеры работ">
         </div>
 
         <div class="popup__content">
@@ -1463,7 +1463,7 @@ ob_start(); ?>
     </div>
     <div id="popup__examples3" class="pop-up popup__examples">
         <div class="image-box">
-            <img src="images/popup_examples1.jpg" width="470" height="660"  alt="img">
+            <img src="images/job_example_3.jpg" width="506" height="708"  alt="Примеры работ">
         </div>
 
         <div class="popup__content">
@@ -1487,7 +1487,7 @@ ob_start(); ?>
     </div>
     <div id="popup__examples4" class="pop-up popup__examples">
         <div class="image-box">
-            <img src="images/popup_examples1.jpg" width="470" height="660"  alt="img">
+            <img src="images/job_example_4.jpg" width="506" height="708"  alt="Примеры работ">
         </div>
 
         <div class="popup__content">
@@ -1511,7 +1511,7 @@ ob_start(); ?>
     </div>
     <div id="popup__examples5" class="pop-up popup__examples">
         <div class="image-box">
-            <img src="images/popup_examples1.jpg" width="470" height="660"  alt="img">
+            <img src="images/job_example_5.jpg" width="506" height="708"  alt="Примеры работ">
         </div>
 
         <div class="popup__content">
@@ -1536,7 +1536,7 @@ ob_start(); ?>
     <div id="popup__examples" class="pop-up popup__examples">
         <h3>Примеры работ</h3>
 
-        <div>
+        <div class="info-block">
             <div class="avatar">
                 <img src="images/avatar_manager.jpg" width="64" height="64" alt="фото">
                 <p class="title">Мария</p>
@@ -1548,7 +1548,7 @@ ob_start(); ?>
                 расскажем вам о разных примерах организации встречи жены и малыша.</p>
         </div>
 
-        <div>
+        <div class="form-box">
             <form class="popup__form services__form" action="" method="post" novalidate="novalidate">
                 <input type="text" name="name" placeholder="Фамилия и Имя">
                 <input type="text" name="phone" placeholder="Введите телефон">
@@ -1566,6 +1566,7 @@ ob_start(); ?>
         </span>
         </a>
     </div>
+
 
 
     <!--[if lt IE 9]>
