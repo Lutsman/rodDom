@@ -34,17 +34,19 @@ div::after, nav::after, ul::after, form::after {
     font-size: 17px; }
   .pop-up > div {
     float: left;
-    width: 320px;
     padding: 30px;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    /*&:first-of-type {
-        width: 470px;
-    }*/ }
+    box-sizing: border-box; }
+  .pop-up .info-block {
+    width: 506px; }
   .pop-up .image-box {
+    width: 506px;
     padding: 0; }
+  .pop-up .form-box {
+    width: 304px; }
   .pop-up .popup__content {
+    width: 304px;
     padding: 0; }
     .pop-up .popup__content > div {
       padding: 30px; }
@@ -62,7 +64,9 @@ div::after, nav::after, ul::after, form::after {
     width: 50%; }
 
 .popup__services {
-  width: 700px; }
+  width: 701px; }
+  .popup__services .info-block, .popup__services .image-box {
+    width: 397px; }
 
 .popup__examples .popup__content form {
   margin-top: 50px; }
