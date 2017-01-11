@@ -71,11 +71,14 @@ $(document).ready(function () {
     /*tea bag*/
     (function () {
         var $teaBag = $('#manager-message-bell');
-        var timer = setTimeout(showTeaBag, 10000);
+        //var timer = setTimeout(showTeaBag, 10000);
+        showTeaBag();
 
         $teaBag.on('click', function (e) {
             e.preventDefault();
+
             hideTeaBag();
+            goToHiddenEl();
         });
 
         function showTeaBag() {
@@ -84,14 +87,20 @@ $(document).ready(function () {
 
         function hideTeaBag() {
             $teaBag.removeClass('active');
+        }
 
-            var targetEl = $teaBag.attr("href");
-            var destination = $(targetEl).offset().top;
+        function goToHiddenEl() {
+            var $targetEl = $($teaBag.attr('data-target'));
+            $targetEl.removeClass('hidden');
+            var destination = $targetEl.offset().top;
+            var offset = $('.bottom-menu').height();
+
             if (destination < 0) {
                 destination = 0;
             }
-            $('html, body').animate({scrollTop: destination - offset}, "slow", function () {
 
+            $('html, body').animate({scrollTop: destination - offset}, "slow", function () {
+                $targetEl.addClass('active');
             });
         }
     })();
