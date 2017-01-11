@@ -4101,7 +4101,8 @@ input[type=submit]:active, a.btn_all:active {
 }
 
 .header {
-    position: absolute;
+    position: fixed;
+    z-index: 1000;
     width: 1920px;
     left: 50%;
     margin-left: -960px;
@@ -4200,14 +4201,6 @@ input[type=submit]:active, a.btn_all:active {
     margin-left: -45%
 }
 
-.bottom-menu.active {
-    position: fixed;
-    top: 0;
-    width: 1920px;
-    left: 50%;
-    margin-left: -960px;
-    z-index: 1000
-}
 
 .firstscreen {
     background: url(../images/DSC02517.jpg) center center no-repeat;
