@@ -267,6 +267,34 @@ div, nav, ul, form {
     }
 }
 
+.bottom-menu {
+    a.top-phone {
+        font-family: 'bebasneue_regular', sans-serif;
+        font-size: 20px;
+    }
+    a.call-me {
+        display: block;
+        width: 160px;
+        height: 30px;
+        padding: 0;
+        margin: 15px;
+        line-height: 26px;
+        font-family: 'bebasneue_regular', sans-serif;
+        font-size: 18px;
+        color: #ffc000;
+        text-align: center;
+        text-transform: uppercase;
+        border: 2px solid #ffc000;
+        @include border-radius(5px);
+        @include box-sizing(border-box);
+
+        &:hover {
+            color: #333;
+            background: rgba(255, 192, 0, 0.9);
+        }
+    }
+}
+
 /*delay*/
 .tr-delay-4 {
     @include transition-delay(0.4s);

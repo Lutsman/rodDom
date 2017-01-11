@@ -55,19 +55,18 @@ ob_start(); ?>
     <div class="globalWrapper cf">
         <a id="vipiska"></a>
         <div class="header cf">
-            <div class="top">
+            <!--<div class="top">
                 <div class="resize cf">
                     <div class="fll">
                         <h1 class="text_bebasreg txt_46 yellow">Мужик - МЫ ТЕБЕ ПОМОЖЕМ!</h1>
                     </div>
                     <div class="flr">
                         <div class="text">
-                            <p class="text_bebasreg white txt_46"><a class="topphone" href="#popup__call-back">+7
-                                    (926) 763-35-49</a></p>
+                            <p class="text_bebasreg white txt_46"><a class="topphone" href="#popup__call-back">+7 (926) 763-35-49</a></p>
                             <div class="cf"></div>
-                            <!-- <div class="share_block">
+                            &lt;!&ndash; <div class="share_block">
                                 <div class="ya-share2" data-services="vkontakte,facebook,odnoklassniki,viber,whatsapp"></div>
-                            </div> -->
+                            </div> &ndash;&gt;
                             <div class="cf"></div>
 
                         </div>
@@ -77,7 +76,7 @@ ob_start(); ?>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
             <div class="bottom-menu">
                 <div class="resize">
                     <ul class="tac">
@@ -93,9 +92,15 @@ ob_start(); ?>
                         <li>
                             <a href="#f7">Контакты<span></span></a>
                         </li>
-                        <li class="double-string">
-                            <p>+7 (926) 763-35-49</p>
-                            <a href="#popup__call-back">Заказать звонок</a>
+                        <!-- <li class="double-string">
+                             <p>+7 (926) 763-35-49</p>
+                             <a href="#popup__call-back">Заказать звонок</a>
+                         </li>-->
+                        <li>
+                            <a class="top-phone" href="#popup__call-back">+7 (926) 763-35-49<span></span></a>
+                        </li>
+                        <li>
+                            <a href="#popup1" class="fancybox-modal call-me">Перезвоните мне!</a>
                         </li>
                     </ul>
                 </div>

@@ -237,6 +237,32 @@ div::after, nav::after, ul::after, form::after {
   .order-call__form input[type="text"]:not(#uptocall-phone) {
     border-color: #646464; }
 
+.bottom-menu a.top-phone {
+  font-family: 'bebasneue_regular', sans-serif;
+  font-size: 20px; }
+.bottom-menu a.call-me {
+  display: block;
+  width: 160px;
+  height: 30px;
+  padding: 0;
+  margin: 15px;
+  line-height: 26px;
+  font-family: 'bebasneue_regular', sans-serif;
+  font-size: 18px;
+  color: #ffc000;
+  text-align: center;
+  text-transform: uppercase;
+  border: 2px solid #ffc000;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+  .bottom-menu a.call-me:hover {
+    color: #333;
+    background: rgba(255, 192, 0, 0.9); }
+
 /*delay*/
 .tr-delay-4 {
   -webkit-transition: 0.4s;
