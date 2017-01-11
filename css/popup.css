@@ -215,9 +215,9 @@ div::after, nav::after, ul::after, form::after {
   .manager-message .image-box, .manager-message .text-box {
     float: left; }
   .manager-message .image-box {
-    width: 33%; }
+    width: 34%; }
   .manager-message .text-box {
-    width: 67%; }
+    width: 66%; }
     .manager-message .text-box p {
       margin-bottom: 15px;
       opacity: 0;
@@ -231,7 +231,7 @@ div::after, nav::after, ul::after, form::after {
     line-height: 20px;
     text-align: center; }
     .manager-message figure img {
-      margin-bottom: 40px; }
+      margin-bottom: 49px; }
 
 .order-call__form {
   opacity: 0;

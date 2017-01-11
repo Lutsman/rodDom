@@ -4268,10 +4268,20 @@ input[type=submit]:active, a.btn_all:active {
 
 .firstscreen .resize ul li {
     width: 220px;
-    height: 160px;
+    height: 180px;
     margin: 0px 5px;
     vertical-align: middle;
-    text-align: center
+    text-align: center;
+}
+
+.firstscreen .resize ul li a {
+    display: block;
+    width: 220px;
+    height: 180px;
+    padding-top: 20px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .firstscreen .resize ul li h3 {
