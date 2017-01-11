@@ -4158,11 +4158,12 @@ input[type=submit]:active, a.btn_all:active {
 
 .bottom-menu ul li a {
     display: block;
-    font-family: 'opensans-light_1';
+    font-family: 'bebasneue_regular', sans-serif;
     color: #fff;
     text-decoration: none;
     padding: 21px 12px;
-    font-size: 13px;
+    font-size: 25px;
+    line-height: 28px;
     text-transform: uppercase;
     position: relative
 }

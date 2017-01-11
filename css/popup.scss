@@ -193,10 +193,17 @@ div, nav, ul, form {
         display: block;
         width: 105px;
         height: 180px;
+        padding-top: 35px;
+        color: #000;
+        text-align: center;
         background-color: #fff;
         border: 1px solid #e52b00;
         @include border-radius(10px 10px 60px 60px);
         @include box-sizing(border-box);
+
+        &:hover {
+            text-decoration: none;
+        }
     }
     .number-posts {
         display: block;
@@ -220,6 +227,8 @@ div, nav, ul, form {
 
 .manager-message {
     padding: 100px 0;
+    font-family: 'opensans-light_1', sans-serif;
+    font-size: 16px;
 
     &.active {
         .text-box p, .order-call__form {
@@ -229,6 +238,7 @@ div, nav, ul, form {
 
     p {
         font-family: 'opensans-light_1', sans-serif;
+        font-size: 16px;
     }
     .image-box, .text-box {
         float: left;
@@ -239,7 +249,7 @@ div, nav, ul, form {
     .text-box {
         width: 67%;
         p {
-            margin: 20px 0;
+            margin-bottom: 15px;
             opacity: 0;
             @include transition(opacity 0.5s ease-in-out);
         }
@@ -247,12 +257,11 @@ div, nav, ul, form {
     figure {
         width: 260px;
         margin: 0;
-        font-size: 18px;
         line-height: 20px;
         text-align: center;
 
         img {
-            margin-bottom: 20px;
+            margin-bottom: 40px;
         }
     }
 }
@@ -268,24 +277,20 @@ div, nav, ul, form {
         }
     }
     input[type="text"]:not(#uptocall-phone) {
+        height: 60px;
+        line-height: 60px;
         border-color: #646464;
     }
 }
 
 .bottom-menu {
-    a.top-phone {
-        font-family: 'bebasneue_regular', sans-serif;
-        font-size: 20px;
-    }
     a.call-me {
         display: block;
         width: 160px;
-        height: 30px;
+        height: 40px;
         padding: 0;
         margin: 15px;
-        line-height: 26px;
-        font-family: 'bebasneue_regular', sans-serif;
-        font-size: 18px;
+        line-height: 36px;
         color: #ffc000;
         text-align: center;
         text-transform: uppercase;

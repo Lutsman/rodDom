@@ -1602,6 +1602,7 @@ ob_start(); ?>
     <div class="manager-notification active" id="manager-message-bell">
         <a href="#manager-message-1">
         <span class="tea-bag">
+            Новое сообщение
             <span class="number-posts">1</span>
         </span>
         </a>
