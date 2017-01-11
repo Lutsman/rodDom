@@ -168,6 +168,9 @@ div::after, nav::after, ul::after, form::after {
     display: block;
     width: 105px;
     height: 180px;
+    padding-top: 35px;
+    color: #000;
+    text-align: center;
     background-color: #fff;
     border: 1px solid #e52b00;
     -moz-border-radius: 10px 10px 60px 60px;
@@ -176,6 +179,8 @@ div::after, nav::after, ul::after, form::after {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box; }
+    .manager-notification .tea-bag:hover {
+      text-decoration: none; }
   .manager-notification .number-posts {
     display: block;
     position: absolute;
@@ -199,11 +204,14 @@ div::after, nav::after, ul::after, form::after {
     box-sizing: border-box; }
 
 .manager-message {
-  padding: 100px 0; }
+  padding: 100px 0;
+  font-family: 'opensans-light_1', sans-serif;
+  font-size: 16px; }
   .manager-message.active .text-box p, .manager-message.active .order-call__form {
     opacity: 1; }
   .manager-message p {
-    font-family: 'opensans-light_1', sans-serif; }
+    font-family: 'opensans-light_1', sans-serif;
+    font-size: 16px; }
   .manager-message .image-box, .manager-message .text-box {
     float: left; }
   .manager-message .image-box {
@@ -211,7 +219,7 @@ div::after, nav::after, ul::after, form::after {
   .manager-message .text-box {
     width: 67%; }
     .manager-message .text-box p {
-      margin: 20px 0;
+      margin-bottom: 15px;
       opacity: 0;
       -webkit-transition: opacity 0.5s ease-in-out;
       -moz-transition: opacity 0.5s ease-in-out;
@@ -220,11 +228,10 @@ div::after, nav::after, ul::after, form::after {
   .manager-message figure {
     width: 260px;
     margin: 0;
-    font-size: 18px;
     line-height: 20px;
     text-align: center; }
     .manager-message figure img {
-      margin-bottom: 20px; }
+      margin-bottom: 40px; }
 
 .order-call__form {
   opacity: 0;
@@ -238,20 +245,17 @@ div::after, nav::after, ul::after, form::after {
     .order-call__form input + input {
       margin-left: 2%; }
   .order-call__form input[type="text"]:not(#uptocall-phone) {
+    height: 60px;
+    line-height: 60px;
     border-color: #646464; }
 
-.bottom-menu a.top-phone {
-  font-family: 'bebasneue_regular', sans-serif;
-  font-size: 20px; }
 .bottom-menu a.call-me {
   display: block;
   width: 160px;
-  height: 30px;
+  height: 40px;
   padding: 0;
   margin: 15px;
-  line-height: 26px;
-  font-family: 'bebasneue_regular', sans-serif;
-  font-size: 18px;
+  line-height: 36px;
   color: #ffc000;
   text-align: center;
   text-transform: uppercase;
