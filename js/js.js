@@ -1,56 +1,61 @@
 $(document).ready(function () {
-    $("#owl1").owlCarousel({
-        items: 1,
-        autoplay: false,
-        autoplayTimeout: 4000,
-        navigation: true, // Show next and prev buttons
-        slideSpeed: 300,
-        paginationSpeed: 300,
-        nav: true,
-        dots: true,
-        dotsEach: true,
-        navText: false,
-        loop: true,
-        autoWidth: false,
-        responsive: false,
-        itemsScaleUp: false,
-    });
+    /*owl carusel*/
+    (function () {
+        $("#owl1").owlCarousel({
+            items: 1,
+            autoplay: false,
+            autoplayTimeout: 4000,
+            navigation: true, // Show next and prev buttons
+            slideSpeed: 300,
+            paginationSpeed: 300,
+            nav: true,
+            dots: true,
+            dotsEach: true,
+            navText: false,
+            loop: true,
+            autoWidth: false,
+            responsive: false,
+            itemsScaleUp: false,
+        });
 
-    $("#owl2").owlCarousel({
-        items: 1,
-        autoplay: false,
-        autoplayTimeout: 4000,
-        navigation: true, // Show next and prev buttons
-        slideSpeed: 300,
-        paginationSpeed: 300,
-        nav: true,
-        dots: true,
-        dotsEach: true,
-        navText: false,
-        loop: true,
-        autoWidth: false,
-        responsive: false,
-        itemsScaleUp: false,
-        onTranslated: function () {
-            slide = $('#owl2 .active .item');
-            if (!$(slide).hasClass('loaded')) {
+        $("#owl2").owlCarousel({
+            items: 1,
+            autoplay: false,
+            autoplayTimeout: 4000,
+            navigation: true, // Show next and prev buttons
+            slideSpeed: 300,
+            paginationSpeed: 300,
+            nav: true,
+            dots: true,
+            dotsEach: true,
+            navText: false,
+            loop: true,
+            autoWidth: false,
+            responsive: false,
+            itemsScaleUp: false,
+            onTranslated: function () {
+                slide = $('#owl2 .active .item');
+                if (!$(slide).hasClass('loaded')) {
 
-                $.ajax({
-                    method: "POST",
-                    url: "js/loadslide.php",
-                    data: {'index': $(slide).data('slide')},
-                    success: function (data) {
-                        $(slide).html(data).addClass('loaded');
-                    }
-                });
+                    $.ajax({
+                        method: "POST",
+                        url: "js/loadslide.php",
+                        data: {'index': $(slide).data('slide')},
+                        success: function (data) {
+                            $(slide).html(data).addClass('loaded');
+                        }
+                    });
+                }
             }
-        }
-    });
+        });
+    })();
 
     /*Fancybox*/
     (function () {
         var $fancyMenu = $('[data-role="lightbox-menu"]');
         var $fancySimple = $('[data-role="lightbox"]');
+        var $fancyFirst = $('[data-role="lightbox-menu-first"]');
+        var $fancyLast = $('[data-role="lightbox-menu-last"]');
 
         $('.fancybox-modal').fancybox({
             padding: 0,
@@ -59,11 +64,29 @@ $(document).ready(function () {
 
         $fancySimple.fancybox({
             padding: 0,
-            margin: [0, 70,0,70]
+            margin: [0, 70,0,70],
+            tpl: {
+                closeBtn: '<span class="lightbox-close"></span>',
+                next: '<span class="lightbox-next"></span>',
+                prev: '<span class="lightbox-prev"></span>'
+            }
         });
 
+
+        /*http://jsfiddle.net/x03xqu7t/2/ отключить последнему слайду навигацию*/
         $fancyMenu.fancybox({
-            padding: 0
+            padding: 0,
+            loop: false,
+            /*tpl: {
+                closeBtn: '<span class="lightbox-close"></span>',
+                next: '<span class="lightbox-next"></span>',
+                prev: '<span class="lightbox-prev"></span>'
+            }*/
+        });
+
+        $fancyLast.fancybox({
+            padding: 0,
+            arrows: false
         });
 
     })();
@@ -114,90 +137,96 @@ $(document).ready(function () {
         }
     });*/
 
-    var options = {
-        delegation: true,
-        clearForm: true,
-        resetForm: true,
-        type: 'post',
-        beforeSubmit: function () {
-            $.fancybox.close();
-        },
-        success: function () {
-            $.fancybox({href: "#popupThanks", type: 'inline', padding: 0});
-        },
-        error: function () {
-            $.fancybox({href: "#popupError", type: 'inline', padding: 0});
-        }
-    }
-    $('#form1').ajaxForm(options);
-    $('#form2').ajaxForm(options);
-    $('#form3').ajaxForm(options);
-    $('#form4').ajaxForm(options);
-    $('#form5').ajaxForm(options);
-    $('#form6').ajaxForm(options);
+    /*Forms*/
+    (function () {
+        /*request*/
+        var options = {
+            delegation: true,
+            clearForm: true,
+            resetForm: true,
+            type: 'post',
+            beforeSubmit: function () {
+                $.fancybox.close();
+            },
+            success: function () {
+                $.fancybox({href: "#popupThanks", type: 'inline', padding: 0});
+            },
+            error: function () {
+                $.fancybox({href: "#popupError", type: 'inline', padding: 0});
+            }
+        };
+        $('#form1').ajaxForm(options);
+        $('#form2').ajaxForm(options);
+        $('#form3').ajaxForm(options);
+        $('#form4').ajaxForm(options);
+        $('#form5').ajaxForm(options);
+        $('#form6').ajaxForm(options);
 
+        /*phone mask*/
+        $("input[name=phone]:not(#uptocall-phone)").mask("+7 (999) 999-99-99");
 
-    $("input[name=phone]:not(#uptocall-phone)").mask("+7 (999) 999-99-99");
+        /*validation*/
+        $("#form1").validate({
+            rules: {
+                name: {required: true, maxlength: 100,},
+                phone: {required: true, minlength: 10, maxlength: 25,},
+            },
+            messages: {
+                name: {required: "", maxlength: "",},
+                phone: {required: "", maxlength: "",},
+            }
+        });
+        $("#form2").validate({
+            rules: {
+                name: {required: true, maxlength: 100,},
+                phone: {required: true, minlength: 10, maxlength: 25,},
+            },
+            messages: {
+                name: {required: "", maxlength: "",},
+                phone: {required: "", maxlength: "",},
+            }
+        });
+        $("#form3").validate({
+            rules: {
+                mess: {required: true, maxlength: 300,},
+            },
+            messages: {
+                mess: {required: "", maxlength: "",},
+            }
+        });
+        $("#form4").validate({
+            rules: {
+                phone: {required: true, minlength: 10, maxlength: 25,},
+            },
+            messages: {
+                phone: {required: "", maxlength: "",},
+            }
+        });
+        $("#form5").validate({
+            rules: {
+                name: {required: true, maxlength: 100,},
+                phone: {required: true, minlength: 10, maxlength: 25,},
+            },
+            messages: {
+                name: {required: "", maxlength: "",},
+                phone: {required: "", maxlength: "",},
+            }
+        });
+        $("#form6").validate({
+            rules: {
+                name: {required: true, maxlength: 100,},
+                phone: {required: true, minlength: 10, maxlength: 25,},
+                mess: {required: true, maxlength: 300,},
+            },
+            messages: {
+                name: {required: "", maxlength: "",},
+                phone: {required: "", maxlength: "",},
+                mess: {required: "", maxlength: "",},
+            }
+        });
+    })();
+});
 
-});
-$("#form1").validate({
-    rules: {
-        name: {required: true, maxlength: 100,},
-        phone: {required: true, minlength: 10, maxlength: 25,},
-    },
-    messages: {
-        name: {required: "", maxlength: "",},
-        phone: {required: "", maxlength: "",},
-    }
-});
-$("#form2").validate({
-    rules: {
-        name: {required: true, maxlength: 100,},
-        phone: {required: true, minlength: 10, maxlength: 25,},
-    },
-    messages: {
-        name: {required: "", maxlength: "",},
-        phone: {required: "", maxlength: "",},
-    }
-});
-$("#form3").validate({
-    rules: {
-        mess: {required: true, maxlength: 300,},
-    },
-    messages: {
-        mess: {required: "", maxlength: "",},
-    }
-});
-$("#form4").validate({
-    rules: {
-        phone: {required: true, minlength: 10, maxlength: 25,},
-    },
-    messages: {
-        phone: {required: "", maxlength: "",},
-    }
-});
-$("#form5").validate({
-    rules: {
-        name: {required: true, maxlength: 100,},
-        phone: {required: true, minlength: 10, maxlength: 25,},
-    },
-    messages: {
-        name: {required: "", maxlength: "",},
-        phone: {required: "", maxlength: "",},
-    }
-});
-$("#form6").validate({
-    rules: {
-        name: {required: true, maxlength: 100,},
-        phone: {required: true, minlength: 10, maxlength: 25,},
-        mess: {required: true, maxlength: 300,},
-    },
-    messages: {
-        name: {required: "", maxlength: "",},
-        phone: {required: "", maxlength: "",},
-        mess: {required: "", maxlength: "",},
-    }
-});
 
 function scrollToElement(element, offset) {
     $(element).click(function (e) {
