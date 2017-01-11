@@ -85,14 +85,14 @@ $(document).ready(function () {
         }
     })();
 
-    $(window).scroll(function () {
+    /*$(window).scroll(function () {
         if ($(this).scrollTop() > 110) {
             $(".bottom-menu").addClass("active");
         }
         else {
             $(".bottom-menu").removeClass("active");
         }
-    });
+    });*/
 
     var options = {
         delegation: true,
