@@ -140,6 +140,41 @@ ob_start(); ?>
             </div>
         </div>
 
+        <!--Всплывающий блок-->
+        <div id="manager-message-1" class="manager-message active">
+            <div class="resize">
+                <div class="image-box">
+                    <figure>
+                        <img src="http://upp.syntone.ru/wp-content/uploads/2016/09/nadya2.png" width="260" height="260" alt="Фото">
+                        <figcaption>
+                            <p><b>Мария</b></p>
+                            <p>организатор</p>
+                            <p>выписок из роддома</p>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="text-box">
+                    <p class="tr-delay-4">Здравствуйте!</p>
+                    <p class="tr-delay-8">Я каждый день помогаю мужчинам придумать сценарий встречи жены из роддома.</p>
+                    <p class="tr-delay-12">Мы много делаем, при этом через сайт сложно передать, какую выписку мы можем для Вас организовать.
+                        Только в разговоре по телефону удаётся подобрать сценарий под Ваши желания, ответить на вопросы,
+                        рассказать, что мы можем предложить.</p>
+                    <p class="tr-delay-16">Согласитесь, будет жалко, если Вы можете получить чудесный праздник, показать любимой, как Вы её любите,
+                        удивить гостей и с первых минут прослыть лучшим в мире отцом, но Вы решили это не делать только потому,
+                        что не знали, на что мы способны.</p>
+                    <p class="tr-delay-20">Предлагаю созвониться по телефону, это займёт 10-15 минут, зато у Вас будет вся нужная информация о том,
+                        как можно встретить супругу из роддома.</p>
+
+                    <form class="order-call__form tr-delay-24" action="" method="post" novalidate="novalidate">
+                        <input type="text" name="phone" placeholder="Введите ваш телефон">
+                        <input class="trans" type="submit" value="Заказать звонок">
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
         <div class="more360 cf">
             <a id="f3"></a>
             <div class="resize cf">

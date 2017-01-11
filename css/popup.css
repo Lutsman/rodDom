@@ -4,6 +4,9 @@ div::after, nav::after, ul::after, form::after {
   display: table;
   clear: both; }
 
+.hidden {
+  display: none; }
+
 .pop-up {
   display: none;
   width: 810px;
@@ -191,5 +194,84 @@ div::after, nav::after, ul::after, form::after {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box; }
+
+.manager-message {
+  padding: 100px 0; }
+  .manager-message.active .text-box p, .manager-message.active .order-call__form {
+    opacity: 1; }
+  .manager-message p {
+    font-family: 'opensans-light_1', sans-serif; }
+  .manager-message .image-box, .manager-message .text-box {
+    float: left; }
+  .manager-message .image-box {
+    width: 33%; }
+  .manager-message .text-box {
+    width: 67%; }
+    .manager-message .text-box p {
+      margin: 20px 0;
+      opacity: 0;
+      -webkit-transition: opacity 0.5s ease-in-out;
+      -moz-transition: opacity 0.5s ease-in-out;
+      -o-transition: opacity 0.5s ease-in-out;
+      transition: opacity 0.5s ease-in-out; }
+  .manager-message figure {
+    width: 260px;
+    margin: 0;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center; }
+    .manager-message figure img {
+      margin-bottom: 20px; }
+
+.order-call__form {
+  opacity: 0;
+  -webkit-transition: opacity 2s ease-in-out;
+  -moz-transition: opacity 2s ease-in-out;
+  -o-transition: opacity 2s ease-in-out;
+  transition: opacity 2s ease-in-out; }
+  .order-call__form input {
+    float: left;
+    width: 49%; }
+    .order-call__form input + input {
+      margin-left: 2%; }
+  .order-call__form input[type="text"]:not(#uptocall-phone) {
+    border-color: #646464; }
+
+/*delay*/
+.tr-delay-4 {
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s; }
+
+.tr-delay-8 {
+  -webkit-transition: 0.8s;
+  -moz-transition: 0.8s;
+  -o-transition: 0.8s;
+  transition: 0.8s; }
+
+.tr-delay-12 {
+  -webkit-transition: 1.2s;
+  -moz-transition: 1.2s;
+  -o-transition: 1.2s;
+  transition: 1.2s; }
+
+.tr-delay-16 {
+  -webkit-transition: 1.6s;
+  -moz-transition: 1.6s;
+  -o-transition: 1.6s;
+  transition: 1.6s; }
+
+.tr-delay-20 {
+  -webkit-transition: 2s;
+  -moz-transition: 2s;
+  -o-transition: 2s;
+  transition: 2s; }
+
+.tr-delay-24 {
+  -webkit-transition: 2.4s;
+  -moz-transition: 2.4s;
+  -o-transition: 2.4s;
+  transition: 2.4s; }
 
 /*# sourceMappingURL=popup.css.map */
