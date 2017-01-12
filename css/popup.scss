@@ -416,3 +416,23 @@ div, nav, ul, form {
         }
     }
 }
+
+/*delay*/
+.tr-delay-2 {
+    @include transition-delay(0.2s !important);
+}
+.tr-delay-4 {
+    @include transition-delay(0.4s !important);
+}
+.tr-delay-6 {
+    @include transition-delay(0.6s !important);
+}
+.tr-delay-8 {
+    @include transition-delay(0.8s !important);
+}
+.tr-delay-10 {
+    @include transition-delay(1.0s !important);
+}
+.tr-delay-12 {
+    @include transition-delay(1.2s !important);
+}
