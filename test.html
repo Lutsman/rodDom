@@ -371,7 +371,7 @@
 
     <div class="video cf">
         <div class="resize cf">
-            <iframe width="940" height="529" src="https://www.youtube.com/watch?v=rOM4c0pDhvg?rel=0" frameborder="0" allowfullscreen></iframe>
+            <a href="#popup__video" class="video__link" data-role="lightbox"></a>
 
         </div>
     </div>
@@ -1698,7 +1698,50 @@
 
 </div>
 
+<div id="popup__video" class="pop-up popup__video">
+    <div class="video-box">
+        <iframe width="636" height="526" src="https://www.youtube.com/embed/rOM4c0pDhvg" frameborder="0" allowfullscreen></iframe>
+    </div>
 
+    <div class="popup__content">
+        <h3>Заказать выписку</h3>
+
+        <div>
+            <p>На сегодняшний день мы организовали более 360 выписок и нам есть чем с Вами поделиться. Оставьте заявку и мы
+                расскажем вам о разных примерах организации встречи жены и малыша.</p>
+
+            <form class="popup__form services__form" action="" method="post" novalidate="novalidate">
+                <input type="text" name="name" placeholder="Фамилия и Имя">
+                <input type="text" name="phone" placeholder="Введите телефон">
+                <input class="trans" type="submit" value="Узнать подробнее">
+            </form>
+        </div>
+
+    </div>
+
+</div>
+<div id="popup__video-form" class="pop-up popup__video-form">
+    <h3>видео наших выписок</h3>
+
+    <div class="info-block">
+        <div class="avatar">
+            <img src="images/avatar_manager.jpg" width="64" height="64" alt="фото">
+            <p class="title">Мария</p>
+            <p>Менеджер <br> организатор <br> выписок из роддома</p>
+        </div>
+        <p>Мы можем организовать выписку любой сложности. Нам важно понять, какую выписку хотите именно Вы. Оставьте
+            заявку, и мы рассчитаем для Вас стоимость выписки.</p>
+    </div>
+
+    <div class="form-box">
+        <form class="popup__form services__form" action="" method="post" novalidate="novalidate">
+            <input type="text" name="name" placeholder="Фамилия и Имя">
+            <input type="text" name="phone" placeholder="Введите телефон">
+            <input class="trans" type="submit" value="Получить точный расчёт">
+        </form>
+    </div>
+
+</div>
 
 <!--Чайный пакетик-->
 <div class="manager-notification" id="manager-message-bell" data-target="#manager-message-1">

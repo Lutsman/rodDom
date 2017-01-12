@@ -93,6 +93,7 @@ div, nav, ul, form {
         width: 50%;
     }
 }
+
 .popup__services, .popup__hashtags {
     width: 701px;
     .info-block, .image-box {
@@ -106,6 +107,33 @@ div, nav, ul, form {
         }
     }
 }
+
+.popup__video {
+    width: 940px;
+    height: 526px;
+    h3 {
+        font-size: 36px;
+    }
+    .video-box {
+        width: 636px;
+        padding: 0;
+    }
+
+}
+.popup__video-form {
+    width: 940px;
+    height: 526px;
+    padding: 70px 130px;
+    background-color: #e9e9e9;
+
+    h3 {
+        background-color: transparent;
+    }
+    .info-block {
+        width: 376px;
+    }
+}
+
 .popup__calculate-cost {
     width: 600px;
     h4 {
@@ -357,6 +385,13 @@ div, nav, ul, form {
             text-decoration: none;
         }
     }
+}
+
+.video__link {
+    display: block;
+    width: 940px;
+    height: 529px;
+    background: url("../images/video_screen_1.jpg") no-repeat;
 }
 
 /*Чайный пакетик*/
