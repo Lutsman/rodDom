@@ -1729,7 +1729,7 @@
     </div>
 
     <div class="steps__wrap">
-        <div id="step1" class="step">
+        <div id="step1" class="step active">
             <form id="step1__form" class="test__form" method="post" action="">
                 <h4>Где планируется выписка?</h4>
 
@@ -1781,7 +1781,7 @@
 
         </div>
 
-        <div id="step3" class="step active">
+        <div id="step3" class="step">
             <h4>Рассчитываем</h4>
 
             <div class="progress-bar">
@@ -1789,21 +1789,23 @@
             </div>
         </div>
 
-        <div id="step4" class="step">
-            <form id="step4__form" class="test__form" method="post" action="">
-                <h4>Расчёт готов!</h4>
+        <div id="step4" class="step payment-ready">
+            <h4>Расчёт готов!</h4>
 
-                <div>
-                    <p>Спасибо! Вы сократили время нашей работы. В благодарность мы дарим Вам скидку 5% на любой вид
-                        услуг. Введите номер телефона, чтобы получить расчёт и зафиксировать скидку.</p>
-                </div>
+            <div>
+                <p>Спасибо! Вы сократили время нашей работы. В благодарность мы дарим Вам скидку 5% на любой вид
+                    услуг. Введите номер телефона, чтобы получить расчёт и зафиксировать скидку.</p>
+            </div>
 
-                <div>
-                    <input type="text" name="phone" placeholder="Введите телефон">
-                    <input class="trans" type="submit" value="Заказать выписку">
-                </div>
+            <div>
+                <form id="step4__form" class="popup__form" method="post" action="">
+                    <div>
+                        <input type="text" name="phone" placeholder="Введите телефон">
+                        <input class="trans" type="submit" value="Заказать выписку">
+                    </div>
 
-            </form>
+                </form>
+            </div>
         </div>
 
     </div><!--steps__wrap-->

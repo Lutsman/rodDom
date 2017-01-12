@@ -11,7 +11,7 @@ div::after, nav::after, ul::after, form::after {
   display: none; }
 
 .pop-up {
-  /* display: none;*/
+  display: none;
   width: 810px;
   background-color: #fff;
   overflow: hidden;
@@ -84,13 +84,18 @@ div::after, nav::after, ul::after, form::after {
 .popup__calculate-cost {
   width: 600px; }
   .popup__calculate-cost h4 {
+    margin-bottom: 40px;
     text-transform: uppercase; }
   .popup__calculate-cost > div {
     width: 100%; }
+  .popup__calculate-cost .steps__counter {
+    padding-bottom: 20px; }
+  .popup__calculate-cost .steps__wrap {
+    padding-bottom: 40px; }
   .popup__calculate-cost .progress-bar {
     width: 520px;
     height: 30px;
-    margin: 30px auto 10px;
+    margin: 0 auto;
     background-color: #ececec;
     overflow: hidden;
     -moz-border-radius: 3px;
@@ -103,10 +108,10 @@ div::after, nav::after, ul::after, form::after {
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     border-radius: 3px;
-    -o-animation: progress-bar 3s forwards;
-    -moz-animation: progress-bar 3s forwards;
-    -webkit-animation: progress-bar 3s forwards;
-    animation: progress-bar 3s forwards; }
+    -o-animation: progress-bar 4s forwards;
+    -moz-animation: progress-bar 4s forwards;
+    -webkit-animation: progress-bar 4s forwards;
+    animation: progress-bar 4s forwards; }
 
 @-webkit-keyframes progress-bar {
   0% {
@@ -159,6 +164,9 @@ div::after, nav::after, ul::after, form::after {
   display: none; }
   .steps__wrap .step.active {
     display: block; }
+.steps__wrap .payment-ready > div {
+  float: left;
+  width: 50%; }
 
 .test__form input[type="radio"], .test__form input[type="checkbox"] {
   display: none; }
@@ -222,7 +230,7 @@ div::after, nav::after, ul::after, form::after {
     background: url("../images/checked.png") no-repeat; }
 .test__form .radio-block, .test__form .checkbox-block {
   float: left;
-  margin: 30px 0 35px;
+  margin-bottom: 35px;
   text-align: center; }
 .test__form .radio-block {
   width: 50%; }
