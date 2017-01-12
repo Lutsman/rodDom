@@ -127,7 +127,7 @@ div, nav, ul, form {
         height: 30px;
         background-color: #fdc200;
         @include border-radius(3px);
-        @include animation(progress-bar 3s forwards);
+        @include animation(progress-bar 4s steps(5, start) forwards);
     }
 }
 @include keyframes(progress-bar) {
