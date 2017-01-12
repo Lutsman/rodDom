@@ -436,6 +436,57 @@ div::after, nav::after, ul::after, form::after {
     margin-bottom: 20px;
     line-height: 20px; }
 
+/*pop-up control*/
+.lightbox-prev, .lightbox-next {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  margin-top: -25px;
+  border: 1px solid #fff;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer; }
+  .lightbox-prev::after, .lightbox-next::after {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 2;
+    top: 12px;
+    width: 20px;
+    height: 20px;
+    border-top: 3px solid #fff;
+    border-right: 3px solid #fff; }
+
+.lightbox-prev {
+  left: -90px; }
+  .lightbox-prev::after {
+    left: 18px;
+    -ms-transform: rotate(225deg);
+    -moz-transform: rotate(225deg);
+    -webkit-transform: rotate(225deg);
+    -o-transform: rotate(225deg);
+    transform: rotate(225deg); }
+
+.lightbox-next {
+  right: -90px; }
+  .lightbox-next::after {
+    right: 18px;
+    -ms-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg); }
+
 /*slider*/
 .owl-carousel p {
   font-family: 'opensans-light_1', sans-serif;
