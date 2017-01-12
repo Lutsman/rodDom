@@ -470,16 +470,6 @@ q > q:before {
     -webkit-transform: translate3d(0px, 0px, 0px)
 }
 
-.owl-carousel .owl-controls .owl-nav .owl-prev, .owl-carousel .owl-controls .owl-nav .owl-next, .owl-carousel .owl-controls .owl-dot {
-    cursor: pointer;
-    cursor: hand;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none
-}
-
 .owl-carousel.owl-loaded {
     display: block
 }
@@ -513,7 +503,7 @@ q > q:before {
 .owl-carousel .owl-item img {
     display: block;
     width: 100%;
-    -webkit-transform-style: preserve-3d
+    -webkit-transform-style: preserve-3d;
 }
 
 .owl-carousel.owl-text-select-on .owl-item {
@@ -553,7 +543,7 @@ q > q:before {
 }
 
 .owl-carousel .owl-item img {
-    transform-style: preserve-3d
+    transform-style: preserve-3d;
 }
 
 .owl-carousel .owl-video-wrapper {
@@ -4552,7 +4542,7 @@ button.map-submit {
 }
 
 .more360 {
-    padding: 25px 0;
+    padding: 50px 0;
     #background: url(../images/back4.jpg) center center no-repeat;
     text-align: center;
     background-color: #F5F5F5
@@ -4563,9 +4553,9 @@ button.map-submit {
 }
 
 .more360 .resize .owl-carousel {
-    width: 780px;
-    height: 620px;
-    margin: 0 auto 70px;
+    width: 771px;
+    height: 610px;
+    margin: 60px auto 30px;
     position: relative
 }
 
@@ -4631,74 +4621,6 @@ button.map-submit {
     top: 100%
 }
 
-.more360 .resize .owl-carousel .owl-controls .owl-nav .owl-prev, .more360 .resize .owl-carousel .owl-controls .owl-nav .owl-next {
-    position: absolute;
-    top: 10px;
-    bottom: 0;
-    width: 45px;
-    background: #000
-}
-
-.more360 .resize .owl-carousel .owl-controls .owl-nav .owl-next {
-    background-image: url(../images/sprite.png);
-    background-repeat: no-repeat;
-    background-position: -47px -870px;
-    right: -60px
-}
-
-.more360 .resize .owl-carousel .owl-controls .owl-nav .owl-prev {
-    background-image: url(../images/sprite.png);
-    background-repeat: no-repeat;
-    background-position: 12px -870px;
-    left: -60px
-}
-
-.more360 .resize .owl-carousel .owl-controls .owl-nav .owl-prev:hover, .more360 .resize .owl-carousel .owl-controls .owl-nav .owl-next:hover {
-    background-color: #ffc000
-}
-
-.more360 .resize .owl-carousel .owl-controls .owl-dots {
-    width: 300px;
-    height: 35px;
-    margin: 40px auto 0
-}
-
-.more360 .resize .owl-carousel .owl-controls .owl-dots .owl-dot {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -o-border-radius: 50%;
-    background: #ffc000;
-    float: left;
-    margin: 0 3px;
-    text-align: center
-}
-
-.more360 .resize .owl-carousel .owl-controls .owl-dots .owl-dot.active {
-    background: #E52B00
-}
-
-.more360 .resize .owl-carousel .owl-controls .owl-dots .owl-dot:hover {
-    background: #FF5E39
-}
-
-.more360 .resize .owl-carousel .owl-controls .owl-dots .owl-dot:after {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -o-border-radius: 50%;
-    line-height: 39px;
-    left: 0;
-    top: 0;
-    font-size: 25px;
-    color: #fff;
-    font-family: 'bebasneue_regular'
-}
-
 .more360 .resize .owl-carousel .owl-controls .owl-dots .owl-dot:nth-child(1):after {
     content: '1'
 }
@@ -4759,8 +4681,9 @@ button.map-submit {
 }
 
 .aboutus .resize .owl-carousel {
-    width: 940px;
-    position: relative
+    width: 771px;
+    height: 610px;
+    margin: 0 auto;
 }
 
 .aboutus .resize .owl-carousel .item {
@@ -4971,28 +4894,6 @@ button.map-submit {
 .aboutus .resize .owl-carousel .item .rev16 .content {
     left: 0;
     top: 0
-}
-
-.aboutus .resize .owl-carousel .owl-controls .owl-nav .owl-prev, .aboutus .resize .owl-carousel .owl-controls .owl-nav .owl-next {
-    position: absolute;
-    top: 330px;
-    height: 80px;
-    width: 35px;
-    background: #000
-}
-
-.aboutus .resize .owl-carousel .owl-controls .owl-nav .owl-next {
-    background-image: url(../images/sprite.png);
-    background-repeat: no-repeat;
-    background-position: -52px -1140px;
-    right: 0
-}
-
-.aboutus .resize .owl-carousel .owl-controls .owl-nav .owl-prev {
-    background-image: url(../images/sprite.png);
-    background-repeat: no-repeat;
-    background-position: 7px -1140px;
-    left: 0
 }
 
 .aboutus .resize .owl-carousel .owl-controls .owl-dots {
