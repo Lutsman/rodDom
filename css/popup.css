@@ -11,7 +11,7 @@ div::after, nav::after, ul::after, form::after {
   display: none; }
 
 .pop-up {
-  display: none;
+  /* display: none;*/
   width: 810px;
   background-color: #fff;
   overflow: hidden;
@@ -96,6 +96,69 @@ div::after, nav::after, ul::after, form::after {
     margin: 0 20px; }
   .steps__counter .active {
     color: #e02f00; }
+
+.test__form h4 {
+  text-transform: uppercase; }
+.test__form input[type="radio"], .test__form input[type="checkbox"] {
+  display: none; }
+  .test__form input[type="radio"]:checked + .radio-label::after, .test__form input[type="radio"]:checked + .checkbox-label::after, .test__form input[type="checkbox"]:checked + .radio-label::after, .test__form input[type="checkbox"]:checked + .checkbox-label::after {
+    opacity: 1;
+    visibility: visible; }
+.test__form label {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 110px;
+  padding-top: 50px;
+  font-family: 'opensans-light_1', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 18px;
+  text-align: center;
+  cursor: pointer;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+  .test__form label::before, .test__form label::after {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; }
+  .test__form label::before {
+    top: 0;
+    width: 30px;
+    height: 30px;
+    margin-left: -15px;
+    background-color: #fff;
+    border: 2px solid #000; }
+  .test__form label::after {
+    margin-left: -10px;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 0.2s ease-in-out 0s;
+    -moz-transition: all 0.2s ease-in-out 0s;
+    -o-transition: all 0.2s ease-in-out 0s;
+    transition: all 0.2s ease-in-out 0s; }
+.test__form .radio-label::before, .test__form .radio-label::after {
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%; }
+.test__form .radio-label::after {
+  top: 5px;
+  width: 20px;
+  height: 20px;
+  background-color: #e02f00; }
+.test__form .checkbox-label {
+  font-size: 16px; }
+  .test__form .checkbox-label::after {
+    top: 6px;
+    width: 21px;
+    height: 17px;
+    background: url("../images/checked.png") no-repeat; }
 
 .avatar {
   margin-bottom: 20px; }
