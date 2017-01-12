@@ -78,7 +78,12 @@ $(document).ready(function () {
 
         $('.fancybox-modal').fancybox({
             padding: 0,
-            margin: [0, 70,0,70]
+            margin: [0, 70,0,70],
+            tpl: {
+                closeBtn: '<span class="lightbox-close"></span>',
+                next: '<span class="lightbox-next"></span>',
+                prev: '<span class="lightbox-prev"></span>'
+            }
         });
 
         $fancySimple.fancybox({
