@@ -65,6 +65,10 @@ div::after, nav::after, ul::after, form::after {
   .pop-up .notice {
     font-size: 22px;
     line-height: 25px; }
+  .pop-up .remark {
+    margin-top: 10px;
+    font-size: 12px;
+    text-align: center; }
 
 .popup__small {
   width: 600px; }
