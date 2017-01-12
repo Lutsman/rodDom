@@ -83,9 +83,67 @@ div::after, nav::after, ul::after, form::after {
 
 .popup__calculate-cost {
   width: 600px; }
+  .popup__calculate-cost h4 {
+    text-transform: uppercase; }
   .popup__calculate-cost > div {
     width: 100%; }
+  .popup__calculate-cost .progress-bar {
+    width: 520px;
+    height: 30px;
+    margin: 30px auto 10px;
+    background-color: #ececec;
+    overflow: hidden;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px; }
+  .popup__calculate-cost .progress-scale {
+    width: 50%;
+    height: 30px;
+    background-color: #fdc200;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -o-animation: progress-bar 3s steps(5, end) forwards;
+    -moz-animation: progress-bar 3s steps(5, end) forwards;
+    -webkit-animation: progress-bar 3s steps(5, end) forwards;
+    animation: progress-bar 3s steps(5, end) forwards; }
 
+@-webkit-keyframes progress-bar {
+  0% {
+    width: 0; }
+  25% {
+    width: 25%; }
+  75% {
+    width: 65%; }
+  100% {
+    width: 100%; } }
+@-moz-keyframes progress-bar {
+  0% {
+    width: 0; }
+  25% {
+    width: 25%; }
+  75% {
+    width: 65%; }
+  100% {
+    width: 100%; } }
+@-o-keyframes progress-bar {
+  0% {
+    width: 0; }
+  25% {
+    width: 25%; }
+  75% {
+    width: 65%; }
+  100% {
+    width: 100%; } }
+@keyframes progress-bar {
+  0% {
+    width: 0; }
+  25% {
+    width: 25%; }
+  75% {
+    width: 65%; }
+  100% {
+    width: 100%; } }
 .steps__counter {
   font-family: 'opensans-light_1', sans-serif;
   font-size: 20px;
@@ -97,8 +155,11 @@ div::after, nav::after, ul::after, form::after {
   .steps__counter .active {
     color: #e02f00; }
 
-.test__form h4 {
-  text-transform: uppercase; }
+.steps__wrap .step {
+  display: none; }
+  .steps__wrap .step.active {
+    display: block; }
+
 .test__form input[type="radio"], .test__form input[type="checkbox"] {
   display: none; }
   .test__form input[type="radio"]:checked + .radio-label::after, .test__form input[type="radio"]:checked + .checkbox-label::after, .test__form input[type="checkbox"]:checked + .radio-label::after, .test__form input[type="checkbox"]:checked + .checkbox-label::after {
@@ -107,7 +168,7 @@ div::after, nav::after, ul::after, form::after {
 .test__form label {
   position: relative;
   z-index: 2;
-  display: block;
+  display: inline-block;
   width: 110px;
   padding-top: 50px;
   font-family: 'opensans-light_1', sans-serif;
@@ -159,6 +220,14 @@ div::after, nav::after, ul::after, form::after {
     width: 21px;
     height: 17px;
     background: url("../images/checked.png") no-repeat; }
+.test__form .radio-block, .test__form .checkbox-block {
+  float: left;
+  margin: 30px 0 35px;
+  text-align: center; }
+.test__form .radio-block {
+  width: 50%; }
+.test__form .checkbox-block {
+  width: 33%; }
 
 .avatar {
   margin-bottom: 20px; }

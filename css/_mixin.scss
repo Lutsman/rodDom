@@ -58,3 +58,25 @@
     -moz-column-count: $column-count;
     column-count: $column-count;
 }
+
+@mixin animation($animation...) {
+    -o-animation: $animation;
+    -moz-animation: $animation;
+    -webkit-animation: $animation;
+    animation: $animation;
+}
+
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
