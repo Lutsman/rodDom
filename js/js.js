@@ -1,7 +1,24 @@
 $(document).ready(function () {
     /*owl carusel*/
     (function () {
-        $("#owl1").owlCarousel({
+        $("#owl2").owlCarousel({
+            items: 1,
+            autoplay: false,
+            autoplayTimeout: 4000,
+            navigation: true, // Show next and prev buttons
+            slideSpeed: 300,
+            paginationSpeed: 300,
+            nav: true,
+            dots: false,
+            dotsEach: true,
+            navText: false,
+            loop: true,
+            autoWidth: false,
+            responsive: false,
+            itemsScaleUp: false
+        });
+
+        /*$("#owl1").owlCarousel({
             items: 1,
             autoplay: false,
             autoplayTimeout: 4000,
@@ -47,7 +64,7 @@ $(document).ready(function () {
                     });
                 }
             }
-        });
+        });*/
     })();
 
     /*Fancybox*/
@@ -77,11 +94,11 @@ $(document).ready(function () {
         $fancyMenu.fancybox({
             padding: 0,
             loop: false,
-            /*tpl: {
+            tpl: {
                 closeBtn: '<span class="lightbox-close"></span>',
                 next: '<span class="lightbox-next"></span>',
                 prev: '<span class="lightbox-prev"></span>'
-            },*/
+            },
             afterLoad: function(current) {
                 if (current.index === current.group.length - 1) {
                     current.arrows = false;
