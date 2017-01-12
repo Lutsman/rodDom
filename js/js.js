@@ -1,7 +1,9 @@
 $(document).ready(function () {
     /*owl carusel*/
     (function () {
-        $("#owl2").owlCarousel({
+        $sliderSimple = $('[data-role="slider"]');
+
+        $sliderSimple.owlCarousel({
             items: 1,
             autoplay: false,
             autoplayTimeout: 4000,
