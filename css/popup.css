@@ -108,10 +108,10 @@ div::after, nav::after, ul::after, form::after {
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     border-radius: 3px;
-    -o-animation: progress-bar 4s forwards;
-    -moz-animation: progress-bar 4s forwards;
-    -webkit-animation: progress-bar 4s forwards;
-    animation: progress-bar 4s forwards; }
+    -o-animation: progress-bar 4s steps(5, start) forwards;
+    -moz-animation: progress-bar 4s steps(5, start) forwards;
+    -webkit-animation: progress-bar 4s steps(5, start) forwards;
+    animation: progress-bar 4s steps(5, start) forwards; }
 
 @-webkit-keyframes progress-bar {
   0% {
