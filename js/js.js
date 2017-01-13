@@ -122,12 +122,26 @@ $(document).ready(function () {
                     next: '<span class="lightbox-next"></span>',
                     prev: '<span class="lightbox-prev"></span>'
                 },
-                afterLoad: function(current) {
-                    onYouTubePlayerAPIReady();
-                }
+                afterLoad: onLightboxOpen,
+                beforeClose: onLightboxClose
             });
 
             var player;
+
+            function onLightboxOpen() {
+                if(player) {
+                    player.playVideo();
+                    return;
+                }
+
+                onYouTubePlayerAPIReady();
+            }
+
+            function onLightboxClose() {
+                console.dir(player);
+                player.stopVideo();
+            }
+
             function onYouTubePlayerAPIReady() {
                 player = new YT.Player('player', {
                     height: '390',
@@ -138,6 +152,8 @@ $(document).ready(function () {
                         'onStateChange': onPlayerStateChange
                     }
                 });
+
+                console.dir(player);
             }
 
             // autoplay video
@@ -158,7 +174,6 @@ $(document).ready(function () {
                             prev: '<span class="lightbox-prev"></span>'
                         }
                     });
-                    player = null;
                 }
             }
         })();
@@ -200,15 +215,6 @@ $(document).ready(function () {
             });
         }
     })();
-
-    /*$(window).scroll(function () {
-        if ($(this).scrollTop() > 110) {
-            $(".bottom-menu").addClass("active");
-        }
-        else {
-            $(".bottom-menu").removeClass("active");
-        }
-    });*/
 
     /*Forms*/
     (function () {
@@ -308,7 +314,7 @@ $(document).ready(function () {
         var placemarks = {
             0: {
                 coords: [55.76127956896109,37.67980749999999],
-                hintContent: 'Помощь мужикам!'
+                hintContent: 'Оформление выписки из роддома'
             }
         };
         var center = [55.76127956896109,37.67980749999999];
@@ -324,7 +330,7 @@ $(document).ready(function () {
 
         function init(){
             var myMap = new ymaps.Map('map', {
-                center: center, //[55.7207,37.6234],
+                center: center,
                 zoom: zoom
             }, {
                 searchControlProvider: 'yandex#search'
@@ -334,22 +340,19 @@ $(document).ready(function () {
 
             for (var currPlacemark in placemarks) {
                 var placemark = new ymaps.Placemark(placemarks[currPlacemark].coords, {
-                    hintContent: placemarks[currPlacemark].hintContent,
-                    balloonContent: 'hello'
+                    hintContent: placemarks[currPlacemark].hintContent
                 }, {
-                    preset: 'islands#darkOrangeIcon',
-                    iconColor: '#000'
-                    /*iconLayout: 'default#image',
-                     iconImageHref: 'images/baloon.png',
-                     iconImageSize: [28, 40],
-                     iconImageOffset: [-30, -50]*/
+                    iconLayout: "default#image",
+                    iconImageHref: "./images/mark_orange.png",
+                    iconImageSize: [50, 50],
+                    iconImageOffset: [-25, -50]
                 });
 
                 myMap.geoObjects.add(placemark);
 
                 placemark.events.add('click', function (e) {
                     e.preventDefault();
-                    
+
                     $.fancybox({
                         href: '#popup__map',
                         type: null,
