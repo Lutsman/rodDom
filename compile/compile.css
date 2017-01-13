@@ -4376,10 +4376,14 @@ button.map-submit {
 .price a:hover {
     text-decoration: none;
 }
-.price .resize a.block:hover .btn-box {
+.price .resize .block .btn-box:hover {
     background: rgba(255, 192, 0, 0.9);
     color: #333;
     border-bottom: none;
+}
+
+.price .resize .block a {
+    display: block;
 }
 
 .price .resize .block {
