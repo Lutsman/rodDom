@@ -138,13 +138,13 @@ $(document).ready(function () {
             }
 
             function onLightboxClose() {
-                //if (!player) return;
+                if (!player) return;
                 //console.dir(player);
                 //player.stopVideo();
                 $('#player').replaceWith('<div id="player"></div>');
                 player = null;
-                console.log('closed');
-                console.log($('#player'));
+                //console.log('closed');
+                //console.log($('#player'));
             }
 
             function onYouTubeIframeAPIReady() {
@@ -158,7 +158,7 @@ $(document).ready(function () {
                     }
                 });
 
-                console.dir(player);
+                //console.dir(player);
             }
 
             // autoplay video
@@ -311,7 +311,7 @@ $(document).ready(function () {
     })();
 
     /*Yandex map*/
-    (function(){
+    /*(function(){
         if (!document.getElementById('map')) return;
 
         var firstScript = document.querySelectorAll('script')[0];
@@ -370,6 +370,64 @@ $(document).ready(function () {
                     });
                 });
             }
+        }
+    })();*/
+
+    /*test*/
+    (function () {
+        var $popUp = $('#popup__calculate-cost');
+        var $steps = $popUp.find('.step');
+        var $stepCounters = $popUp.find('.steps__counter span');
+        var stepIndex = 0;
+
+        $popUp.on('submit', function (e) {
+            e.preventDefault();
+
+            var target = e.target;
+
+            console.log(target);
+            //if (!validate(target)) return;
+
+
+            stepIndex = $(target).parent('.step').index();
+
+            if (stepIndex === 1) {
+                nextStep();
+                setTimeout(nextStep, 4200);
+            } else if (stepIndex < $steps.length) {
+                collectFormData(target);
+                nextStep();
+            } else {
+                collectFormData(target);
+                sendRequest();
+            }
+        });
+
+        function validate(form) {
+
+            return true;
+        }
+        function sendRequest() {
+
+        }
+        function collectFormData(form) {
+
+        }
+        function nextStep() {
+            if (stepIndex === $steps.length - 1) return;
+
+            console.log('next step');
+            console.log(stepIndex);
+            console.log($steps.length);
+            console.log(stepIndex === $steps.length - 1);
+
+            $stepCounters[stepIndex].classList.remove('active');
+            $stepCounters[stepIndex + 1].classList.add('active');
+
+            $steps[stepIndex].classList.remove('active');
+            $steps[stepIndex + 1].classList.add('active');
+
+            stepIndex++;
         }
     })();
 });
