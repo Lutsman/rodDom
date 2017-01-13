@@ -85,7 +85,7 @@ div, nav, ul, form {
             text-align: center;
         }
         .small__h3 {
-            font-size: 34px;
+            font-size: 22px;
         }
     }
     .notice {
@@ -113,6 +113,24 @@ div, nav, ul, form {
     width: 701px;
     .info-block, .image-box {
         width: 397px;
+    }
+}
+.popup__services {
+    p {
+        font-size: 12px;
+        text-align: center;
+    }
+    .notice {
+        margin-bottom: 5px;
+    }
+    .popup__content form {
+        margin-top: 25px;
+    }
+}
+.popup__hashtags {
+    h3 {
+        font-family: 'opensans-light_1', sans-serif;
+        font-size: 30px;
     }
 }
 .popup__examples {
