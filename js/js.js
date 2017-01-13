@@ -134,15 +134,20 @@ $(document).ready(function () {
                     return;
                 }
 
-                onYouTubePlayerAPIReady();
+                onYouTubeIframeAPIReady();
             }
 
             function onLightboxClose() {
-                console.dir(player);
-                player.stopVideo();
+                //if (!player) return;
+                //console.dir(player);
+                //player.stopVideo();
+                $('#player').replaceWith('<div id="player"></div>');
+                player = null;
+                console.log('closed');
+                console.log($('#player'));
             }
 
-            function onYouTubePlayerAPIReady() {
+            function onYouTubeIframeAPIReady() {
                 player = new YT.Player('player', {
                     height: '390',
                     width: '640',
@@ -405,5 +410,4 @@ $('input[type=file]').change(function () {
     var parent = $(this).parent().parent();
     $(parent).find('.fileName').html(filename);
 });
-
 

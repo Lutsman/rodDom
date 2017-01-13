@@ -2009,7 +2009,8 @@
 
 
 <script src="js/jquery-1.9.1.min.js"></script>
-<script src="http://www.youtube.com/player_api"></script>
+<script src="http://www.youtube.com/iframe_api?enablejsapi=1"></script>
+
 <script src="js/forms.js"></script>
 <script src="js/jquery.maskedinput.min.js"></script>
 <script src="fancybox/jquery.fancybox.pack.js"></script>
@@ -2018,6 +2019,45 @@
 <script src="js/owl.carousel.js"></script>
 <script src="js/wow.js"></script>
 <script src="js/jquery.cookie.js"></script>
+<!--<script>
+    /*global function for youtube API*/
+    var player;
+
+    function onYouTubePlayerAPIReady() {
+        player = new YT.Player('player', {
+            height: '390',
+            width: '640',
+            videoId: '0Bmhjf0rKe8',
+            events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+            }
+        });
+
+        console.dir(player);
+    }
+
+    // autoplay video
+    function onPlayerReady(event) {
+        event.target.playVideo();
+    }
+
+    // when video ends
+    function onPlayerStateChange(event) {
+        if(event.data === 0) {
+            $.fancybox({
+                href: "#popup__video-form",
+                type: null,
+                padding: 0,
+                tpl: {
+                    closeBtn: '<span class="lightbox-close"></span>',
+                    next: '<span class="lightbox-next"></span>',
+                    prev: '<span class="lightbox-prev"></span>'
+                }
+            });
+        }
+    }
+</script>-->
 <script src="js/js.js"></script>
 <script src="js/timer.js"></script>
 <script src="js/es5-shims.min.js"></script>
