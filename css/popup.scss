@@ -583,8 +583,15 @@ div, nav, ul, form {
     z-index: 99999;
     background-color: rgba(0, 0, 0, 0.75);
 }
+.fancybox-opened {
+    z-index: 999999;
+}
 
-/*slider*/
+#player {
+    width: 636px;
+    height: 526px;
+}
+    /*slider*/
 .owl-carousel {
 
     p {

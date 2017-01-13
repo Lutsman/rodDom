@@ -451,7 +451,7 @@
 
     <div class="video cf">
         <div class="resize cf">
-            <a href="#popup__video" class="video__link" data-role="lightbox"></a>
+            <a href="#popup__video" class="video__link" data-role="lightbox-video"></a>
 
         </div>
     </div>
@@ -1703,7 +1703,8 @@
 
 <div id="popup__video" class="pop-up popup__video">
     <div class="video-box">
-        <iframe width="636" height="526" src="https://www.youtube.com/embed/rOM4c0pDhvg" frameborder="0" allowfullscreen></iframe>
+        <div id="player"></div>
+        <!--<iframe width="636" height="526" src="https://www.youtube.com/embed/rOM4c0pDhvg?autoplay=1" frameborder="0" allowfullscreen></iframe>-->
     </div>
 
     <div class="popup__content">
@@ -1936,7 +1937,7 @@
                     <label class="checkbox-label" for="form-checkbox2">Видеооператор</label>
                 </div>
                 <div class="checkbox-block">
-                    <input id="form-checkbox3" name="checkbox" value="1" type="checkbox"">
+                    <input id="form-checkbox3" name="checkbox" value="1" type="checkbox">
                     <label class="checkbox-label" for="form-checkbox3">Воздушные шары</label>
                 </div>
                 <div class="checkbox-block">
@@ -1948,7 +1949,7 @@
                     <label class="checkbox-label" for="form-checkbox5">Украшение квартиры</label>
                 </div>
                 <div class="checkbox-block">
-                    <input id="form-checkbox6" name="checkbox" value="1" type="checkbox"">
+                    <input id="form-checkbox6" name="checkbox" value="1" type="checkbox">
                     <label class="checkbox-label" for="form-checkbox6">Музыкант в роддом</label>
                 </div>
 
@@ -2007,6 +2008,7 @@
 
 
 <script src="js/jquery-1.9.1.min.js"></script>
+<script src="http://www.youtube.com/player_api"></script>
 <script src="js/forms.js"></script>
 <script src="js/jquery.maskedinput.min.js"></script>
 <script src="fancybox/jquery.fancybox.pack.js"></script>

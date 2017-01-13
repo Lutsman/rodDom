@@ -73,8 +73,7 @@ $(document).ready(function () {
     (function () {
         var $fancyMenu = $('[data-role="lightbox-menu"]');
         var $fancySimple = $('[data-role="lightbox"]');
-        //var $fancyFirst = $('[data-role="lightbox-menu-first"]');
-        //var $fancyLast = $('[data-role="lightbox-menu-last"]');
+        var $fancyVideo = $('[data-role="lightbox-video"]');
 
         $('.fancybox-modal').fancybox({
             padding: 0,
@@ -112,6 +111,57 @@ $(document).ready(function () {
                 }
             }
         });
+
+        /*youtube fancy change modal on video ens*/
+        (function () {
+            $fancyVideo.fancybox({
+                padding: 0,
+                loop: false,
+                tpl: {
+                    closeBtn: '<span class="lightbox-close"></span>',
+                    next: '<span class="lightbox-next"></span>',
+                    prev: '<span class="lightbox-prev"></span>'
+                },
+                afterLoad: function(current) {
+                    onYouTubePlayerAPIReady();
+                }
+            });
+
+            var player;
+            function onYouTubePlayerAPIReady() {
+                player = new YT.Player('player', {
+                    height: '390',
+                    width: '640',
+                    videoId: '0Bmhjf0rKe8',
+                    events: {
+                        'onReady': onPlayerReady,
+                        'onStateChange': onPlayerStateChange
+                    }
+                });
+            }
+
+            // autoplay video
+            function onPlayerReady(event) {
+                event.target.playVideo();
+            }
+
+            // when video ends
+            function onPlayerStateChange(event) {
+                if(event.data === 0) {
+                    $.fancybox({
+                        href: "#popup__video-form",
+                        type: null,
+                        padding: 0,
+                        tpl: {
+                            closeBtn: '<span class="lightbox-close"></span>',
+                            next: '<span class="lightbox-next"></span>',
+                            prev: '<span class="lightbox-prev"></span>'
+                        }
+                    });
+                    player = null;
+                }
+            }
+        })();
     })();
 
     /*tea bag*/
