@@ -298,6 +298,72 @@ $(document).ready(function () {
             }
         });
     })();
+
+    /*Yandex map*/
+    (function(){
+        if (!document.getElementById('map')) return;
+
+        var firstScript = document.querySelectorAll('script')[0];
+        var script = document.createElement('script');
+        var placemarks = {
+            0: {
+                coords: [55.76127956896109,37.67980749999999],
+                hintContent: 'Помощь мужикам!'
+            }
+        };
+        var center = [55.76127956896109,37.67980749999999];
+        var zoom = 17;
+
+        script.src = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU';
+        script.async = true;
+        firstScript.parentNode.insertBefore(script, firstScript);
+
+        script.addEventListener('load', function () {
+            ymaps.ready(init);
+        });
+
+        function init(){
+            var myMap = new ymaps.Map('map', {
+                center: center, //[55.7207,37.6234],
+                zoom: zoom
+            }, {
+                searchControlProvider: 'yandex#search'
+            });
+
+            myMap.behaviors.disable('scrollZoom');
+
+            for (var currPlacemark in placemarks) {
+                var placemark = new ymaps.Placemark(placemarks[currPlacemark].coords, {
+                    hintContent: placemarks[currPlacemark].hintContent,
+                    balloonContent: 'hello'
+                }, {
+                    preset: 'islands#darkOrangeIcon',
+                    iconColor: '#000'
+                    /*iconLayout: 'default#image',
+                     iconImageHref: 'images/baloon.png',
+                     iconImageSize: [28, 40],
+                     iconImageOffset: [-30, -50]*/
+                });
+
+                myMap.geoObjects.add(placemark);
+
+                placemark.events.add('click', function (e) {
+                    e.preventDefault();
+                    
+                    $.fancybox({
+                        href: '#popup__map',
+                        type: null,
+                        padding: 0,
+                        tpl: {
+                            closeBtn: '<span class="lightbox-close"></span>',
+                            next: '<span class="lightbox-next"></span>',
+                            prev: '<span class="lightbox-prev"></span>'
+                        }
+                    });
+                });
+            }
+        }
+    })();
 });
 
 
