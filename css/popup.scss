@@ -5,7 +5,9 @@
 .hidden {
     display: none !important;
 }
-
+.none {
+    display: none;
+}
 
 div, nav, ul, form {
     &::after {

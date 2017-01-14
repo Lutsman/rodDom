@@ -2,6 +2,9 @@
 .hidden {
   display: none !important; }
 
+.none {
+  display: none; }
+
 div::after, nav::after, ul::after, form::after {
   content: '';
   display: table;

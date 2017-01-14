@@ -74,6 +74,7 @@ $(document).ready(function () {
         var $fancyMenu = $('[data-role="lightbox-menu"]');
         var $fancySimple = $('[data-role="lightbox"]');
         var $fancyVideo = $('[data-role="lightbox-video"]');
+        var $fancyTest = $('[data-role="lightbox-test"]');
 
         $('.fancybox-modal').fancybox({
             padding: 0,
@@ -95,7 +96,6 @@ $(document).ready(function () {
             }
         });
 
-
         /*http://jsfiddle.net/x03xqu7t/2/ отключить последнему слайду навигацию*/
         $fancyMenu.fancybox({
             padding: 0,
@@ -109,6 +109,20 @@ $(document).ready(function () {
                 if (current.index === current.group.length - 1) {
                     current.arrows = false;
                 }
+            }
+        });
+
+        $fancyTest.fancybox({
+            padding: 0,
+            loop: false,
+            tpl: {
+                closeBtn: '<span class="lightbox-close"></span>',
+                next: '<span class="lightbox-next"></span>',
+                prev: '<span class="lightbox-prev"></span>'
+            },
+            afterClose: function() {
+                $('#popup__calculate-cost').trigger('resetTest');
+                console.log('test reset triggered');
             }
         });
 
@@ -375,44 +389,161 @@ $(document).ready(function () {
 
     /*test*/
     (function () {
+        var $formStep1 = $('#step1__form');
+        var $formStep2 = $('#step2__form');
+        var $formStep4 = $('#step4__form');
+
         var $popUp = $('#popup__calculate-cost');
+        var $forms = $popUp.find('form');
         var $steps = $popUp.find('.step');
         var $stepCounters = $popUp.find('.steps__counter span');
         var stepIndex = 0;
+        var formDataArr = [];
 
-        $popUp.on('submit', function (e) {
+        /*$forms.each(function () {
+            $(this).validate()
+        });*/
+
+        /*custom validate meth*/
+        /*jQuery.validator.addMethod('atLeastOneChecked', function(value, element) {
+            console.log(element);
+            console.log(value);
+            if(element.length>0){
+                for(var i=0;i<element.length;i++){
+                    if($(element[i]).val('checked')) return true;
+                }
+                return false;
+            }
+            return false;
+        });*/
+
+        /*$formStep1.validate({
+            rules: {
+                district: {
+                    required: true,
+                    minlength: 1
+                }
+            },
+            messages: {
+                district: {
+                    required: 'some mess'
+                }
+            },
+            submitHandler: function(form) {
+                console.log('valid');
+                console.log(form);
+                onSubmitValidForm(form);
+            },
+            invalidHandler: function(event, validator) {
+                console.log('something gone wrong');
+            }
+        });
+        $formStep2.validate({
+            rules: {
+                checkbox: {
+                    required: true,
+                    atLeastOneChecked: true
+                }
+            },
+            messages: {
+                checkbox: {
+                    atLeastOneChecked: 'Please check at least one option'
+                }
+            },
+            submitHandler: function(form) {
+                onSubmitValidForm(form);
+                console.log('valid checkboxes');
+            }
+        });*/
+        /*$formStep4.validate({
+            rules: {
+                phone: {required: true}
+            },
+            messages: {
+                phone: {required: ""}
+            },
+            submitHandler: function(form) {
+                onSubmitValidForm(form);
+                console.log('fucking test end');
+            }
+        });*/
+
+        //$popUp.on('submit', onSubmitValidForm);
+        $popUp.on({
+            'resetTest': resetTest,
+            'submit': onSubmitValidForm
+        });
+
+        function onSubmitValidForm(e) {
             e.preventDefault();
 
             var target = e.target;
 
             //console.log(target);
-            if (!validate(target)) return;
 
             //console.log($(target).parents('.step'));
 
             stepIndex = $(target).parents('.step').index();
 
+            if (!validate(target)) return;
+
             if (stepIndex === 1) {
+                collectFormData(target);
                 nextStep();
                 setTimeout(nextStep, 4200);
-            } else if (stepIndex < $steps.length) {
+            } else if (stepIndex < $steps.length - 1) {
                 collectFormData(target);
                 nextStep();
             } else {
                 collectFormData(target);
-                sendRequest();
+                sendRequest(target);
             }
-        });
-
-        function validate(form) {
-
-            return true;
         }
-        function sendRequest() {
+        function validate(form) {
+            var valid = false;
 
+            if (stepIndex === 3) {
+                var phone = form.querySelector('input[name="phone"]');
+                valid = !!phone.value;
+
+                phone.classList.remove('valid');
+                phone.classList.remove('error');
+
+                if (!valid) {
+                    phone.classList.add('error');
+                } else {
+                    phone.classList.add('valid');
+                }
+            } else {
+                valid = form.querySelectorAll('input:checked').length > 0;
+                if (!valid) {
+                    showError(form);
+                }
+            }
+
+            return valid;
+        }
+        function sendRequest(form) {
+            $.ajax({
+                type: form.method,
+                url: form.action,
+                data: $.param(formDataArr),
+                beforeSubmit: function () {
+                    resetTest();
+                },
+                success: function () {
+                    $.fancybox({href: "#popupThanks", type: 'inline', padding: 0});
+                },
+                error: function () {
+                    $.fancybox({href: "#popupError", type: 'inline', padding: 0});
+                }
+            })
         }
         function collectFormData(form) {
+            var dataArr = $(form).serializeArray();
 
+            formDataArr.concat(dataArr);
+            console.log(formDataArr);
         }
         function nextStep() {
             if (stepIndex === $steps.length - 1) return;
@@ -429,6 +560,27 @@ $(document).ready(function () {
             $steps[stepIndex + 1].classList.add('active');
 
             stepIndex++;
+        }
+        function showError(form) {
+            var $error = $(form).find('.error-block');
+
+            $error.fadeIn();
+            setTimeout(function () {
+                $error.fadeOut();
+            }, 2000);
+        }
+        function resetTest() {
+            stepIndex = 0;
+
+            $stepCounters.removeClass('active');
+            $stepCounters.eq(0).addClass('active');
+
+            $steps.removeClass('active');
+            $steps.eq(0).addClass('active');
+
+            $forms.each(function () {
+                this.reset();
+            });
         }
     })();
 });
