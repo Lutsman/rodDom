@@ -247,10 +247,28 @@ $(document).ready(function () {
                 $.fancybox.close();
             },
             success: function () {
-                $.fancybox({href: "#popupThanks", type: 'inline', padding: 0});
+                $.fancybox({
+                    href: "#popupThanks",
+                    padding: 0,
+                    loop: false,
+                    tpl: {
+                        closeBtn: '<span class="lightbox-close"></span>',
+                        next: '<span class="lightbox-next"></span>',
+                        prev: '<span class="lightbox-prev"></span>'
+                    }
+                });
             },
             error: function () {
-                $.fancybox({href: "#popupError", type: 'inline', padding: 0});
+                $.fancybox({
+                    href: "#popupError",
+                    padding: 0,
+                    loop: false,
+                    tpl: {
+                        closeBtn: '<span class="lightbox-close"></span>',
+                        next: '<span class="lightbox-next"></span>',
+                        prev: '<span class="lightbox-prev"></span>'
+                    }
+                });
             }
         };
         $('#form1').ajaxForm(options);
@@ -528,14 +546,29 @@ $(document).ready(function () {
                 type: form.method,
                 url: form.action,
                 data: $.param(formDataArr),
-                beforeSubmit: function () {
-                    resetTest();
-                },
                 success: function () {
-                    $.fancybox({href: "#popupThanks", type: 'inline', padding: 0});
+                    $.fancybox({
+                        href: "#popupThanks",
+                        padding: 0,
+                        loop: false,
+                        tpl: {
+                            closeBtn: '<span class="lightbox-close"></span>',
+                            next: '<span class="lightbox-next"></span>',
+                            prev: '<span class="lightbox-prev"></span>'
+                        }
+                    });
                 },
                 error: function () {
-                    $.fancybox({href: "#popupError", type: 'inline', padding: 0});
+                    $.fancybox({
+                        href: "#popupError",
+                        padding: 0,
+                        loop: false,
+                        tpl: {
+                            closeBtn: '<span class="lightbox-close"></span>',
+                            next: '<span class="lightbox-next"></span>',
+                            prev: '<span class="lightbox-prev"></span>'
+                        }
+                    });
                 }
             })
         }
