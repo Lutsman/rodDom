@@ -126,7 +126,7 @@ $(document).ready(function () {
             }
         });
 
-        /*youtube fancy change modal on video ens*/
+        /*youtube fancy change modal on video end*/
         (function () {
             $fancyVideo.fancybox({
                 padding: 0,
@@ -237,15 +237,18 @@ $(document).ready(function () {
 
     /*Forms*/
     (function () {
+        var $formNamePhone = $('[data-validate="name-phone"]');
+        var $formPhone = $('[data-validate="phone"]');
+
         /*request*/
         var options = {
             delegation: true,
             clearForm: true,
             resetForm: true,
             type: 'post',
-            beforeSubmit: function () {
+            /*beforeSubmit: function () {
                 $.fancybox.close();
-            },
+            },*/
             success: function () {
                 $.fancybox({
                     href: "#popupThanks",
@@ -271,6 +274,10 @@ $(document).ready(function () {
                 });
             }
         };
+        $formNamePhone
+            .add($formPhone)
+            .ajaxForm(options);
+
         $('#form1').ajaxForm(options);
         $('#form2').ajaxForm(options);
         $('#form3').ajaxForm(options);
@@ -282,6 +289,30 @@ $(document).ready(function () {
         $("input[name=phone]:not(#uptocall-phone)").mask("+7 (999) 999-99-99");
 
         /*validation*/
+        $formNamePhone.each(function(){
+            $(this).validate({
+                rules: {
+                    name: {required: true, maxlength: 100},
+                    phone: {required: true}
+                },
+                messages: {
+                    name: {required: "", maxlength: ""},
+                    phone: {required: ""}
+                }
+            });
+        });
+
+        $formPhone.each(function () {
+            $(this).validate({
+                rules: {
+                    phone: {required: true}
+                },
+                messages: {
+                    phone: {required: ""}
+                }
+            });
+        });
+
         $("#form1").validate({
             rules: {
                 name: {required: true, maxlength: 100,},
@@ -343,7 +374,7 @@ $(document).ready(function () {
     })();
 
     /*Yandex map*/
-    /*(function(){
+    (function(){
         if (!document.getElementById('map')) return;
 
         var firstScript = document.querySelectorAll('script')[0];
@@ -403,13 +434,13 @@ $(document).ready(function () {
                 });
             }
         }
-    })();*/
+    })();
 
     /*test*/
     (function () {
-        var $formStep1 = $('#step1__form');
+        /*var $formStep1 = $('#step1__form');
         var $formStep2 = $('#step2__form');
-        var $formStep4 = $('#step4__form');
+        var $formStep4 = $('#step4__form');*/
 
         var $popUp = $('#popup__calculate-cost');
         var $forms = $popUp.find('form');
@@ -615,6 +646,16 @@ $(document).ready(function () {
                 this.reset();
             });
         }
+    })();
+
+    /*before leave page*/
+    (function () {
+        $(window).on('beforeunload', function (e) {
+            console.log(e);
+            console.dir(e);
+
+            return
+        })
     })();
 });
 
