@@ -385,11 +385,12 @@ $(document).ready(function () {
 
             var target = e.target;
 
-            console.log(target);
-            //if (!validate(target)) return;
+            //console.log(target);
+            if (!validate(target)) return;
 
+            //console.log($(target).parents('.step'));
 
-            stepIndex = $(target).parent('.step').index();
+            stepIndex = $(target).parents('.step').index();
 
             if (stepIndex === 1) {
                 nextStep();
@@ -416,10 +417,10 @@ $(document).ready(function () {
         function nextStep() {
             if (stepIndex === $steps.length - 1) return;
 
-            console.log('next step');
-            console.log(stepIndex);
-            console.log($steps.length);
-            console.log(stepIndex === $steps.length - 1);
+            //console.log('next step');
+            //console.log(stepIndex);
+            //console.log($steps.length);
+            //console.log(stepIndex === $steps.length - 1);
 
             $stepCounters[stepIndex].classList.remove('active');
             $stepCounters[stepIndex + 1].classList.add('active');
