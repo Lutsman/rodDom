@@ -4316,6 +4316,10 @@ button.map-submit {
     text-align: center
 }
 
+.details .resize {
+    width: 100%;
+}
+
 .scenario {
     background: url(../images/back2.jpg) center center no-repeat;
     padding: 90px 0 60px;

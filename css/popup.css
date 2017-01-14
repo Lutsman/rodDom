@@ -49,7 +49,8 @@ div::after, nav::after, ul::after, form::after {
     text-align: center; }
   .pop-up p {
     font-family: 'opensans-light_1', sans-serif;
-    font-size: 17px; }
+    font-size: 17px;
+    line-height: 20px; }
   .pop-up > div {
     float: left;
     padding: 30px;

@@ -98,6 +98,8 @@ $(document).ready(function () {
 
         /*http://jsfiddle.net/x03xqu7t/2/ отключить последнему слайду навигацию*/
         $fancyMenu.fancybox({
+            prevEffect	: 'none',
+            nextEffect	: 'none',
             padding: 0,
             loop: false,
             tpl: {
@@ -449,75 +451,7 @@ $(document).ready(function () {
         var stepIndex = 0;
         var formDataArr = [];
 
-        /*$forms.each(function () {
-            $(this).validate()
-        });*/
 
-        /*custom validate meth*/
-        /*jQuery.validator.addMethod('atLeastOneChecked', function(value, element) {
-            console.log(element);
-            console.log(value);
-            if(element.length>0){
-                for(var i=0;i<element.length;i++){
-                    if($(element[i]).val('checked')) return true;
-                }
-                return false;
-            }
-            return false;
-        });*/
-
-        /*$formStep1.validate({
-            rules: {
-                district: {
-                    required: true,
-                    minlength: 1
-                }
-            },
-            messages: {
-                district: {
-                    required: 'some mess'
-                }
-            },
-            submitHandler: function(form) {
-                console.log('valid');
-                console.log(form);
-                onSubmitValidForm(form);
-            },
-            invalidHandler: function(event, validator) {
-                console.log('something gone wrong');
-            }
-        });
-        $formStep2.validate({
-            rules: {
-                checkbox: {
-                    required: true,
-                    atLeastOneChecked: true
-                }
-            },
-            messages: {
-                checkbox: {
-                    atLeastOneChecked: 'Please check at least one option'
-                }
-            },
-            submitHandler: function(form) {
-                onSubmitValidForm(form);
-                console.log('valid checkboxes');
-            }
-        });*/
-        /*$formStep4.validate({
-            rules: {
-                phone: {required: true}
-            },
-            messages: {
-                phone: {required: ""}
-            },
-            submitHandler: function(form) {
-                onSubmitValidForm(form);
-                console.log('fucking test end');
-            }
-        });*/
-
-        //$popUp.on('submit', onSubmitValidForm);
         $popUp.on({
             'resetTest': resetTest,
             'submit': onSubmitValidForm
@@ -606,22 +540,17 @@ $(document).ready(function () {
         function collectFormData(form) {
             var dataArr = $(form).serializeArray();
 
-            formDataArr.concat(dataArr);
+            formDataArr = formDataArr.concat(dataArr);
             console.log(formDataArr);
         }
         function nextStep() {
             if (stepIndex === $steps.length - 1) return;
 
-            //console.log('next step');
-            //console.log(stepIndex);
-            //console.log($steps.length);
-            //console.log(stepIndex === $steps.length - 1);
+            $stepCounters.eq(stepIndex).removeClass('active');
+            $stepCounters.eq(stepIndex + 1).addClass('active');
 
-            $stepCounters[stepIndex].classList.remove('active');
-            $stepCounters[stepIndex + 1].classList.add('active');
-
-            $steps[stepIndex].classList.remove('active');
-            $steps[stepIndex + 1].classList.add('active');
+            $steps.eq(stepIndex).removeClass('active');
+            $steps.eq(stepIndex + 1).addClass('active');
 
             stepIndex++;
         }
@@ -654,7 +583,7 @@ $(document).ready(function () {
             console.log(e);
             console.dir(e);
 
-            return
+            return;
         })
     })();
 });
