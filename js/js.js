@@ -203,8 +203,8 @@ $(document).ready(function () {
     /*tea bag*/
     (function () {
         var $teaBag = $('#manager-message-bell');
-        //var timer = setTimeout(showTeaBag, 10000);
-        showTeaBag();
+        var timer = setTimeout(showTeaBag, 10000);
+        //showTeaBag();
 
         $teaBag.on('click', function (e) {
             e.preventDefault();
