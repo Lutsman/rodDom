@@ -124,7 +124,7 @@ $(document).ready(function () {
             },
             afterClose: function() {
                 $('#popup__calculate-cost').trigger('resetTest');
-                console.log('test reset triggered');
+                //console.log('test reset triggered');
             }
         });
 
@@ -373,6 +373,21 @@ $(document).ready(function () {
                 mess: {required: "", maxlength: "",},
             }
         });
+    })();
+
+    /*set form target*/
+    (function () {
+        $button = $('[data-form-location]');
+
+        $button.on('click', setFormLocation);
+
+        function setFormLocation() {
+            var _ = $(this);
+            var target = _.attr('href');
+            var data = _.attr('data-form-location');
+
+            $(target).find('input[name="whatForm"]').eq(0).val(data);
+        }
     })();
 
     /*Yandex map*/
