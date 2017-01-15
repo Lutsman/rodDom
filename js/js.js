@@ -377,7 +377,7 @@ $(document).ready(function () {
 
     /*set form target*/
     (function () {
-        $button = $('[data-form-location]');
+        var $button = $('[data-form-location]');
 
         $button.on('click', setFormLocation);
 
