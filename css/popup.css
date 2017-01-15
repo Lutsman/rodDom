@@ -457,7 +457,7 @@ div::after, nav::after, ul::after, form::after {
     line-height: 45px; }
 
 .reviews__text {
-  margin-top: 40px; }
+  margin-top: 20px; }
   .reviews__text p {
     margin-bottom: 20px;
     line-height: 20px; }
