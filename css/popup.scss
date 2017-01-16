@@ -209,8 +209,15 @@ div, nav, ul, form {
         width: 0;
     }
     25% {
-        width: 25%;
+        width: 20%;
     }
+    40% {
+        width: 20%;
+    }
+    50% {
+        width: 65%;
+    }
+
     75% {
         width: 65%;
     }
