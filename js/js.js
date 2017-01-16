@@ -102,6 +102,7 @@ $(document).ready(function () {
         $('.fancybox-modal').fancybox({
             padding: 0,
             margin: [0, 70,0,70],
+            fitToView: false,
             tpl: {
                 closeBtn: '<span class="lightbox-close"></span>',
                 next: '<span class="lightbox-next"></span>',
@@ -112,6 +113,7 @@ $(document).ready(function () {
         $fancySimple.fancybox({
             padding: 0,
             margin: [0, 70,0,70],
+            fitToView: false,
             tpl: {
                 closeBtn: '<span class="lightbox-close"></span>',
                 next: '<span class="lightbox-next"></span>',
@@ -135,6 +137,8 @@ $(document).ready(function () {
             prevEffect	: 'none',
             nextEffect	: 'none',
             padding: 0,
+            //autoHeight: true,
+            fitToView: false,
             loop: false,
             tpl: {
                 closeBtn: '<span class="lightbox-close"></span>',
@@ -152,6 +156,7 @@ $(document).ready(function () {
         $fancyTest.fancybox({
             padding: 0,
             loop: false,
+            fitToView: false,
             tpl: {
                 closeBtn: '<span class="lightbox-close"></span>',
                 next: '<span class="lightbox-next"></span>',
@@ -169,6 +174,7 @@ $(document).ready(function () {
             $fancyVideo.fancybox({
                 padding: 0,
                 loop: false,
+                fitToView: false,
                 tpl: {
                     closeBtn: '<span class="lightbox-close"></span>',
                     next: '<span class="lightbox-next"></span>',
@@ -491,9 +497,9 @@ $(document).ready(function () {
 
     /*test*/
     (function () {
-        /*var $formStep1 = $('#step1__form');
+        var $formStep1 = $('#step1__form');
         var $formStep2 = $('#step2__form');
-        var $formStep4 = $('#step4__form');*/
+        var $formStep4 = $('#step4__form');
 
         var $popUp = $('#popup__calculate-cost');
         var $forms = $popUp.find('form');
@@ -506,6 +512,14 @@ $(document).ready(function () {
         $popUp.on({
             'resetTest': resetTest,
             'submit': onSubmitValidForm
+        });
+
+        $formStep1.add($formStep2).on('click', 'input',  function (e) {
+            validate(this.closest('form'));
+        });
+
+        $formStep4.on('click', 'input',  function (e) {
+            validate(this.closest('form'));
         });
 
         function onSubmitValidForm(e) {
@@ -550,8 +564,11 @@ $(document).ready(function () {
                 }
             } else {
                 valid = form.querySelectorAll('input:checked').length > 0;
+
                 if (!valid) {
                     showError(form);
+                } else {
+                    hideError(form);
                 }
             }
 
@@ -592,7 +609,7 @@ $(document).ready(function () {
             var dataArr = $(form).serializeArray();
 
             formDataArr = formDataArr.concat(dataArr);
-            console.log(formDataArr);
+            //console.log(formDataArr);
         }
         function nextStep() {
             if (stepIndex === $steps.length - 1) return;
@@ -609,9 +626,14 @@ $(document).ready(function () {
             var $error = $(form).find('.error-block');
 
             $error.fadeIn();
-            setTimeout(function () {
+            /*setTimeout(function () {
                 $error.fadeOut();
-            }, 2000);
+            }, 2000);*/
+        }
+        function hideError(form) {
+            var $error = $(form).find('.error-block');
+
+            $error.fadeOut();
         }
         function resetTest() {
             stepIndex = 0;
