@@ -1,7 +1,27 @@
+'use strict';
+
+
+/*helpers global functions*/
+function playVideo (parent) {
+            var $video = $(parent).find('video');
+
+            if (!$video.length) return;
+
+            //console.log($video);
+            var timer = setTimeout(function () {
+                $video.each(function () {
+                    //console.log(this);
+                    this.play();
+                });
+            }, 1000);
+        }
+
+
+
 $(document).ready(function () {
     /*owl carusel*/
     (function () {
-        $sliderSimple = $('[data-role="slider"]');
+        var $sliderSimple = $('[data-role="slider"]');
 
         $sliderSimple.owlCarousel({
             items: 1,
@@ -17,7 +37,10 @@ $(document).ready(function () {
             loop: true,
             autoWidth: false,
             responsive: false,
-            itemsScaleUp: false
+            itemsScaleUp: false,
+            onTranslated: function () {
+                playVideo($('.owl-loaded .owl-item.active'));
+            }
         });
 
         /*$("#owl1").owlCarousel({
@@ -79,6 +102,7 @@ $(document).ready(function () {
         $('.fancybox-modal').fancybox({
             padding: 0,
             margin: [0, 70,0,70],
+            fitToView: false,
             tpl: {
                 closeBtn: '<span class="lightbox-close"></span>',
                 next: '<span class="lightbox-next"></span>',
@@ -89,26 +113,19 @@ $(document).ready(function () {
         $fancySimple.fancybox({
             padding: 0,
             margin: [0, 70,0,70],
+            fitToView: false,
             tpl: {
                 closeBtn: '<span class="lightbox-close"></span>',
                 next: '<span class="lightbox-next"></span>',
                 prev: '<span class="lightbox-prev"></span>'
             },
             afterLoad: function(current) {
+                playVideo(current.href);
+
                 /*if (current.index === current.group.length - 1) {
                     current.arrows = false;
                 }*/
-                var $video = $(current.href).find('video');
-
-                if ($video.length) {
-                    console.log($video);
-                    var timer = setTimeout(function () {
-                        $video.each(function () {
-                            console.log(this);
-                            this.play();
-                        });
-                    }, 1000);
-                }
+               
 
                 /*console.dir(current);
                 console.dir(arguments);*/
@@ -120,6 +137,8 @@ $(document).ready(function () {
             prevEffect	: 'none',
             nextEffect	: 'none',
             padding: 0,
+            //autoHeight: true,
+            fitToView: false,
             loop: false,
             tpl: {
                 closeBtn: '<span class="lightbox-close"></span>',
@@ -129,6 +148,7 @@ $(document).ready(function () {
             afterLoad: function(current) {
                 if (current.index === current.group.length - 1) {
                     current.arrows = false;
+                    playVideo(current.href);
                 }
             }
         });
@@ -136,6 +156,7 @@ $(document).ready(function () {
         $fancyTest.fancybox({
             padding: 0,
             loop: false,
+            fitToView: false,
             tpl: {
                 closeBtn: '<span class="lightbox-close"></span>',
                 next: '<span class="lightbox-next"></span>',
@@ -147,11 +168,13 @@ $(document).ready(function () {
             }
         });
 
+
         /*youtube fancy change modal on video end*/
         (function () {
             $fancyVideo.fancybox({
                 padding: 0,
                 loop: false,
+                fitToView: false,
                 tpl: {
                     closeBtn: '<span class="lightbox-close"></span>',
                     next: '<span class="lightbox-next"></span>',
@@ -186,7 +209,7 @@ $(document).ready(function () {
                 player = new YT.Player('player', {
                     height: '390',
                     width: '640',
-                    videoId: '0Bmhjf0rKe8',
+                    videoId: 'rOM4c0pDhvg',
                     events: {
                         'onReady': onPlayerReady,
                         'onStateChange': onPlayerStateChange
@@ -474,9 +497,9 @@ $(document).ready(function () {
 
     /*test*/
     (function () {
-        /*var $formStep1 = $('#step1__form');
+        var $formStep1 = $('#step1__form');
         var $formStep2 = $('#step2__form');
-        var $formStep4 = $('#step4__form');*/
+        var $formStep4 = $('#step4__form');
 
         var $popUp = $('#popup__calculate-cost');
         var $forms = $popUp.find('form');
@@ -489,6 +512,14 @@ $(document).ready(function () {
         $popUp.on({
             'resetTest': resetTest,
             'submit': onSubmitValidForm
+        });
+
+        $formStep1.add($formStep2).on('click', 'input',  function (e) {
+            validate(this.closest('form'));
+        });
+
+        $formStep4.on('click', 'input',  function (e) {
+            validate(this.closest('form'));
         });
 
         function onSubmitValidForm(e) {
@@ -533,8 +564,11 @@ $(document).ready(function () {
                 }
             } else {
                 valid = form.querySelectorAll('input:checked').length > 0;
+
                 if (!valid) {
                     showError(form);
+                } else {
+                    hideError(form);
                 }
             }
 
@@ -575,7 +609,7 @@ $(document).ready(function () {
             var dataArr = $(form).serializeArray();
 
             formDataArr = formDataArr.concat(dataArr);
-            console.log(formDataArr);
+            //console.log(formDataArr);
         }
         function nextStep() {
             if (stepIndex === $steps.length - 1) return;
@@ -592,9 +626,14 @@ $(document).ready(function () {
             var $error = $(form).find('.error-block');
 
             $error.fadeIn();
-            setTimeout(function () {
+            /*setTimeout(function () {
                 $error.fadeOut();
-            }, 2000);
+            }, 2000);*/
+        }
+        function hideError(form) {
+            var $error = $(form).find('.error-block');
+
+            $error.fadeOut();
         }
         function resetTest() {
             stepIndex = 0;
