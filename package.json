@@ -1,0 +1,22 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "rod-dom",
+  "main": "MooFlow.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lutsman/rodDom.git"
+  },
+  "author": "Dimitry Loutsenko and Evgeniya Omelchenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lutsman/rodDom/issues"
+  },
+  "homepage": "https://github.com/Lutsman/rodDom#readme",
+  "devDependencies": {
+    "babel-cli": "^6.18.0"
+  }
+}
