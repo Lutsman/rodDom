@@ -157,7 +157,7 @@ q > q:before {
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
     border-radius: 15px;
-    box-shadow: 0 5px 5px #000
+    box-shadow: 0 5px 5px #000;
 }
 
 .fancybox-opened {
@@ -172,7 +172,8 @@ q > q:before {
 }
 
 .fancybox-inner {
-    overflow: hidden
+    overflow: hidden;
+    height: auto !important;
 }
 
 .fancybox-type-iframe .fancybox-inner {
@@ -324,7 +325,7 @@ q > q:before {
 
 .fancybox-lock .fancybox-overlay {
     overflow: auto;
-    overflow-y: scroll
+    overflow-y: scroll;
 }
 
 .fancybox-title {
