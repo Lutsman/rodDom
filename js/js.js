@@ -1,23 +1,5 @@
 'use strict';
 
-
-/*helpers global functions*/
-function playVideo (parent) {
-            var $video = $(parent).find('video');
-
-            if (!$video.length) return;
-
-            //console.log($video);
-            var timer = setTimeout(function () {
-                $video.each(function () {
-                    //console.log(this);
-                    this.play();
-                });
-            }, 1000);
-        }
-
-
-
 $(document).ready(function () {
     /*owl carusel*/
     (function () {
@@ -148,6 +130,8 @@ $(document).ready(function () {
             afterLoad: function(current) {
                 if (current.index === current.group.length - 1) {
                     current.arrows = false;
+                    current.keys.prev = {};
+                    current.keys.next = {};
                     current.helpers.overlay.closeClick = false;
                     setTimeout(function () {
                         $('.fancybox-overlay').one('click', closeFancyOnOverlay);
@@ -362,7 +346,6 @@ $(document).ready(function () {
                 }
             });
         });
-
         $formPhone.each(function () {
             $(this).validate({
                 rules: {
@@ -431,6 +414,16 @@ $(document).ready(function () {
                 phone: {required: "", maxlength: "",},
                 mess: {required: "", maxlength: "",},
             }
+        });
+
+        /*input type file validation*/
+        $('input[type=file]').change(function () {
+            var filename = $(this).val().replace("C:\\fakepath\\", "");
+            if (filename == '') {
+                filename = "(Не выбранa)";
+            }
+            var parent = $(this).parent().parent();
+            $(parent).find('.fileName').html(filename);
         });
     })();
 
@@ -669,38 +662,56 @@ $(document).ready(function () {
         }
     })();
 
-    /*before leave page*/
+    /*scroller*/
     (function () {
+        function scrollToElement(element, offset) {
+            $(element).click(function (e) {
+                var elementClick = $(this).attr("href");
+                var destination = $(elementClick).offset().top;
+                if (destination < 0) {
+                    destination = 0;
+                }
+                $('html, body').animate({scrollTop: destination - offset}, "slow");
+                e.preventDefault();
+            });
+        }
+        scrollToElement("a[href='#f1']", 102);
+        scrollToElement("a[href='#f2']", 102);
+        scrollToElement("a[href='#f3']", 102);
+        scrollToElement("a[href='#f4']", 102);
+        scrollToElement("a[href='#f5']", 102);
+        scrollToElement("a[href='#f6']", 102);
+        scrollToElement("a[href='#f7']", 102);
+    })();
+
+    /*before leave page*/
+    /*(function () {
         $(window).on('beforeunload', function (e) {
             console.log(e);
             console.dir(e);
 
             return;
         })
-    })();
+    })();*/
 });
 
 
-function scrollToElement(element, offset) {
-    $(element).click(function (e) {
-        var elementClick = $(this).attr("href");
-        var destination = $(elementClick).offset().top;
-        if (destination < 0) {
-            destination = 0;
-        }
-        $('html, body').animate({scrollTop: destination - offset}, "slow");
-        e.preventDefault();
-    });
+/*helpers global functions*/
+function playVideo (parent) {
+    var $video = $(parent).find('video');
+
+    if (!$video.length) return;
+
+    //console.log($video);
+    var timer = setTimeout(function () {
+        $video.each(function () {
+            //console.log(this);
+            this.play();
+        });
+    }, 1000);
 }
-scrollToElement("a[href='#f1']", 102);
-scrollToElement("a[href='#f2']", 102);
-scrollToElement("a[href='#f3']", 102);
-scrollToElement("a[href='#f4']", 102);
-scrollToElement("a[href='#f5']", 102);
-scrollToElement("a[href='#f6']", 102);
-scrollToElement("a[href='#f7']", 102);
 
-
+/*some unused function*/
 function baseName(str) {
     var base = new String(str).substring(str.lastIndexOf('/') + 1);
     if (base.lastIndexOf(".") != -1)
@@ -708,12 +719,5 @@ function baseName(str) {
     return base;
 }
 
-$('input[type=file]').change(function () {
-    var filename = $(this).val().replace("C:\\fakepath\\", "");
-    if (filename == '') {
-        filename = "(Не выбранa)";
-    }
-    var parent = $(this).parent().parent();
-    $(parent).find('.fileName').html(filename);
-});
+
 
