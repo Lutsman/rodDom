@@ -261,7 +261,7 @@ div, nav, ul, form {
         z-index: 2;
         display: inline-block;
         width: 110px;
-        padding-top: 50px;
+        padding-top: 40px;
         font-family: 'opensans-light_1', sans-serif;
         font-size: 20px;
         font-weight: bold;
@@ -316,14 +316,15 @@ div, nav, ul, form {
     }
     .radio-block, .checkbox-block {
         float: left;
-        margin-bottom: 35px;
         text-align: center;
     }
     .radio-block {
         width: 50%;
+        margin-bottom: 35px;
     }
     .checkbox-block {
         width: 33%;
+        margin-bottom: 25px;
     }
 }
 
@@ -609,6 +610,22 @@ div, nav, ul, form {
     z-index: 999999;
 }
 
+.hidden-cap {
+    display: block;
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    width: 54px;
+    height: 54px;
+    margin-top: -25px;
+}
+.prev-cap {
+     left: -90px;
+ }
+.next-cap {
+    right: -90px;
+}
+
 #player {
     width: 636px;
     height: 526px;
@@ -832,9 +849,9 @@ div, nav, ul, form {
         position: relative;
         z-index: 9999;
         display: block;
-        width: 450px;
+        width: 420px;
         height: 66px;
-        padding: 13px 40px 15px 113px;
+        padding: 13px 20px 15px 113px;
         font-family: 'opensans-light_1', sans-serif;
         font-size: 16px;
         font-weight: bold;
