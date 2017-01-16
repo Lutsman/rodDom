@@ -94,22 +94,24 @@ $(document).ready(function () {
                 next: '<span class="lightbox-next"></span>',
                 prev: '<span class="lightbox-prev"></span>'
             },
-            afterShow: function(current) {
+            afterLoad: function(current) {
                 /*if (current.index === current.group.length - 1) {
                     current.arrows = false;
                 }*/
-                /*var $video = $(current.href).find('video');
+                var $video = $(current.href).find('video');
 
                 if ($video.length) {
                     console.log($video);
-                    $video.each(function () {
-                        console.log(this);
-                        this.play();
-                    });
+                    var timer = setTimeout(function () {
+                        $video.each(function () {
+                            console.log(this);
+                            this.play();
+                        });
+                    }, 1000);
                 }
 
-                console.dir(current);*/
-                console.log(arguments);
+                /*console.dir(current);
+                console.dir(arguments);*/
             }
         });
 
