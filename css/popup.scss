@@ -127,10 +127,17 @@ div, nav, ul, form {
         text-align: center;
     }
     .notice {
-        margin-bottom: 5px;
+        margin-bottom: 10px;
+        font-size: 42px;
+        line-height: 42px;
     }
     .popup__content form {
-        margin-top: 25px;
+        margin-top: 20px;
+    }
+    .avatar {
+        .title {
+            font-size: 22px;
+        }
     }
 }
 .popup__hashtags {
@@ -142,6 +149,22 @@ div, nav, ul, form {
 .popup__examples {
     .popup__content {
         form {
+            margin-top: 50px;
+        }
+    }
+    .avatar {
+        margin-top: 20px;
+        margin-bottom: 0;
+
+        .title {
+            font-size: 22px;
+        }
+    }
+    .info-block, .form-box {
+        width: 50%;
+    }
+    .form-box {
+        p {
             margin-top: 50px;
         }
     }

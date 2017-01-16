@@ -100,15 +100,28 @@ div::after, nav::after, ul::after, form::after {
 .popup__services .popup__content p {
   text-align: center; }
 .popup__services .notice {
-  margin-bottom: 5px; }
+  margin-bottom: 10px;
+  font-size: 42px;
+  line-height: 42px; }
 .popup__services .popup__content form {
-  margin-top: 25px; }
+  margin-top: 20px; }
+.popup__services .avatar .title {
+  font-size: 22px; }
 
 .popup__hashtags h3 {
   font-family: 'opensans-light_1', sans-serif;
   font-size: 30px; }
 
 .popup__examples .popup__content form {
+  margin-top: 50px; }
+.popup__examples .avatar {
+  margin-top: 20px;
+  margin-bottom: 0; }
+  .popup__examples .avatar .title {
+    font-size: 22px; }
+.popup__examples .info-block, .popup__examples .form-box {
+  width: 50%; }
+.popup__examples .form-box p {
   margin-top: 50px; }
 
 .popup__video {
