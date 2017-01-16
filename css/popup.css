@@ -166,7 +166,11 @@ div::after, nav::after, ul::after, form::after {
   0% {
     width: 0; }
   25% {
-    width: 25%; }
+    width: 20%; }
+  40% {
+    width: 20%; }
+  50% {
+    width: 65%; }
   75% {
     width: 65%; }
   100% {
@@ -175,7 +179,11 @@ div::after, nav::after, ul::after, form::after {
   0% {
     width: 0; }
   25% {
-    width: 25%; }
+    width: 20%; }
+  40% {
+    width: 20%; }
+  50% {
+    width: 65%; }
   75% {
     width: 65%; }
   100% {
@@ -184,7 +192,11 @@ div::after, nav::after, ul::after, form::after {
   0% {
     width: 0; }
   25% {
-    width: 25%; }
+    width: 20%; }
+  40% {
+    width: 20%; }
+  50% {
+    width: 65%; }
   75% {
     width: 65%; }
   100% {
@@ -193,7 +205,11 @@ div::after, nav::after, ul::after, form::after {
   0% {
     width: 0; }
   25% {
-    width: 25%; }
+    width: 20%; }
+  40% {
+    width: 20%; }
+  50% {
+    width: 65%; }
   75% {
     width: 65%; }
   100% {
