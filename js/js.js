@@ -93,6 +93,23 @@ $(document).ready(function () {
                 closeBtn: '<span class="lightbox-close"></span>',
                 next: '<span class="lightbox-next"></span>',
                 prev: '<span class="lightbox-prev"></span>'
+            },
+            afterShow: function(current) {
+                /*if (current.index === current.group.length - 1) {
+                    current.arrows = false;
+                }*/
+                /*var $video = $(current.href).find('video');
+
+                if ($video.length) {
+                    console.log($video);
+                    $video.each(function () {
+                        console.log(this);
+                        this.play();
+                    });
+                }
+
+                console.dir(current);*/
+                console.log(arguments);
             }
         });
 
