@@ -1,9 +1,5 @@
 'use strict';
 
-
-
-
-
 $(document).ready(function () {
     /*owl carusel*/
     (function () {
@@ -24,12 +20,12 @@ $(document).ready(function () {
             autoWidth: false,
             responsive: false,
             itemsScaleUp: false,
-            onTranslated: function () {
+            onTranslated: function onTranslated() {
                 playVideo($('.owl-loaded .owl-item.active'));
             }
         });
 
-        function playVideo (parent) {
+        function playVideo(parent) {
             var $video = $(parent).find('video');
 
             if (!$video.length) return;
@@ -59,8 +55,7 @@ $(document).ready(function () {
             responsive: false,
             itemsScaleUp: false,
         });
-
-        $("#owl2").owlCarousel({
+          $("#owl2").owlCarousel({
             items: 1,
             autoplay: false,
             autoplayTimeout: 4000,
@@ -78,8 +73,7 @@ $(document).ready(function () {
             onTranslated: function () {
                 slide = $('#owl2 .active .item');
                 if (!$(slide).hasClass('loaded')) {
-
-                    $.ajax({
+                      $.ajax({
                         method: "POST",
                         url: "js/loadslide.php",
                         data: {'index': $(slide).data('slide')},
@@ -101,36 +95,36 @@ $(document).ready(function () {
 
         $('.fancybox-modal').fancybox({
             padding: 0,
-            margin: [0, 70,0,70],
+            margin: [0, 70, 0, 70],
             fitToView: false,
             tpl: {
                 closeBtn: '<span class="lightbox-close"></span>',
                 next: '<span class="lightbox-next"></span>',
                 prev: '<span class="lightbox-prev"></span>'
             },
-            afterLoad: function(current) {
+            afterLoad: function afterLoad(current) {
                 playVideo(current.href);
             }
         });
 
         $fancySimple.fancybox({
             padding: 0,
-            margin: [0, 70,0,70],
+            margin: [0, 70, 0, 70],
             fitToView: false,
             tpl: {
                 closeBtn: '<span class="lightbox-close"></span>',
                 next: '<span class="lightbox-next"></span>',
                 prev: '<span class="lightbox-prev"></span>'
             },
-            afterLoad: function(current) {
+            afterLoad: function afterLoad(current) {
                 playVideo(current.href);
             }
         });
 
         /*http://jsfiddle.net/x03xqu7t/2/ отключить последнему слайду навигацию*/
         $fancyMenu.fancybox({
-            prevEffect	: 'none',
-            nextEffect	: 'none',
+            prevEffect: 'none',
+            nextEffect: 'none',
             padding: 0,
             //autoHeight: true,
             fitToView: false,
@@ -145,7 +139,7 @@ $(document).ready(function () {
                 next: '<span class="lightbox-next"></span>',
                 prev: '<span class="lightbox-prev"></span>'
             },
-            afterLoad: function(current) {
+            afterLoad: function afterLoad(current) {
                 if (current.index === current.group.length - 1) {
                     current.arrows = false;
                     current.keys.prev = {};
@@ -170,7 +164,7 @@ $(document).ready(function () {
                 next: '<span class="lightbox-next"></span>',
                 prev: '<span class="lightbox-prev"></span>'
             },
-            afterClose: function() {
+            afterClose: function afterClose() {
                 $('#popup__calculate-cost').trigger('resetTest');
                 //console.log('test reset triggered');
             }
@@ -184,7 +178,7 @@ $(document).ready(function () {
             $.fancybox.close();
         }
 
-        function playVideo (parent) {
+        function playVideo(parent) {
             var $video = $(parent).find('video');
 
             if (!$video.length) return;
@@ -216,7 +210,7 @@ $(document).ready(function () {
             var player;
 
             function onLightboxOpen() {
-                if(player) {
+                if (player) {
                     player.playVideo();
                     return;
                 }
@@ -255,7 +249,7 @@ $(document).ready(function () {
 
             // when video ends
             function onPlayerStateChange(event) {
-                if(event.data === 0) {
+                if (event.data === 0) {
                     $.fancybox({
                         href: "#popup__video-form",
                         type: 'inline',
@@ -266,7 +260,7 @@ $(document).ready(function () {
                             next: '<span class="lightbox-next"></span>',
                             prev: '<span class="lightbox-prev"></span>'
                         },
-                        afterLoad: function(current) {
+                        afterLoad: function afterLoad(current) {
                             playVideo(current.href);
                         }
                     });
@@ -306,7 +300,7 @@ $(document).ready(function () {
                 destination = 0;
             }
 
-            $('html, body').animate({scrollTop: destination - offset}, "slow", function () {
+            $('html, body').animate({ scrollTop: destination - offset }, "slow", function () {
                 $targetEl.addClass('active');
             });
         }
@@ -326,7 +320,7 @@ $(document).ready(function () {
             /*beforeSubmit: function () {
                 $.fancybox.close();
             },*/
-            success: function () {
+            success: function success() {
                 $.fancybox({
                     href: "#popupThanks",
                     padding: 0,
@@ -338,7 +332,7 @@ $(document).ready(function () {
                     }
                 });
             },
-            error: function () {
+            error: function error() {
                 $.fancybox({
                     href: "#popupError",
                     padding: 0,
@@ -351,9 +345,7 @@ $(document).ready(function () {
                 });
             }
         };
-        $formNamePhone
-            .add($formPhone)
-            .ajaxForm(options);
+        $formNamePhone.add($formPhone).ajaxForm(options);
 
         $('#form1').ajaxForm(options);
         $('#form2').ajaxForm(options);
@@ -366,85 +358,85 @@ $(document).ready(function () {
         $("input[name=phone]:not(#uptocall-phone)").mask("+7 (999) 999-99-99");
 
         /*validation*/
-        $formNamePhone.each(function(){
+        $formNamePhone.each(function () {
             $(this).validate({
                 rules: {
-                    name: {required: true, maxlength: 100},
-                    phone: {required: true}
+                    name: { required: true, maxlength: 100 },
+                    phone: { required: true }
                 },
                 messages: {
-                    name: {required: "", maxlength: ""},
-                    phone: {required: ""}
+                    name: { required: "", maxlength: "" },
+                    phone: { required: "" }
                 }
             });
         });
         $formPhone.each(function () {
             $(this).validate({
                 rules: {
-                    phone: {required: true}
+                    phone: { required: true }
                 },
                 messages: {
-                    phone: {required: ""}
+                    phone: { required: "" }
                 }
             });
         });
 
         $("#form1").validate({
             rules: {
-                name: {required: true, maxlength: 100,},
-                phone: {required: true, minlength: 10, maxlength: 25,},
+                name: { required: true, maxlength: 100 },
+                phone: { required: true, minlength: 10, maxlength: 25 }
             },
             messages: {
-                name: {required: "", maxlength: "",},
-                phone: {required: "", maxlength: "",},
+                name: { required: "", maxlength: "" },
+                phone: { required: "", maxlength: "" }
             }
         });
         $("#form2").validate({
             rules: {
-                name: {required: true, maxlength: 100,},
-                phone: {required: true, minlength: 10, maxlength: 25,},
+                name: { required: true, maxlength: 100 },
+                phone: { required: true, minlength: 10, maxlength: 25 }
             },
             messages: {
-                name: {required: "", maxlength: "",},
-                phone: {required: "", maxlength: "",},
+                name: { required: "", maxlength: "" },
+                phone: { required: "", maxlength: "" }
             }
         });
         $("#form3").validate({
             rules: {
-                mess: {required: true, maxlength: 300,},
+                mess: { required: true, maxlength: 300 }
             },
             messages: {
-                mess: {required: "", maxlength: "",},
+                mess: { required: "", maxlength: "" }
             }
         });
         $("#form4").validate({
             rules: {
-                phone: {required: true, minlength: 10, maxlength: 25,},
+                phone: { required: true, minlength: 10, maxlength: 25 }
             },
             messages: {
-                phone: {required: "", maxlength: "",},
+                phone: { required: "", maxlength: "" }
             }
         });
         $("#form5").validate({
             rules: {
-                name: {required: true, maxlength: 100,},
-                phone: {required: true, minlength: 10, maxlength: 25,},
+                name: { required: true, maxlength: 100 },
+                phone: { required: true, minlength: 10, maxlength: 25 }
             },
             messages: {
-                name: {required: "", maxlength: "",},
-                phone: {required: "", maxlength: "",},
+                name: { required: "", maxlength: "" },
+                phone: { required: "", maxlength: "" }
             }
         });
         $("#form6").validate({
             rules: {
-                name: {required: true, maxlength: 100,},
-                phone: {required: true, minlength: 10, maxlength: 25,},
-                mess: {required: true, maxlength: 300,},
+                name: { required: true, maxlength: 100 },
+                phone: { required: true, minlength: 10, maxlength: 25 },
+                mess: { required: true, maxlength: 300 }
             },
             messages: {
-                name: {required: "", maxlength: "",},
-                phone: {required: "", maxlength: "",},
-                mess: {required: "", maxlength: "",},
+                name: { required: "", maxlength: "" },
+                phone: { required: "", maxlength: "" },
+                mess: { required: "", maxlength: "" }
             }
         });
 
@@ -475,18 +467,18 @@ $(document).ready(function () {
     })();
 
     /*Yandex map*/
-    (function(){
+    (function () {
         if (!document.getElementById('map')) return;
 
         var firstScript = document.querySelectorAll('script')[0];
         var script = document.createElement('script');
         var placemarks = {
             0: {
-                coords: [55.76127956896109,37.67980749999999],
+                coords: [55.76127956896109, 37.67980749999999],
                 hintContent: 'Оформление выписки из роддома'
             }
         };
-        var center = [55.76127956896109,37.67980749999999];
+        var center = [55.76127956896109, 37.67980749999999];
         var zoom = 17;
 
         script.src = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU';
@@ -497,7 +489,7 @@ $(document).ready(function () {
             ymaps.ready(init);
         });
 
-        function init(){
+        function init() {
             var myMap = new ymaps.Map('map', {
                 center: center,
                 zoom: zoom
@@ -550,19 +542,18 @@ $(document).ready(function () {
         var stepIndex = 0;
         var formDataArr = [];
 
-
         $popUp.on({
             'resetTest': resetTest,
             'submit': onSubmitValidForm
         });
 
-        $formStep1.add($formStep2).on('click', 'input',  function (e) {
+        $formStep1.add($formStep2).on('click', 'input', function (e) {
             validate(this.closest('form'));
         });
 
-        $formStep4.on('blur', 'input',  function (e) {
+        $formStep4.on('blur', 'input', function (e) {
             setTimeout(function () {
-                validate(this.closest('form'))
+                validate(this.closest('form'));
             }.bind(this), 500);
         });
 
@@ -623,7 +614,7 @@ $(document).ready(function () {
                 type: form.method,
                 url: form.action,
                 data: $.param(formDataArr),
-                success: function () {
+                success: function success() {
                     $.fancybox({
                         href: "#popupThanks",
                         padding: 0,
@@ -635,7 +626,7 @@ $(document).ready(function () {
                         }
                     });
                 },
-                error: function () {
+                error: function error() {
                     $.fancybox({
                         href: "#popupError",
                         padding: 0,
@@ -647,7 +638,7 @@ $(document).ready(function () {
                         }
                     });
                 }
-            })
+            });
         }
         function collectFormData(form) {
             var dataArr = $(form).serializeArray();
@@ -703,7 +694,7 @@ $(document).ready(function () {
                 if (destination < 0) {
                     destination = 0;
                 }
-                $('html, body').animate({scrollTop: destination - offset}, "slow");
+                $('html, body').animate({ scrollTop: destination - offset }, "slow");
                 e.preventDefault();
             });
         }
@@ -721,8 +712,7 @@ $(document).ready(function () {
         $(window).on('beforeunload', function (e) {
             console.log(e);
             console.dir(e);
-
-            return;
+              return;
         })
     })();*/
 });
@@ -731,12 +721,8 @@ $(document).ready(function () {
 /*some unused function*/
 function baseName(str) {
     var base = new String(str).substring(str.lastIndexOf('/') + 1);
-    if (base.lastIndexOf(".") != -1)
-        base = base.substring(0, base.lastIndexOf("."));
+    if (base.lastIndexOf(".") != -1) base = base.substring(0, base.lastIndexOf("."));
     return base;
 }
 
-
-
-
-
+//# sourceMappingURL=js-compiled.js.map
