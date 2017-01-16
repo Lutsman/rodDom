@@ -107,6 +107,9 @@ $(document).ready(function () {
                 closeBtn: '<span class="lightbox-close"></span>',
                 next: '<span class="lightbox-next"></span>',
                 prev: '<span class="lightbox-prev"></span>'
+            },
+            afterLoad: function(current) {
+                playVideo(current.href);
             }
         });
 
@@ -121,14 +124,6 @@ $(document).ready(function () {
             },
             afterLoad: function(current) {
                 playVideo(current.href);
-
-                /*if (current.index === current.group.length - 1) {
-                    current.arrows = false;
-                }*/
-               
-
-                /*console.dir(current);
-                console.dir(arguments);*/
             }
         });
 
@@ -140,6 +135,11 @@ $(document).ready(function () {
             //autoHeight: true,
             fitToView: false,
             loop: false,
+            helpers: {
+                overlay: {
+                    closeClick: true
+                }
+            },
             tpl: {
                 closeBtn: '<span class="lightbox-close"></span>',
                 next: '<span class="lightbox-next"></span>',
@@ -148,7 +148,13 @@ $(document).ready(function () {
             afterLoad: function(current) {
                 if (current.index === current.group.length - 1) {
                     current.arrows = false;
+                    current.helpers.overlay.closeClick = false;
+                    setTimeout(function () {
+                        $('.fancybox-overlay').one('click', closeFancyOnOverlay);
+                    }, 2000);
+
                     playVideo(current.href);
+                    //console.dir(current);
                 }
             }
         });
@@ -168,6 +174,13 @@ $(document).ready(function () {
             }
         });
 
+        function closeFancyOnOverlay(e) {
+            var target = e.target;
+
+            if (this !== target) return;
+
+            $.fancybox.close();
+        }
 
         /*youtube fancy change modal on video end*/
         (function () {
