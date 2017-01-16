@@ -518,8 +518,10 @@ $(document).ready(function () {
             validate(this.closest('form'));
         });
 
-        $formStep4.on('click', 'input',  function (e) {
-            validate(this.closest('form'));
+        $formStep4.on('blur', 'input',  function (e) {
+            setTimeout(function () {
+                validate(this.closest('form'))
+            }.bind(this), 500);
         });
 
         function onSubmitValidForm(e) {
