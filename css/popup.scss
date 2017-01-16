@@ -351,7 +351,7 @@ div, nav, ul, form {
     p {
         padding-left: 75px;
     }
-    img {
+    video {
         float: left;
         margin-right: 10px;
         @include border-radius(50%);
@@ -823,14 +823,16 @@ div, nav, ul, form {
             @include transition(opacity 0.6s ease-in-out);
         }
     }
-    figure {
+
+    .video-box {
         width: 260px;
         margin: 0;
         line-height: 20px;
         text-align: center;
 
-        img {
+        video {
             margin-bottom: 49px;
+            @include border-radius(50%);
         }
     }
 }
