@@ -173,7 +173,7 @@ q > q:before {
 
 .fancybox-inner {
     overflow: hidden;
-    height: auto !important;
+    /*height: auto !important;*/
 }
 
 .fancybox-type-iframe .fancybox-inner {
