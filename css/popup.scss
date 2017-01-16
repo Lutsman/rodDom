@@ -57,7 +57,7 @@ div, nav, ul, form {
     }
     p {
         font-family: 'opensans-light_1', sans-serif;
-        font-size: 17px;
+        font-size: 16px;
         line-height: 20px;
 
     }
@@ -75,6 +75,9 @@ div, nav, ul, form {
     }
     .form-box {
         width: 304px;
+        p {
+            margin-bottom: 10px;
+        }
     }
     .popup__content {
         width: 304px;
@@ -120,8 +123,7 @@ div, nav, ul, form {
     }
 }
 .popup__services {
-    p {
-        font-size: 12px;
+    .popup__content p {
         text-align: center;
     }
     .notice {
@@ -248,6 +250,12 @@ div, nav, ul, form {
     }
 }
 .test__form {
+    position: relative;
+    z-index: 2;
+
+    input[type="submit"] {
+        margin-top: 10px;
+    }
     input[type="radio"], input[type="checkbox"] {
         display: none;
 
@@ -316,16 +324,26 @@ div, nav, ul, form {
     }
     .radio-block, .checkbox-block {
         float: left;
+        margin-bottom: 25px;
         text-align: center;
     }
     .radio-block {
         width: 50%;
-        margin-bottom: 35px;
     }
     .checkbox-block {
         width: 33%;
-        margin-bottom: 25px;
     }
+}
+
+.error-block {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    bottom: 65px;
+    width: 100%;
+    font-family: 'opensans-light_1', sans-serif;
+    color: #e52b00;
+    text-align: center;
 }
 
 .avatar {
@@ -340,7 +358,7 @@ div, nav, ul, form {
     }
     .title {
         margin-bottom: 10px;
-        font-size: 20px;
+        font-size: 26px;
         font-weight: bold;
     }
 }
@@ -355,7 +373,7 @@ div, nav, ul, form {
         padding: 0 20px;
         margin-bottom: 20px;
         text-indent: 0;
-        font-size: 15px;
+        font-size: 16px;
         line-height: 45px;
         border: 2px solid #646464;
         @include border-radius(7px);
