@@ -4697,8 +4697,9 @@ button.map-submit {
 }
 
 .aboutus .resize .owl-carousel {
-    width: 771px;
-    height: 450px;
+    width: 580px;
+  /*  height: 450px;*/
+    min-height: 510px;
     margin: 0 auto;
 }
 
