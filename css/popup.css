@@ -305,7 +305,7 @@ div::after, nav::after, ul::after, form::after {
   margin-bottom: 20px; }
   .avatar p {
     padding-left: 75px; }
-  .avatar img {
+  .avatar video {
     float: left;
     margin-right: 10px;
     -moz-border-radius: 50%;
@@ -755,13 +755,16 @@ div::after, nav::after, ul::after, form::after {
       -moz-transition: opacity 0.6s ease-in-out;
       -o-transition: opacity 0.6s ease-in-out;
       transition: opacity 0.6s ease-in-out; }
-  .manager-message figure {
+  .manager-message .video-box {
     width: 260px;
     margin: 0;
     line-height: 20px;
     text-align: center; }
-    .manager-message figure img {
-      margin-bottom: 49px; }
+    .manager-message .video-box video {
+      margin-bottom: 49px;
+      -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;
+      border-radius: 50%; }
 
 .order-call__form {
   opacity: 0;
