@@ -242,12 +242,16 @@ $(document).ready(function () {
                 if(event.data === 0) {
                     $.fancybox({
                         href: "#popup__video-form",
-                        type: null,
+                        type: 'inline',
                         padding: 0,
+                        fitToView: false,
                         tpl: {
                             closeBtn: '<span class="lightbox-close"></span>',
                             next: '<span class="lightbox-next"></span>',
                             prev: '<span class="lightbox-prev"></span>'
+                        },
+                        afterLoad: function(current) {
+                            playVideo(current.href);
                         }
                     });
                 }
