@@ -10,9 +10,6 @@ div::after, nav::after, ul::after, form::after {
   display: table;
   clear: both; }
 
-.hidden {
-  display: none; }
-
 .overlay-bg {
   position: absolute;
   z-index: 2;
