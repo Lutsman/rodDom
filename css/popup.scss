@@ -766,6 +766,14 @@ div, nav, ul, form {
         border: 2px solid #e52b00;
         @include border-radius(10px 10px 60px 60px);
         @include box-sizing(border-box);
+
+        video {
+            position: absolute;
+            z-index: 2;
+            left: 10px;
+            bottom: 10px;
+            @include border-radius(50%);
+        }
     }
     .number-posts {
         display: block;
@@ -878,7 +886,7 @@ div, nav, ul, form {
         @include border-radius(0 20px 20px 0);
         @include box-sizing(border-box);
 
-        &::after {
+      /*  &::after {
             content: '';
             display: block;
             position: absolute;
@@ -891,6 +899,14 @@ div, nav, ul, form {
             border: 4px solid #e02f00;
             @include border-radius(50%);
             @include box-sizing(border-box);
+        }*/
+        video {
+            position: absolute;
+            z-index: 2;
+            top: -9px;
+            left: 18px;
+            border: 4px solid #e02f00;
+            @include border-radius(50%);
         }
     }
 }
