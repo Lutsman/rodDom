@@ -1,7 +1,27 @@
+'use strict';
+
+
+/*helpers global functions*/
+function playVideo (parent) {
+            var $video = $(parent).find('video');
+
+            if (!$video.length) return;
+
+            //console.log($video);
+            var timer = setTimeout(function () {
+                $video.each(function () {
+                    //console.log(this);
+                    this.play();
+                });
+            }, 1000);
+        }
+
+
+
 $(document).ready(function () {
     /*owl carusel*/
     (function () {
-        $sliderSimple = $('[data-role="slider"]');
+        var $sliderSimple = $('[data-role="slider"]');
 
         $sliderSimple.owlCarousel({
             items: 1,
@@ -17,7 +37,10 @@ $(document).ready(function () {
             loop: true,
             autoWidth: false,
             responsive: false,
-            itemsScaleUp: false
+            itemsScaleUp: false,
+            onTranslated: function () {
+                playVideo($('.owl-loaded .owl-item.active'));
+            }
         });
 
         /*$("#owl1").owlCarousel({
@@ -95,20 +118,12 @@ $(document).ready(function () {
                 prev: '<span class="lightbox-prev"></span>'
             },
             afterLoad: function(current) {
+                playVideo(current.href);
+
                 /*if (current.index === current.group.length - 1) {
                     current.arrows = false;
                 }*/
-                var $video = $(current.href).find('video');
-
-                if ($video.length) {
-                    console.log($video);
-                    var timer = setTimeout(function () {
-                        $video.each(function () {
-                            console.log(this);
-                            this.play();
-                        });
-                    }, 1000);
-                }
+               
 
                 /*console.dir(current);
                 console.dir(arguments);*/
@@ -129,6 +144,7 @@ $(document).ready(function () {
             afterLoad: function(current) {
                 if (current.index === current.group.length - 1) {
                     current.arrows = false;
+                    playVideo(current.href);
                 }
             }
         });
@@ -146,6 +162,7 @@ $(document).ready(function () {
                 //console.log('test reset triggered');
             }
         });
+
 
         /*youtube fancy change modal on video end*/
         (function () {
@@ -186,7 +203,7 @@ $(document).ready(function () {
                 player = new YT.Player('player', {
                     height: '390',
                     width: '640',
-                    videoId: '0Bmhjf0rKe8',
+                    videoId: 'rOM4c0pDhvg',
                     events: {
                         'onReady': onPlayerReady,
                         'onStateChange': onPlayerStateChange
