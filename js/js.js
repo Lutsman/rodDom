@@ -25,6 +25,20 @@ $(document).ready(function () {
             }
         });
 
+        function playVideo (parent) {
+            var $video = $(parent).find('video');
+
+            if (!$video.length) return;
+
+            //console.log($video);
+            var timer = setTimeout(function () {
+                $video.each(function () {
+                    //console.log(this);
+                    this.play();
+                });
+            }, 1000);
+        }
+
         /*$("#owl1").owlCarousel({
             items: 1,
             autoplay: false,
@@ -164,6 +178,20 @@ $(document).ready(function () {
             if (this !== target) return;
 
             $.fancybox.close();
+        }
+
+        function playVideo (parent) {
+            var $video = $(parent).find('video');
+
+            if (!$video.length) return;
+
+            //console.log($video);
+            var timer = setTimeout(function () {
+                $video.each(function () {
+                    //console.log(this);
+                    this.play();
+                });
+            }, 1000);
         }
 
         /*youtube fancy change modal on video end*/
@@ -695,22 +723,7 @@ $(document).ready(function () {
     })();*/
 });
 
-
-/*helpers global functions*/
-function playVideo (parent) {
-    var $video = $(parent).find('video');
-
-    if (!$video.length) return;
-
-    //console.log($video);
-    var timer = setTimeout(function () {
-        $video.each(function () {
-            //console.log(this);
-            this.play();
-        });
-    }, 1000);
-}
-
+/*global helpers*/
 /*some unused function*/
 function baseName(str) {
     var base = new String(str).substring(str.lastIndexOf('/') + 1);
@@ -718,6 +731,10 @@ function baseName(str) {
         base = base.substring(0, base.lastIndexOf("."));
     return base;
 }
+
+
+
+
 
 
 
