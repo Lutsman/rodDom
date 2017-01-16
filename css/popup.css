@@ -476,7 +476,8 @@ div::after, nav::after, ul::after, form::after {
   margin-top: 20px; }
   .reviews__text p {
     margin-bottom: 20px;
-    line-height: 20px; }
+    line-height: 20px;
+    text-align: justify; }
 
 .details a {
   display: block;
