@@ -4524,7 +4524,9 @@ button.map-submit {
     text-align: center;
     color: #ffc000;
     font-family: 'bebasneue_regular';
-    margin: 25px 0
+    margin: 10px 0;
+    padding-bottom: 10px;
+    line-height: 44px;
 }
 
 .price .resize .block .btn-box {
