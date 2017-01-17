@@ -208,6 +208,9 @@ $(document).ready(function () {
 
         /*youtube fancy change modal on video end*/
         (function () {
+            var script = '<script src="http://www.youtube.com/iframe_api?enablejsapi=1" async></script>';
+            $('script').eq(0).after(script);
+
             $fancyVideo.fancybox({
                 padding: 0,
                 loop: false,
