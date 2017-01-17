@@ -109,8 +109,10 @@ div::after, nav::after, ul::after, form::after {
   font-family: 'opensans-light_1', sans-serif;
   font-size: 30px; }
 
-.popup__examples .popup__content form {
-  margin-top: 50px; }
+.popup__examples .image-box {
+  width: 440px; }
+.popup__examples .popup__content {
+  width: 370px; }
 .popup__examples .avatar {
   margin-top: 20px;
   margin-bottom: 0; }
@@ -788,7 +790,7 @@ div::after, nav::after, ul::after, form::after {
     line-height: 20px;
     text-align: center; }
     .manager-message .video-box video {
-      margin-bottom: 49px;
+      margin-bottom: 30px;
       -moz-border-radius: 50%;
       -webkit-border-radius: 50%;
       border-radius: 50%; }
@@ -815,7 +817,6 @@ div::after, nav::after, ul::after, form::after {
   z-index: 9999;
   left: 0;
   bottom: 35px;
-  width: 460px;
   height: 86px;
   -webkit-transition: 1.5s top ease-in-out, 3s opacity;
   -moz-transition: 1.5s top ease-in-out, 3s opacity;
@@ -833,7 +834,6 @@ div::after, nav::after, ul::after, form::after {
     position: relative;
     z-index: 9999;
     display: block;
-    width: 420px;
     height: 66px;
     padding: 13px 20px 15px 113px;
     font-family: 'opensans-light_1', sans-serif;

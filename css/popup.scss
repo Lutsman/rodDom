@@ -143,10 +143,11 @@ div, nav, ul, form {
     }
 }
 .popup__examples {
+    .image-box {
+        width: 440px;
+    }
     .popup__content {
-        form {
-            margin-top: 50px;
-        }
+        width: 370px;
     }
     .avatar {
         margin-top: 20px;
@@ -859,7 +860,7 @@ div, nav, ul, form {
         text-align: center;
 
         video {
-            margin-bottom: 49px;
+            margin-bottom: 30px;
             @include border-radius(50%);
         }
     }
@@ -888,7 +889,6 @@ div, nav, ul, form {
     z-index: 9999;
     left: 0;
     bottom: 35px;
-    width: 460px;
     height: 86px;
     @include transition(1.5s top ease-in-out, 3s opacity);
 
@@ -905,9 +905,8 @@ div, nav, ul, form {
         position: relative;
         z-index: 9999;
         display: block;
-        width: 420px;
         height: 66px;
-        padding: 13px 20px 15px 113px;
+        padding: 13px 11px 15px 113px;
         font-family: 'opensans-light_1', sans-serif;
         font-size: 16px;
         font-weight: bold;
