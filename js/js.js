@@ -1,8 +1,16 @@
 'use strict';
-
-
-
-
+/*import './jquery-1.9.1.min';
+import './forms';
+import './jquery.maskedinput.min';
+import './jquery.validate.min';
+import './../fancybox/jquery.fancybox.pack';
+import './smooth_scroll';
+import './owl.carousel';
+import './wow';
+import './jquery.cookie';
+import './timer';
+import './es5-shims.min';
+import './share';*/
 
 $(document).ready(function () {
     /*owl carusel*/

@@ -1,5 +1,29 @@
 'use strict';
 
+require('./jquery-1.9.1.min');
+
+require('./forms');
+
+require('./jquery.maskedinput.min');
+
+require('./jquery.validate.min');
+
+require('./../fancybox/jquery.fancybox.pack');
+
+require('./smooth_scroll');
+
+require('./owl.carousel');
+
+require('./wow');
+
+require('./jquery.cookie');
+
+require('./timer');
+
+require('./es5-shims.min');
+
+require('./share');
+
 $(document).ready(function () {
     /*owl carusel*/
     (function () {

@@ -5,6 +5,7 @@
 .hidden {
     display: none !important;
 }
+
 .none {
     display: none;
 }
@@ -16,7 +17,6 @@ div, nav, ul, form {
         clear: both;
     }
 }
-
 .overlay-bg {
     position: absolute;
     z-index: 2;
