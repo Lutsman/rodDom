@@ -4108,7 +4108,7 @@ button.map-submit {
     text-align: justify; }
 
 .pop-up {
-  display: none;
+  /* display: none;*/
   width: 96%;
   height: 100%;
   min-height: 100vh;
