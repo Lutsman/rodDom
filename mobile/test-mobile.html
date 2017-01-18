@@ -78,14 +78,14 @@
         </ul>
     </div>
     <div class="firstscreen cf">
+        <div class="overlay-bg"></div>
         <a id="vipiska"></a>
         <div class="resize cf">
-            <h1 class="text_bebasreg txt_16 yellow">Мужик - МЫ ТЕБЕ ПОМОЖЕМ!</h1>
-            <a href="callto:+79267633549" class="text_bebasreg txt_26 white">+7 (926) 763-35-49</a>
+            <a class="top-phone" href="#popup__call-back" data-role="lightbox" data-form-location="Хеддер up, номер телефона">+7 (926) 763-35-49<span></span></a>
             <p class="text_sanslight1 txt_14 black"></p>
             <div class="cf"></div>
-            <h2 class="text_bebasreg txt_24 yellow">Оформление Выписки из Роддома</h2>
-            <h3 class="text_bebaslight txt_22 white">ВЕСЬ ГЕМОРРОЙ МЫ БЕРЕМ НА СЕБЯ!</h3>
+            <h2 class="text_bebasreg txt_24 yellow">Торжественная выписка из роддома</h2>
+            <h3 class="txt_22 white">ВСЮ ПОДГОТОВКУ МЫ БЕРЕМ НА СЕБЯ!</h3>
             <form action="/mobile/mailer.php" method="post" id="form1">
                 <input type="text" name="phone" placeholder="Введите номер телефона">
                 <input type="submit" value="Заказать оформление!" onclick="yaCounter36217330.reachGoal('ORDER_FORM'); return true;">
@@ -99,41 +99,89 @@
         <div class="resize cf">
             <a id="prices"></a><a id="catalogs"></a><a id="photos"></a>
             <h2 class="txt_26 black text_bebasreg">Мы организовали более <br/>360 выписок <br/>Как это было:</h2>
-            <iframe width="280" height="158" src="https://www.youtube.com/embed/r7nzvCrscXg?list=PLB3mMFnoGP0EkSnbxXpGMX-iKQ6vkaCri" frameborder="0" allowfullscreen></iframe>
-            <div class="owl-carousel" id="owl1">
-                <div class="item">
-                    <img src="images/image1.jpg" width="219" height="190" alt="">
+            <a href="#" class="video__link"></a>
+            <!--<iframe width="280" height="158" src="https://www.youtube.com/embed/r7nzvCrscXg?list=PLB3mMFnoGP0EkSnbxXpGMX-iKQ6vkaCri" frameborder="0" allowfullscreen></iframe>-->
+
+            <div id="owl1" class="owl-carousel" data-role="slider">
+                <div class="slide">
+                    <img src="images/image1.jpg" width="219" height="190" alt="фото">
                 </div>
-                <div class="item">
-                    <img src="images/image2.jpg" width="219" height="190" alt="">
+                <div class="slide">
+                    <img src="images/image2.jpg" width="219" height="190" alt="фото">
                 </div>
-                <div class="item">
-                    <img src="images/image3.jpg" width="219" height="190" alt="">
+                <div class="slide">
+                    <img src="images/image3.jpg" width="219" height="190" alt="фото">
                 </div>
-                <div class="item">
-                    <img src="images/image4.jpg" width="219" height="190" alt="">
+                <div class="slide">
+                    <img src="images/image4.jpg" width="219" height="190" alt="фото">
                 </div>
-                <div class="item">
-                    <img src="images/image5.jpg" width="219" height="190" alt="">
+                <div class="slide">
+                    <img src="images/image5.jpg" width="219" height="190" alt="фото">
                 </div>
-                <div class="item">
-                    <img src="images/image6.jpg" width="219" height="190" alt="">
+                <div class="slide">
+                    <img src="images/image6.jpg" width="219" height="190" alt="фото">
                 </div>
+
             </div>
             <a href="#popup1" class="btn_all fancybox-modal">Нужно так же!</a>
         </div>
     </div>
 
+    <!--Всплывающий блок-->
+    <div id="manager-message-1" class="manager-message hidden">
+        <div class="resize">
+            <div class="image-box">
+                <div class="video-box">
+                    <video width="260" height="260" autoplay loop>
+                        <source src="video/MAShA.ogg" type='video/ogg'>
+                        <source src="video/MAShA.mp4" type='video/mp4'>
+                        <source src="video/MAShA.webm" type='video/webm'>
+                    </video>
+
+                    <div>
+                        <p><b>Мария</b></p>
+                        <p>организатор</p>
+                        <p>выписок из роддома</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-box">
+                <p class="tr-delay-2">Здравствуйте!</p>
+                <p class="tr-delay-4">Я каждый день помогаю мужчинам, родителям и даже подругам счастливой мамы
+                    придумать сценарий встречи из роддома.</p>
+                <p class="tr-delay-6">К сожалению, через сайт сложно передать, какую выписку мы можем для Вас
+                    организовать. Только в разговоре по телефону удаётся подобрать сценарий под Ваши желания, ответить
+                    на вопросы, рассказать, что мы можем предложить.</p>
+                <p class="tr-delay-8">Согласитесь, будет жалко, если Вы можете получить чудесный торжественный праздник,
+                    показать любимой, как Вы её любите, удивить гостей и с первых минут прослыть лучшим в мире отцом,
+                    но Вы решили это не делать только потому, что не знали, на что мы способны.</p>
+                <p class="tr-delay-10">Предлагаю созвониться по телефону, это займёт 10-15 минут, зато у Вас будет вся
+                    нужная информация о том, как можно встретить молодую маму из роддома.</p>
+
+                <form class="order-call__form tr-delay-12" data-validate="phone" action="mailer.php" method="post" novalidate="novalidate">
+                    <input type="text" name="phone" placeholder="Введите ваш телефон">
+                    <input class="trans" type="submit" value="Заказать звонок">
+                    <input type="hidden" name="whatForm" value="Чайный пакетик">
+                </form>
+            </div>
+
+        </div>
+    </div>
+
     <div class="details cf">
         <div class="resize cf">
-            <p class="txt_16">Все подробности по организации выписки из роддома <br/><br/> <a href="callto:+79267633549">+7 (926) 763-35-49</a></p>
+            <a href="#popup__scenario" class="txt_16" data-role="lightbox">Все подробности по организации выписки из роддома:
+                <br/><br/>
+                <span>+7 (926) 763-35-49</span>
+            </a>
         </div>
     </div>
 
     <div class="price cf">
         <a id="f8"></a>
         <div class="resize cf">
-            <h2 class="text_bebasreg txt_26 white">Мужик - выбери<br/>подходящий тариф!</h2>
+            <h2 class="text_bebasreg txt_26 white">Выберите подходящий тариф</h2>
             <div class="block bl1 bbox">
                 <h3>«Мини»</h3>
                 <div class="cf"></div>
@@ -150,7 +198,7 @@
                     <h5>Букет из шаров с гелием</h5>
                     <p>Цена <span>9 900 рублей</span></p>
                     <h6>7 900 р.</h6>
-                    <a href="#popup1" class="btn_all fancybox-modal">Заказать пакет по СПЕЦ. ЦЕНЕ!</a>
+                    <a href="#popup__mini-package" class="btn_all" data-role="lightbox" data-form-location="Цены-1, Мини">Заказать пакет по СПЕЦ. ЦЕНЕ!</a>
                 </div>
             </div>
             <div class="block bl2 bbox">
@@ -170,7 +218,7 @@
                     <h5>Метровый воздушный медведь</h5>
                     <p>Цена <span>14 900 рублей</span></p>
                     <h6>12 900 р.</h6>
-                    <a href="#popup1" class="btn_all fancybox-modal">Заказать пакет по СПЕЦ. ЦЕНЕ!</a>
+                    <a href="#popup__standart-package" class="btn_all" data-role="lightbox" data-form-location="Цены-1, Стандарт">Заказать пакет по СПЕЦ. ЦЕНЕ!</a>
                 </div>
             </div>
             <div class="block bl3 bbox">
@@ -192,7 +240,7 @@
                     <h5>Метровый воздушный медведь</h5>
                     <p>Цена <span>22 900 рублей</span></p>
                     <h6>20 900 р.</h6>
-                    <a href="#popup1" class="btn_all fancybox-modal">Заказать пакет по СПЕЦ. ЦЕНЕ!</a>
+                    <a href="#popup__optimal-package" class="btn_all" data-role="lightbox" data-form-location="Цены-1, Оптимальный">Заказать пакет по СПЕЦ. ЦЕНЕ!</a>
                 </div>
             </div>
             <div class="block bl4 bbox">
@@ -217,7 +265,7 @@
                     <h5>Метровый воздушный медведь</h5>
                     <p>Цена <span>34 900 рублей</span></p>
                     <h6>29 900 р.</h6>
-                    <a href="#popup1" class="btn_all fancybox-modal">Заказать пакет по СПЕЦ. ЦЕНЕ!</a>
+                    <a href="#popup__prestige-package" class="btn_all" data-role="lightbox" data-form-location="Цены-1, Престижный">Заказать пакет по СПЕЦ. ЦЕНЕ!</a>
                 </div>
             </div>
         </div>
@@ -225,7 +273,10 @@
 
     <div class="details cf">
         <div class="resize cf">
-            <p class="txt_16">Все подробности по организации выписки из роддома <br/><br/> <a href="callto:+79267633549">+7 (926) 763-35-49</a></p>
+            <a href="#popup__scenario" class="txt_16" data-role="lightbox">Все подробности по организации выписки из роддома:
+                <br/><br/>
+                <span>+7 (926) 763-35-49</span>
+            </a>
         </div>
     </div>
 
@@ -495,7 +546,7 @@
         <a id="f1"></a>
         <div class="resize cf">
             <h2 class="text_bebaslight txt_30 black">Закажи услугу до 31 января</h2>
-            <h3 class="text_bebasreg txt_40 black">получи 3 сценария встречи жены!</h3>
+            <h3 class="text_bebasreg txt_40 black">получи 3 сценария встречи из роддома!</h3>
             <form action="/mobile/mailer.php" method="post" id="form2">
                 <input type="text" name="phone" placeholder="Введите номер телефона">
                 <input type="submit" value="Получить сценарии" onclick="yaCounter36217330.reachGoal('ORDER_SCENARIO'); return true;">
@@ -506,52 +557,254 @@
 
     <div class="details cf">
         <div class="resize cf">
-            <p class="txt_16">Все подробности по организации выписки из роддома <br/><br/> <a href="callto:+79267633549">+7 (926) 763-35-49</a></p>
+            <a href="#popup__scenario" class="txt_16" data-role="lightbox">Все подробности по организации выписки из роддома:
+                <br/><br/>
+                <span>+7 (926) 763-35-49</span>
+            </a>
         </div>
     </div>
     <div class="aboutus cf">
         <a id="f4"></a>
         <div class="resize cf">
-            <h2 class="txt_26 black text_bebasreg">Клиенты о нас</h2>
-            <div class="owl-carousel" id="owl2">
-                <div class="item">
-                    <img src="images/image2-1.jpg" width="219" height="156" alt="">
-                    <div class="review">
-                        <h3>Кирилл и его сын Сережа</h3>
-                        <p>Недавно в моей жизни произошло важное наверное для каждого событие – в моей семье родился ребенок, сын. Накануне выписки ломал голову над тем, как бы все устроить поинтереснее. Нашел этот сервис и заказал здесь все под ключ. Очень удобно - сразу полный комплект услуг. Быстро доставили все в нужное утро, украсили машину, подготовили сценарий для гостей - все не просто толпились, а было действие! Самое главное - любимая, все ее родственники и подруги были в восторге. Громадное спасибо за помощь!</p>
+            <h2 class="txt_26 black text_bebasreg">Эмоции наших клиентов</h2>
+
+            <div id="owl2" class="owl-carousel" data-role="slider">
+                <div class="slide">
+                    <img src="images/slider_2_slide_1.jpg" width="219" height="156" alt="фото">
+
+                    <div class="reviews__text">
+                        <p>Денис и его дочь Анютка</p>
+                        <p>За день до выписки жены и нашей Анютки из роддома я был сам не свой. Решил скрыть
+                            волнение перед родственниками и устроить целое событие с сюрпризами и трогательными
+                            украшениями, которые так нравятся женщинам. Моего волнения и правда никто из
+                            родственников не заметил. Самое интересное, что жена ничего такого особого не ждала,
+                            поэтому сюрприз действительно удался! Спасибо вам за помощь в организации этого
+                            дня!</p>
                     </div>
                 </div>
-                <div class="item">
-                    <img src="images/image2-2.jpg" width="219" height="156" alt="">
-                    <div class="review">
-                        <h3>Михаил с младшей Машенькой</h3>
-                        <p>Очень хотелось порадовать мою жену и удивить всех родственников в день выписки из роддома. Чтобы устроить необычную встречу, обратился сюда. Ребенок у нас первый, дочка, опыта, сами понимаете, никакого. А здесь для нас все организовала целая команда. Мы остановились на принадлежностях ярко-розового цвета - жена аж прослезилась от восторга, и фотки симпатичные получились. Очень рекомендую такой формат всем молодым отцам. Хлопот ноль, радости - целый мешок!</p>
+                <div class="slide">
+                    <img src="images/slider_2_slide_2.jpg" width="219" height="156" alt="фото">
+
+                    <div class="reviews__text">
+                        <p>Семен с сыном Коленькой</p>
+                        <p>Перед родами жена недвусмысленно намекнула, что выписка – очень трогательное и
+                            волнительное для семьи событие, и ей бы хотелось "чего-то особенного". Надо так
+                            надо. На улицах Москвы часто видел машины с наклейками вроде "Любимая, спасибо за
+                            малыша!", но решил не ограничиваться этим, а устроить любимке "торжественный прием".
+                            Заказал здесь все-все и даже сам не ожидал, как все получилось здорово. А уж как
+                            довольна моя благоверная. Спасибо вам и удачи!</p>
                     </div>
                 </div>
-                <div class="item">
-                    <img src="images/image2-3.jpg" width="219" height="156" alt="">
-                    <div class="review">
-                        <h3>Семен с сыном Коленькой</h3>
-                        <p>Перед родами жена недвусмысленно намекнула, что выписка – очень трогательное и волнительное для семьи событие, и ей бы хотелось "чего-то особенного". Надо так надо. На улицах Москвы часто видел машины с наклейками вроде "Любимая, спасибо за малыша!", но решил не ограничиваться этим, а устроить любимке "торжественный прием". Заказал здесь все-все и даже сам не ожидал, как все получилось здорово. А уж как довольна моя благоверная. Спасибо вам и удачи!</p>
+                <div class="slide">
+                    <img src="images/slider_2_slide_3.jpg" width="219" height="156" alt="фото">
+
+                    <div class="reviews__text">
+                        <p>Михаил с младшей Машенькой</p>
+                        <p>Очень хотелось порадовать мою жену и удивить всех родственников в день выписки из
+                            роддома. Чтобы устроить необычную встречу, обратился сюда. Ребенок у нас первый,
+                            дочка, опыта, сами понимаете, никакого. А здесь для нас все организовала целая
+                            команда. Мы остановились на принадлежностях ярко-розового цвета - жена аж
+                            прослезилась от восторга, и фотки симпатичные получились. Очень рекомендую такой
+                            формат всем молодым отцам. Хлопот ноль, радости - целый мешок!</p>
                     </div>
                 </div>
+                <div class="slide">
+                    <img src="images/slider_2_slide_4.jpg" width="219" height="156" alt="фото">
+
+                    <div class="reviews__text">
+                        <p>Кирилл и его сын Сережа</p>
+                        <p>Недавно в моей жизни произошло важное наверное для каждого событие – в моей семье
+                            родился ребенок, сын. Накануне выписки ломал голову над тем, как бы все устроить
+                            поинтереснее. Нашел этот сервис и заказал здесь все под ключ. Очень удобно - сразу
+                            полный комплект услуг. Быстро доставили все в нужное утро, украсили машину,
+                            подготовили сценарий для гостей - все не просто толпились, а было действие! Самое
+                            главное - любимая, все ее родственники и подруги были в восторге. Громадное спасибо
+                            за помощь!</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="images/slider_2_slide_5.jpg" width="219" height="156" alt="фото">
+
+                    <div class="reviews__text">
+                        <p>Николай с сыном Олежкой</p>
+                        <p>Никогда не думал, что с таким трепетом и нежностью буду готовиться к встрече с Инной
+                            и сыном Олежкой. В голову пришла мысль устроить что-то необыкновенное. Знаю, что для
+                            этого есть event-агентства и подыскивал что-то в этом духе. Мне повезло вдвойне,
+                            потому что нашел агентство, которое занимается именно организацией выписок из
+                            роддома! Это невероятно, ребята! И отдельная благодарность за то, как просто
+                            получилось с вами устроить этот день. Создали настроение и фотки со встречи
+                            получились классные!</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="images/slider_2_slide_6.jpg" width="219" height="156" alt="фото">
+
+                    <div class="reviews__text">
+                        <p>Кирилл о Марине и дочке Леночке</p>
+                        <p>Марина такой человек (как и большинство женщин, наверное), которые что-то себе
+                            придумают и полагают, что ее мужчина должен читать мысли. Зная эту ее особенность, я
+                            предположил, что просто обязан угодить ей в наш долгожданный день встречи с
+                            маленькой. Все даже проще, чем мне казалось. Нашел вас, по телефону объяснил, что
+                            примерно нужно. В день выписки не прослезился только наш кот. Респект за то, что вы
+                            точно знаете, о чем думают женщины, и помогаете нам, мужчинам, держать марку перед
+                            прекрасным полом!</p>
+                    </div>
+                </div>
+                <!--<div class="slide">
+                    <img src="images/slider_2_slide_1.jpg" width="580" height="270" alt="фото">
+
+                    <div class="reviews__text">
+                        <p>Алексей с сыном Ванечкой</p>
+                        <p>Я готовился к выписке жены и сына. Купил для друзей шампанское и конфеты. Цветы
+                            любимой (предупредила по телефону, что ей ничего нельзя, кроме цветов). И тут я
+                            задумался об оформлении всего события как праздника. Друзья были растроганы
+                            масштабом того, что я устроил для Оксаны и нашего первенца. Что уж говорить об
+                            Оксане, которая две минуты плакала у меня на плече под всеобщие аплодисменты...
+                            Получилось красиво, мило. Никто не подозревает, что за всем этим буквально один
+                            звонок декораторам за пару дней до.</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="images/rev1.jpg" width="771" height="250" alt="фото">
+
+                    <div class="reviews__text">
+                        <p>Антон и его сын Степа</p>
+                        <p>Когда в нашей семье появился Степашка, я, честно признаюсь, очень растрогался. Я
+                            понял, ради чего все это, ради чего стоит жить. Выразить это словами невозможно, да
+                            и нет таких слов, особенно в этот самый день, перед родственниками. Я пошел другим
+                            путем. Выразил свое отношение на деле. Очень здорово? что вы помогли мне устроить
+                            все так быстро и просто. Это как нажать на одну кнопку и получить результат. Это
+                            супер!</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="images/rev1.jpg" width="771" height="250" alt="фото">
+
+                    <div class="reviews__text">
+                        <p>Борис с дочерью Лизой</p>
+                        <p>Мужики, если в вашей семье случилось пополнение, устройте любимой вот такой вот
+                            праздник! По опыту скажу - от вас этого ждут, даже если и не говорят. Впервые видел,
+                            как теща плачет от умиления. Жена уставшая, но счастливая и довольная. Оно того
+                            стоит! Как-то сразу понял, что сам крепить те же ленточки на радиатор мне не с руки
+                            - позвонил и заказал все разом тут. Получилось целое организованное праздничное
+                            мероприятие на пороге роддома и дома. На твердую "пятерку". За что и спасибо!</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="images/rev1.jpg" width="771" height="250" alt="фото">
+
+                    <div class="reviews__text">
+                        <p>Анатолий и его дочь Света</p>
+                        <p>Выписывались. Все на нервах, особенно я, отец, которому новый статус вроде и
+                            радостен, но непривычен. Этот сервис порекомендовал коллега, сказав, что это
+                            настоящий мужской вариант: декораторы все сделают сами, а мне нужно только позвать
+                            близких. Первая встреча с нашей девчонкой прошла красиво и весело! Не буду
+                            раскрывать подробностей - но довольны остались все, каждый был причастным к нашему
+                            событию. Осталось много эмоций, сувениров, фотографий. Очень стоящая идея!</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="images/rev1.jpg" width="771" height="250" alt="фото">
+
+                    <div class="reviews__text">
+                        <p>Евгений с дочерью Оленькой</p>
+                        <p>До рождения ребенка я часто баловал жену подарками и сюрпризами. В день выписки тоже
+                            хотел что-то особенное, красивое. Долго искал в интернете идеи для такого случая.
+                            Остановился на этой услуге, когда мастера полностью готовят все необходимое для
+                            праздника. Понравилось, что организуют все люди с опытом. То есть ничего важного не
+                            упустишь, ты на высоте. Спасибо за то, что помогаете молодым папам готовить
+                            оригинальные сюрпризы для своих жен!</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="images/rev1.jpg" width="771" height="250" alt="фото">
+
+                    <div class="reviews__text">
+                        <p>Леонид с младшим Никитой</p>
+                        <p>Первый раз я стал папой 7 лет назад, но тогда еще не была развита сфера декора да и
+                            из роддома - садились и уезжали на такси. Могли фотографа заказать и цветы подарить.
+                            Поэтому выписка старшего сына была не такой яркой, как младшего. Второго ребенка
+                            решили "отметить" уже на профессиональном уровне: позвать декораторов, фотографов,
+                            нанять красивый автомобиль. Получилось очень круто! Понравилось, что все
+                            организационные моменты вы взяли на себя, а у нас был праздник.</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="images/rev1.jpg" width="771" height="250" alt="фото">
+
+                    <div class="reviews__text">
+                        <p>Максим с дочерью Наташенькой</p>
+                        <p>Готовясь к выписке жены с дочкой, я не задумывался о том, что из встречи с ребенком
+                            можно устроить какое-то мероприятие, праздник. Идея нашла меня сама. Знакомый друга
+                            посоветовал вариант для реальных мужей, любящих своих жен. Расскажу вам один секрет,
+                            как мужчина может угодить в такой момент своей женщине - взять подсказку и помощь
+                            опытных людей. Моя была в восторге, пока я держал сверток с дочуркой, пытаясь
+                            рассмотреть среди пеленок ее личико! Всем советую дарить любимой такую встречу. Это
+                            лучше всяких слов!</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="images/rev1.jpg" width="771" height="250" alt="фото">
+
+                    <div class="reviews__text">
+                        <p>Контстантин и его сын Платон</p>
+                        <p>Спасибо за Вашу работу! С отделом закрывали проект, жена с малышом выписываются. Все как-то так
+                            совпало, что на счету была каждая минута. Я был невероятно счастлив, но понимал, что от меня
+                            требуется больше - отклик, действия, эмоции! Все это удалось благодаря Вам - все решил один
+                            звонок. Это отличная идея - Ваш сервис для занятых отцов. А других сейчас и не бывает -
+                            это-то после пополнения в семье.</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="images/rev1.jpg" width="771" height="250" alt="фото">
+
+                    <div class="reviews__text">
+                        <p>Владимир с дочерью Лидой</p>
+                        <p>Первая встреча со своей маленькой копией – волнительное событие для любого отца.
+                            Очень хотелось в день выписки необычно отблагодарить ее, выразить как-то свою любовь
+                            и заботу. Вы помогли мне сделать то, с чем я бы сам так не справился. Каждый момент
+                            этого дня сопровождала какая-то милая, любимая всеми девочками, деталь. Нина была
+                            так счастлива, тронута, сказала, что не ожидала от меня таких талантов и что я
+                            "суперпапочка". Думаю оставить вас в секрете от нее.</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="images/rev1.jpg" width="771" height="250" alt="фото">
+
+                    <div class="reviews__text">
+                        <p>Павел и его сын Макар</p>
+                        <p>Хотел удивить жену собственноручно изготовленным плакатом «Любимая, спасибо за сына»,
+                            но после неудачной попытки решил купить готовые украшения. И нашел целый сайт о
+                            выписке для молодых пап! Не подозревал, что так можно. Тем более ценно, что от меня
+                            потребовалось только позвонить, а декораторы уже все взяли в свои руки. Зая была
+                            просто польщена. Хорошо, что есть люди, умеющие профессионально сопровождать такие
+                            моменты в жизни!</p>
+                    </div>
+                </div>
+-->
             </div>
+
             <a href="#popup2" class="btn_all fancybox-modal">Оставить отзыв</a>
         </div>
     </div>
 
     <div class="details cf">
         <div class="resize cf">
-            <p class="txt_16">Все подробности по организации выписки из роддома <br/><br/> <a href="callto:+79267633549">+7 (926) 763-35-49</a></p>
+            <a href="#popup__scenario" class="txt_16" data-role="lightbox">Все подробности по организации выписки из роддома:
+                <br/><br/>
+                <span>+7 (926) 763-35-49</span>
+            </a>
         </div>
     </div>
 
     <div class="alltime cf">
         <a id="f5"></a>
         <div class="resize cf">
-            <h2 class="white txt_12">Хочешь порадовать жену, избавить себя от лишней нервотрепки?<br/>Все, что нужно сделать тебе - оставить заявку</h2>
+            <h2 class="white txt_12">Хотите организовать торжественную выписку из роддома и избавить себя от лишней нервотрепки?
+                <br/>
+                Всё, что Вам нужно сделать - оставить заявку</h2>
             <a href="#popup1" class="btn_all fancybox-modal trans">Оставить заявку</a>
-            <h3 class="txt_26 text_bebasreg white">Весь геморрой мы берем на себя!</h3>
+            <h3 class="txt_26 text_bebasreg white">Всю подготовку мы берём на себя</h3>
             <div class="block-time">
                 <img src="images/time1.jpg" width="281" height="158" alt="">
                 <p>Разработаем<br/>сценарий</p>
@@ -654,14 +907,41 @@
 </div>
 
 
+<div id="popup__call-back" class="pop-up">
+    <h3>Заказать звонок</h3>
+
+    <div>
+        <div class="avatar">
+            <video width="64" height="64" autoplay loop>
+                <source src="video/MAShA.ogg" type='video/ogg'>
+                <source src="video/MAShA.mp4" type='video/mp4'>
+                <source src="video/MAShA.webm" type='video/webm'>
+            </video>
+            <p class="title">Мария</p>
+            <p>организатор <br> выписок из роддома</p>
+        </div>
+        <p>Закажите звонок <br> и мы свяжемся <br> с Вами в ближайшее время.</p>
+    </div>
+
+    <div>
+        <form class="popup__form" data-validate="name-phone" action="mailer.php" method="post" novalidate="novalidate">
+            <input type="text" name="name" placeholder="Ваше имя">
+            <input type="text" name="phone" placeholder="Введите телефон">
+            <input class="trans" type="submit" value="Заказать звонок">
+            <input type="hidden" name="whatForm" value="к сожалению мы не знаем место положения это формы...id = popup__call-back">
+        </form>
+    </div>
+
+</div>
+
 <div id="popup__rates" class="pop-up popup__rates">
+    <h3>Тарифы</h3>
+
     <div class="image-box">
-        <img src="images/tarrifs_lightbox.jpg" width="506" height="565"  alt="img">
+        <img src="images/rates_mob.jpg" alt="img">
     </div>
 
     <div class="popup__content">
-        <h3>Тарифы</h3>
-
         <div>
             <p>По опыту более <strong>360 выписок</strong> мы сформировали <strong>4 тарифа</strong>. Тарифы отличаются ценой и набором услуг, цена тарифов
                 от 7.900 р до 29.900 р.
@@ -680,13 +960,13 @@
 </div>
 
 <div id="popup__services1" class="pop-up popup__services">
+    <h3>Фотограф</h3>
+
     <div class="image-box">
-        <img src="images/service_lightbox_1.jpg" width="397" height="485"  alt="img">
+        <img src="images/service_mob_1.jpg" alt="img">
     </div>
 
     <div class="popup__content">
-        <h3>Фотограф</h3>
-
         <div>
             <p class="notice">от 4.490 р.</p>
             <p>Цена зависит от объёма и сложности работ, узнайте точную цену</p>
@@ -705,14 +985,14 @@
 
 </div>
 <div id="popup__services2" class="pop-up popup__services">
+    <h3>Видеооператор</h3>
+
     <div class="image-box">
-        <img src="images/service_lightbox_2.jpg" width="397" height="485"  alt="img">
+        <img src="images/service_mob_2.jpg" alt="img">
     </div>
 
     <div class="popup__content">
-        <h3>Видеооператор</h3>
-
-        <div>
+       <div>
             <p class="notice">от 4.490 р.</p>
             <p>Цена зависит от объёма и сложности работ, узнайте точную цену</p>
 
@@ -728,13 +1008,13 @@
 
 </div>
 <div id="popup__services3" class="pop-up popup__services">
+    <h3>Украшение квартиры</h3>
+
     <div class="image-box">
-        <img src="images/service_lightbox_3.jpg" width="397" height="530"  alt="img">
+        <img src="images/service_mob_3.jpg" alt="img">
     </div>
 
     <div class="popup__content">
-        <h3>Украшение квартиры</h3>
-
         <div>
             <p class="notice">от 4.490 р.</p>
             <p>Цена зависит от объёма и сложности работ, узнайте точную цену</p>
@@ -751,13 +1031,13 @@
 
 </div>
 <div id="popup__services4" class="pop-up popup__services">
+    <h3>Воздушные шары</h3>
+
     <div class="image-box">
-        <img src="images/service_lightbox_4.jpg" width="397" height="530"  alt="img">
+        <img src="images/service_mob_4.jpg" alt="img">
     </div>
 
     <div class="popup__content">
-        <h3>Воздушные шары</h3>
-
         <div>
             <p class="notice">от 4.490 р.</p>
             <p>Цена зависит от объёма и сложности работ, узнайте точную цену</p>
@@ -774,13 +1054,13 @@
 
 </div>
 <div id="popup__services5" class="pop-up popup__services">
+    <h3>Украшение машины</h3>
+
     <div class="image-box">
-        <img src="images/service_lightbox_5.jpg" width="397" height="530"  alt="img">
+        <img src="images/service_mob_5.jpg" alt="img">
     </div>
 
     <div class="popup__content">
-        <h3>Украшение машины</h3>
-
         <div>
             <p class="notice">от 4.490 р.</p>
             <p>Цена зависит от объёма и сложности работ, узнайте точную цену</p>
@@ -797,13 +1077,13 @@
 
 </div>
 <div id="popup__services6" class="pop-up popup__services">
+    <h3>Музыканты</h3>
+
     <div class="image-box">
-        <img src="images/service_lightbox_6.jpg" width="397" height="485"  alt="img">
+        <img src="images/service_mob_6.jpg" alt="img">
     </div>
 
     <div class="popup__content">
-        <h3>Музыканты</h3>
-
         <div>
             <p class="notice">от 4.490 р.</p>
             <p>Цена зависит от объёма и сложности работ, узнайте точную цену</p>
@@ -850,13 +1130,13 @@
 </div>
 
 <div id="popup__examples1" class="pop-up popup__examples">
+    <h3>Примеры работ</h3>
+
     <div class="image-box">
-        <img src="images/job_example_1.jpg" width="440" height="625"  alt="Примеры работ">
+        <img src="images/example_mob_1.jpg" alt="Примеры работ">
     </div>
 
     <div class="popup__content">
-        <h3>Примеры работ</h3>
-
         <div>
             <p>На сегодняшний день мы организовали более 360 выписок и нам есть чем с Вами поделиться. Посмотрите наши
                 сценарии торжественной встречи жены из роддома. Мы специализируемся только на выписках из роддома, и
@@ -876,13 +1156,13 @@
 
 </div>
 <div id="popup__examples2" class="pop-up popup__examples">
+    <h3>Примеры работ</h3>
+
     <div class="image-box">
-        <img src="images/job_example_2.jpg" width="440" height="625" alt="Примеры работ">
+        <img src="images/example_mob_2.jpg" alt="Примеры работ">
     </div>
 
     <div class="popup__content">
-        <h3>Примеры работ</h3>
-
         <div>
             <p>На сегодняшний день мы организовали более 360 выписок и нам есть чем с Вами поделиться. Посмотрите наши
                 сценарии торжественной встречи жены из роддома. Мы специализируемся только на выписках из роддома, и
@@ -902,13 +1182,13 @@
 
 </div>
 <div id="popup__examples3" class="pop-up popup__examples">
+    <h3>Примеры работ</h3>
+
     <div class="image-box">
-        <img src="images/job_example_3.jpg" width="440" height="625" alt="Примеры работ">
+        <img src="images/example_mob_3.jpg" alt="Примеры работ">
     </div>
 
     <div class="popup__content">
-        <h3>Примеры работ</h3>
-
         <div>
             <p>На сегодняшний день мы организовали более 360 выписок и нам есть чем с Вами поделиться. Посмотрите наши
                 сценарии торжественной встречи жены из роддома. Мы специализируемся только на выписках из роддома, и
@@ -928,13 +1208,13 @@
 
 </div>
 <div id="popup__examples4" class="pop-up popup__examples">
+    <h3>Примеры работ</h3>
+
     <div class="image-box">
-        <img src="images/job_example_4.jpg" width="440" height="625" alt="Примеры работ">
+        <img src="images/example_mob_4.jpg" alt="Примеры работ">
     </div>
 
     <div class="popup__content">
-        <h3>Примеры работ</h3>
-
         <div>
             <p>На сегодняшний день мы организовали более 360 выписок и нам есть чем с Вами поделиться. Посмотрите наши
                 сценарии торжественной встречи жены из роддома. Мы специализируемся только на выписках из роддома, и
@@ -954,13 +1234,13 @@
 
 </div>
 <div id="popup__examples5" class="pop-up popup__examples">
+    <h3>Примеры работ</h3>
+
     <div class="image-box">
-        <img src="images/job_example_5.jpg" width="440" height="625" alt="Примеры работ">
+        <img src="images/example_mob_5.jpg" alt="Примеры работ">
     </div>
 
     <div class="popup__content">
-        <h3>Примеры работ</h3>
-
         <div>
             <p>На сегодняшний день мы организовали более 360 выписок и нам есть чем с Вами поделиться. Посмотрите наши
                 сценарии торжественной встречи жены из роддома. Мы специализируемся только на выписках из роддома, и
@@ -979,13 +1259,10 @@
     </div>
 
 </div>
-<div id="popup__examples" class="pop-up popup__examples popup__small">
+<div id="popup__examples" class="pop-up popup__examples">
     <h3>Примеры работ</h3>
 
     <div class="info-block">
-        <p>На сегодняшний день мы организовали более 360 выписок и нам есть чем с Вами поделиться. Посмотрите наши
-            <b>сценарии торжественной встречи</b> из роддома. Мы <b>специализируемся только на выписках из роддома</b>, и умеем делать
-            это быстро, качественно, торжественно, и учитывая ваш бюджет.</p>
         <div class="avatar">
             <video width="64" height="64" autoplay loop>
                 <source src="video/MAShA.ogg" type='video/ogg'>
@@ -995,6 +1272,9 @@
             <p class="title">Мария</p>
             <p>организатор <br> выписок из роддома</p>
         </div>
+        <p>На сегодняшний день мы организовали более 360 выписок и нам есть чем с Вами поделиться. Посмотрите наши
+            <b>сценарии торжественной встречи</b> из роддома. Мы <b>специализируемся только на выписках из роддома</b>, и умеем делать
+            это быстро, качественно, торжественно, и учитывая ваш бюджет.</p>
     </div>
 
     <div class="form-box">
@@ -1008,6 +1288,318 @@
     </div>
 
 </div>
+
+<div id="popup__mini-package" class="pop-up">
+    <h3>пакет «мини»</h3>
+
+    <div>
+        <div class="avatar">
+            <video width="64" height="64" autoplay loop>
+                <source src="video/MAShA.ogg" type='video/ogg'>
+                <source src="video/MAShA.mp4" type='video/mp4'>
+                <source src="video/MAShA.webm" type='video/webm'>
+            </video>
+            <p class="title">Мария</p>
+            <p>организатор <br> выписок из роддома</p>
+        </div>
+        <p>Предлагаем выписки для любого бюджета. Пакет «Мини» включает в себя: фотографа и 50 шаров к роддому или в
+            квартиру. В подарок вы получаете букет из шаров с гелием. Закажите такую выписку за 7900 вместо 9900 рублей.
+            Оставьте заявку и мы расскажем вам о пакете «Мини» более подробно.</p>
+    </div>
+
+    <div>
+        <form class="popup__form" data-validate="name-phone" action="mailer.php" method="post" novalidate="novalidate">
+            <input type="text" name="name" placeholder="Ваше имя">
+            <input type="text" name="phone" placeholder="Введите телефон">
+            <input class="trans" type="submit" value="Узнать подробнее">
+            <input type="hidden" name="whatForm" value="Мини">
+            <p class="remark">Ваши данные не будут <br> переданы 3-м лицам.</p>
+        </form>
+    </div>
+
+</div>
+<div id="popup__standart-package" class="pop-up">
+    <h3>пакет «СТАНДАРТ»</h3>
+
+    <div>
+        <div class="avatar">
+            <video width="64" height="64" autoplay loop>
+                <source src="video/MAShA.ogg" type='video/ogg'>
+                <source src="video/MAShA.mp4" type='video/mp4'>
+                <source src="video/MAShA.webm" type='video/webm'>
+            </video>
+            <p class="title">Мария</p>
+            <p>организатор <br> выписок из роддома</p>
+        </div>
+        <p>Предлагаем выписки для любого бюджета. Пакет «Стандарт» включает в себя: фотографа, видеооператора, 50 шаров
+            к роддому или в квартиру. В подарок — метровый воздушный медведь. Закажите такую выписку за 12900
+            вместо 14900 рублей. Оставьте заявку и мы расскажем вам о пакете «Стандарт» более подробно.</p>
+    </div>
+
+    <div>
+        <form class="popup__form" data-validate="name-phone" action="mailer.php" method="post" novalidate="novalidate">
+            <input type="text" name="name" placeholder="Ваше имя">
+            <input type="text" name="phone" placeholder="Введите телефон">
+            <input class="trans" type="submit" value="Узнать подробнее">
+            <input type="hidden" name="whatForm" value="Стандарт">
+            <p class="remark">Ваши данные не будут <br> переданы 3-м лицам.</p>
+        </form>
+    </div>
+
+</div>
+<div id="popup__optimal-package" class="pop-up">
+    <h3>пакет «Оптимальный»</h3>
+
+    <div>
+        <div class="avatar">
+            <video width="64" height="64" autoplay loop>
+                <source src="video/MAShA.ogg" type='video/ogg'>
+                <source src="video/MAShA.mp4" type='video/mp4'>
+                <source src="video/MAShA.webm" type='video/webm'>
+            </video>
+            <p class="title">Мария</p>
+            <p>организатор <br> выписок из роддома</p>
+        </div>
+        <p>Предлагаем выписки для любого бюджета. Пакет «Оптимальный» включает в себя: фотографа, видеооператора,
+            50 шаров к роддому или в квартиру, оформление автолентами и магнитами, оформление квартиры шарами и
+            гирляндами. В подарок — метровый воздушный медведь. Закажите такую выписку за 20900 вместо 22900 рублей.
+            Оставьте заявку и мы расскажем вам о пакете «Оптимальный» более подробно.</p>
+    </div>
+
+    <div>
+        <form class="popup__form" data-validate="name-phone" action="mailer.php" method="post" novalidate="novalidate">
+            <input type="text" name="name" placeholder="Ваше имя">
+            <input type="text" name="phone" placeholder="Введите телефон">
+            <input class="trans" type="submit" value="Узнать подробнее">
+            <input type="hidden" name="whatForm" value="Оптимальный">
+            <p class="remark">Ваши данные не будут <br> переданы 3-м лицам.</p>
+        </form>
+    </div>
+
+</div>
+<div id="popup__prestige-package" class="pop-up">
+    <h3>пакет «Престижный»</h3>
+
+    <div>
+        <div class="avatar">
+            <video width="64" height="64" autoplay loop>
+                <source src="video/MAShA.ogg" type='video/ogg'>
+                <source src="video/MAShA.mp4" type='video/mp4'>
+                <source src="video/MAShA.webm" type='video/webm'>
+            </video>
+            <p class="title">Мария</p>
+            <p>организатор <br> выписок из роддома</p>
+        </div>
+        <p>Предлагаем выписки для любого бюджета. Пакет «Престижный» включает в себя: фотографа, видеооператора,
+            50 шаров к роддому или в квартиру, оформление автолентами и магнитами, оформление квартиры шарами и
+            гирляндами, скрипача или саксофониста на выбор, ростовую куклу. В подарок — метровый воздушный медведь
+            и букет из шаров с гелием. Закажите такую выписку за 29900 вместо 34900 рублей.
+            Оставьте заявку и мы расскажем вам о пакете «Престижный» более подробно.</p>
+    </div>
+
+    <div>
+        <form class="popup__form" data-validate="name-phone" action="mailer.php" method="post" novalidate="novalidate">
+            <input type="text" name="name" placeholder="Ваше имя">
+            <input type="text" name="phone" placeholder="Введите телефон">
+            <input class="trans" type="submit" value="Узнать подробнее">
+            <input type="hidden" name="whatForm" value="Престижный">
+            <p class="remark">Ваши данные не будут <br> переданы 3-м лицам.</p>
+        </form>
+    </div>
+
+</div>
+
+<div id="popup__map" class="pop-up">
+    <h3>Приходите к нам в гости!</h3>
+
+    <div>
+        <div class="avatar">
+            <video width="64" height="64" autoplay loop>
+                <source src="video/MAShA.ogg" type='video/ogg'>
+                <source src="video/MAShA.mp4" type='video/mp4'>
+                <source src="video/MAShA.webm" type='video/webm'>
+            </video>
+            <p class="title">Мария</p>
+            <p>организатор <br> выписок из роддома</p>
+        </div>
+        <p>Приходите к нам в гости! Вместе мы составим программу встречи малыша из роддома, учитывая ваши пожелания и ваш бюджет.
+            Оставьте заявку и мы свяжемся с вами и подготовим предложение для торжественной встречи молодой мамы.</p>
+    </div>
+
+    <div>
+        <form class="popup__form" data-validate="name-phone" action="mailer.php" method="post" novalidate="novalidate">
+            <input type="text" name="name" placeholder="Ваше имя">
+            <input type="text" name="phone" placeholder="Введите телефон">
+            <button class="map-submit trans" type="submit">Получить персональное предложение</button>
+            <input type="hidden" name="whatForm" value="Карта, получить перс. предложение">
+            <p class="remark">Ваши данные не будут <br> переданы 3-м лицам.</p>
+        </form>
+    </div>
+
+</div>
+
+<div id="popup__scenario" class="pop-up">
+    <h3>сценарий встречи</h3>
+
+    <div>
+        <div class="avatar">
+            <video width="64" height="64" autoplay loop>
+                <source src="video/MAShA.ogg" type='video/ogg'>
+                <source src="video/MAShA.mp4" type='video/mp4'>
+                <source src="video/MAShA.webm" type='video/webm'>
+            </video>
+            <p class="title">Мария</p>
+            <p>организатор <br> выписок из роддома</p>
+        </div>
+        <p>На сегодняшний день мы организовали более 360 выписок и нам есть чем с Вами поделиться. Посмотрите наши
+            сценарии торжественной встречи жены из роддома. Мы специализируемся только на выписках из роддома, и умеем
+            делать это быстро, качественно, торжественно и учитывая ваш бюджет.
+            Оставьте заявку и мы расскажем вам о разных примерах организации встречи жены и малыша.</p>
+    </div>
+
+    <div>
+        <form class="popup__form services__form" data-validate="name-phone" action="mailer.php" method="post" novalidate="novalidate">
+            <input type="text" name="name" placeholder="Ваше имя">
+            <input type="text" name="phone" placeholder="Введите телефон">
+            <input class="trans" type="submit" value="Получить сценарий встречи">
+            <input type="hidden" name="whatForm" value="Желтая полоса, получить сценарий">
+        </form>
+    </div>
+
+</div>
+
+<div id="popup__calculate-cost" class="pop-up popup__calculate-cost">
+    <h3>Рассчитать стоимость <br> оформления выписки из роддома</h3>
+    <div class="steps__counter">
+        <span class="active">Шаг 1</span>
+        <span>Шаг 2</span>
+        <span>Шаг 3</span>
+        <span>Шаг 4</span>
+    </div>
+
+    <div class="steps__wrap">
+        <div id="step1" class="step active">
+            <form id="step1__form" class="test__form" method="post" action="">
+                <h4>Где планируется выписка?</h4>
+
+                <div>
+                    <div class="radio-block">
+                        <input id="form-radio1" name="district" value="1"  type="radio">
+                        <label class="radio-label" for="form-radio1">Москва</label>
+                    </div>
+                    <div class="radio-block">
+                        <input id="form-radio2" name="district" value="2" type="radio">
+                        <label class="radio-label" for="form-radio2">Московская область</label>
+                    </div>
+                </div>
+                <div class="error-block none">
+                    Выберите ваше местоположение.
+                </div>
+                <input class="trans" type="submit" value="Следующий шаг">
+            </form>
+
+        </div>
+
+        <div id="step2" class="step">
+            <form id="step2__form" class="test__form" method="post" action="">
+                <h4>Выбери, чем хочешь удивить жену?</h4>
+
+                <div>
+                    <div class="checkbox-block">
+                        <input id="form-checkbox1" name="checkbox" value="1" type="checkbox">
+                        <label class="checkbox-label" for="form-checkbox1">Фотограф</label>
+                    </div>
+                    <div class="checkbox-block">
+                        <input id="form-checkbox2" name="checkbox[]" value="2" type="checkbox">
+                        <label class="checkbox-label" for="form-checkbox2">Видеооператор</label>
+                    </div>
+                    <div class="checkbox-block">
+                        <input id="form-checkbox3" name="checkbox[]" value="1" type="checkbox">
+                        <label class="checkbox-label" for="form-checkbox3">Воздушные шары</label>
+                    </div>
+                    <div class="checkbox-block">
+                        <input id="form-checkbox4" name="checkbox[]" value="1" type="checkbox">
+                        <label class="checkbox-label" for="form-checkbox4">Украшения на машину</label>
+                    </div>
+                    <div class="checkbox-block">
+                        <input id="form-checkbox5" name="checkbox[]" value="1" type="checkbox">
+                        <label class="checkbox-label" for="form-checkbox5">Украшение квартиры</label>
+                    </div>
+                    <div class="checkbox-block">
+                        <input id="form-checkbox6" name="checkbox[]" value="1" type="checkbox">
+                        <label class="checkbox-label" for="form-checkbox6">Музыкант в роддом</label>
+                    </div>
+                </div>
+                <div class="error-block none">
+                    Выберите хотя-бы один пункт.
+                </div>
+
+                <input class="trans" type="submit" value="Следующий шаг">
+            </form>
+
+        </div>
+
+        <div id="step3" class="step">
+            <h4>Рассчитываем</h4>
+
+            <div class="progress-bar">
+                <div class="progress-scale"></div>
+            </div>
+        </div>
+
+        <div id="step4" class="step">
+            <h4>Расчёт готов!</h4>
+
+            <div>
+                <p>Спасибо! Вы сократили время нашей работы. В благодарность мы дарим Вам скидку 5% на любой вид
+                    услуг. Введите номер телефона, чтобы получить расчёт и зафиксировать скидку.</p>
+            </div>
+
+            <div>
+                <form id="step4__form" class="popup__form" action="mailer.php" method="post">
+                    <div>
+                        <input type="text" name="phone" placeholder="Введите телефон">
+                        <input class="trans" type="submit" value="Заказать выписку">
+                        <input type="hidden" name="whatForm" value="Тест, Получить расчёт">
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </div><!--steps__wrap-->
+
+</div>
+
+<!--Чайный пакетик-->
+<div class="manager-notification" id="manager-message-bell" data-target="#manager-message-1">
+    <a href="#manager-message-1">
+        <span class="tea-bag">
+            Новое <br> сообщение
+            <video width="85" height="85" autoplay loop>
+                <source src="video/MAShA.ogg" type='video/ogg'>
+                <source src="video/MAShA.mp4" type='video/mp4'>
+                <source src="video/MAShA.webm" type='video/webm'>
+            </video>
+            <span class="number-posts">1</span>
+        </span>
+    </a>
+</div>
+
+<!--Плашка Рассчитать стоимость-->
+<div class="calculate-cost">
+    <a href="#popup__calculate-cost" data-role="lightbox-test">
+        <span>
+            Тест
+            <video width="76" height="76" autoplay loop>
+                <source src="video/MAShA.ogg" type='video/ogg'>
+                <source src="video/MAShA.mp4" type='video/mp4'>
+                <source src="video/MAShA.webm" type='video/webm'>
+            </video>
+        </span>
+    </a>
+</div>
+
 
 
 

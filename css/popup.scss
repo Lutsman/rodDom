@@ -217,7 +217,7 @@ div, nav, ul, form {
         @include border-radius(3px);
     }
     .progress-scale {
-        width: 50%;
+      /*  width: 50%;*/
         height: 30px;
         background-color: #fdc200;
         @include border-radius(3px);
