@@ -865,6 +865,7 @@ div, nav, ul, form {
         }
     }
 }
+
 .order-call__form {
     opacity: 0;
     @include transition(opacity 2s ease-in-out);

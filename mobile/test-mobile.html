@@ -53,22 +53,27 @@
         <ul class="list-menu" id="close-menu">
             <div class="close"></div>
             <li>
-                <a href="#f8" class="link8">Тарифы "Под Ключ"</a>
+                <a href="#popup__rates" data-role="lightbox-menu">Тарифы<span></span></a>
             </li>
             <li>
-                <a href="#f3" class="link3">Примеры наших работ</a>
+                <a href="#popup__services1" data-role="lightbox-menu" rel="group1">Услуги<span></span></a>
+                <a href="#popup__services2" class="hidden" data-role="lightbox-menu" rel="group1">Услуги<span></span></a>
+                <a href="#popup__services3" class="hidden" data-role="lightbox-menu" rel="group1">Услуги<span></span></a>
+                <a href="#popup__services4" class="hidden" data-role="lightbox-menu" rel="group1">Услуги<span></span></a>
+                <a href="#popup__services5" class="hidden" data-role="lightbox-menu" rel="group1">Услуги<span></span></a>
+                <a href="#popup__services6" class="hidden" data-role="lightbox-menu" rel="group1">Услуги<span></span></a>
+                <a href="#popup__services" class="hidden" data-role="lightbox-menu" rel="group1">Услуги<span></span></a>
             </li>
             <li>
-                <a href="#f2" class="link2">Список всех услуг</a>
+                <a href="#popup__examples1" data-role="lightbox-menu" rel="group2">Примеры работ<span></span></a>
+                <a href="#popup__examples2" class="hidden" data-role="lightbox-menu" rel="group2">Примеры работ<span></span></a>
+                <a href="#popup__examples3" class="hidden" data-role="lightbox-menu" rel="group2">Примеры работ<span></span></a>
+                <a href="#popup__examples4" class="hidden" data-role="lightbox-menu" rel="group2">Примеры работ<span></span></a>
+                <a href="#popup__examples5" class="hidden" data-role="lightbox-menu" rel="group2">Примеры работ<span></span></a>
+                <a href="#popup__examples" class="hidden" data-role="lightbox-menu" rel="group2">Примеры работ<span></span></a>
             </li>
             <li>
-                <a href="#f4" class="link4">Отзывы клиентов</a>
-            </li>
-            <li>
-                <a href="#f5" class="link6">Схема работы</a>
-            </li>
-            <li>
-                <a href="#f6" class="link7 opencontacts">Контакты</a>
+                <a href="#f6">Контакты</a>
             </li>
         </ul>
     </div>
@@ -646,6 +651,362 @@
         <input type="submit" value="Добавить отзыв" class="trans">
         <input type="hidden" name="whatForm" value="Форма - Добавить отзыв">
     </form>
+</div>
+
+
+<div id="popup__rates" class="pop-up popup__rates">
+    <div class="image-box">
+        <img src="images/tarrifs_lightbox.jpg" width="506" height="565"  alt="img">
+    </div>
+
+    <div class="popup__content">
+        <h3>Тарифы</h3>
+
+        <div>
+            <p>По опыту более <strong>360 выписок</strong> мы сформировали <strong>4 тарифа</strong>. Тарифы отличаются ценой и набором услуг, цена тарифов
+                от 7.900 р до 29.900 р.
+                <br><br> Оставьте свои контакты и мы поможем подобрать подходящий вам тариф.</p>
+
+            <form class="popup__form" data-validate="name-phone" action="mailer.php" method="post" novalidate="novalidate">
+                <input type="text" name="name" placeholder="Ваше имя">
+                <input type="text" name="phone" placeholder="Введите телефон">
+                <input class="trans" type="submit" value="Узнать о тарифах">
+                <input type="hidden" name="whatForm" value="Хеддер, тарифы">
+            </form>
+        </div>
+
+    </div>
+
+</div>
+
+<div id="popup__services1" class="pop-up popup__services">
+    <div class="image-box">
+        <img src="images/service_lightbox_1.jpg" width="397" height="485"  alt="img">
+    </div>
+
+    <div class="popup__content">
+        <h3>Фотограф</h3>
+
+        <div>
+            <p class="notice">от 4.490 р.</p>
+            <p>Цена зависит от объёма и сложности работ, узнайте точную цену</p>
+
+            <form class="popup__form services__form" data-validate="name-phone" action="mailer.php" method="post" novalidate="novalidate">
+                <input type="text" name="name" placeholder="Ваше имя">
+                <input type="text" name="phone" placeholder="Введите телефон">
+                <input class="trans" type="submit" value="Уточнить стоимость услуги">
+                <input type="hidden" name="whatForm" value="Хеддер, услуги, фотограф">
+            </form>
+        </div>
+
+    </div>
+
+    <span class="hidden-cap prev-cap"></span>
+
+</div>
+<div id="popup__services2" class="pop-up popup__services">
+    <div class="image-box">
+        <img src="images/service_lightbox_2.jpg" width="397" height="485"  alt="img">
+    </div>
+
+    <div class="popup__content">
+        <h3>Видеооператор</h3>
+
+        <div>
+            <p class="notice">от 4.490 р.</p>
+            <p>Цена зависит от объёма и сложности работ, узнайте точную цену</p>
+
+            <form class="popup__form services__form" data-validate="name-phone" action="mailer.php" method="post" novalidate="novalidate">
+                <input type="text" name="name" placeholder="Ваше имя">
+                <input type="text" name="phone" placeholder="Введите телефон">
+                <input class="trans" type="submit" value="Уточнить стоимость услуги">
+                <input type="hidden" name="whatForm" value="Хеддер, услуги, видеооператор">
+            </form>
+        </div>
+
+    </div>
+
+</div>
+<div id="popup__services3" class="pop-up popup__services">
+    <div class="image-box">
+        <img src="images/service_lightbox_3.jpg" width="397" height="530"  alt="img">
+    </div>
+
+    <div class="popup__content">
+        <h3>Украшение квартиры</h3>
+
+        <div>
+            <p class="notice">от 4.490 р.</p>
+            <p>Цена зависит от объёма и сложности работ, узнайте точную цену</p>
+
+            <form class="popup__form services__form" data-validate="name-phone" action="mailer.php" method="post" novalidate="novalidate">
+                <input type="text" name="name" placeholder="Ваше имя">
+                <input type="text" name="phone" placeholder="Введите телефон">
+                <input class="trans" type="submit" value="Уточнить стоимость услуги">
+                <input type="hidden" name="whatForm" value="Хеддер, услуги, укр. квартиры">
+            </form>
+        </div>
+
+    </div>
+
+</div>
+<div id="popup__services4" class="pop-up popup__services">
+    <div class="image-box">
+        <img src="images/service_lightbox_4.jpg" width="397" height="530"  alt="img">
+    </div>
+
+    <div class="popup__content">
+        <h3>Воздушные шары</h3>
+
+        <div>
+            <p class="notice">от 4.490 р.</p>
+            <p>Цена зависит от объёма и сложности работ, узнайте точную цену</p>
+
+            <form class="popup__form services__form" data-validate="name-phone" action="mailer.php" method="post" novalidate="novalidate">
+                <input type="text" name="name" placeholder="Ваше имя">
+                <input type="text" name="phone" placeholder="Введите телефон">
+                <input class="trans" type="submit" value="Уточнить стоимость услуги">
+                <input type="hidden" name="whatForm" value="Хеддер, услуги, шары">
+            </form>
+        </div>
+
+    </div>
+
+</div>
+<div id="popup__services5" class="pop-up popup__services">
+    <div class="image-box">
+        <img src="images/service_lightbox_5.jpg" width="397" height="530"  alt="img">
+    </div>
+
+    <div class="popup__content">
+        <h3>Украшение машины</h3>
+
+        <div>
+            <p class="notice">от 4.490 р.</p>
+            <p>Цена зависит от объёма и сложности работ, узнайте точную цену</p>
+
+            <form class="popup__form services__form" data-validate="name-phone" action="mailer.php" method="post" novalidate="novalidate">
+                <input type="text" name="name" placeholder="Ваше имя">
+                <input type="text" name="phone" placeholder="Введите телефон">
+                <input class="trans" type="submit" value="Уточнить стоимость услуги">
+                <input type="hidden" name="whatForm" value="Хеддер, услуги, укр. Машины">
+            </form>
+        </div>
+
+    </div>
+
+</div>
+<div id="popup__services6" class="pop-up popup__services">
+    <div class="image-box">
+        <img src="images/service_lightbox_6.jpg" width="397" height="485"  alt="img">
+    </div>
+
+    <div class="popup__content">
+        <h3>Музыканты</h3>
+
+        <div>
+            <p class="notice">от 4.490 р.</p>
+            <p>Цена зависит от объёма и сложности работ, узнайте точную цену</p>
+
+            <form class="popup__form services__form" data-validate="name-phone" action="mailer.php" method="post" novalidate="novalidate">
+                <input type="text" name="name" placeholder="Ваше имя">
+                <input type="text" name="phone" placeholder="Введите телефон">
+                <input class="trans" type="submit" value="Уточнить стоимость услуги">
+                <input type="hidden" name="whatForm" value="Хеддер, услуги, музыканты">
+            </form>
+        </div>
+
+    </div>
+
+</div>
+<div id="popup__services" class="pop-up popup__services">
+    <h3>Более 20 услуг</h3>
+
+    <div class="info-block">
+        <div class="avatar">
+            <video width="64" height="64" autoplay loop>
+                <source src="video/MAShA.ogg" type='video/ogg'>
+                <source src="video/MAShA.mp4" type='video/mp4'>
+                <source src="video/MAShA.webm" type='video/webm'>
+            </video>
+            <p class="title">Мария</p>
+            <p>организатор <br> выписок из роддома</p>
+        </div>
+        <p>Организовав более 360 торжественных выписок из роддома, мы выделили свыше <b>20 востребованных услуг</b>,
+            подготовили 5 сценариев встречи и можем организовать праздник практически на любой вкус и бюджет.</p>
+        <br>
+        <p>Узнайте больше о наших возможностях, и мы вместе подберём услуги для вашего праздника.</p>
+    </div>
+
+    <div class="form-box">
+        <form class="popup__form services__form" data-validate="name-phone" action="mailer.php" method="post" novalidate="novalidate">
+            <input type="text" name="name" placeholder="Ваше имя">
+            <input type="text" name="phone" placeholder="Введите телефон">
+            <input class="trans" type="submit" value="Узнать больше">
+            <input type="hidden" name="whatForm" value="Хеддер, услуги">
+        </form>
+    </div>
+
+</div>
+
+<div id="popup__examples1" class="pop-up popup__examples">
+    <div class="image-box">
+        <img src="images/job_example_1.jpg" width="440" height="625"  alt="Примеры работ">
+    </div>
+
+    <div class="popup__content">
+        <h3>Примеры работ</h3>
+
+        <div>
+            <p>На сегодняшний день мы организовали более 360 выписок и нам есть чем с Вами поделиться. Посмотрите наши
+                сценарии торжественной встречи жены из роддома. Мы специализируемся только на выписках из роддома, и
+                умеем делать это быстро, качественно, торжественно, и учитывая ваш бюджет.</p>
+            <br>
+            <p>Оставьте заявку и мы расскажем вам о разных примерах организации встречи жены и малыша.</p>
+
+            <form class="popup__form services__form" data-validate="name-phone" action="mailer.php" method="post" novalidate="novalidate">
+                <input type="text" name="name" placeholder="Ваше имя">
+                <input type="text" name="phone" placeholder="Введите телефон">
+                <input class="trans" type="submit" value="Узнать больше о примерах">
+                <input type="hidden" name="whatForm" value="Хеддер, примеры работ">
+            </form>
+        </div>
+
+    </div>
+
+</div>
+<div id="popup__examples2" class="pop-up popup__examples">
+    <div class="image-box">
+        <img src="images/job_example_2.jpg" width="440" height="625" alt="Примеры работ">
+    </div>
+
+    <div class="popup__content">
+        <h3>Примеры работ</h3>
+
+        <div>
+            <p>На сегодняшний день мы организовали более 360 выписок и нам есть чем с Вами поделиться. Посмотрите наши
+                сценарии торжественной встречи жены из роддома. Мы специализируемся только на выписках из роддома, и
+                умеем делать это быстро, качественно, торжественно, и учитывая ваш бюджет.</p>
+            <br>
+            <p>Оставьте заявку и мы расскажем вам о разных примерах организации встречи жены и малыша.</p>
+
+            <form class="popup__form services__form" data-validate="name-phone" action="mailer.php" method="post" novalidate="novalidate">
+                <input type="text" name="name" placeholder="Ваше имя">
+                <input type="text" name="phone" placeholder="Введите телефон">
+                <input class="trans" type="submit" value="Узнать больше о примерах">
+                <input type="hidden" name="whatForm" value="Хеддер, примеры работ">
+            </form>
+        </div>
+
+    </div>
+
+</div>
+<div id="popup__examples3" class="pop-up popup__examples">
+    <div class="image-box">
+        <img src="images/job_example_3.jpg" width="440" height="625" alt="Примеры работ">
+    </div>
+
+    <div class="popup__content">
+        <h3>Примеры работ</h3>
+
+        <div>
+            <p>На сегодняшний день мы организовали более 360 выписок и нам есть чем с Вами поделиться. Посмотрите наши
+                сценарии торжественной встречи жены из роддома. Мы специализируемся только на выписках из роддома, и
+                умеем делать это быстро, качественно, торжественно, и учитывая ваш бюджет.</p>
+            <br>
+            <p>Оставьте заявку и мы расскажем вам о разных примерах организации встречи жены и малыша.</p>
+
+            <form class="popup__form services__form" data-validate="name-phone" action="mailer.php" method="post" novalidate="novalidate">
+                <input type="text" name="name" placeholder="Ваше имя">
+                <input type="text" name="phone" placeholder="Введите телефон">
+                <input class="trans" type="submit" value="Узнать больше о примерах">
+                <input type="hidden" name="whatForm" value="Хеддер, примеры работ">
+            </form>
+        </div>
+
+    </div>
+
+</div>
+<div id="popup__examples4" class="pop-up popup__examples">
+    <div class="image-box">
+        <img src="images/job_example_4.jpg" width="440" height="625" alt="Примеры работ">
+    </div>
+
+    <div class="popup__content">
+        <h3>Примеры работ</h3>
+
+        <div>
+            <p>На сегодняшний день мы организовали более 360 выписок и нам есть чем с Вами поделиться. Посмотрите наши
+                сценарии торжественной встречи жены из роддома. Мы специализируемся только на выписках из роддома, и
+                умеем делать это быстро, качественно, торжественно, и учитывая ваш бюджет.</p>
+            <br>
+            <p>Оставьте заявку и мы расскажем вам о разных примерах организации встречи жены и малыша.</p>
+
+            <form class="popup__form services__form" data-validate="name-phone" action="mailer.php" method="post" novalidate="novalidate">
+                <input type="text" name="name" placeholder="Ваше имя">
+                <input type="text" name="phone" placeholder="Введите телефон">
+                <input class="trans" type="submit" value="Узнать больше о примерах">
+                <input type="hidden" name="whatForm" value="Хеддер, примеры работ">
+            </form>
+        </div>
+
+    </div>
+
+</div>
+<div id="popup__examples5" class="pop-up popup__examples">
+    <div class="image-box">
+        <img src="images/job_example_5.jpg" width="440" height="625" alt="Примеры работ">
+    </div>
+
+    <div class="popup__content">
+        <h3>Примеры работ</h3>
+
+        <div>
+            <p>На сегодняшний день мы организовали более 360 выписок и нам есть чем с Вами поделиться. Посмотрите наши
+                сценарии торжественной встречи жены из роддома. Мы специализируемся только на выписках из роддома, и
+                умеем делать это быстро, качественно, торжественно, и учитывая ваш бюджет.</p>
+            <br>
+            <p>Оставьте заявку и мы расскажем вам о разных примерах организации встречи жены и малыша.</p>
+
+            <form class="popup__form services__form" data-validate="name-phone" action="mailer.php" method="post" novalidate="novalidate">
+                <input type="text" name="name" placeholder="Ваше имя">
+                <input type="text" name="phone" placeholder="Введите телефон">
+                <input class="trans" type="submit" value="Узнать больше о примерах">
+                <input type="hidden" name="whatForm" value="Хеддер, примеры работ">
+            </form>
+        </div>
+
+    </div>
+
+</div>
+<div id="popup__examples" class="pop-up popup__examples popup__small">
+    <h3>Примеры работ</h3>
+
+    <div class="info-block">
+        <p>На сегодняшний день мы организовали более 360 выписок и нам есть чем с Вами поделиться. Посмотрите наши
+            <b>сценарии торжественной встречи</b> из роддома. Мы <b>специализируемся только на выписках из роддома</b>, и умеем делать
+            это быстро, качественно, торжественно, и учитывая ваш бюджет.</p>
+        <div class="avatar">
+            <video width="64" height="64" autoplay loop>
+                <source src="video/MAShA.ogg" type='video/ogg'>
+                <source src="video/MAShA.mp4" type='video/mp4'>
+                <source src="video/MAShA.webm" type='video/webm'>
+            </video>
+            <p class="title">Мария</p>
+            <p>организатор <br> выписок из роддома</p>
+        </div>
+    </div>
+
+    <div class="form-box">
+        <form class="popup__form services__form" data-validate="name-phone" action="mailer.php" method="post" novalidate="novalidate">
+            <input type="text" name="name" placeholder="Ваше имя">
+            <input type="text" name="phone" placeholder="Введите телефон">
+            <input class="trans" type="submit" value="Узнать больше">
+            <input type="hidden" name="whatForm" value="Хеддер, примеры работ">
+        </form>
+        <p>Оставьте заявку и узнайте о разных примерах организации встречи мамы и малыша.</p>
+    </div>
+
 </div>
 
 
