@@ -1,16 +1,4 @@
 'use strict';
-/*import './jquery-1.9.1.min';
-import './forms';
-import './jquery.maskedinput.min';
-import './jquery.validate.min';
-import './../fancybox/jquery.fancybox.pack';
-import './smooth_scroll';
-import './owl.carousel';
-import './wow';
-import './jquery.cookie';
-import './timer';
-import './es5-shims.min';
-import './share';*/
 
 $(document).ready(function () {
     /*owl carusel*/
@@ -52,52 +40,52 @@ $(document).ready(function () {
         }
 
         /*$("#owl1").owlCarousel({
-            items: 1,
-            autoplay: false,
-            autoplayTimeout: 4000,
-            navigation: true, // Show next and prev buttons
-            slideSpeed: 300,
-            paginationSpeed: 300,
-            nav: true,
-            dots: true,
-            dotsEach: true,
-            navText: false,
-            loop: true,
-            autoWidth: false,
-            responsive: false,
-            itemsScaleUp: false,
-        });
+         items: 1,
+         autoplay: false,
+         autoplayTimeout: 4000,
+         navigation: true, // Show next and prev buttons
+         slideSpeed: 300,
+         paginationSpeed: 300,
+         nav: true,
+         dots: true,
+         dotsEach: true,
+         navText: false,
+         loop: true,
+         autoWidth: false,
+         responsive: false,
+         itemsScaleUp: false,
+         });
 
-        $("#owl2").owlCarousel({
-            items: 1,
-            autoplay: false,
-            autoplayTimeout: 4000,
-            navigation: true, // Show next and prev buttons
-            slideSpeed: 300,
-            paginationSpeed: 300,
-            nav: true,
-            dots: true,
-            dotsEach: true,
-            navText: false,
-            loop: true,
-            autoWidth: false,
-            responsive: false,
-            itemsScaleUp: false,
-            onTranslated: function () {
-                slide = $('#owl2 .active .item');
-                if (!$(slide).hasClass('loaded')) {
+         $("#owl2").owlCarousel({
+         items: 1,
+         autoplay: false,
+         autoplayTimeout: 4000,
+         navigation: true, // Show next and prev buttons
+         slideSpeed: 300,
+         paginationSpeed: 300,
+         nav: true,
+         dots: true,
+         dotsEach: true,
+         navText: false,
+         loop: true,
+         autoWidth: false,
+         responsive: false,
+         itemsScaleUp: false,
+         onTranslated: function () {
+         slide = $('#owl2 .active .item');
+         if (!$(slide).hasClass('loaded')) {
 
-                    $.ajax({
-                        method: "POST",
-                        url: "js/loadslide.php",
-                        data: {'index': $(slide).data('slide')},
-                        success: function (data) {
-                            $(slide).html(data).addClass('loaded');
-                        }
-                    });
-                }
-            }
-        });*/
+         $.ajax({
+         method: "POST",
+         url: "js/loadslide.php",
+         data: {'index': $(slide).data('slide')},
+         success: function (data) {
+         $(slide).html(data).addClass('loaded');
+         }
+         });
+         }
+         }
+         });*/
     })();
 
     /*Fancybox*/
@@ -335,8 +323,8 @@ $(document).ready(function () {
             resetForm: true,
             type: 'post',
             /*beforeSubmit: function () {
-                $.fancybox.close();
-            },*/
+             $.fancybox.close();
+             },*/
             success: function () {
                 $.fancybox({
                     href: "#popupThanks",
@@ -537,6 +525,7 @@ $(document).ready(function () {
                         href: '#popup__map',
                         type: null,
                         padding: 0,
+                        fitToView: false,
                         tpl: {
                             closeBtn: '<span class="lightbox-close"></span>',
                             next: '<span class="lightbox-next"></span>',
@@ -682,8 +671,8 @@ $(document).ready(function () {
 
             $error.fadeIn();
             /*setTimeout(function () {
-                $error.fadeOut();
-            }, 2000);*/
+             $error.fadeOut();
+             }, 2000);*/
         }
         function hideError(form) {
             var $error = $(form).find('.error-block');
@@ -729,13 +718,13 @@ $(document).ready(function () {
 
     /*before leave page*/
     /*(function () {
-        $(window).on('beforeunload', function (e) {
-            console.log(e);
-            console.dir(e);
+     $(window).on('beforeunload', function (e) {
+     console.log(e);
+     console.dir(e);
 
-            return;
-        })
-    })();*/
+     return;
+     })
+     })();*/
 });
 
 /*global helpers*/

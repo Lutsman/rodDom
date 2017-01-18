@@ -525,6 +525,7 @@ $(document).ready(function () {
                         href: '#popup__map',
                         type: null,
                         padding: 0,
+                        fitToView: false,
                         tpl: {
                             closeBtn: '<span class="lightbox-close"></span>',
                             next: '<span class="lightbox-next"></span>',
