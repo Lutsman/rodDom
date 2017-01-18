@@ -835,7 +835,7 @@ div::after, nav::after, ul::after, form::after {
     z-index: 9999;
     display: block;
     height: 66px;
-    padding: 13px 20px 15px 113px;
+    padding: 13px 11px 15px 113px;
     font-family: 'opensans-light_1', sans-serif;
     font-size: 16px;
     font-weight: bold;
