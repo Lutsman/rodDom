@@ -163,7 +163,7 @@ div::after, nav::after, ul::after, form::after {
     -webkit-border-radius: 3px;
     border-radius: 3px; }
   .popup__calculate-cost .progress-scale {
-    width: 50%;
+    /*  width: 50%;*/
     height: 30px;
     background-color: #fdc200;
     -moz-border-radius: 3px;
