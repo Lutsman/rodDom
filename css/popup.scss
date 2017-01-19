@@ -623,6 +623,10 @@ div, nav, ul, form {
     display: block;
     height: 700px;
     padding-top: 60px;
+
+    &:hover {
+        text-decoration: none;
+    }
 }
 
 /*pop-up control*/
