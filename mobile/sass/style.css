@@ -3744,12 +3744,17 @@ a.white {
   text-align: center;
   color: #ffc000; }
 
-.price .block .content .btn_all {
+.price .block .content a {
+  display: block; }
+
+.price a:hover {
+  text-decoration: none; }
+
+.price .block .btn_all {
   width: 240px;
   height: 45px;
   line-height: 47px;
   font-size: 20px;
-  margin-top: 20px;
   border-bottom: 3px solid #901b00;
   box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.23); }
 
@@ -4103,7 +4108,7 @@ button.map-submit {
   margin: 15px auto 0;
   font-family: 'bebasneue_regular', sans-serif;
   font-size: 25px;
-  line-height: 36px;
+  line-height: 40px;
   color: #ffc000;
   text-align: center;
   text-transform: uppercase;
@@ -4150,6 +4155,14 @@ button.map-submit {
     font-family: 'opensans-light_1', sans-serif;
     font-size: 17px;
     line-height: 20px; }
+
+.price__button-box {
+  width: 240px;
+  padding: 0 20px 20px;
+  background: rgba(255, 255, 255, 0.4); }
+
+.price .bl3 .price__button-box {
+  background: #161018; }
 
 .pop-up {
   display: none;
