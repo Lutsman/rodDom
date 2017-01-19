@@ -4332,8 +4332,8 @@ button.map-submit {
 }
 
 .scenario {
+    position: relative;
     background: url(../images/back2.jpg) center center no-repeat;
-    padding: 90px 0 60px;
     margin-top: -1px
 }
 
@@ -4342,10 +4342,6 @@ button.map-submit {
 }
 
 .scenario .resize h3 {
-    margin-top: 65px
-}
-
-.scenario .resize form {
     margin-top: 65px
 }
 
@@ -5215,10 +5211,6 @@ button.map-submit {
 .alltime .resize .btn_all {
     margin-top: 50px;
     position: relative
-}
-
-.alltime .resize h3 {
-    margin-top: 60px
 }
 
 .alltime .block-time {

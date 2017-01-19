@@ -733,14 +733,20 @@
 
     <div class="scenario cf">
         <a id="f1"></a>
-        <div class="resize cf">
-            <h2 class="text_bebaslight txt_60 black">Закажите услугу до <span class="txt_98">31 января</span></h2>
-            <h3 class="text_bebasreg txt_60 black">получите <span class="txt_82">3 сценария</span> встречи из роддома!</h3>
-            <form action="mailer.php" method="post" id="form2">
-                <input type="text" name="phone" placeholder="Введите номер телефона">
-                <input type="submit" value="Получить сценарии" onclick="yaCounter36217330.reachGoal('ORDER_SCENARIO'); return true;">
-                <input type="hidden" name="whatForm" value="Получить 3 сценария">
-            </form>
+        <a class="scenario-link" href="#popup__scenario" data-role="lightbox">
+            <div class="resize cf">
+                <h2 class="text_bebaslight txt_60 black">Закажите услугу до <span class="txt_98">31 января</span></h2>
+                <h3 class="text_bebasreg txt_60 black">получите <span class="txt_82">3 сценария</span> встречи из роддома!</h3>
+            </div>
+        </a>
+        <div class="scenario__form-box">
+            <div class="resize cf">
+                <form action="mailer.php" method="post" id="form2">
+                    <input type="text" name="phone" placeholder="Введите номер телефона">
+                    <input type="submit" value="Получить сценарии" onclick="yaCounter36217330.reachGoal('ORDER_SCENARIO'); return true;">
+                    <input type="hidden" name="whatForm" value="Получить 3 сценария">
+                </form>
+            </div>
         </div>
     </div>
 
@@ -836,6 +842,36 @@
                             прекрасным полом!</p>
                     </div>
                 </div>
+
+                <div class="slide">
+                    <div class="slider__form slider__small-form">
+
+                        <div class="info-block">
+                            <div class="avatar">
+                                <video width="64" height="64" autoplay loop>
+                                    <source src="video/MAShA.ogg" type='video/ogg'>
+                                    <source src="video/MAShA.mp4" type='video/mp4'>
+                                    <source src="video/MAShA.webm" type='video/webm'>
+                                </video>
+                                <p class="title">Мария</p>
+                                <p>организатор <br> выписок из роддома</p>
+                            </div>
+                            <p>Мы можем организовать выписку любой сложности. Нам важно понять, какую выписку хотите
+                                именно Вы. Оставьте заявку, и мы рассчитаем для Вас стоимость выписки.</p>
+                        </div>
+
+                        <div class="form-box">
+                            <form class="popup__form" data-validate="name-phone" action="mailer.php" method="post" novalidate="novalidate">
+                                <input type="text" name="name" placeholder="Ваше имя">
+                                <input type="text" name="phone" placeholder="Введите телефон">
+                                <input class="trans" type="submit" value="Получить точный расчёт">
+                                <input type="hidden" name="whatForm" value="Фото, форма вместо фото">
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+
                 <!--<div class="slide">
                     <img src="images/slider_2_slide_1.jpg" width="580" height="270" alt="фото">
 
@@ -1014,23 +1050,27 @@
                 <br/>
                 Всё, что Вам нужно сделать - оставить заявку</h2>
             <a href="#popup1" class="btn_all fancybox-modal trans">Оставить заявку</a>
-            <h3 class="txt_60 text_bebasreg white">Всю подготовку мы берём на себя</h3>
-            <div class="block-time time1 wow animate zoomIn" data-wow-delay="0.3s">
-                <img src="images/time1.jpg" width="448" height="252" alt="">
-                <p>Разработаем<br/>сценарий</p>
-            </div>
-            <div class="block-time time2 wow animate zoomIn" data-wow-delay="0.7s">
-                <img src="images/time2.jpg" width="393" height="183" alt="">
-                <p>Составим смету</p>
-            </div>
-            <div class="block-time time3 wow animate zoomIn" data-wow-delay="1.1s">
-                <img src="images/time3.jpg" width="446" height="279" alt="">
-                <p>Организуем<br/>все до мелочей</p>
-            </div>
-            <div class="block-time time4 wow animate zoomIn" data-wow-delay="1.5s">
-                <img src="images/time4.jpg" width="393" height="385" alt="">
-                <p>В день выписки все<br/>будут счастливы<br/>и рады!</p>
-            </div>
+
+            <a class="test-link" href="#popup__calculate-cost" data-role="lightbox-test">
+                <h3 class="txt_60 text_bebasreg white">Всю подготовку мы берём на себя</h3>
+                <div class="block-time time1 wow animate zoomIn" data-wow-delay="0.3s">
+                    <img src="images/time1.jpg" width="448" height="252" alt="">
+                    <p>Разработаем<br/>сценарий</p>
+                </div>
+                <div class="block-time time2 wow animate zoomIn" data-wow-delay="0.7s">
+                    <img src="images/time2.jpg" width="393" height="183" alt="">
+                    <p>Составим смету</p>
+                </div>
+                <div class="block-time time3 wow animate zoomIn" data-wow-delay="1.1s">
+                    <img src="images/time3.jpg" width="446" height="279" alt="">
+                    <p>Организуем<br/>все до мелочей</p>
+                </div>
+                <div class="block-time time4 wow animate zoomIn" data-wow-delay="1.5s">
+                    <img src="images/time4.jpg" width="393" height="385" alt="">
+                    <p>В день выписки все<br/>будут счастливы<br/>и рады!</p>
+                </div>
+            </a>
+
         </div>
     </div>
 

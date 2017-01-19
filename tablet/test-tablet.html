@@ -54,39 +54,47 @@
         <ul class="list-menu" id="close-menu">
             <div class="close"></div>
             <li>
-                <a href="#f8" class="link8">Тарифы "Под Ключ"</a>
+                <a href="#popup__rates" data-role="lightbox-menu">Тарифы<span></span></a>
             </li>
             <li>
-                <a href="#f3" class="link3">Примеры наших работ</a>
+                <a href="#popup__services1" data-role="lightbox-menu" rel="group1">Услуги<span></span></a>
+                <a href="#popup__services2" class="hidden" data-role="lightbox-menu" rel="group1">Услуги<span></span></a>
+                <a href="#popup__services3" class="hidden" data-role="lightbox-menu" rel="group1">Услуги<span></span></a>
+                <a href="#popup__services4" class="hidden" data-role="lightbox-menu" rel="group1">Услуги<span></span></a>
+                <a href="#popup__services5" class="hidden" data-role="lightbox-menu" rel="group1">Услуги<span></span></a>
+                <a href="#popup__services6" class="hidden" data-role="lightbox-menu" rel="group1">Услуги<span></span></a>
+                <a href="#popup__services" class="hidden" data-role="lightbox-menu" rel="group1">Услуги<span></span></a>
             </li>
             <li>
-                <a href="#f2" class="link2">Список всех услуг</a>
+                <a href="#popup__examples1" data-role="lightbox-menu" rel="group2">Примеры работ<span></span></a>
+                <a href="#popup__examples2" class="hidden" data-role="lightbox-menu" rel="group2">Примеры работ<span></span></a>
+                <a href="#popup__examples3" class="hidden" data-role="lightbox-menu" rel="group2">Примеры работ<span></span></a>
+                <a href="#popup__examples4" class="hidden" data-role="lightbox-menu" rel="group2">Примеры работ<span></span></a>
+                <a href="#popup__examples5" class="hidden" data-role="lightbox-menu" rel="group2">Примеры работ<span></span></a>
+                <a href="#popup__examples" class="hidden" data-role="lightbox-menu" rel="group2">Примеры работ<span></span></a>
             </li>
             <li>
-                <a href="#f4" class="link4">Отзывы клиентов</a>
-            </li>
-            <li>
-                <a href="#f6" class="link6">Схема работы</a>
-            </li>
-            <li>
-                <a href="#f7" class="link7">Контакты</a>
+                <a href="#f7">Контакты</a>
             </li>
         </ul>
     </div>
     <div class="firstscreen cf">
+        <div class="overlay-bg"></div>
         <a id="vipiska"></a>
         <div class="resize cf">
             <div class="fll">
                 <div class="menu-button"><span>Меню</span></div>
-                <h1 class="text_bebasreg txt_40 yellow">Мужик - МЫ ТЕБЕ ПОМОЖЕМ!</h1>
+               <!-- <h1 class="text_bebasreg txt_40 yellow">Мужик - МЫ ТЕБЕ ПОМОЖЕМ!</h1>-->
             </div>
             <div class="flr">
-                <p class="text_bebasreg txt_36 white"><a class="topphone" href="callto:+79267633549">+7 (926) 763-35-49</a></p>
+                <p class="text_bebasreg txt_36 white">
+                    <a class="topphone" href="#popup__call-back" data-role="lightbox" data-form-location="Хеддер up, номер телефона">+7 (926) 763-35-49<span></span></a>
+                </p>
                 <p class="text_sanslight1 txt_13 black"></p>
             </div>
             <div class="cf"></div>
-            <h2 class="text_bebasreg txt_62 yellow">Оформление Выписки из Роддома</h2>
-            <h3 class="text_bebaslight txt_32 white">ВЕСЬ ГЕМОРРОЙ МЫ БЕРЕМ НА СЕБЯ!</h3>
+            <h2 class="text_bebasreg txt_62 yellow">Торжественная выписка из роддома</h2>
+            <h3 class="txt_32 white">ВСЮ ПОДГОТОВКУ МЫ БЕРЕМ НА СЕБЯ!</h3>
             <a href="#popup1" class="btn_all fancybox-modal">Заказать оформление!</a>
         </div>
     </div>
@@ -635,6 +643,231 @@
         <input type="hidden" name="whatForm" value="Форма - Добавить отзыв">
     </form>
 </div>
+
+
+<div id="popup__call-back" class="pop-up popup__small">
+    <h3>Заказать звонок</h3>
+
+    <div>
+        <div class="avatar">
+            <video width="64" height="64" autoplay loop>
+                <source src="video/MAShA.ogg" type='video/ogg'>
+                <source src="video/MAShA.mp4" type='video/mp4'>
+                <source src="video/MAShA.webm" type='video/webm'>
+            </video>
+            <p class="title">Мария</p>
+            <p>организатор <br> выписок из роддома</p>
+        </div>
+        <p>Закажите звонок <br> и мы свяжемся <br> с Вами в ближайшее время.</p>
+    </div>
+
+    <div>
+        <form class="popup__form" data-validate="name-phone" action="mailer.php" method="post" novalidate="novalidate">
+            <input type="text" name="name" placeholder="Ваше имя">
+            <input type="text" name="phone" placeholder="Введите телефон">
+            <input class="trans" type="submit" value="Заказать звонок">
+            <input type="hidden" name="whatForm" value="к сожалению мы не знаем место положения это формы...id = popup__call-back">
+        </form>
+    </div>
+
+</div>
+
+<div id="popup__rates" class="pop-up popup__rates">
+    <div class="image-box">
+        <img src="images/rates_tablet.jpg" width="377" height="550"  alt="img">
+    </div>
+
+    <div class="popup__content">
+        <h3>Тарифы</h3>
+
+        <div>
+            <p>По опыту более <strong>360 выписок</strong> мы сформировали <strong>4 тарифа</strong>. Тарифы отличаются ценой и набором услуг, цена тарифов
+                от 7.900 р до 29.900 р.
+                <br><br> Оставьте свои контакты и мы поможем подобрать подходящий вам тариф.</p>
+
+            <form class="popup__form" data-validate="name-phone" action="mailer.php" method="post" novalidate="novalidate">
+                <input type="text" name="name" placeholder="Ваше имя">
+                <input type="text" name="phone" placeholder="Введите телефон">
+                <input class="trans" type="submit" value="Узнать о тарифах">
+                <input type="hidden" name="whatForm" value="Хеддер, тарифы">
+            </form>
+        </div>
+
+    </div>
+
+</div>
+
+<div id="popup__services1" class="pop-up popup__services">
+    <div class="image-box">
+        <img src="images/service_lightbox_1.jpg" width="397" height="485"  alt="img">
+    </div>
+
+    <div class="popup__content">
+        <h3>Фотограф</h3>
+
+        <div>
+            <p class="notice">от 4.490 р.</p>
+            <p>Цена зависит от объёма и сложности работ, узнайте точную цену</p>
+
+            <form class="popup__form services__form" data-validate="name-phone" action="mailer.php" method="post" novalidate="novalidate">
+                <input type="text" name="name" placeholder="Ваше имя">
+                <input type="text" name="phone" placeholder="Введите телефон">
+                <input class="trans" type="submit" value="Уточнить стоимость услуги">
+                <input type="hidden" name="whatForm" value="Хеддер, услуги, фотограф">
+            </form>
+        </div>
+
+    </div>
+
+    <span class="hidden-cap prev-cap"></span>
+
+</div>
+<div id="popup__services2" class="pop-up popup__services">
+    <div class="image-box">
+        <img src="images/service_lightbox_2.jpg" width="397" height="485"  alt="img">
+    </div>
+
+    <div class="popup__content">
+        <h3>Видеооператор</h3>
+
+        <div>
+            <p class="notice">от 4.490 р.</p>
+            <p>Цена зависит от объёма и сложности работ, узнайте точную цену</p>
+
+            <form class="popup__form services__form" data-validate="name-phone" action="mailer.php" method="post" novalidate="novalidate">
+                <input type="text" name="name" placeholder="Ваше имя">
+                <input type="text" name="phone" placeholder="Введите телефон">
+                <input class="trans" type="submit" value="Уточнить стоимость услуги">
+                <input type="hidden" name="whatForm" value="Хеддер, услуги, видеооператор">
+            </form>
+        </div>
+
+    </div>
+
+</div>
+<div id="popup__services3" class="pop-up popup__services">
+    <div class="image-box">
+        <img src="images/service_lightbox_3.jpg" width="397" height="530"  alt="img">
+    </div>
+
+    <div class="popup__content">
+        <h3>Украшение квартиры</h3>
+
+        <div>
+            <p class="notice">от 4.490 р.</p>
+            <p>Цена зависит от объёма и сложности работ, узнайте точную цену</p>
+
+            <form class="popup__form services__form" data-validate="name-phone" action="mailer.php" method="post" novalidate="novalidate">
+                <input type="text" name="name" placeholder="Ваше имя">
+                <input type="text" name="phone" placeholder="Введите телефон">
+                <input class="trans" type="submit" value="Уточнить стоимость услуги">
+                <input type="hidden" name="whatForm" value="Хеддер, услуги, укр. квартиры">
+            </form>
+        </div>
+
+    </div>
+
+</div>
+<div id="popup__services4" class="pop-up popup__services">
+    <div class="image-box">
+        <img src="images/service_lightbox_4.jpg" width="397" height="530"  alt="img">
+    </div>
+
+    <div class="popup__content">
+        <h3>Воздушные шары</h3>
+
+        <div>
+            <p class="notice">от 4.490 р.</p>
+            <p>Цена зависит от объёма и сложности работ, узнайте точную цену</p>
+
+            <form class="popup__form services__form" data-validate="name-phone" action="mailer.php" method="post" novalidate="novalidate">
+                <input type="text" name="name" placeholder="Ваше имя">
+                <input type="text" name="phone" placeholder="Введите телефон">
+                <input class="trans" type="submit" value="Уточнить стоимость услуги">
+                <input type="hidden" name="whatForm" value="Хеддер, услуги, шары">
+            </form>
+        </div>
+
+    </div>
+
+</div>
+<div id="popup__services5" class="pop-up popup__services">
+    <div class="image-box">
+        <img src="images/service_lightbox_5.jpg" width="397" height="530"  alt="img">
+    </div>
+
+    <div class="popup__content">
+        <h3>Украшение машины</h3>
+
+        <div>
+            <p class="notice">от 4.490 р.</p>
+            <p>Цена зависит от объёма и сложности работ, узнайте точную цену</p>
+
+            <form class="popup__form services__form" data-validate="name-phone" action="mailer.php" method="post" novalidate="novalidate">
+                <input type="text" name="name" placeholder="Ваше имя">
+                <input type="text" name="phone" placeholder="Введите телефон">
+                <input class="trans" type="submit" value="Уточнить стоимость услуги">
+                <input type="hidden" name="whatForm" value="Хеддер, услуги, укр. Машины">
+            </form>
+        </div>
+
+    </div>
+
+</div>
+<div id="popup__services6" class="pop-up popup__services">
+    <div class="image-box">
+        <img src="images/service_lightbox_6.jpg" width="397" height="485"  alt="img">
+    </div>
+
+    <div class="popup__content">
+        <h3>Музыканты</h3>
+
+        <div>
+            <p class="notice">от 4.490 р.</p>
+            <p>Цена зависит от объёма и сложности работ, узнайте точную цену</p>
+
+            <form class="popup__form services__form" data-validate="name-phone" action="mailer.php" method="post" novalidate="novalidate">
+                <input type="text" name="name" placeholder="Ваше имя">
+                <input type="text" name="phone" placeholder="Введите телефон">
+                <input class="trans" type="submit" value="Уточнить стоимость услуги">
+                <input type="hidden" name="whatForm" value="Хеддер, услуги, музыканты">
+            </form>
+        </div>
+
+    </div>
+
+</div>
+<div id="popup__services" class="pop-up popup__services">
+    <h3>Более 20 услуг</h3>
+
+    <div class="info-block">
+        <div class="avatar">
+            <video width="64" height="64" autoplay loop>
+                <source src="video/MAShA.ogg" type='video/ogg'>
+                <source src="video/MAShA.mp4" type='video/mp4'>
+                <source src="video/MAShA.webm" type='video/webm'>
+            </video>
+            <p class="title">Мария</p>
+            <p>организатор <br> выписок из роддома</p>
+        </div>
+        <p>Организовав более 360 торжественных выписок из роддома, мы выделили свыше <b>20 востребованных услуг</b>,
+            подготовили 5 сценариев встречи и можем организовать праздник практически на любой вкус и бюджет.</p>
+        <br>
+        <p>Узнайте больше о наших возможностях, и мы вместе подберём услуги для вашего праздника.</p>
+    </div>
+
+    <div class="form-box">
+        <form class="popup__form services__form" data-validate="name-phone" action="mailer.php" method="post" novalidate="novalidate">
+            <input type="text" name="name" placeholder="Ваше имя">
+            <input type="text" name="phone" placeholder="Введите телефон">
+            <input class="trans" type="submit" value="Узнать больше">
+            <input type="hidden" name="whatForm" value="Хеддер, услуги">
+        </form>
+    </div>
+
+</div>
+
+
 
 
 

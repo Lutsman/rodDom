@@ -469,6 +469,21 @@ div, nav, ul, form {
         text-align: center;
     }
 }
+.slider__small-form {
+    width: 580px;
+    height: auto;
+    padding: 120px 0;
+
+    > div {
+        padding: 30px 20px;
+    }
+    .form-box {
+        width: 280px;
+    }
+    .info-block {
+        width: 300px;
+    }
+}
 
 .bottom-menu {
     a.call-me {
@@ -584,6 +599,30 @@ div, nav, ul, form {
     &:hover {
         text-decoration: none;
     }
+}
+
+.scenario-link {
+    display: block;
+    height: 417px;
+    padding: 90px 0 60px;
+    @include box-sizing(border-box);
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+.scenario__form-box {
+    position: absolute;
+    z-index: 2;
+    top: 273px;
+    left: 0;
+    width: 100%;
+}
+
+.test-link {
+    display: block;
+    height: 700px;
+    padding-top: 60px;
 }
 
 /*pop-up control*/

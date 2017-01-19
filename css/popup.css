@@ -412,6 +412,17 @@ div::after, nav::after, ul::after, form::after {
     font-size: 12px;
     text-align: center; }
 
+.slider__small-form {
+  width: 580px;
+  height: auto;
+  padding: 120px 0; }
+  .slider__small-form > div {
+    padding: 30px 20px; }
+  .slider__small-form .form-box {
+    width: 280px; }
+  .slider__small-form .info-block {
+    width: 300px; }
+
 .bottom-menu a.call-me {
   display: block;
   width: 160px;
@@ -514,6 +525,28 @@ div::after, nav::after, ul::after, form::after {
   line-height: 78px; }
   .details a:hover {
     text-decoration: none; }
+
+.scenario-link {
+  display: block;
+  height: 417px;
+  padding: 90px 0 60px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+  .scenario-link:hover {
+    text-decoration: none; }
+
+.scenario__form-box {
+  position: absolute;
+  z-index: 2;
+  top: 273px;
+  left: 0;
+  width: 100%; }
+
+.test-link {
+  display: block;
+  height: 700px;
+  padding-top: 60px; }
 
 /*pop-up control*/
 .lightbox-prev, .lightbox-next {
