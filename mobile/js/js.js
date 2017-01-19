@@ -86,6 +86,8 @@ $(document).ready(function () {
             padding: 0,
             margin: 0,
             type: 'iframe',
+            width: '100%',
+            height: '100%',
             autoSize: true,
             scrolling: false,
             tpl: {
@@ -430,6 +432,162 @@ $(document).ready(function () {
         });
     })();
 
+    /*test*/
+    (function () {
+        var $formStep1 = $('#step1__form');
+        var $formStep2 = $('#step2__form');
+        var $formStep4 = $('#step4__form');
+
+        var $popUp = $('#popup__calculate-cost');
+        var $forms = $popUp.find('form');
+        var $steps = $popUp.find('.step');
+        var $stepCounters = $popUp.find('.steps__counter span');
+        var stepIndex = 0;
+        var formDataArr = [];
+
+
+        $popUp.on({
+            'resetTest': resetTest,
+            'submit': onSubmitValidForm
+        });
+
+        $formStep1.add($formStep2).on('click', 'input',  function (e) {
+            validate(this.closest('form'));
+        });
+
+        $formStep4.on('blur', 'input',  function (e) {
+            setTimeout(function () {
+                validate(this.closest('form'))
+            }.bind(this), 500);
+        });
+
+        function onSubmitValidForm(e) {
+            e.preventDefault();
+
+            var target = e.target;
+
+            //console.log(target);
+
+            //console.log($(target).parents('.step'));
+
+            stepIndex = $(target).parents('.step').index();
+
+            if (!validate(target)) return;
+
+            if (stepIndex === 1) {
+                collectFormData(target);
+                nextStep();
+                setTimeout(nextStep, 4200);
+            } else if (stepIndex < $steps.length - 1) {
+                collectFormData(target);
+                nextStep();
+            } else {
+                collectFormData(target);
+                sendRequest(target);
+            }
+        }
+        function validate(form) {
+            var valid = false;
+
+            if (stepIndex === 3) {
+                var phone = form.querySelector('input[name="phone"]');
+                valid = !!phone.value;
+
+                phone.classList.remove('valid');
+                phone.classList.remove('error');
+
+                if (!valid) {
+                    phone.classList.add('error');
+                } else {
+                    phone.classList.add('valid');
+                }
+            } else {
+                valid = form.querySelectorAll('input:checked').length > 0;
+
+                if (!valid) {
+                    showError(form);
+                } else {
+                    hideError(form);
+                }
+            }
+
+            return valid;
+        }
+        function sendRequest(form) {
+            $.ajax({
+                type: form.method,
+                url: form.action,
+                data: $.param(formDataArr),
+                success: function () {
+                    $.fancybox({
+                        href: "#popupThanks",
+                        padding: 0,
+                        loop: false,
+                        tpl: {
+                            closeBtn: '<span class="lightbox-close"></span>',
+                            next: '<span class="lightbox-next"></span>',
+                            prev: '<span class="lightbox-prev"></span>'
+                        }
+                    });
+                },
+                error: function () {
+                    $.fancybox({
+                        href: "#popupError",
+                        padding: 0,
+                        loop: false,
+                        tpl: {
+                            closeBtn: '<span class="lightbox-close"></span>',
+                            next: '<span class="lightbox-next"></span>',
+                            prev: '<span class="lightbox-prev"></span>'
+                        }
+                    });
+                }
+            })
+        }
+        function collectFormData(form) {
+            var dataArr = $(form).serializeArray();
+
+            formDataArr = formDataArr.concat(dataArr);
+            //console.log(formDataArr);
+        }
+        function nextStep() {
+            if (stepIndex === $steps.length - 1) return;
+
+            $stepCounters.eq(stepIndex).removeClass('active');
+            $stepCounters.eq(stepIndex + 1).addClass('active');
+
+            $steps.eq(stepIndex).removeClass('active');
+            $steps.eq(stepIndex + 1).addClass('active');
+
+            stepIndex++;
+        }
+        function showError(form) {
+            var $error = $(form).find('.error-block');
+
+            $error.fadeIn();
+            /*setTimeout(function () {
+             $error.fadeOut();
+             }, 2000);*/
+        }
+        function hideError(form) {
+            var $error = $(form).find('.error-block');
+
+            $error.fadeOut();
+        }
+        function resetTest() {
+            stepIndex = 0;
+
+            $stepCounters.removeClass('active');
+            $stepCounters.eq(0).addClass('active');
+
+            $steps.removeClass('active');
+            $steps.eq(0).addClass('active');
+
+            $forms.each(function () {
+                this.reset();
+            });
+        }
+    })();
 
     /*crazy scroller (модификация "Русский бунт")*/
     (function () {
@@ -454,7 +612,6 @@ $(document).ready(function () {
         scrollToElement("a[href='#f6']", 30);
         scrollToElement("a[href='#f8']", 30);
     })();
-
 
     /*magic menu*/
     (function () {

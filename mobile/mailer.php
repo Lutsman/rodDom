@@ -45,8 +45,8 @@
     $mail = new PHPMailer();
     $mail->From = 'welcome@roddom-for-men.ru';               // от кого
     $mail->FromName = 'Выписка из роддома под ключ';        // от кого
-    $mail->AddAddress('pr@svadba-dream.ru','');
-    $mail->AddBCC('pr@svadba-dream.ru','');  // кому - адрес, Имя
+    $mail->AddAddress('lislab@yandex.ru','');
+    $mail->AddBCC('lislab@yandex.ru','');  // кому - адрес, Имя
     $mail->IsHTML(true);                        // выставляем формат письма HTML
     $mail->Subject = $subject; // тема письма
     $mail->CharSet = "UTF-8";                   // кодировка
@@ -58,7 +58,7 @@
         }
     }
     if (isset($_POST['cena']) && $_POST['cena'] != '') {
-    $mail->AddAddress('pr@svadba-dream.ru');  // кому - адрес, Имя
+    $mail->AddAddress('lislab@yandex.ru');  // кому - адрес, Имя
         
         
     }

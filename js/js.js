@@ -161,6 +161,7 @@ $(document).ready(function () {
             padding: 0,
             loop: false,
             fitToView: false,
+            scrolling: 'no',
             tpl: {
                 closeBtn: '<span class="lightbox-close"></span>',
                 next: '<span class="lightbox-next"></span>',
