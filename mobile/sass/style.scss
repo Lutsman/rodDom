@@ -687,7 +687,7 @@ a.white {
     width: 320px;
     padding-top: 80px;
     text-align: center;
-    height: 250px;
+    height: 280px;
     top: 0;
 }
 
@@ -1641,6 +1641,29 @@ button.map-submit {
     height: 80px;
     line-height: 30px;
     font-size: 23px;
+}
+
+.globalWrapper .list-menu.active a.call-me {
+  display: block;
+  width: 160px;
+  height: 40px;
+  padding: 0;
+  margin: 15px auto 0;
+  font-family: 'bebasneue_regular', sans-serif;
+  font-size: 25px;
+  line-height: 36px;
+  color: #ffc000;
+  text-align: center;
+  text-transform: uppercase;
+  border: 2px solid #ffc000;
+  @include border-radius(5px);
+  @include box-sizing(border-box);
+
+  &:hover {
+    color: #333;
+    text-decoration: none;
+    background: rgba(255, 192, 0, 0.9);
+  }
 }
 
 .reviews__text {
