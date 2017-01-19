@@ -61,6 +61,14 @@ $(document).ready(function () {
             },
             afterLoad: function (current) {
                 playVideo(current.href);
+                stepForward();
+            },
+            beforeClose: function () {
+                console.log('before close');
+            },
+            afterClose: function () {
+                console.log('remove hashchange');
+                removeFancyStep();
             }
         });
 
@@ -79,6 +87,11 @@ $(document).ready(function () {
             },
             afterLoad: function (current) {
                 playVideo(current.href);
+                stepForward();
+            },
+            afterClose: function () {
+                console.log('remove hashchange');
+                removeFancyStep();
             }
         });
 
@@ -175,6 +188,41 @@ $(document).ready(function () {
                     this.play();
                 });
             }, 1000);
+        }
+
+
+        /*back button managing*/
+
+
+        
+        function stepForward() {
+            window.location.hash = "popup_opend";
+
+            window.addEventListener('hashchange', stepBack);
+        }
+        
+        function stepBack() {
+            //console.log(window.location.hash);
+            //console.log(window.location.hash === 'popup_opend');
+            if (window.location.hash === '#popup_opend') return;
+
+            console.log(window.location.hash);
+            console.log('close popup');
+
+            $.fancybox.close();
+            window.removeEventListener('hashchange', stepBack);
+        }
+
+        function removeFancyStep() {
+            window.removeEventListener('hashchange', stepBack);
+            console.log(window.location.hash);
+
+            /*if (window.location.hash === '#popup_opend') {
+                window.location.hash = '';
+                console.log(window.location.hash);
+
+
+            }*/
         }
     })();
 
