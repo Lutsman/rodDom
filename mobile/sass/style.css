@@ -3185,7 +3185,7 @@ a.white {
   background-position: 15px 10px; }
 
 .firstscreen {
-  background: url(../images/back1.jpg) center center no-repeat;
+  background: url(../images/back_1.jpg) center top no-repeat;
   padding-bottom: 20px;
   margin-top: 30px;
   position: relative;
