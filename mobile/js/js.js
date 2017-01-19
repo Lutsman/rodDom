@@ -63,11 +63,7 @@ $(document).ready(function () {
                 playVideo(current.href);
                 stepForward();
             },
-            beforeClose: function () {
-                console.log('before close');
-            },
             afterClose: function () {
-                console.log('remove hashchange');
                 removeFancyStep();
             }
         });
@@ -90,7 +86,6 @@ $(document).ready(function () {
                 stepForward();
             },
             afterClose: function () {
-                console.log('remove hashchange');
                 removeFancyStep();
             }
         });
@@ -107,6 +102,12 @@ $(document).ready(function () {
                 closeBtn: '<span class="lightbox-close"></span>',
                 next: '<span class="lightbox-next"></span>',
                 prev: '<span class="lightbox-prev"></span>'
+            },
+            afterLoad: function () {
+                stepForward();
+            },
+            afterClose: function () {
+                removeFancyStep();
             }
         });
 
@@ -144,8 +145,12 @@ $(document).ready(function () {
                     }, 2000);
 
                     playVideo(current.href);
-                    //console.dir(current);
+                } else if(current.index === 0) {
+                    stepForward();
                 }
+            },
+            afterClose: function () {
+                removeFancyStep();
             }
         });
 
@@ -162,9 +167,12 @@ $(document).ready(function () {
                 next: '<span class="lightbox-next"></span>',
                 prev: '<span class="lightbox-prev"></span>'
             },
+            afterLoad: function () {
+                stepForward();
+            },
             afterClose: function () {
                 $('#popup__calculate-cost').trigger('resetTest');
-                //console.log('test reset triggered');
+                removeFancyStep();
             }
         });
 
@@ -190,24 +198,17 @@ $(document).ready(function () {
             }, 1000);
         }
 
-
         /*back button managing*/
-
-
-        
         function stepForward() {
+            //if (window.location.hash === '#popup_opend') return;
+
             window.location.hash = "popup_opend";
 
             window.addEventListener('hashchange', stepBack);
         }
         
         function stepBack() {
-            //console.log(window.location.hash);
-            //console.log(window.location.hash === 'popup_opend');
             if (window.location.hash === '#popup_opend') return;
-
-            console.log(window.location.hash);
-            console.log('close popup');
 
             $.fancybox.close();
             window.removeEventListener('hashchange', stepBack);
@@ -215,7 +216,7 @@ $(document).ready(function () {
 
         function removeFancyStep() {
             window.removeEventListener('hashchange', stepBack);
-            console.log(window.location.hash);
+            //console.log(window.location.hash);
 
             /*if (window.location.hash === '#popup_opend') {
                 window.location.hash = '';
@@ -286,6 +287,12 @@ $(document).ready(function () {
                         closeBtn: '<span class="lightbox-close"></span>',
                         next: '<span class="lightbox-next"></span>',
                         prev: '<span class="lightbox-prev"></span>'
+                    },
+                    afterLoad: function () {
+                        stepForward();
+                    },
+                    afterClose: function () {
+                        removeFancyStep();
                     }
                 });
             },
@@ -298,6 +305,12 @@ $(document).ready(function () {
                         closeBtn: '<span class="lightbox-close"></span>',
                         next: '<span class="lightbox-next"></span>',
                         prev: '<span class="lightbox-prev"></span>'
+                    },
+                    afterLoad: function () {
+                        stepForward();
+                    },
+                    afterClose: function () {
+                        removeFancyStep();
                     }
                 });
             }
@@ -490,6 +503,12 @@ $(document).ready(function () {
                             closeBtn: '<span class="lightbox-close"></span>',
                             next: '<span class="lightbox-next"></span>',
                             prev: '<span class="lightbox-prev"></span>'
+                        },
+                        afterLoad: function () {
+                            stepForward();
+                        },
+                        afterClose: function () {
+                            removeFancyStep();
                         }
                     });
                 },
@@ -502,6 +521,12 @@ $(document).ready(function () {
                             closeBtn: '<span class="lightbox-close"></span>',
                             next: '<span class="lightbox-next"></span>',
                             prev: '<span class="lightbox-prev"></span>'
+                        },
+                        afterLoad: function () {
+                            stepForward();
+                        },
+                        afterClose: function () {
+                            removeFancyStep();
                         }
                     });
                 }
@@ -667,75 +692,6 @@ $(document).ready(function () {
         });
     })();
 });
-/*    var options = {
-        delegation: true,
-        clearForm: true,
-        resetForm: true,
-        type: 'post',
-        beforeSubmit: function() {
-            $.fancybox.close();
-        },
-        success: function() {
-            $.fancybox({href: "#popupThanks", type: 'inline', padding: 0});
-        },
-        error: function() {
-            $.fancybox({href: "#popupError", type: 'inline', padding: 0});
-        }
-    };
-    $('#form1').ajaxForm(options);
-    $('#form2').ajaxForm(options);
-    $('#form3').ajaxForm(options);
-    $('#form4').ajaxForm(options);
-    $('#form5').ajaxForm(options);
-
-
-    $("input[name=phone]").mask("+7 (999) 999-99-99");
-
-});
-$("#form1").validate({
-    rules:{
-        phone:{required: true, minlength: 10, maxlength: 25,},
-    },
-    messages:{
-        phone:{required: "", maxlength: "",},
-    }
-});
-$("#form2").validate({
-    rules:{
-        phone:{required: true, minlength: 10, maxlength: 25,},
-    },
-    messages:{
-        phone:{required: "", maxlength: "",},
-    }
-});
-$("#form3").validate({
-    rules:{
-        name:{required: true, maxlength: 100,},
-        phone:{required: true, minlength: 10, maxlength: 25,},
-    },
-    messages:{
-        name:{required: "", maxlength: "",},
-        phone:{required: "", maxlength: "",},
-    }
-});
-$("#form4").validate({
-    rules:{
-        name:{required: true, maxlength: 100,},
-        mess:{required: true, maxlength: 300,},
-    },
-    messages:{
-        name:{required: "", maxlength: "",},
-        mess:{required: "", maxlength: "",},
-    }
-});
-$("#form5").validate({
-    rules:{
-        phone:{required: true, minlength: 10, maxlength: 25,},
-    },
-    messages:{
-        phone:{required: "", maxlength: "",},
-    }
-});*/
 
 /*global helpers*/
 /*some unused function*/
