@@ -1,48 +1,47 @@
 $(document).ready(function(){
-  $("#owl1").owlCarousel({
-    items : 1,
-    autoplay : false,
-    autoplayTimeout: 4000,
-    navigation : true, // Show next and prev buttons
-    slideSpeed : 300,
-    paginationSpeed : 300,
-    nav: true,
-    dots: false,
-    dotsEach: true,
-    navText : false,
-    loop : true,
-    autoWidth : false,
-    responsive : false, 
-    itemsScaleUp : false, 
-  });
-  $("#owl2").owlCarousel({
-    items : 1,
-    autoplay : false,
-    autoplayTimeout: 4000,
-    navigation : true, // Show next and prev buttons
-    slideSpeed : 300,
-    paginationSpeed : 300,
-    nav: true,
-    dots: true,
-    dotsEach: true,
-    navText : false,
-    loop : true,
-    autoWidth : false,
-    responsive : false, 
-    itemsScaleUp : false, 
-  });
+  /*owl carusel*/
+  (function () {
+    var $sliderSimple = $('[data-role="slider"]');
+
+    $sliderSimple.owlCarousel({
+      items: 1,
+      autoplay: false,
+      autoplayTimeout: 4000,
+      navigation: true, // Show next and prev buttons
+      slideSpeed: 300,
+      paginationSpeed: 300,
+      nav: true,
+      dots: false,
+      dotsEach: true,
+      navText: false,
+      loop: true,
+      autoWidth: false,
+      responsive: false,
+      itemsScaleUp: false,
+      onTranslated: function () {
+        playVideo($('.owl-loaded .owl-item.active'));
+      }
+    });
+
+    function playVideo (parent) {
+      var $video = $(parent).find('video');
+
+      if (!$video.length) return;
+
+      //console.log($video);
+      var timer = setTimeout(function () {
+        $video.each(function () {
+          //console.log(this);
+          this.play();
+        });
+      }, 1000);
+    }
+
+  })();
 
 
  $('.fancybox-modal').fancybox({padding: 0});
 
- $(window).scroll(function() {
-          if ($(this).scrollTop() > 110){
-              $(".bottom-menu").addClass( "active" );
-            }
-            else{
-              $(".bottom-menu").removeClass( "active" );
-            }
-        });
 
   var options = {
     delegation: true,
@@ -58,15 +57,12 @@ $(document).ready(function(){
     error: function() {
       $.fancybox({href: "#popupError", type: 'inline', padding: 0});
     }
-  }
+  };
   $('#form1').ajaxForm(options);
   $('#form2').ajaxForm(options);
   $('#form3').ajaxForm(options);
   $('#form4').ajaxForm(options);
   $('#form5').ajaxForm(options);
-
-
-
 
 
 $("input[name=phone]").mask("+7 (999) 999-99-99");
