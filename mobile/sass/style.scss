@@ -1105,9 +1105,6 @@ a.white {
     position: relative;
 }
 
-.alltime .resize h3 {
-    margin-top: 30px;
-}
 
 .alltime .block-time {
     position: relative;
@@ -1684,6 +1681,16 @@ button.map-submit {
     width: 100%;
 }
 
+.test-link {
+    display: block;
+    height: 750px;
+    padding-top: 30px;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
 .reviews__text {
     margin-top: 20px;
 
@@ -1692,7 +1699,6 @@ button.map-submit {
         font-family: 'opensans-light_1', sans-serif;
         font-size: 17px;
         line-height: 20px;
-        text-align: justify;
     }
 }
 
