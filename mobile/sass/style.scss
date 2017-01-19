@@ -760,8 +760,8 @@ a.white {
 }
 
 .scenario {
+    position: relative;
     background: url(../images/back2.jpg) center bottom no-repeat;
-    padding: 35px 0;
     -webkit-background-size: cover;
     background-size: cover;
 }
@@ -1664,6 +1664,24 @@ button.map-submit {
     text-decoration: none;
     background: rgba(255, 192, 0, 0.9);
   }
+}
+
+.scenario-link {
+    display: block;
+    height: 317px;
+    padding: 35px 0;
+    @include box-sizing(border-box);
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+.scenario__form-box {
+    position: absolute;
+    z-index: 2;
+    top: 150px;
+    left: 0;
+    width: 100%;
 }
 
 .reviews__text {
