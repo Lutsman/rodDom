@@ -50,8 +50,8 @@ $(document).ready(function () {
             padding: 0,
             margin: 0,
             fitToView: false,
-            /*width: '100%',
-            height: 'auto',*/
+            width: '100%',
+            height: 'auto',
             autoSize: true,
             scrolling: false,
             tpl: {
