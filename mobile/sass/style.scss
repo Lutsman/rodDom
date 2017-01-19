@@ -605,7 +605,7 @@ a.white {
 }
 
 .firstscreen {
-    background: url(../images/back1.jpg) center center no-repeat;
+    background: url(../images/back_1.jpg) center top no-repeat;
     padding-bottom: 20px;
     margin-top: 30px;
     position: relative;
@@ -1782,6 +1782,7 @@ button.map-submit {
     .form-box {
         p {
             margin-top: 20px;
+            text-align: center;
         }
     }
 }
@@ -1942,6 +1943,8 @@ button.map-submit {
 
     }
     .radio-block, .checkbox-block {
+        float: left;
+        width: 50%;
         margin-bottom: 40px;
         text-align: center;
     }
@@ -1973,6 +1976,11 @@ button.map-submit {
         font-size: 26px;
         font-weight: bold;
     }
+}
+.popup__midle-box {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
 }
 
 .popup__form {
