@@ -3623,9 +3623,6 @@ a.white {
   margin-top: 30px;
   position: relative; }
 
-.alltime .resize h3 {
-  margin-top: 30px; }
-
 .alltime .block-time {
   position: relative;
   text-align: center;
@@ -4139,14 +4136,20 @@ button.map-submit {
   left: 0;
   width: 100%; }
 
+.test-link {
+  display: block;
+  height: 750px;
+  padding-top: 30px; }
+  .test-link:hover {
+    text-decoration: none; }
+
 .reviews__text {
   margin-top: 20px; }
   .reviews__text p {
     margin-bottom: 20px;
     font-family: 'opensans-light_1', sans-serif;
     font-size: 17px;
-    line-height: 20px;
-    text-align: justify; }
+    line-height: 20px; }
 
 .pop-up {
   display: none;
