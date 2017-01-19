@@ -4209,7 +4209,8 @@ button.map-submit {
 .popup__examples .avatar .title {
   font-size: 22px; }
 .popup__examples .form-box p {
-  margin-top: 20px; }
+  margin-top: 20px;
+  text-align: center; }
 
 .popup__calculate-cost h3 {
   font-size: 32px;
@@ -4378,6 +4379,8 @@ button.map-submit {
       height: 17px;
       background: url("../images/checked.png") no-repeat; }
   .test__form .radio-block, .test__form .checkbox-block {
+    float: left;
+    width: 50%;
     margin-bottom: 40px;
     text-align: center; }
 
@@ -4405,6 +4408,11 @@ button.map-submit {
     margin-bottom: 10px;
     font-size: 26px;
     font-weight: bold; }
+
+.popup__midle-box {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto; }
 
 .popup__form {
   width: 240px;
