@@ -547,6 +547,8 @@ div::after, nav::after, ul::after, form::after {
   display: block;
   height: 700px;
   padding-top: 60px; }
+  .test-link:hover {
+    text-decoration: none; }
 
 /*pop-up control*/
 .lightbox-prev, .lightbox-next {

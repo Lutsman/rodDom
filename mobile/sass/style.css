@@ -4407,37 +4407,6 @@ button.map-submit {
 .services__form input[type="submit"] {
   font-size: 22px; }
 
-.calculate-cost__form {
-  width: 771px;
-  margin: 0 auto; }
-  .calculate-cost__form h3 {
-    margin-bottom: 20px;
-    font-size: 30px;
-    line-height: 30px; }
-  .calculate-cost__form input {
-    float: left;
-    margin-right: 25px; }
-  .calculate-cost__form input[type="text"]:not(#uptocall-phone) {
-    width: 240px;
-    height: 45px;
-    padding: 0 20px;
-    text-indent: 0;
-    font-size: 15px;
-    line-height: 45px;
-    border: 2px solid #646464;
-    -moz-border-radius: 7px;
-    -webkit-border-radius: 7px;
-    border-radius: 7px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box; }
-  .calculate-cost__form input[type="submit"] {
-    width: 240px;
-    height: 45px;
-    margin: 0;
-    font-size: 22px;
-    line-height: 45px; }
-
 /*pop-up control*/
 .lightbox-prev, .lightbox-next {
   position: absolute;
