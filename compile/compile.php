@@ -60,12 +60,12 @@ EOS;
 if (isset($_GET['css'])) {
 
 $css_list = array(
-	'../css/reset.css',
+	/*'../css/reset.css',
 	'../fancybox/jquery.fancybox.css',
 	'../css/owl.carousel.css',	
   '../css/_fonts.css', 
-  '../css/animate.css', 
-  '../css/style.css', 
+  '../css/animate.css',*/
+  '../sass/style.css'
 );
 $result = '';
 foreach ($css_list as $css) {
@@ -101,12 +101,12 @@ file_put_contents('compile.js', $result);
 } else {
 
 $css_list = array(
-	'../css/reset.css',
+	/*'../css/reset.css',
 	'../fancybox/jquery.fancybox.css',
 	'../css/owl.carousel.css',	
   '../css/_fonts.css', 
-  '../css/animate.css', 
-  '../css/style.css', 
+  '../css/animate.css',*/
+  '../sass/style.css',
 );
 $result = '';
 foreach ($css_list as $css) {
