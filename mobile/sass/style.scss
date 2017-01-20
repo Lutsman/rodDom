@@ -1310,6 +1310,14 @@ a.white {
     text-align: center;
 }
 
+#yaMap {
+    width: 320px;
+    height: 350px;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+}
+
 .map {
     height: 350px;
     position: relative;

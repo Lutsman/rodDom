@@ -210,6 +210,27 @@ $(document).ready(function () {
             },
             'popupClosed': function() {
                 $("body").css({'position':''});
+            },
+            'popupMapOpen': function() {
+                $.fancybox({
+                    href: '#popup__map',
+                    padding: 0,
+                    margin: 0,
+                    width: '100%',
+                    height: 'auto',
+                    autoSize: false,
+                    tpl: {
+                        closeBtn: '<span class="lightbox-close"></span>',
+                        next: '<span class="lightbox-next"></span>',
+                        prev: '<span class="lightbox-prev"></span>'
+                    },
+                    afterLoad: function () {
+                        $(document).trigger('popupOpened');
+                    },
+                    afterClose: function () {
+                        $(document).trigger('popupClosed');
+                    }
+                });
             }
         });
 
@@ -661,6 +682,60 @@ $(document).ready(function () {
 
 
              }*/
+        }
+    })();
+
+    /*Yandex map*/
+    (function(){
+        if (!document.getElementById('yaMap')) return;
+
+        var firstScript = document.querySelectorAll('script')[0];
+        var script = document.createElement('script');
+        var placemarks = {
+            0: {
+                coords: [55.76127956896109,37.67980749999999],
+                hintContent: 'Оформление выписки из роддома'
+            }
+        };
+        var center = [55.76127956896109,37.67980749999999];
+        var zoom = 15;
+
+        script.src = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU';
+        script.async = true;
+        firstScript.parentNode.insertBefore(script, firstScript);
+
+        script.addEventListener('load', function () {
+            ymaps.ready(init);
+        });
+
+        function init(){
+            var myMap = new ymaps.Map('yaMap', {
+                center: center,
+                zoom: zoom
+            }, {
+                searchControlProvider: 'yandex#search'
+            });
+
+            //myMap.behaviors.disable('scrollZoom');
+
+            for (var currPlacemark in placemarks) {
+                var placemark = new ymaps.Placemark(placemarks[currPlacemark].coords, {
+                    hintContent: placemarks[currPlacemark].hintContent
+                }, {
+                    iconLayout: "default#image",
+                    iconImageHref: "./images/mark_orange.png",
+                    iconImageSize: [50, 50],
+                    iconImageOffset: [-25, -50]
+                });
+
+                myMap.geoObjects.add(placemark);
+
+                placemark.events.add('click', function (e) {
+                    e.preventDefault();
+
+                    $(document).trigger('popupMapOpen');
+                });
+            }
         }
     })();
 
