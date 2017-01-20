@@ -716,7 +716,8 @@ $(document).ready(function () {
                 searchControlProvider: 'yandex#search'
             });
 
-            //myMap.behaviors.disable('scrollZoom');
+            myMap.behaviors.disable('scrollZoom');
+            myMap.behaviors.disable('drag');
 
             for (var currPlacemark in placemarks) {
                 var placemark = new ymaps.Placemark(placemarks[currPlacemark].coords, {
@@ -731,6 +732,11 @@ $(document).ready(function () {
                 myMap.geoObjects.add(placemark);
 
                 placemark.events.add('click', function (e) {
+                    e.preventDefault();
+
+                    $(document).trigger('popupMapOpen');
+                });
+                placemark.events.add('touch', function (e) {
                     e.preventDefault();
 
                     $(document).trigger('popupMapOpen');
