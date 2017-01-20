@@ -625,6 +625,7 @@ $(document).ready(function () {
                 url: form.action,
                 data: $.param(formDataArr),
                 success: function () {
+                    hideTestBtn();
                     $.fancybox({
                         href: "#popupThanks",
                         padding: 0,
@@ -692,6 +693,9 @@ $(document).ready(function () {
             $forms.each(function () {
                 this.reset();
             });
+        }
+        function hideTestBtn() {
+            $('[data-role="lightbox-test"]').hide();
         }
     })();
 

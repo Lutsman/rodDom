@@ -227,34 +227,6 @@ $(document).ready(function () {
 
             $.fancybox.close();
         }
-
-        /*back button managing*/
-        /*function stepForward() {
-            //if (window.location.hash === '#popup_opend') return;
-
-            window.location.hash = "popup_opend";
-
-            window.addEventListener('hashchange', stepBack);
-        }
-        
-        function stepBack() {
-            if (window.location.hash === '#popup_opend') return;
-
-            $.fancybox.close();
-            window.removeEventListener('hashchange', stepBack);
-        }
-
-        function removeFancyStep() {
-            window.removeEventListener('hashchange', stepBack);
-            //console.log(window.location.hash);
-
-            /!*if (window.location.hash === '#popup_opend') {
-                window.location.hash = '';
-                console.log(window.location.hash);
-
-
-            }*!/
-        }*/
     })();
 
     /*tea bag*/
@@ -443,10 +415,6 @@ $(document).ready(function () {
 
             var target = e.target;
 
-            //console.log(target);
-
-            //console.log($(target).parents('.step'));
-
             stepIndex = $(target).parents('.step').index();
 
             if (!validate(target)) return;
@@ -497,6 +465,7 @@ $(document).ready(function () {
                 data: $.param(formDataArr),
                 success: function () {
                     $(document).trigger('postSuccess');
+                    hideTestBtn();
                 },
                 error: function () {
                     $(document).trigger('postError');
@@ -545,6 +514,9 @@ $(document).ready(function () {
             $forms.each(function () {
                 this.reset();
             });
+        }
+        function hideTestBtn() {
+            $('[data-role="lightbox-test"]').hide();
         }
     })();
 
