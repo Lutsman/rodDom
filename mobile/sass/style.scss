@@ -538,7 +538,9 @@ a.white {
 }
 
 .popup {
-    width: 280px;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
     text-align: center;
     background: #313131;
     box-sizing: border-box;
@@ -565,6 +567,7 @@ a.white {
     font-family: 'opensans-light_1';
     font-size: 15px;
     margin-left: 20px;
+    text-align: center;
 }
 
 .popup form input {
@@ -1459,6 +1462,13 @@ a.white {
     float: right;
 }
 
+.popupform {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    @include transform(translate3d(-50%, -50%, 0));
+}
 .popupform textarea {
     width: 240px;
     height: 140px;
@@ -2378,6 +2388,219 @@ button.map-submit {
             border: 4px solid #e02f00;
             @include border-radius(50%);
         }
+    }
+}
+
+/*Страница спасибо*/
+.thanks-page .resize {
+    width: 280px;
+}
+.manager-thanks {
+    padding: 50px 0;
+
+    .text-box {
+
+        p {
+            line-height: 25px;
+            opacity: 1;
+        }
+    }
+    .image-box {
+        margin-bottom: 20px;
+    }
+    .video-box{
+        margin: 0 auto;
+
+        video {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.video {
+    .video__content {
+        padding: 10px 0;
+        text-align: center;
+        @include box-sizing(border-box);
+
+        p {
+            margin-bottom: 15px;
+            font-family: 'opensans-light_1', sans-serif;
+            font-size: 16px;
+            line-height: 25px;
+        }
+    }
+    .video-box {
+        width: 280px;
+    }
+}
+
+.thanks__form-wrap {
+    padding: 30px 0;
+
+    h2 {
+        margin-bottom: 15px;
+        font-size: 26px;
+        line-height: 36px;
+        text-align: center;
+    }
+    h3 {
+        font-family: 'opensans-light_1', sans-serif;
+        font-size: 16px;
+        line-height: 25px;
+        text-align: center;
+    }
+    .title {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+.thanks__form {
+    font-family: 'opensans-light_1', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+    }
+    input[type="text"]:not(#uptocall-phone), textarea {
+        width: 100%;
+        max-width: 300px;
+        height: 45px;
+        padding: 0 20px;
+        text-indent: 0;
+        font-size: 16px;
+        line-height: 45px;
+        border: 2px solid #646464;
+        @include box-sizing(border-box);
+        @include border-radius(7px);
+    }
+    textarea {
+        max-width: 660px;
+        height: auto;
+    }
+    .inputs-block {
+        padding: 30px;
+
+        > div {
+            margin-bottom: 20px;
+        }
+    }
+    .buttons-box {
+        a {
+            display: inline-block;
+            /*    margin-left: 30px;*/
+        }
+        p {
+            margin-bottom: 20px;
+            font-family: 'opensans-light_1', sans-serif;
+            font-size: 16px;
+            line-height: 40px;
+            text-align: center;
+        }
+        input[type="submit"] {
+            height: 40px;
+            line-height: 40px;
+        }
+    }
+    .title {
+        margin-bottom: 20px;
+    }
+}
+.thanks__organisation {
+    margin-bottom: 30px;
+    text-align: center;
+
+    .block {
+        width: 130px;
+        height: 192px;
+        background: url(../images/ramka.png) left top no-repeat;
+        float: left;
+        margin: 10px 5px 5px;
+        position: relative;
+    }
+    .content {
+        width: 116px;
+        height: 130px;
+        margin-top: 10px;
+        margin-left: 10px;
+        overflow: hidden;
+        position: relative;
+        left: 0;
+        bottom: 0;
+        font-size: 13px;
+        @include border-radius(3px 3px 0 0);
+
+        img {
+            position: relative;
+            z-index: 2;
+        }
+        .text {
+            width: 116px;
+            height: auto;
+            padding: 4px 0;
+            background: #ffc000;
+            position: absolute;
+            bottom: 0;
+            z-index: 2;
+
+            p {
+                font-family: 'opensans-light_1', sans-serif;
+                font-size: 12px;
+                line-height: 1;
+            }
+        }
+    }
+    input[type="radio"], input[type="checkbox"] {
+        display: none;
+
+        &:checked + .radio-label::after, &:checked + .checkbox-label::after {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    label {
+        position: relative;
+        z-index: 2;
+        display: block;
+        padding-left: 35px;
+        margin-bottom: 0;
+        font-family: 'opensans-light_1', sans-serif;
+        font-size: 13px;
+        line-height: 15px;
+        text-align: center;
+        cursor: pointer;
+        @include box-sizing(border-box);
+
+        &::before, &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            z-index: 2;
+            @include box-sizing(border-box);
+        }
+        &::before {
+            top: 0;
+            left: 0;
+            width: 30px;
+            height: 30px;
+            background-color: #fff;
+            border: 2px solid #000;
+        }
+        &::after {
+            top: 6px;
+            left: 4px;
+            width: 21px;
+            height: 17px;
+            background: url("../images/checked.png") no-repeat;
+            opacity: 0;
+            visibility: hidden;
+            @include transition(all 0.2s ease-in-out 0s);
+        }
+    }
+    .checkbox-block {
+        margin: 10px 0;
     }
 }
 
