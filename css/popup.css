@@ -939,6 +939,10 @@ div::after, nav::after, ul::after, form::after {
   float: left;
   width: 636px; }
 
+.thanks__video {
+  color: #fff;
+  background: url(../images/back8.jpg) center center no-repeat; }
+
 .thanks__form-wrap {
   padding: 30px 0; }
   .thanks__form-wrap h2 {

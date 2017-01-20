@@ -4913,7 +4913,9 @@ p a.topphone {
 
 /*Страница спасибо*/
 .manager-thanks {
-  padding: 50px 0; }
+  padding: 50px 0;
+  background: url(../images/back-thanks_1.png) center center repeat-y;
+  background-size: cover; }
   .manager-thanks .text-box {
     width: 50%; }
     .manager-thanks .text-box p {
@@ -4926,25 +4928,33 @@ p a.topphone {
     .manager-thanks .video-box video {
       margin-bottom: 0; }
 
-.video .video__content {
-  float: left;
-  width: 264px;
-  padding: 30px;
-  text-align: center;
+.thanks__video {
+  padding: 50px 0;
+  color: #fff;
+  background: url(../images/back7.jpg) center center repeat-y;
+  background-size: cover;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
-  .video .video__content p {
-    margin-bottom: 15px;
-    font-family: 'opensans-light_1', sans-serif;
-    font-size: 16px;
-    line-height: 25px; }
-.video .video-box {
-  float: left;
-  width: 452px; }
+  .thanks__video .video__content {
+    float: left;
+    width: 264px;
+    padding: 30px;
+    text-align: center;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; }
+    .thanks__video .video__content p {
+      margin-bottom: 15px;
+      font-family: 'opensans-light_1', sans-serif;
+      font-size: 16px;
+      line-height: 25px; }
+  .thanks__video .video-box {
+    float: left;
+    width: 452px; }
 
 .thanks__form-wrap {
-  padding: 30px 0; }
+  padding: 50px 0; }
   .thanks__form-wrap h2 {
     margin-bottom: 15px;
     font-size: 40px;
@@ -4992,14 +5002,15 @@ p a.topphone {
     display: inline-block;
     /*    margin-left: 30px;*/ }
   .thanks__form .buttons-box p {
-    float: left;
     font-family: 'opensans-light_1', sans-serif;
     font-size: 16px;
-    line-height: 40px; }
+    line-height: 40px;
+    text-align: center; }
   .thanks__form .buttons-box input[type="submit"] {
-    float: right;
-    height: 40px;
-    line-height: 40px; }
+    margin-bottom: 40px;
+    /*
+     height: 40px;
+     line-height: 40px;*/ }
   .thanks__form .title {
     margin-bottom: 20px; }
 
