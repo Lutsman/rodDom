@@ -1408,7 +1408,7 @@
 				F.prev();
 			});*/
 
-			$(F.outer).swipe({
+			/*$(F.outer).swipe({
 				swipe : function(event, direction) {
 					if (direction === 'left') {
 						F.next(direction);
@@ -1416,7 +1416,7 @@
 						F.prev(direction);
 					}
 				}
-			});
+			});*/
 		},
 
 		_getPosition: function (onlyAbsolute) {
