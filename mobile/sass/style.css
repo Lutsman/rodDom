@@ -4180,10 +4180,9 @@ button.map-submit {
 .pop-up {
   display: none;
   width: 100%;
-  height: 100%;
+  height: auto;
   min-height: 100vh;
   background-color: #fff;
-  overflow: hidden;
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
   border-radius: 15px;
@@ -4493,7 +4492,7 @@ button.map-submit {
   width: 31px;
   height: 31px;
   margin-top: -15px;
-  border: 3px solid #fff;
+  border: 3px solid #000;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
@@ -4513,8 +4512,8 @@ button.map-submit {
     top: 6px;
     width: 10px;
     height: 10px;
-    border-top: 3px solid #fff;
-    border-right: 3px solid #fff; }
+    border-top: 3px solid #000;
+    border-right: 3px solid #000; }
 
 .lightbox-prev {
   left: 20px; }
@@ -4539,10 +4538,10 @@ button.map-submit {
 .lightbox-close {
   position: absolute;
   z-index: 2;
-  top: -10px;
-  right: -5px;
-  width: 50px;
-  height: 50px;
+  top: 0;
+  right: 0;
+  width: 70px;
+  height: 70px;
   cursor: pointer; }
   .lightbox-close::after {
     content: '\00D7';
@@ -4550,7 +4549,7 @@ button.map-submit {
     position: absolute;
     z-index: 2;
     top: 18px;
-    left: 18px;
+    right: 18px;
     font-size: 36px;
     font-weight: bold; }
 

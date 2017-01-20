@@ -38,11 +38,9 @@ $(document).ready(function () {
         $('.fancybox-modal').fancybox({
             padding: 0,
             margin: 0,
-            fitToView: false,
             width: '100%',
             height: 'auto',
             autoSize: false,
-            scrolling: 'no',
             tpl: {
                 closeBtn: '<span class="lightbox-close"></span>',
                 next: '<span class="lightbox-next"></span>',
@@ -62,11 +60,9 @@ $(document).ready(function () {
         $fancySimple.fancybox({
             padding: 0,
             margin: 0,
-            fitToView: false,
             width: '100%',
             height: 'auto',
             autoSize: false,
-            scrolling: false,
             tpl: {
                 closeBtn: '<span class="lightbox-close"></span>',
                 next: '<span class="lightbox-next"></span>',
@@ -90,7 +86,6 @@ $(document).ready(function () {
             width: '100%',
             height: '100%',
             autoSize: true,
-            scrolling: false,
             tpl: {
                 closeBtn: '<span class="lightbox-close"></span>',
                 next: '<span class="lightbox-next"></span>',
@@ -105,16 +100,13 @@ $(document).ready(function () {
         });
 
         $fancyMenu.fancybox({
-            prevEffect: 'none',
-            nextEffect: 'none',
+            //prevEffect: 'fade',
+            //nextEffect: 'fade',
             padding: 0,
             margin: 0,
             width: '100%',
             height: 'auto',
             autoSize: false,
-            scrolling: false,
-            //autoHeight: true,
-            fitToView: false,
             loop: false,
             helpers: {
                 overlay: {
@@ -137,7 +129,7 @@ $(document).ready(function () {
                         $('.fancybox-overlay').one('click', closeFancyOnOverlay);
                     }, 2000);
 
-                    console.log($(current.href).has('video').length);
+                    //console.log($(current.href).has('video').length);
                     $(current.href).trigger('playVideo');
                 } else if(current.index === 0) {
                     $(document).trigger('popupOpened');
@@ -151,11 +143,9 @@ $(document).ready(function () {
         $fancyTest.fancybox({
             padding: 0,
             margin: 0,
-            fitToView: false,
             width: '100%',
             height: 'auto',
             autoSize: false,
-            scrolling: false,
             tpl: {
                 closeBtn: '<span class="lightbox-close"></span>',
                 next: '<span class="lightbox-next"></span>',
@@ -171,17 +161,16 @@ $(document).ready(function () {
         });
 
         /*success and error forms*/
+        /*prevent scroll*/
         $(document).on({
             'postSuccess': function (e) {
                 $.fancybox({
                     href: "#popupThanks",
                     padding: 0,
                     margin: 0,
-                    fitToView: false,
                     width: '100%',
                     height: 'auto',
                     autoSize: false,
-                    scrolling: 'no',
                     tpl: {
                         closeBtn: '<span class="lightbox-close"></span>',
                         next: '<span class="lightbox-next"></span>',
@@ -200,11 +189,9 @@ $(document).ready(function () {
                     href: "#popupError",
                     padding: 0,
                     margin: 0,
-                    fitToView: false,
                     width: '100%',
                     height: 'auto',
                     autoSize: false,
-                    scrolling: 'no',
                     tpl: {
                         closeBtn: '<span class="lightbox-close"></span>',
                         next: '<span class="lightbox-next"></span>',
@@ -217,8 +204,15 @@ $(document).ready(function () {
                         $(document).trigger('popupClosed');
                     }
                 });
+            },
+            'popupOpened': function() {
+                $("body").css({'position':'fixed'});
+            },
+            'popupClosed': function() {
+                $("body").css({'position':''});
             }
         });
+
 
         function closeFancyOnOverlay(e) {
             var target = e.target;
