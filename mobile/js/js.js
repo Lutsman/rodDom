@@ -32,7 +32,7 @@ $(document).ready(function () {
     (function () {
         var $fancyMenu = $('[data-role="lightbox-menu"]');
         var $fancySimple = $('[data-role="lightbox"]');
-        var $fancyVideo = $('[data-role="lightbox-video"]');
+        var $fancyVideo = $('[data-role="lightbox-video-embed"]');
         var $fancyTest = $('[data-role="lightbox-test"]');
 
         $('.fancybox-modal').fancybox({
