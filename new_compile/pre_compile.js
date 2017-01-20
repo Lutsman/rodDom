@@ -7504,6 +7504,7 @@ wow.init();
 var styleLoaded = false;
 $('body').one('styleLoaded', function (e) {
     styleLoaded = true;
+    console.log('style loaded true');
 });
 
 $(document).ready(function () {
@@ -7515,9 +7516,10 @@ $(document).ready(function () {
 
         if (styleLoaded) {
             initOwl();
+            console.log('owl init');
         } else {
             $('body').one('styleLoaded', function (e) {
-                //console.log('owl init');
+                console.log('owl init');
                 initOwl();
             });
         }

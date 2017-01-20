@@ -195,8 +195,9 @@
 
     onloadCSS(styles, function () {
         document.body.dispatchEvent(styleLoadedEvent);
-        //.dir(styleLoadedEvent);
-        //console.log('style loaded');
+        document.body.classList.add('loaded');
+        console.dir(styleLoadedEvent);
+        console.log('style loaded');
     });
 
 
