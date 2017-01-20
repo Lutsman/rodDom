@@ -178,14 +178,14 @@
             }
         }
 
-    // commonjs
-    if( typeof exports !== "undefined" ){
-        exports.onloadCSS = onloadCSS;
-    }
-    else {
-        w.onloadCSS = onloadCSS;
-    }
-}( typeof global !== "undefined" ? global : this ));
+        // commonjs
+        if( typeof exports !== "undefined" ){
+            exports.onloadCSS = onloadCSS;
+        }
+        else {
+            w.onloadCSS = onloadCSS;
+        }
+    }( typeof global !== "undefined" ? global : this ));
 }).call(window);
 
 

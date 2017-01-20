@@ -7503,9 +7503,6 @@ wow.init();
 /*'use strict';*/
 var styleLoaded = false;
 
-
-
-
 document.body.addEventListener('styleLoaded', function(e) {
     styleLoaded = true;
     console.log('style loaded true');
@@ -7534,7 +7531,7 @@ $(document).ready(function () {
         function initOwl() {
             setTimeout(function () {
                 $sliderSimple.each(function () {
-                    $(this)..owlCarousel({
+                    $(this).owlCarousel({
                         items: 1,
                         autoplay: false,
                         autoplayTimeout: 4000,
@@ -7724,7 +7721,6 @@ $(document).ready(function () {
             padding: 0,
             loop: false,
             fitToView: false,
-            scrolling: 'no',
             tpl: {
                 closeBtn: '<span class="lightbox-close"></span>',
                 next: '<span class="lightbox-next"></span>',

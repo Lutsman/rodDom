@@ -1,29 +1,60 @@
-'use strict';
+/*custom script*/
+/*'use strict';*/
+var styleLoaded = false;
+
+
+
+
+document.body.addEventListener('styleLoaded', function(e) {
+    styleLoaded = true;
+    console.log('style loaded true');
+});
+
 
 $(document).ready(function () {
+
     /*owl carusel*/
     (function () {
         var $sliderSimple = $('[data-role="slider"]');
 
-        $sliderSimple.owlCarousel({
-            items: 1,
-            autoplay: false,
-            autoplayTimeout: 4000,
-            navigation: true, // Show next and prev buttons
-            slideSpeed: 300,
-            paginationSpeed: 300,
-            nav: true,
-            dots: false,
-            dotsEach: true,
-            navText: false,
-            loop: true,
-            autoWidth: false,
-            responsive: false,
-            itemsScaleUp: false,
-            onTranslated: function () {
-                playVideo($('.owl-loaded .owl-item.active'));
-            }
-        });
+
+        if (styleLoaded) {
+            console.log('owl init');
+            initOwl();
+        } else {
+            document.body.addEventListener('styleLoaded', function(e) {
+                console.log('owl init');
+                initOwl();
+            });
+        }
+
+        function initOwl() {
+            setTimeout(function () {
+                $sliderSimple.each(function () {
+                    $(this).owlCarousel({
+                        items: 1,
+                        autoplay: false,
+                        autoplayTimeout: 4000,
+                        navigation: true, // Show next and prev buttons
+                        slideSpeed: 300,
+                        paginationSpeed: 300,
+                        nav: true,
+                        dots: false,
+                        dotsEach: true,
+                        navText: false,
+                        loop: true,
+                        autoWidth: false,
+                        responsive: false,
+                        itemsScaleUp: false,
+                        onTranslated: function () {
+                            playVideo($('.owl-loaded .owl-item.active'));
+                        }
+                    });
+                });
+            }, 5000);
+        }
+
+
 
         function playVideo (parent) {
             var $video = $(parent).find('video');
@@ -38,6 +69,35 @@ $(document).ready(function () {
                 });
             }, 1000);
         }
+
+
+        /*$(window).on('load', function () {
+         $sliderSimple.owlCarousel({
+         items: 1,
+         autoplay: false,
+         autoplayTimeout: 4000,
+         navigation: true, // Show next and prev buttons
+         slideSpeed: 300,
+         paginationSpeed: 300,
+         nav: true,
+         dots: false,
+         dotsEach: true,
+         navText: false,
+         loop: true,
+         autoWidth: false,
+         responsive: false,
+         itemsScaleUp: false,
+         onTranslated: function () {
+         playVideo($('.owl-loaded .owl-item.active'));
+         }
+         });
+         console.log('owl refresh');
+         });
+
+         $(window).on('refreshOwl', function () {
+         $sliderSimple.trigger('refresh.owl.carousel');
+         console.log('owl refresh');
+         });*/
 
         /*$("#owl1").owlCarousel({
          items: 1,
@@ -130,6 +190,8 @@ $(document).ready(function () {
             padding: 0,
             //autoHeight: true,
             fitToView: false,
+            height: 'auto',
+            autoSize: false,
             loop: false,
             helpers: {
                 overlay: {
@@ -161,7 +223,8 @@ $(document).ready(function () {
             padding: 0,
             loop: false,
             fitToView: false,
-            scrolling: 'no',
+            height: 'auto',
+            autoSize: false,
             tpl: {
                 closeBtn: '<span class="lightbox-close"></span>',
                 next: '<span class="lightbox-next"></span>',
@@ -325,11 +388,11 @@ $(document).ready(function () {
             type: 'post',
             /*beforeSubmit: function () {
              //$.fancybox.close();
-                console.dir(arguments);
+             console.dir(arguments);
              },*/
             /*beforeSend: function () {
-                console.dir(this);
-            },*/
+             console.dir(this);
+             },*/
             success: function () {
                 $.fancybox({
                     href: "#popupThanks",
@@ -648,6 +711,7 @@ $(document).ready(function () {
                         href: "#popupError",
                         padding: 0,
                         loop: false,
+                        f
                         tpl: {
                             closeBtn: '<span class="lightbox-close"></span>',
                             next: '<span class="lightbox-next"></span>',
@@ -746,8 +810,3 @@ function baseName(str) {
         base = base.substring(0, base.lastIndexOf("."));
     return base;
 }
-
-
-
-
-
