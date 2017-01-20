@@ -123,9 +123,81 @@
             }
         }
     }( this ));
+
+    /*! onloadCSS: adds onload support for asynchronous stylesheets loaded with loadCSS. [c]2016 @zachleat, Filament Group, Inc. Licensed MIT */
+    /* global navigator */
+    /* exported onloadCSS */
+
+    (function (w) {
+        function onloadCSS( ss, callback ) {
+            var called;
+            function newcb(){
+                if( !called && callback ){
+                    called = true;
+                    callback.call( ss );
+                }
+            }
+            if( ss.addEventListener ){
+                ss.addEventListener( "load", newcb );
+            }
+            if( ss.attachEvent ){
+                ss.attachEvent( "onload", newcb );
+            }
+
+            // This code is for browsers that don’t support onload
+            // No support for onload (it'll bind but never fire):
+            //	* Android 4.3 (Samsung Galaxy S4, Browserstack)
+            //	* Android 4.2 Browser (Samsung Galaxy SIII Mini GT-I8200L)
+            //	* Android 2.3 (Pantech Burst P9070)
+
+            // Weak inference targets Android < 4.4
+            if( "isApplicationInstalled" in navigator && "onloadcssdefined" in ss ) {
+                ss.onloadcssdefined( newcb );
+            }
+        }
+
+    // commonjs
+    if( typeof exports !== "undefined" ){
+        exports.onloadCSS = onloadCSS;
+    }
+    else {
+        w.onloadCSS = onloadCSS;
+    }
+}( typeof global !== "undefined" ? global : this ));
 }).call(window);
+
+/*custom event polyfil*/
+(function () {
+    try {
+        new CustomEvent("IE has CustomEvent, but doesn't support constructor");
+    } catch (e) {
+
+        window.CustomEvent = function(event, params) {
+            var evt;
+            params = params || {
+                    bubbles: false,
+                    cancelable: false,
+                    detail: undefined
+                };
+            evt = document.createEvent("CustomEvent");
+            evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail);
+            return evt;
+        };
+
+        CustomEvent.prototype = Object.create(window.Event.prototype);
+    }
+})();
 
 /*loading css*/
 (function () {
+    var styleLoadedEvent = new CustomEvent('styleLoaded');
     var styles = loadCSS('new_compile/compile.css', document.documentElement.querySelector('style'));
+
+    onloadCSS(styles, function () {
+        document.body.dispatchEvent(styleLoadedEvent);
+        //.dir(styleLoadedEvent);
+        //console.log('style loaded');
+    });
+
+
 })();
