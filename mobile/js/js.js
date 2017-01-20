@@ -41,8 +41,8 @@ $(document).ready(function () {
             fitToView: false,
             width: '100%',
             height: 'auto',
-            autoSize: true,
-            scrolling: false,
+            autoSize: false,
+            scrolling: 'no',
             tpl: {
                 closeBtn: '<span class="lightbox-close"></span>',
                 next: '<span class="lightbox-next"></span>',
