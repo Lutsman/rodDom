@@ -1397,15 +1397,25 @@
 
 
 			/*swipe hack*/
-			$(F.outer).on('swipeleft', function() {
-				if(!F.current.arrows) return;
+			/*$(F.outer).on('swipeleft', function() {
+				//if(!F.current.arrows) return;
 
 				F.next();
 			});
 			$(F.outer).on('swiperight', function() {
-				if(!F.current.arrows) return;
+				//if(!F.current.arrows) return;
 
 				F.prev();
+			});*/
+
+			$(F.outer).swipe({
+				swipe : function(event, direction) {
+					if (direction === 'left') {
+						F.next(direction);
+					} else if (direction === 'right') {
+						F.prev(direction);
+					}
+				}
 			});
 		},
 

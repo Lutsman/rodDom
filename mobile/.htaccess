@@ -1,0 +1,84 @@
+php_flag default_charset cp1251
+php_flag session.use_trans_sid off
+php_flag display_errors off
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault A86400    
+  ExpiresByType image/x-icon A2592000
+  ExpiresByType application/x-javascript A2592000
+  ExpiresByType text/css A2592000
+  ExpiresByType image/gif A604800
+  ExpiresByType image/png A604800
+  ExpiresByType image/jpeg A604800
+  ExpiresByType text/plain A604800
+  ExpiresByType application/x-shockwave-flash A604800
+  ExpiresByType video/x-flv A604800
+  ExpiresByType application/pdf A604800
+  ExpiresByType text/html A900
+</IfModule>
+
+<ifModule mod_headers.c>
+    #кэшировать html и htm файлы на один день
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "max-age=43200"
+    </FilesMatch>
+    #кэшировать css, javascript и текстовые файлы на одну неделю
+    <FilesMatch "\.(js|css|txt|ttf|eot)$">
+        Header set Cache-Control "max-age=604800"
+    </FilesMatch>
+    #кэшировать флэш и изображения на месяц
+    <FilesMatch "\.(flv|swf|ico|gif|jpg|jpeg|png)$">
+        Header set Cache-Control "max-age=2592000"
+    </FilesMatch>
+    #отключить кэширование
+    <FilesMatch "\.(pl|php|cgi|spl|scgi|fcgi)$">
+        Header unset Cache-Control
+    </FilesMatch>
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE text/css
+  Addtype font/truetype .ttf
+  AddOutputFilterByType DEFLATE font/truetype
+  <IfModule mod_setenvif.c>
+    BrowserMatch ^Mozilla/4 gzip-only-text/html
+    BrowserMatch ^Mozilla/4\.0[678] no-gzip
+    BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+  </IfModule>
+</IfModule>
+
+AddDefaultCharset windows-1251
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{HTTP_HOST} ^www.roddom-for-men.ru
+RewriteRule (.*) http://roddom-for-men.ru/$1 [R=301,L]
+
+RewriteRule ^(.*)$ $1 [NS,E=no-gzip:1,E=dont-vary:1]
+
+RewriteCond %{REQUEST_URI} !^/dump
+RewriteCond %{REQUEST_URI} !^/compile
+RewriteCond %{REQUEST_URI} !^/tiny_mce
+RewriteCond %{REQUEST_URI} !^/kcaptcha
+RewriteCond %{REQUEST_URI} !^/mainAjax
+RewriteCond %{REQUEST_URI} !^/_cache
+RewriteCond %{REQUEST_URI} !^/_cron
+RewriteCond %{REQUEST_URI} !^/_test
+RewriteCond %{REQUEST_URI} !^/js
+RewriteCond %{REQUEST_URI} !^/css
+RewriteCond %{REQUEST_URI} !^/font
+RewriteCond %{REQUEST_URI} !^/cron.
+RewriteCond %{REQUEST_URI} !^/mobile
+RewriteCond %{REQUEST_URI} !^/tablet
+RewriteCond %{REQUEST_URI} !^/loadslide.php
+RewriteCond %{REQUEST_URI} !^/mailer.php
+RewriteCond %{REQUEST_URI} !^/!back
+RewriteCond %{REQUEST_URI} !\.(gif|jpg|jpeg|JPG|png|css|bmp|ico|js|gz|txt|text|woff|ttf|svg|html)
+RewriteRule ^.*$ index.php [L]
+
+RewriteRule ^/xml/googlexml2.xml$ /xml/googlexml2.php [L]
+RewriteRule ^/xml/google/googlexml3.xml$ /xml/google/googlexml3.php [L]
