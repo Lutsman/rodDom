@@ -3,12 +3,15 @@
 @import 'local';
 @import 'owl.carousel';
 @import 'animate';
+@import 'jquery.fancybox';
+@import 'mixin';
 
 body, h1, h2, h3, h4, h5, h6, p {
     font-family: 'bebasneue_regular', sans-serif;
     -webkit-text-size-adjust: none;
-    -webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased
 }
+
 
 .globalWrapper {
     max-width: 1920px;
@@ -20,69 +23,69 @@ body, h1, h2, h3, h4, h5, h6, p {
     box-shadow: 0 0 10px 0 black;
     overflow: hidden;
     height: auto;
-    background: #fff;
+    background: #fff
 }
 
 .resize {
     position: relative;
+    z-index: 2;
     width: 940px;
-    margin: 0 auto;
+    margin: 0 auto
 }
 
 .cf:after, .cf:before {
     content: '';
-    display: table;
+    display: table
 }
 
 .cf:after {
-    clear: both;
+    clear: both
 }
 
 .cf {
-    zoom: 1;
+    zoom: 1
 }
 
-form input[type=text].error,
-textarea.error {
+form input[type=text].error, textarea.error {
     border-width: 1px !important;
     border-color: #dd2a1b !important;
-    border-style: solid !important;
+    border-style: solid !important
 }
 
 label.error {
-    display: none !important;
+    display: none !important
 }
 
-input[type=text]::-webkit-input-placeholder, text-area::-webkit-input-placeholder {
-    color: #595959;
+input[type=text]::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    color: #595959
 }
 
-input[type=text]::-moz-placeholder, text-area::-webkit-input-placeholder {
-    color: #595959;
+input[type=text]::-moz-placeholder, textarea::-webkit-input-placeholder {
+    color: #595959
 }
 
-input[type=text]:-moz-placeholder, text-area::-webkit-input-placeholder {
-    color: #595959;
+input[type=text]:-moz-placeholder, textarea::-webkit-input-placeholder {
+    color: #595959
 }
 
-input[type=text]:-ms-input-placeholder, text-area::-webkit-input-placeholder {
-    color: #595959;
+input[type=text]:-ms-input-placeholder, textarea::-webkit-input-placeholder {
+    color: #595959
 }
 
-textarea[type=text]::-webkit-input-placeholder, text-area::-webkit-input-placeholder {
-    color: #595959;
+textarea[type=text]::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    color: #595959
 }
 
-textarea[type=text]::-moz-placeholder, text-area::-webkit-input-placeholder {
-    color: #595959;
+textarea[type=text]::-moz-placeholder, textarea::-webkit-input-placeholder {
+    color: #595959
 }
 
-textarea[type=text]:-moz-placeholder, text-area::-webkit-input-placeholder {
-    color: #595959;
+textarea[type=text]:-moz-placeholder, textarea::-webkit-input-placeholder {
+    color: #595959
 }
 
-textarea[type=text]:-ms-input-placeholder, text-area::-webkit-input-placeholder {
-    color: #595959;
+textarea[type=text]:-ms-input-placeholder, textarea::-webkit-input-placeholder {
+    color: #595959
 }
 
 textarea::-webkit-input-placeholder {
@@ -91,7 +94,7 @@ textarea::-webkit-input-placeholder {
     -ms-transition: color 0.4s ease;
     -o-transition: color 0.4s ease;
     transition: color 0.4s ease;
-    color: #595959;
+    color: #595959
 }
 
 textarea::-moz-placeholder {
@@ -100,7 +103,7 @@ textarea::-moz-placeholder {
     -ms-transition: color 0.4s ease;
     -o-transition: color 0.4s ease;
     transition: color 0.4s ease;
-    color: #595959;
+    color: #595959
 }
 
 textarea:-moz-placeholder {
@@ -109,7 +112,7 @@ textarea:-moz-placeholder {
     -ms-transition: color 0.4s ease;
     -o-transition: color 0.4s ease;
     transition: color 0.4s ease;
-    color: #595959;
+    color: #595959
 }
 
 textarea:-ms-input-placeholder {
@@ -118,7 +121,7 @@ textarea:-ms-input-placeholder {
     -ms-transition: color 0.4s ease;
     -o-transition: color 0.4s ease;
     transition: color 0.4s ease;
-    color: #595959;
+    color: #595959
 }
 
 textarea:focus::-webkit-input-placeholder {
@@ -127,7 +130,7 @@ textarea:focus::-webkit-input-placeholder {
     -ms-transition: color 0.4s ease;
     -o-transition: color 0.4s ease;
     transition: color 0.4s ease;
-    color: transparent;
+    color: transparent
 }
 
 input::-webkit-input-placeholder {
@@ -136,7 +139,7 @@ input::-webkit-input-placeholder {
     -ms-transition: color 0.4s ease;
     -o-transition: color 0.4s ease;
     transition: color 0.4s ease;
-    color: #595959;
+    color: #595959
 }
 
 input::-moz-placeholder {
@@ -145,7 +148,7 @@ input::-moz-placeholder {
     -ms-transition: color 0.4s ease;
     -o-transition: color 0.4s ease;
     transition: color 0.4s ease;
-    color: #595959;
+    color: #595959
 }
 
 input:-moz-placeholder {
@@ -154,7 +157,7 @@ input:-moz-placeholder {
     -ms-transition: color 0.4s ease;
     -o-transition: color 0.4s ease;
     transition: color 0.4s ease;
-    color: #595959;
+    color: #595959
 }
 
 input:-ms-input-placeholder {
@@ -163,7 +166,7 @@ input:-ms-input-placeholder {
     -ms-transition: color 0.4s ease;
     -o-transition: color 0.4s ease;
     transition: color 0.4s ease;
-    color: #595959;
+    color: #595959
 }
 
 input:focus::-webkit-input-placeholder {
@@ -172,7 +175,7 @@ input:focus::-webkit-input-placeholder {
     -ms-transition: color 0.4s ease;
     -o-transition: color 0.4s ease;
     transition: color 0.4s ease;
-    color: transparent;
+    color: transparent
 }
 
 input:focus::-moz-placeholder {
@@ -181,7 +184,7 @@ input:focus::-moz-placeholder {
     -ms-transition: color 0.4s ease;
     -o-transition: color 0.4s ease;
     transition: color 0.4s ease;
-    color: transparent;
+    color: transparent
 }
 
 input:focus:-moz-placeholder {
@@ -190,7 +193,7 @@ input:focus:-moz-placeholder {
     -ms-transition: color 0.4s ease;
     -o-transition: color 0.4s ease;
     transition: color 0.4s ease;
-    color: transparent;
+    color: transparent
 }
 
 input:focus:-ms-input-placeholder {
@@ -199,19 +202,19 @@ input:focus:-ms-input-placeholder {
     -ms-transition: color 0.4s ease;
     -o-transition: color 0.4s ease;
     transition: color 0.4s ease;
-    color: transparent;
+    color: transparent
 }
 
 .fll {
-    float: left;
+    float: left
 }
 
 .flr {
-    float: right;
+    float: right
 }
 
 *:focus {
-    outline: none;
+    outline: none
 }
 
 input[type=text]:not(#uptocall-phone) {
@@ -233,13 +236,13 @@ input[type=text]:not(#uptocall-phone) {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    -o-box-sizing: border-box;
+    -o-box-sizing: border-box
 }
 
-input[type=submit], a.btn_all {
+input[type=submit], a.btn_all, button.map-submit {
     width: 260px;
     height: 60px;
-    line-height: 65px;
+    line-height: 60px;
     text-align: center;
     display: block;
     border: none;
@@ -258,23 +261,28 @@ input[type=submit], a.btn_all {
     border-radius: 7px;
     -webkit-border-radius: 7px;
     -moz-border-radius: 7px;
-    -o-border-radius: 7px;
+    -o-border-radius: 7px
 }
 
-input[type=submit]:hover,
-a.btn_all:hover {
+input[type=submit]:hover, a.btn_all:hover, button.map-submit:hover {
     text-decoration: none;
     background: rgba(255, 192, 0, 0.9);
     color: #333;
-    box-shadow: 0 -3px #8A6802 inset;
+    box-shadow: 0 -3px #8A6802 inset
 }
 
-input[type=submit]:active,
-a.btn_all:active {
+input[type=submit]:active, a.btn_all:active, button.map-submit:active {
     text-decoration: none;
     background: rgba(255, 192, 0, 0.9);
     color: #333;
-    box-shadow: 0 -3px #8A6802 inset;
+    box-shadow: 0 -3px #8A6802 inset
+}
+
+button.map-submit {
+    width: 100%;
+    height: 80px;
+    line-height: 30px;
+    font-size: 23px;
 }
 
 .trans {
@@ -282,203 +290,212 @@ a.btn_all:active {
     -moz-transition: all 0.4s ease;
     -ms-transition: all 0.4s ease;
     -o-transition: all 0.4s ease;
-    transition: all 0.4s ease;
+    transition: all 0.4s ease
 }
 
 .txt_12 {
-    font-size: 12px;
+    font-size: 12px
 }
 
 .txt_14 {
-    font-size: 14px;
+    font-size: 14px
 }
 
 .txt_16 {
-    font-size: 16px;
+    font-size: 16px
 }
 
 .txt_18 {
-    font-size: 18px;
+    font-size: 18px
 }
 
 .txt_20 {
-    font-size: 20px;
+    font-size: 20px
 }
 
 .txt_22 {
-    font-size: 22px;
+    font-size: 22px
 }
 
 .txt_24 {
-    font-size: 24px;
+    font-size: 24px
 }
 
 .txt_26 {
-    font-size: 26px;
+    font-size: 26px
 }
 
 .txt_28 {
-    font-size: 28px;
+    font-size: 28px
 }
 
 .txt_30 {
-    font-size: 30px;
+    font-size: 30px
 }
 
 .txt_32 {
-    font-size: 32px;
+    font-size: 32px
 }
 
 .txt_34 {
-    font-size: 34px;
+    font-size: 34px
 }
 
 .txt_36 {
-    font-size: 36px;
+    font-size: 36px
 }
 
 .txt_38 {
-    font-size: 38px;
+    font-size: 38px
 }
 
 .txt_40 {
-    font-size: 40px;
+    font-size: 40px
 }
 
 .txt_42 {
-    font-size: 42px;
+    font-size: 42px
 }
 
 .txt_44 {
-    font-size: 44px;
+    font-size: 44px
 }
 
 .txt_46 {
-    font-size: 46px;
+    font-size: 46px
 }
 
 .txt_48 {
-    font-size: 48px;
+    font-size: 48px
 }
 
 .txt_50 {
-    font-size: 50px;
+    font-size: 50px
 }
 
 .txt_60 {
-    font-size: 60px;
+    font-size: 60px
 }
 
 .txt_56 {
-    font-size: 56px;
+    font-size: 56px
+}
+
+.txt_64 {
+    font-size: 64px
 }
 
 .txt_74 {
-    font-size: 74px;
+    font-size: 74px
+}
+
+.txt_82 {
+    font-size: 82px;
 }
 
 .txt_86 {
-    font-size: 70px;
+    font-size: 70px
 }
 
 .txt_98 {
-    font-size: 98px;
+    font-size: 98px
 }
 
 .txt_100 {
-    font-size: 100px;
+    font-size: 100px
 }
 
 .text_bebascyr {
-    font-family: 'bebas_neue_cyrillicregular';
+    font-family: 'bebas_neue_cyrillicregular'
 }
 
 .text_sansbold {
-    font-family: 'open_sansbold';
+    font-family: 'open_sansbold'
 }
 
 .text_bebasbook {
-    font-family: 'bebasneue_book';
+    font-family: 'bebasneue_book'
 }
 
 .text_bebaslight {
-    font-family: 'bebasneue_light';
+    font-family: 'bebasneue_light'
 }
 
 .text_bebasreg {
-    font-family: 'bebasneue_regular';
+    font-family: 'bebasneue_regular'
 }
 
 .text_sanslight1 {
-    font-family: 'opensans-light_1';
+    font-family: 'opensans-light_1'
 }
 
 .text_sansreg {
-    font-family: 'opensans-regular_0';
+    font-family: 'opensans-regular_0'
 }
 
 .color33 {
-    color: #333333;
+    color: #333333
 }
 
 .black {
-    color: #000;
+    color: #000
 }
 
 .darkblue {
-    color: #18354c;
+    color: #18354c
 }
 
 .yellow {
-    color: #ffc000;
+    color: #ffc000
 }
 
 .white {
-    color: #fff;
+    color: #fff
 }
 
 .red {
-    color: #e52b00;
+    color: #e52b00
 }
 
 .grey {
-    color: #8c8c8c;
+    color: #8c8c8c
 }
 
 .ttu {
-    text-transform: uppercase;
+    text-transform: uppercase
 }
 
 .tac {
-    text-align: center;
+    text-align: center
 }
 
 .tac li {
     display: inline;
     display: inline-block;
+    vertical-align: top;
     zoom: 1;
-    text-align: center;
+    text-align: center
 }
 
 .bbox {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    -o-box-sizing: border-box;
+    -o-box-sizing: border-box
 }
 
 .head {
     font-size: 86px;
     font-family: 'bebasneue_regular';
-    margin: 70px auto 35;
+    //margin: 70px auto 35;
     text-align: center;
-    text-transform: uppercase;
+    text-transform: uppercase
 }
 
 .popup_ty {
     padding: 50px;
     width: auto;
-    min-width: 500px;
+    min-width: 500px
 }
 
 .popup {
@@ -493,13 +510,13 @@ a.btn_all:active {
     border-radius: 15px;
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
-    -o-border-radius: 15px;
+    -o-border-radius: 15px
 }
 
 .popup h4 {
     margin-top: 25px;
     line-height: 1.2;
-    margin-bottom: 30px;
+    margin-bottom: 30px
 }
 
 .popup form p {
@@ -508,7 +525,7 @@ a.btn_all:active {
     color: #fff;
     font-family: 'opensans-light_1';
     font-size: 15px;
-    margin-left: 48px;
+    margin-left: 48px
 }
 
 .popup form input {
@@ -517,7 +534,7 @@ a.btn_all:active {
     height: 60px;
     line-height: 60px;
     border-color: #000;
-    color: #333;
+    color: #333
 }
 
 .popup form input[type=submit] {
@@ -527,33 +544,34 @@ a.btn_all:active {
     border: none;
     color: #fff;
     text-indent: 0;
-    margin-top: 20px;
+    margin-top: 20px
 }
 
 .popup h3 {
-    line-height: 1.2;
+    line-height: 1.2
 }
 
 .popup form input[type=text] {
     background-image: url(../images/sprite.png);
     background-repeat: no-repeat;
-    background-position: 15px 20px;
+    background-position: 15px 20px
 }
 
 .header {
-    position: absolute;
+    position: fixed;
+    z-index: 1000;
     width: 1920px;
     left: 50%;
     margin-left: -960px;
-    background: transparent;
+    background: transparent
 }
 
 .top {
-    padding: 17px 0;
+    padding: 17px 0
 }
 
 .top h1 {
-    margin-top: 18px;
+    margin-top: 18px
 }
 
 .top .flr a.bbox {
@@ -573,42 +591,61 @@ a.btn_all:active {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -o-border-radius: 5px;
-    margin-top: -5px;
+    margin-top: -5px
 }
 
 .top .flr a.bbox:hover {
     text-decoration: none;
     background: rgba(255, 192, 0, 0.9);
-    color: #333;
+    color: #333
 }
 
 .top .flr .text {
     float: left;
-    text-align: right;
+    text-align: right
 }
 
 .top .flr .text p {
     line-height: 1.1;
-    margin-right: 15px;
+    margin-right: 15px
 }
 
 .bottom-menu {
-    background: rgba(0, 0, 0, .9);
+    background: rgba(0, 0, 0, .9)
 }
 
 .bottom-menu ul li a {
     display: block;
-    font-family: 'opensans-light_1';
+    font-family: 'bebasneue_regular', sans-serif;
     color: #fff;
     text-decoration: none;
-    padding: 12px;
-    font-size: 13px;
+    padding: 21px 20px;
+    font-size: 25px;
+    line-height: 28px;
     text-transform: uppercase;
-    position: relative;
+    position: relative
+}
+
+.bottom-menu ul .double-string a {
+    text-decoration: underline;
+    padding: 0;
+    text-transform: none;
+
+}
+.double-string {
+    padding: 12px;
+}
+.double-string p {
+    font-family: 'opensans-light_1';
+    color: #fff;
 }
 
 .bottom-menu ul li a:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.2)
+}
+.bottom-menu ul .double-string  a:hover {
+    text-decoration: none;
+    background: none;
 }
 
 .bottom-menu ul li a:hover span {
@@ -618,30 +655,29 @@ a.btn_all:active {
     border-bottom: 1px dashed #fff;
     bottom: 7px;
     left: 50%;
-    margin-left: -45%;
+    margin-left: -45%
 }
 
-.bottom-menu.active {
-    position: fixed;
-    top: 0;
-    width: 1920px;
-    left: 50%;
-    margin-left: -960px;
-    z-index: 1000;
-}
 
 .firstscreen {
-    background: url(../images/back1.jpg) center center no-repeat;
-    padding: 200px 0 0;
+    position: relative;
+    z-index: 2;
+    height: 1190px;
+    background: url(../images/back1.jpg) center top no-repeat;
+    padding: 190px 0 0;
+    /*   background-size: cover;*/
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .firstscreen .resize h1 {
-    text-align: center;
+    text-align: center
 }
 
 .firstscreen .resize h2 {
     margin-top: 40px;
-    text-align: center;
+    text-align: center
 }
 
 .firstscreen .resize form {
@@ -652,10 +688,10 @@ a.btn_all:active {
     -moz-border-radius: 7px;
     -o-border-radius: 7px;
     background: rgba(0, 0, 0, 0.8);
-    margin-top: 65px;
+    margin-top: 190px;
     padding-top: 45px;
     text-align: center;
-    padding: 30px 30px 40px;
+    padding: 30px 30px 40px
 }
 
 .firstscreen .resize form p {
@@ -663,36 +699,49 @@ a.btn_all:active {
     text-align: left;
     color: #fff;
     font-family: 'opensans-light_1';
-    font-size: 15px;
+    font-size: 15px
 }
 
 .firstscreen .resize form input {
     margin-top: 7px;
-    width: 280px;
+    width: 280px
 }
 
 .firstscreen .resize form input[type=text] {
     background-image: url(../images/sprite.png);
     background-repeat: no-repeat;
-    background-position: 15px 10px;
+    background-position: 15px 10px
 }
 
 .firstscreen .resize form input[type=submit] {
     margin-top: 23px;
     padding: 0;
-    -webkit-appearance: none;
+    -webkit-appearance: none
 }
 
 .firstscreen .resize ul {
-    margin-top: 75px;
+    margin-top: 75px
 }
 
 .firstscreen .resize ul li {
     width: 220px;
-    height: 190px;
-    margin: 0px 5px;
+    height: 180px;
+    margin: 0 5px;
     vertical-align: middle;
     text-align: center;
+}
+
+.firstscreen .resize ul li a {
+    display: block;
+    width: 220px;
+    height: 180px;
+    padding-top: 20px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.firstscreen .resize ul li a:hover {
+    text-decoration: none;
 }
 
 .firstscreen .resize ul li h3 {
@@ -700,7 +749,7 @@ a.btn_all:active {
     font-size: 28px;
     line-height: 1.2;
     color: #fff;
-    font-family: 'bebasneue_regular';
+    font-family: 'bebasneue_regular'
 }
 
 .firstscreen .resize ul li p {
@@ -708,41 +757,40 @@ a.btn_all:active {
     color: #b3b3b3;
     line-height: 1.2;
     font-size: 16px;
-    font-family: 'opensans-light_1';
+    font-family: 'opensans-light_1'
 }
 
 .video {
     padding: 30px 0 30px;
-    margin-top: -1px;
+    margin-top: -1px
 }
 
 .details {
     background: url(../images/back2.jpg) top center no-repeat;
-    padding: 30px 0 30px;
-    margin-top: -1px;
+    padding: 0;
+    margin-top: -1px
 }
 
 .details p {
-    text-align: center;
+    text-align: center
+}
+
+.details .resize {
+    width: 100%;
 }
 
 .scenario {
+    position: relative;
     background: url(../images/back2.jpg) center center no-repeat;
-    padding: 90px 0 60px;
-    margin-top: -1px;
+    margin-top: -1px
 }
 
-.scenario h2,
-.scenario h3 {
-    text-align: center;
+.scenario h2, .scenario h3 {
+    text-align: center
 }
 
 .scenario .resize h3 {
-    margin-top: 65px;
-}
-
-.scenario .resize form {
-    margin-top: 65px;
+    margin-top: 65px
 }
 
 .scenario .resize form input {
@@ -754,7 +802,6 @@ a.btn_all:active {
     border-radius: 4px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
-    -o-border-radius: 4px;
 }
 
 .scenario .resize form input[type=text] {
@@ -767,13 +814,13 @@ a.btn_all:active {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     -o-box-sizing: border-box;
-    border: none;
+    border: none
 }
 
 .scenario .resize form input[type=submit] {
     padding: 0;
     -webkit-appearance: none;
-    line-height: 75px;
+    line-height: 75px
 }
 
 .price {
@@ -783,10 +830,23 @@ a.btn_all:active {
 
 .price h2 {
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: 80px
+}
+.price a:hover {
+    text-decoration: none;
+}
+.price .resize .block .btn-box:hover {
+    background: rgba(255, 192, 0, 0.9);
+    color: #333;
+    border-bottom: none;
+}
+
+.price .resize .block a {
+    display: block;
 }
 
 .price .resize .block {
+    display: block;
     width: 235px;
     background: url(../images/bl1-1.png);
     box-shadow: 0px 3px 11px 0px rgba(0, 0, 0, 0.2);
@@ -800,76 +860,92 @@ a.btn_all:active {
     font-size: 30px;
     font-family: 'bebasneue_light';
     color: #fff;
-    text-align: center;
+    text-align: center
 }
 
 .price .resize .block .cf {
     width: 235px;
-    margin-top: 40px;
+    margin-top: 40px
 }
 
 .price .resize .block h3 span {
     font-size: 40px;
-    font-family: 'bebasneue_regular';
+    font-family: 'bebasneue_regular'
 }
 
 .price .resize .bl1 {
     height: 626px;
-    background: url(../images/bl1-1.png);
+    background: url(../images/bl1-1.png)
 }
 
 .price .resize .bl2 {
     height: 696px;
-    background: url(../images/bl1-2.png);
+    background: url(../images/bl1-2.png)
 }
 
 .price .resize .bl3 {
     height: 786px;
     background: url(../images/bl1-3.png);
     margin-top: -10px;
-    padding-top: 10px;
+    padding-top: 10px
 }
 
 .price .resize .bl3 .cf {
-    margin-top: 38px;
+    margin-top: 38px
 }
 
 .price .resize .bl4 {
     height: 866px;
-    background: url(../images/bl1-4.png);
+    background: url(../images/bl1-4.png)
 }
 
 .price .resize .block ul li {
+    position: relative;
+    z-index: 2;
     padding-left: 27px;
-    background-image: url(../images/sprite.png);
-    background-repeat: no-repeat;
-    background-position: 0 -350px;
     font-family: 'opensans-light_1';
     font-size: 16px;
     color: #333333;
     min-height: 25px;
     line-height: 1.3;
-    margin-top: 16px;
+    margin-top: 16px
+}
+.price .resize .block ul li::before {
+    content: '+';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    font-size: 18px;
+    line-height: 18px;
+    text-align: center;
+    border: 1px solid #aaa;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .price .resize .bl3 ul li {
     color: #fff;
-    background-image: url(../images/sprite.png);
-    background-position: 0 -450px;
 }
 
 .price .resize .block .line {
     width: 30px;
     height: 5px;
     background: #ffc000;
-    margin-top: 70px;
+    margin-top: 70px
 }
 
 .price .resize .block h4 {
     color: #000;
     font-family: 'open_sansbold';
     font-size: 18px;
-    margin-top: 14px;
+    margin-top: 14px
 }
 
 .price .resize .block h5 {
@@ -878,12 +954,11 @@ a.btn_all:active {
     color: #000;
     font-family: 'bebasneue_regular';
     font-size: 28px;
-    margin-top: 20px;
+    margin-top: 20px
 }
 
-.price .resize .bl3 h4,
-.price .resize .bl3 h5 {
-    color: #fff;
+.price .resize .bl3 h4, .price .resize .bl3 h5 {
+    color: #fff
 }
 
 .price .resize .block p {
@@ -891,11 +966,11 @@ a.btn_all:active {
     color: #fff;
     text-align: center;
     margin-top: 28px;
-    font-size: 19px;
+    font-size: 19px
 }
 
 .price .resize .block p span {
-    text-decoration: line-through;
+    text-decoration: line-through
 }
 
 .price .resize .block h6 {
@@ -903,18 +978,24 @@ a.btn_all:active {
     text-align: center;
     color: #ffc000;
     font-family: 'bebasneue_regular';
-    margin: 25px 0;
+    margin: 10px 0;
+    padding-bottom: 10px;
+    line-height: 44px;
 }
 
-.price .resize .block a {
+.price .resize .block .btn-box {
     display: block;
     position: absolute;
     bottom: 20px;
     margin: 0 auto;
     width: 200px;
     height: 70px;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
     line-height: 1.2;
     padding: 8px;
+    background: #e52b00;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -923,44 +1004,44 @@ a.btn_all:active {
     border-bottom: 2px solid #901b00;
     box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.23);
     margin-left: 3px;
-}
-
-.price .resize .block a:hover {
-    border-bottom: none;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -o-border-radius: 7px;
+    border-radius: 7px;
 }
 
 .price .resize .bl4 p {
-    margin-top: 50px;
+    margin-top: 50px
 }
 
 .more360 {
-    padding: 25px 0;
+    padding: 50px 0;
     #background: url(../images/back4.jpg) center center no-repeat;
     text-align: center;
-    background-color: #F5F5F5;
+    background-color: #F5F5F5
 }
 
 .more360 .resize h2 {
-    line-height: 1.2;
+    line-height: 1.2
 }
 
 .more360 .resize .owl-carousel {
-    width: 780px;
-    height: 620px;
-    margin: 0 auto 70px;
-    position: relative;
+    width: 771px;
+    height: 610px;
+    margin: 20px auto;
+    position: relative
 }
 
 .more360 .resize .owl-carousel .item {
     width: 780px;
-    height: 620px;
+    height: 620px
 }
 
 .more360 .resize .owl-carousel .item .col {
     float: left;
     height: 620px;
     width: 250px;
-    margin: 0 5px;
+    margin: 0 5px
 }
 
 .more360 .resize .owl-carousel .item .col .block {
@@ -969,7 +1050,7 @@ a.btn_all:active {
     #height: 200px;
     margin-top: 10px;
     position: relative;
-    overflow: hidden;
+    overflow: hidden
 }
 
 .more360 .resize .owl-carousel .item .col .block img {
@@ -981,7 +1062,7 @@ a.btn_all:active {
     margin: auto;
     width: 236px;
     height: auto;
-    z-index: 1;
+    z-index: 1
 }
 
 .more360 .resize .owl-carousel .item .col .medium {
@@ -990,7 +1071,7 @@ a.btn_all:active {
     object-fit: cover;
     -webkit-object-fit: cover;
     -moz-object-fit: cover;
-    position: relative;
+    position: relative
 }
 
 .more360 .resize .owl-carousel .item .col .medium img {
@@ -998,7 +1079,7 @@ a.btn_all:active {
     width: 250px;
     object-fit: cover;
     -webkit-object-fit: cover;
-    -moz-object-fit: cover;
+    -moz-object-fit: cover
 }
 
 .more360 .resize .owl-carousel .item .col .block .shadow {
@@ -1006,149 +1087,81 @@ a.btn_all:active {
     height: 100%;
     background: rgba(0, 0, 0, 0.4);
     position: absolute;
-    z-index: 2;
+    z-index: 2
 }
 
 .more360 .resize .owl-carousel .item .col .block:hover .shadow {
-    top: 100%;
-}
-
-.more360 .resize .owl-carousel .owl-controls .owl-nav .owl-prev,
-.more360 .resize .owl-carousel .owl-controls .owl-nav .owl-next {
-    position: absolute;
-    top: 10px;
-    bottom: 0;
-    width: 45px;
-    background: #000;
-}
-
-.more360 .resize .owl-carousel .owl-controls .owl-nav .owl-next {
-    background-image: url(../images/sprite.png);
-    background-repeat: no-repeat;
-    background-position: -47px -870px;
-    right: -60px;
-}
-
-.more360 .resize .owl-carousel .owl-controls .owl-nav .owl-prev {
-    background-image: url(../images/sprite.png);
-    background-repeat: no-repeat;
-    background-position: 12px -870px;
-    left: -60px;
-}
-
-.more360 .resize .owl-carousel .owl-controls .owl-nav .owl-prev:hover,
-.more360 .resize .owl-carousel .owl-controls .owl-nav .owl-next:hover {
-    background-color: #ffc000;
-}
-
-.more360 .resize .owl-carousel .owl-controls .owl-dots {
-    width: 300px;
-    height: 35px;
-    margin: 40px auto 0;
-}
-
-.more360 .resize .owl-carousel .owl-controls .owl-dots .owl-dot {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -o-border-radius: 50%;
-    background: #ffc000;
-    float: left;
-    margin: 0 3px;
-    text-align: center;
-}
-
-.more360 .resize .owl-carousel .owl-controls .owl-dots .owl-dot.active {
-    background: #E52B00;
-}
-
-.more360 .resize .owl-carousel .owl-controls .owl-dots .owl-dot:hover {
-    background: #FF5E39;
-}
-
-.more360 .resize .owl-carousel .owl-controls .owl-dots .owl-dot:after {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -o-border-radius: 50%;
-    line-height: 39px;
-    left: 0;
-    top: 0;
-    font-size: 25px;
-    color: #fff;
-    font-family: 'bebasneue_regular';
+    top: 100%
 }
 
 .more360 .resize .owl-carousel .owl-controls .owl-dots .owl-dot:nth-child(1):after {
-    content: '1';
+    content: '1'
 }
 
 .more360 .resize .owl-carousel .owl-controls .owl-dots .owl-dot:nth-child(2):after {
-    content: '2';
+    content: '2'
 }
 
 .more360 .resize .owl-carousel .owl-controls .owl-dots .owl-dot:nth-child(3):after {
-    content: '3';
+    content: '3'
 }
 
 .more360 .resize .owl-carousel .owl-controls .owl-dots .owl-dot:nth-child(4):after {
-    content: '4';
+    content: '4'
 }
 
 .more360 .resize .owl-carousel .owl-controls .owl-dots .owl-dot:nth-child(5):after {
-    content: '5';
+    content: '5'
 }
 
 .more360 .resize .owl-carousel .owl-controls .owl-dots .owl-dot:nth-child(6):after {
-    content: '6';
+    content: '6'
 }
 
 .more360 .resize .owl-carousel .owl-controls .owl-dots .owl-dot:nth-child(7):after {
-    content: '7';
+    content: '7'
 }
 
 .aboutus {
     background: #fff;
-    padding: 100px 0 70px;
+    padding: 100px 0 70px
 }
 
 .aboutus .resize h2 {
     position: relative;
     text-align: center;
-    margin-bottom: 75px;
+    margin-bottom: 75px
 }
 
 .aboutus .resize h2:before {
     content: '';
-    width: 194px;
+    width: 154px;
     height: 12px;
     background: #dfdfdf;
     position: absolute;
     left: 0;
-    top: 0;
+    top: 0
 }
 
 .aboutus .resize h2:after {
     content: '';
-    width: 194px;
+    width: 154px;
     height: 12px;
     background: #dfdfdf;
     position: absolute;
     right: 0;
-    top: 0;
+    top: 0
 }
 
 .aboutus .resize .owl-carousel {
-    width: 940px;
-    position: relative;
+    width: 580px;
+    /*  height: 450px;*/
+    min-height: 530px;
+    margin: 0 auto;
 }
 
 .aboutus .resize .owl-carousel .item {
-    width: 940px;
+    width: 940px
 }
 
 .aboutus .resize .owl-carousel .item .review {
@@ -1157,87 +1170,87 @@ a.btn_all:active {
     margin: 10px;
     float: left;
     position: relative;
-    z-index: 1;
+    z-index: 1
 }
 
 .aboutus .resize .owl-carousel .item .rev1 {
     margin: 0 10px 10px 0;
-    background: url(../images/rev1.jpg) left top no-repeat;
+    background: url(../images/rev1.jpg) left top no-repeat
 }
 
 .aboutus .resize .owl-carousel .item .rev2 {
     margin: 0 0 10px 10px;
-    background: url(../images/rev2.jpg) right top no-repeat;
+    background: url(../images/rev2.jpg) right top no-repeat
 }
 
 .aboutus .resize .owl-carousel .item .rev3 {
     margin: 10px 10px 0 0;
-    background: url(../images/rev3.jpg) left bottom no-repeat;
+    background: url(../images/rev3.jpg) left bottom no-repeat
 }
 
 .aboutus .resize .owl-carousel .item .rev4 {
     margin: 10px 0 0 10px;
-    background: url(../images/rev4.jpg) right bottom no-repeat;
+    background: url(../images/rev4.jpg) right bottom no-repeat
 }
 
 .aboutus .resize .owl-carousel .item .rev5 {
     margin: 0 10px 10px 0;
-    background: url(../images/rev5.jpg) left top no-repeat;
+    background: url(../images/rev5.jpg) left top no-repeat
 }
 
 .aboutus .resize .owl-carousel .item .rev6 {
     margin: 0 0 10px 10px;
-    background: url(../images/rev6.jpg) right top no-repeat;
+    background: url(../images/rev6.jpg) right top no-repeat
 }
 
 .aboutus .resize .owl-carousel .item .rev7 {
     margin: 10px 10px 0 0;
-    background: url(../images/rev7.jpg) left bottom no-repeat;
+    background: url(../images/rev7.jpg) left bottom no-repeat
 }
 
 .aboutus .resize .owl-carousel .item .rev8 {
     margin: 10px 0 0 10px;
-    background: url(../images/rev8.jpg) right bottom no-repeat;
+    background: url(../images/rev8.jpg) right bottom no-repeat
 }
 
 .aboutus .resize .owl-carousel .item .rev9 {
     margin: 0 10px 10px 0;
-    background: url(../images/rev9.jpg) left top no-repeat;
+    background: url(../images/rev9.jpg) left top no-repeat
 }
 
 .aboutus .resize .owl-carousel .item .rev10 {
     margin: 0 0 10px 10px;
-    background: url(../images/rev10.jpg) right top no-repeat;
+    background: url(../images/rev10.jpg) right top no-repeat
 }
 
 .aboutus .resize .owl-carousel .item .rev11 {
     margin: 10px 10px 0 0;
-    background: url(../images/rev11.jpg) left bottom no-repeat;
+    background: url(../images/rev11.jpg) left bottom no-repeat
 }
 
 .aboutus .resize .owl-carousel .item .rev12 {
     margin: 10px 0 0 10px;
-    background: url(../images/rev12.jpg) right bottom no-repeat;
+    background: url(../images/rev12.jpg) right bottom no-repeat
 }
 
 .aboutus .resize .owl-carousel .item .rev13 {
     margin: 0 10px 10px 0;
-    background: url(../images/rev13.jpg) left top no-repeat;
+    background: url(../images/rev13.jpg) left top no-repeat
 }
 
 .aboutus .resize .owl-carousel .item .rev14 {
     margin: 0 0 10px 10px;
-    background: url(../images/rev14.jpg) right top no-repeat;
+    background: url(../images/rev14.jpg) right top no-repeat
 }
 
 .aboutus .resize .owl-carousel .item .rev15 {
     margin: 10px 10px 0 0;
-    background: url(../images/rev15.jpg) left bottom no-repeat;
+    background: url(../images/rev15.jpg) left bottom no-repeat
 }
 
 .aboutus .resize .owl-carousel .item .rev16 {
     margin: 10px 0 0 10px;
-    background: url(../images/rev16.jpg) right bottom no-repeat;
+    background: url(../images/rev16.jpg) right bottom no-repeat
 }
 
 .aboutus .resize .owl-carousel .item .review .content {
@@ -1249,7 +1262,7 @@ a.btn_all:active {
     position: absolute;
     text-align: center;
     z-index: 2;
-    opacity: 0.8;
+    opacity: 0.8
 }
 
 .aboutus .resize .owl-carousel .item .review .content:after {
@@ -1259,14 +1272,13 @@ a.btn_all:active {
     height: 74px;
     background: url(../images/sprite.png) no-repeat 0 -620px;
     right: 15px;
-    bottom: 20px;
+    bottom: 20px
 }
 
 .aboutus .resize .owl-carousel .item .review .content h3 {
     color: #e52b00;
     font-family: 'bebasneue_regular';
-    font-size: 30px;
-
+    font-size: 30px
 }
 
 .aboutus .resize .owl-carousel .item .review .content p {
@@ -1275,116 +1287,93 @@ a.btn_all:active {
     font-family: Arial;
     font-style: italic;
     line-height: 1.2;
-    margin-top: 30px;
+    margin-top: 30px
 }
 
 .aboutus .resize .owl-carousel .item .rev1 .content {
     right: 0;
-    bottom: 0;
+    bottom: 0
 }
 
 .aboutus .resize .owl-carousel .item .rev2 .content {
     left: 0;
-    bottom: 0;
+    bottom: 0
 }
 
 .aboutus .resize .owl-carousel .item .rev3 .content {
     right: 0;
-    top: 0;
+    top: 0
 }
 
 .aboutus .resize .owl-carousel .item .rev4 .content {
     left: 0;
-    top: 0;
+    top: 0
 }
 
 .aboutus .resize .owl-carousel .item .rev5 .content {
     right: 0;
-    bottom: 0;
+    bottom: 0
 }
 
 .aboutus .resize .owl-carousel .item .rev6 .content {
     left: 0;
-    bottom: 0;
+    bottom: 0
 }
 
 .aboutus .resize .owl-carousel .item .rev7 .content {
     right: 0;
-    top: 0;
+    top: 0
 }
 
 .aboutus .resize .owl-carousel .item .rev8 .content {
     left: 0;
-    top: 0;
+    top: 0
 }
 
 .aboutus .resize .owl-carousel .item .rev9 .content {
     right: 0;
-    bottom: 0;
+    bottom: 0
 }
 
 .aboutus .resize .owl-carousel .item .rev10 .content {
     left: 0;
-    bottom: 0;
+    bottom: 0
 }
 
 .aboutus .resize .owl-carousel .item .rev11 .content {
     right: 0;
-    top: 0;
+    top: 0
 }
 
 .aboutus .resize .owl-carousel .item .rev12 .content {
     left: 0;
-    top: 0;
+    top: 0
 }
 
 .aboutus .resize .owl-carousel .item .rev13 .content {
     right: 0;
-    bottom: 0;
+    bottom: 0
 }
 
 .aboutus .resize .owl-carousel .item .rev14 .content {
     left: 0;
-    bottom: 0;
+    bottom: 0
 }
 
 .aboutus .resize .owl-carousel .item .rev15 .content {
     right: 0;
-    top: 0;
+    top: 0
 }
 
 .aboutus .resize .owl-carousel .item .rev16 .content {
     left: 0;
-    top: 0;
-}
-
-.aboutus .resize .owl-carousel .owl-controls .owl-nav .owl-prev,
-.aboutus .resize .owl-carousel .owl-controls .owl-nav .owl-next {
-    position: absolute;
-    top: 330px;
-    height: 80px;
-    width: 35px;
-    background: #000;
-}
-
-.aboutus .resize .owl-carousel .owl-controls .owl-nav .owl-next {
-    background-image: url(../images/sprite.png);
-    background-repeat: no-repeat;
-    background-position: -52px -1140px;
-    right: 0;
-}
-
-.aboutus .resize .owl-carousel .owl-controls .owl-nav .owl-prev {
-    background-image: url(../images/sprite.png);
-    background-repeat: no-repeat;
-    background-position: 7px -1140px;
-    left: 0;
+    top: 0
 }
 
 .aboutus .resize .owl-carousel .owl-controls .owl-dots {
     width: 165px;
     height: 35px;
-    margin: 40px auto 0;
+    margin: 40px auto 0
 }
 
 .aboutus .resize .owl-carousel .owl-controls .owl-dots .owl-dot {
@@ -1397,11 +1386,11 @@ a.btn_all:active {
     background: #e2e2e2;
     float: left;
     margin: 0 3px;
-    text-align: center;
+    text-align: center
 }
 
 .aboutus .resize .owl-carousel .owl-controls .owl-dots .owl-dot.active {
-    background: #ffc000;
+    background: #ffc000
 }
 
 .aboutus .resize .owl-carousel .owl-controls .owl-dots .owl-dot:after {
@@ -1416,44 +1405,44 @@ a.btn_all:active {
     top: 0;
     font-size: 25px;
     color: #fff;
-    font-family: 'bebasneue_regular';
+    font-family: 'bebasneue_regular'
 }
 
 .aboutus .resize .owl-carousel .owl-controls .owl-dots .owl-dot:nth-child(1):after {
-    content: '1';
+    content: '1'
 }
 
 .aboutus .resize .owl-carousel .owl-controls .owl-dots .owl-dot:nth-child(2):after {
-    content: '2';
+    content: '2'
 }
 
 .aboutus .resize .owl-carousel .owl-controls .owl-dots .owl-dot:nth-child(3):after {
-    content: '3';
+    content: '3'
 }
 
 .aboutus .resize .owl-carousel .owl-controls .owl-dots .owl-dot:nth-child(4):after {
-    content: '4';
+    content: '4'
 }
 
 .say {
     padding: 80px 0 60px;
     background: url(../images/back5.jpg) center center no-repeat;
-    display: none;
+    display: none
 }
 
 .say .resize h2 {
-    line-height: 1;
+    line-height: 1
 }
 
 .say .resize h3 {
     margin-top: 10px;
-    font-family: 'opensans-light_1';
+    font-family: 'opensans-light_1'
 }
 
 .say .resize form {
     width: 560px;
     height: 240px;
-    margin-top: 50px;
+    margin-top: 50px
 }
 
 .say .resize form textarea {
@@ -1479,7 +1468,7 @@ a.btn_all:active {
     background-repeat: no-repeat;
     background-position: left 10px top 14px;
     border: none;
-    margin-bottom: 15px;
+    margin-bottom: 15px
 }
 
 .say .resize form .fileName {
@@ -1490,8 +1479,7 @@ a.btn_all:active {
     background: url(../images/dob.png);
     font-family: 'opensans-light_1';
     font-size: 15px;
-    position: relative;
-
+    position: relative
 }
 
 .say .resize form .fileName:after {
@@ -1508,33 +1496,33 @@ a.btn_all:active {
     text-align: center;
     line-height: 55px;
     cursor: pointer;
-    background: url(../images/sprite.png) no-repeat 0 -200px;
+    background: url(../images/sprite.png) no-repeat 0 -200px
 }
 
 .say .resize form label .fileName p {
     font-family: 'opensans-light_1';
-    font-size: 15px;
+    font-size: 15px
 }
 
 .say .resize form input[type=submit] {
     margin: 15px 0;
     box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.23);
-    border-bottom: 2px solid #901b00;
+    border-bottom: 2px solid #901b00
 }
 
 .say .resize form input[type=submit]:hover {
-    border-bottom: none;
+    border-bottom: none
 }
 
 .organisation {
     padding: 100px 0 60px;
     #background: url(../images/back6.jpg) center center no-repeat;
     text-align: center;
-    background-color: #F5F5F5;
+    background-color: #F5F5F5
 }
 
 .organisation .resize h3 {
-    margin: 55px 0;
+    margin: 55px 0
 }
 
 .organisation .resize .block {
@@ -1543,7 +1531,7 @@ a.btn_all:active {
     background: url(../images/border.png) left top no-repeat;
     float: left;
     margin: 10px 6px;
-    position: relative;
+    position: relative
 }
 
 .organisation .resize .block .content {
@@ -1561,7 +1549,7 @@ a.btn_all:active {
     position: relative;
     left: 0;
     bottom: 0;
-    cursor: pointer;
+    cursor: pointer
 }
 
 .organisation .resize .block a {
@@ -1578,12 +1566,12 @@ a.btn_all:active {
     background-repeat: no-repeat;
     text-decoration: none;
     text-align: center;
-    left: 30px;
+    left: 30px
 }
 
 .organisation .resize .block .content img {
     position: relative;
-    z-index: 1;
+    z-index: 1
 }
 
 .organisation .resize .block .content .text {
@@ -1594,53 +1582,52 @@ a.btn_all:active {
     background: #ffc000;
     position: absolute;
     bottom: 0;
-    z-index: 2;
+    z-index: 2
 }
 
 .organisation .resize .block .content .text p {
     font-family: 'opensans-light_1';
     font-size: 14px;
     color: #000;
-    line-height: 1.1;
+    line-height: 1.1
 }
 
 .organisation .resize .block .content .text h4 {
     font-family: 'bebasneue_regular';
     font-size: 18px;
     color: #000;
-    margin-top: 12px;
-
+    margin-top: 12px
 }
 
 .organisation .resize .block .content .text h4 span {
-    font-size: 30px;
+    font-size: 30px
 }
 
 .clarify span {
-    border-bottom: 1px #8C8C8C dashed;
+    border-bottom: 1px #8C8C8C dashed
 }
 
 .consult {
     padding: 110px 0 95px;
     background: url(../images/back7.jpg) center center no-repeat;
-    text-align: center;
+    text-align: center
 }
 
 .consult .resize h3 {
     margin-top: 45px;
-    font-family: 'opensans-light_1';
+    font-family: 'opensans-light_1'
 }
 
 .consult .resize form {
     width: 300px;
     height: auto;
     padding: 10px 0;
-    margin: 40px auto 0;
+    margin: 40px auto 0
 }
 
 .consult .resize form input {
     margin-top: 15px;
-    width: 300px;
+    width: 300px
 }
 
 .consult .resize form input[type=text] {
@@ -1648,12 +1635,12 @@ a.btn_all:active {
     background-repeat: no-repeat;
     background-position: 15px 16px;
     height: 55px;
-    line-height: 55px;
+    line-height: 55px
 }
 
 .consult .resize form input[type=submit] {
     height: 70px;
-    line-height: 70px;
+    line-height: 70px
 }
 
 .alltime {
@@ -1661,43 +1648,29 @@ a.btn_all:active {
     background: url(../images/back8.jpg) center center no-repeat;
     text-align: center;
     position: relative;
-    height: 910px;
+    height: 940px;
 }
 
 .alltime .resize h2 {
     line-height: 1.3;
-    font-family: 'opensans-light_1';
-
+    font-family: 'opensans-light_1'
 }
 
 .alltime .resize .btn_all {
     margin-top: 50px;
-    position: relative;
-}
-
-/*.alltime .resize .btn_all:after {
-  content: '';
-  position: absolute;
-  width: 103px;
-  height: 71px;
-  background: url(../images/arrow-7.png) no-repeat;
-  right: -120px;
-  top: -30px;
-}*/
-.alltime .resize h3 {
-    margin-top: 60px;
+    position: relative
 }
 
 .alltime .block-time {
     position: absolute;
-    text-align: center;
+    text-align: center
 }
 
 .alltime .block-time img {
     position: absolute;
     z-index: 1;
     left: 0;
-    top: 0;
+    top: 0
 }
 
 .alltime .block-time p {
@@ -1706,72 +1679,72 @@ a.btn_all:active {
     z-index: 2;
     font-family: 'bebasneue_regular';
     color: #fff;
-    font-size: 30px;
+    font-size: 30px
 }
 
 .alltime .time1 {
     width: 448px;
     height: 252px;
     float: left;
-    top: 310px;
-    left: 40px;
+    top: 345px;
+    left: 40px
 }
 
 .alltime .time1 p {
     top: 93px;
-    left: 145px;
+    left: 145px
 }
 
 .alltime .time2 {
     width: 393px;
     height: 183px;
     float: right;
-    top: 310px;
-    right: 40px;
+    top: 345px;
+    right: 40px
 }
 
 .alltime .time2 p {
     top: 88px;
-    left: 110px;
+    left: 110px
 }
 
 .alltime .time3 {
     width: 446px;
     height: 279px;
     float: left;
-    top: 580px;
-    left: 40px;
+    top: 615px;
+    left: 40px
 }
 
 .alltime .time3 p {
     top: 115px;
-    left: 135px;
+    left: 135px
 }
 
 .alltime .time4 {
     width: 393px;
     height: 385px;
     float: right;
-    top: 515px;
-    right: 40px;
+    top: 550px;
+    right: 40px
 }
 
 .alltime .time4 p {
     top: 35px;
     left: 70px;
-    font-size: 36px;
+    font-size: 36px
 }
 
 .questions {
     padding: 160px 0 140px;
     background: url(../images/back9.jpg) center center no-repeat;
-    text-align: center;
+    text-align: center
 }
 
 .questions .resize form {
     text-align: center;
     width: 650px;
-    margin: 75px auto 0;
+    margin: 75px auto 0
 }
 
 .questions .resize form input {
@@ -1779,28 +1752,28 @@ a.btn_all:active {
     height: 65px;
     line-height: 65px;
     float: left;
-    margin: 0 15px;
+    margin: 0 15px
 }
 
 .questions .resize form input[type=text] {
     background-image: url(../images/sprite.png);
     background-repeat: no-repeat;
-    background-position: 15px 20px;
+    background-position: 15px 20px
 }
 
 .questions .resize form input[type=submit] {
     box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.23);
-    border-bottom: 2px solid #901b00;
+    border-bottom: 2px solid #901b00
 }
 
 .questions .resize form input[type=submit]:hover {
-    border-bottom: none;
+    border-bottom: none
 }
 
 .map {
     height: 470px;
     position: relative;
-    z-index: 1;
+    z-index: 1
 }
 
 .map .contacts {
@@ -1811,23 +1784,22 @@ a.btn_all:active {
     top: 0;
     left: 50%;
     margin-left: -400px;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.7)
 }
 
 .map .contacts h2 {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 30px
 }
 
 .map .contacts .rekviz {
-
 }
 
 .map .contacts .rekviz p {
     font-size: 11px;
     margin: 0px;
     margin-left: 10px;
-    padding: 0px;
+    padding: 0px
 }
 
 .map .contacts p {
@@ -1837,7 +1809,7 @@ a.btn_all:active {
     color: #fff;
     line-height: 1.2;
     padding-left: 50px;
-    margin-left: 40px;
+    margin-left: 40px
 }
 
 .map .contacts a.phone {
@@ -1853,12 +1825,12 @@ a.btn_all:active {
     color: #fff;
     line-height: 1.2;
     padding-left: 45px;
-    margin-left: 40px;
+    margin-left: 40px
 }
 
 .map .contacts .free {
     font-size: 14px;
-    margin-top: -12px;
+    margin-top: -12px
 }
 
 .map .contacts a.mail {
@@ -1875,18 +1847,18 @@ a.btn_all:active {
     color: #fff;
     line-height: 1.2;
     padding-left: 45px;
-    margin-left: 40px;
+    margin-left: 40px
 }
 
 .map .contacts a:hover {
-    text-decoration: none;
+    text-decoration: none
 }
 
 .map .contacts .pin {
     font-size: 18px;
     background-image: url(../images/sprite.png);
     background-position: 0 -280px;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat
 }
 
 .map .contacts .btn_all {
@@ -1895,27 +1867,27 @@ a.btn_all:active {
     box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.23);
     border-bottom: 2px solid #901b00;
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 10px
 }
 
 .map .contacts .btn_all:hover {
-    border-bottom: 2px solid rgba(0, 0, 0, 0.7);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.7)
 }
 
 .footer {
     padding: 25px 0;
-    background: #fff;
+    background: #fff
 }
 
 .footer p {
     font-size: 14px;
     font-family: 'opensans-light_1';
-    color: #000;
+    color: #000
 }
 
 .footer .center p {
     float: left;
-    margin-left: 25px;
+    margin-left: 25px
 }
 
 .footer .flr a {
@@ -1924,33 +1896,33 @@ a.btn_all:active {
     font-size: 14px;
     color: #e5bd00;
     font-family: 'opensans-light_1';
-    text-decoration: underline;
+    text-decoration: underline
 }
 
 .footer .flr a:hover {
     text-decoration: none;
-    color: #f9670f;
+    color: #f9670f
 }
 
 .share_block {
     margin-top: 7px;
     margin-right: 19px;
-    float: right;
+    float: right
 }
 
 .organisation {
-    padding: 65px 0;
+    padding: 65px 0
 }
 
 .organisation p {
     font-size: 18px;
     line-height: 1.2;
     color: #000;
-    font-family: 'opensans-light_1';
+    font-family: 'opensans-light_1'
 }
 
 .optimization {
-    padding: 20px 50px;
+    padding: 20px 50px
 }
 
 .optimization h1 {
@@ -1959,7 +1931,7 @@ a.btn_all:active {
     font-family: 'opensans-light_1';
     font-weight: bold;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 10px
 }
 
 .optimization p {
@@ -1967,15 +1939,17 @@ a.btn_all:active {
     line-height: 1.2;
     font-family: 'opensans-light_1';
     text-align: justify;
-    margin: 3px 0 5px 0;
+    margin: 3px 0 5px 0
 }
 
 p a.topphone {
     color: #fff;
-    text-decoration: none;
+    text-decoration: none
 }
 
 .details p a {
     color: #000;
-    text-decoration: none;
+    text-decoration: none
 }
+
+@import 'popup';

@@ -1,9 +1,10 @@
 /*CSS loader*/
+/*
 (function () {
-    /*! loadCSS: load a CSS file asynchronously. [c]2016 @scottjehl, Filament Group, Inc. Licensed MIT */
+    /!*! loadCSS: load a CSS file asynchronously. [c]2016 @scottjehl, Filament Group, Inc. Licensed MIT *!/
     (function(w){
         "use strict";
-        /* exported loadCSS */
+        /!* exported loadCSS *!/
         var loadCSS = function( href, before, media ){
             // Arguments explained:
             // `href` [REQUIRED] is the URL for your CSS file.
@@ -80,7 +81,7 @@
         }
     }( typeof global !== "undefined" ? global : this ));
 
-    /*! CSS rel=preload polyfill. Depends on loadCSS function. [c]2016 @scottjehl, Filament Group, Inc. Licensed MIT  */
+    /!*! CSS rel=preload polyfill. Depends on loadCSS function. [c]2016 @scottjehl, Filament Group, Inc. Licensed MIT  *!/
     (function( w ){
         // rel=preload support test
         if( !w.loadCSS ){
@@ -125,11 +126,12 @@
     }( this ));
 }).call(window);
 
-/*loading css*/
+/!*loading css*!/
 (function () {
     var styles = loadCSS('new_compile/compile.css', document.documentElement.querySelector('style'));
 })();
 
+*/
 
 /*! jQuery v1.9.1 | (c) 2005, 2012 jQuery Foundation, Inc. | jquery.org/license */
 
@@ -5672,6 +5674,7 @@ $(document).ready(function () {
             padding: 0,
             loop: false,
             fitToView: false,
+            scrolling: 'no',
             tpl: {
                 closeBtn: '<span class="lightbox-close"></span>',
                 next: '<span class="lightbox-next"></span>',
@@ -5707,6 +5710,9 @@ $(document).ready(function () {
 
         /*youtube fancy change modal on video end*/
         (function () {
+            var script = '<script src="http://www.youtube.com/iframe_api?enablejsapi=1" async></script>';
+            $('script').eq(0).after(script);
+
             $fancyVideo.fancybox({
                 padding: 0,
                 loop: false,
@@ -6033,6 +6039,7 @@ $(document).ready(function () {
                         href: '#popup__map',
                         type: null,
                         padding: 0,
+                        fitToView: false,
                         tpl: {
                             closeBtn: '<span class="lightbox-close"></span>',
                             next: '<span class="lightbox-next"></span>',
@@ -6131,6 +6138,7 @@ $(document).ready(function () {
                 url: form.action,
                 data: $.param(formDataArr),
                 success: function () {
+                    hideTestBtn();
                     $.fancybox({
                         href: "#popupThanks",
                         padding: 0,
@@ -6198,6 +6206,9 @@ $(document).ready(function () {
             $forms.each(function () {
                 this.reset();
             });
+        }
+        function hideTestBtn() {
+            $('[data-role="lightbox-test"]').hide();
         }
     })();
 
