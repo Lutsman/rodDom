@@ -1779,12 +1779,16 @@ button.map-submit {
 .map .contacts {
     width: 320px;
     height: 470px;
+    padding: 70px 0;
     position: absolute;
     z-index: 2;
     top: 0;
     left: 50%;
     margin-left: -400px;
-    background: rgba(0, 0, 0, 0.7)
+    background: rgba(0, 0, 0, 0.7);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .map .contacts h2 {

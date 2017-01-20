@@ -2546,6 +2546,8 @@ p a.topphone {
 /*Страница спасибо*/
 .manager-thanks {
     padding: 50px 0;
+    background: url(../images/back-thanks_1.png) center center repeat-y;
+    background-size: cover;
 
     .text-box {
         width: 50%;
@@ -2567,7 +2569,13 @@ p a.topphone {
     }
 }
 
-.video {
+.thanks__video {
+    padding: 50px 0;
+    color: #fff;
+    background: url(../images/back7.jpg) center center repeat-y;
+    background-size: cover;
+    @include box-sizing(border-box);
+
     .video__content {
         float: left;
         width: 264px;
@@ -2589,7 +2597,7 @@ p a.topphone {
 }
 
 .thanks__form-wrap {
-    padding: 30px 0;
+    padding: 50px 0;
 
     h2 {
         margin-bottom: 15px;
@@ -2646,15 +2654,16 @@ p a.topphone {
             /*    margin-left: 30px;*/
         }
         p {
-            float: left;
             font-family: 'opensans-light_1', sans-serif;
             font-size: 16px;
             line-height: 40px;
+            text-align: center;
         }
         input[type="submit"] {
-            float: right;;
+            margin-bottom: 40px;
+           /*
             height: 40px;
-            line-height: 40px;
+            line-height: 40px;*/
         }
     }
     .title {

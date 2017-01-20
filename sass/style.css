@@ -4431,12 +4431,16 @@ button.map-submit {
 .map .contacts {
   width: 320px;
   height: 470px;
+  padding: 70px 0;
   position: absolute;
   z-index: 2;
   top: 0;
   left: 50%;
   margin-left: -400px;
-  background: rgba(0, 0, 0, 0.7); }
+  background: rgba(0, 0, 0, 0.7);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
 
 .map .contacts h2 {
   text-align: center;
@@ -5487,7 +5491,8 @@ div::after, nav::after, ul::after, form::after {
 
 /*Страница спасибо*/
 .manager-thanks {
-  padding: 50px 0; }
+  padding: 50px 0;
+  background: url("../images/back-thanks_1.png") center center no-repeat; }
   .manager-thanks .text-box {
     width: 50%; }
     .manager-thanks .text-box p {
@@ -5500,25 +5505,29 @@ div::after, nav::after, ul::after, form::after {
     .manager-thanks .video-box video {
       margin-bottom: 0; }
 
-.video .video__content {
-  float: left;
-  width: 304px;
-  padding: 50px;
-  text-align: center;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
-  .video .video__content p {
-    margin-bottom: 15px;
-    font-family: 'opensans-light_1', sans-serif;
-    font-size: 16px;
-    line-height: 25px; }
-.video .video-box {
-  float: left;
-  width: 636px; }
+.thanks__video {
+  padding: 50px 0;
+  color: #fff;
+  background: url(../images/back8.jpg) center center no-repeat; }
+  .thanks__video .video__content {
+    float: left;
+    width: 304px;
+    padding: 50px;
+    text-align: center;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; }
+    .thanks__video .video__content p {
+      margin-bottom: 15px;
+      font-family: 'opensans-light_1', sans-serif;
+      font-size: 16px;
+      line-height: 25px; }
+  .thanks__video .video-box {
+    float: left;
+    width: 636px; }
 
 .thanks__form-wrap {
-  padding: 30px 0; }
+  padding: 50px 0; }
   .thanks__form-wrap h2 {
     margin-bottom: 15px;
     font-size: 50px;
@@ -5567,15 +5576,14 @@ div::after, nav::after, ul::after, form::after {
     display: inline-block;
     /*    margin-left: 30px;*/ }
   .thanks__form .buttons-box p {
-    float: left;
-    margin-left: 100px;
     font-family: 'opensans-light_1', sans-serif;
     font-size: 16px;
-    line-height: 40px; }
+    line-height: 40px;
+    text-align: center; }
   .thanks__form .buttons-box input[type="submit"] {
-    float: right;
-    height: 40px;
-    line-height: 40px; }
+    margin-bottom: 40px;
+    /*  height: 40px;
+      line-height: 40px;*/ }
 
 .thanks__organisation {
   margin-bottom: 30px;

@@ -2402,6 +2402,8 @@ button.map-submit {
 }
 .manager-thanks {
     padding: 50px 0;
+    background: url(../images/back-thanks_1.png) center center repeat-y;
+    background-size: cover;
 
     .text-box {
 
@@ -2422,7 +2424,13 @@ button.map-submit {
     }
 }
 
-.video {
+.thanks__video {
+  padding: 70px 0 50px;
+  color: #fff;
+  background: url(../images/back5.jpg) center center repeat-y;
+  background-size: cover;
+  @include box-sizing(border-box);
+
     .video__content {
         padding: 10px 0;
         text-align: center;
@@ -2498,15 +2506,15 @@ button.map-submit {
             /*    margin-left: 30px;*/
         }
         p {
-            margin-bottom: 20px;
             font-family: 'opensans-light_1', sans-serif;
             font-size: 16px;
             line-height: 40px;
             text-align: center;
         }
         input[type="submit"] {
-            height: 40px;
-            line-height: 40px;
+            margin-bottom: 30px;
+            /*height: 40px;
+            line-height: 40px;*/
         }
     }
     .title {
