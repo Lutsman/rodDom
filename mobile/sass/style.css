@@ -4847,7 +4847,7 @@ button.map-submit {
     text-align: center; }
   .thanks__form-wrap .title {
     width: 80%;
-    margin: 0 auto 20px; }
+    margin: 0 auto; }
 
 .thanks__form {
   font-family: 'opensans-light_1', sans-serif;
@@ -4890,6 +4890,8 @@ button.map-submit {
   .thanks__form .buttons-box input[type="submit"] {
     height: 40px;
     line-height: 40px; }
+  .thanks__form .title {
+    margin-bottom: 20px; }
 
 .thanks__organisation {
   margin-bottom: 30px;

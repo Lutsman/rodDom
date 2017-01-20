@@ -2442,7 +2442,7 @@ button.map-submit {
     }
     .title {
         width: 80%;
-        margin: 0 auto 20px;
+        margin: 0 auto;
     }
 }
 .thanks__form {
@@ -2493,6 +2493,9 @@ button.map-submit {
             height: 40px;
             line-height: 40px;
         }
+    }
+    .title {
+        margin-bottom: 20px;
     }
 }
 .thanks__organisation {
