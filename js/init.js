@@ -1,3 +1,25 @@
+/*custom event polyfil*/
+(function () {
+    try {
+        new CustomEvent("IE has CustomEvent, but doesn't support constructor");
+    } catch (e) {
+
+        window.CustomEvent = function(event, params) {
+            var evt;
+            params = params || {
+                    bubbles: false,
+                    cancelable: false,
+                    detail: undefined
+                };
+            evt = document.createEvent("CustomEvent");
+            evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail);
+            return evt;
+        };
+
+        CustomEvent.prototype = Object.create(window.Event.prototype);
+    }
+})();
+
 /*CSS loader*/
 (function () {
     /*! loadCSS: load a CSS file asynchronously. [c]2016 @scottjehl, Filament Group, Inc. Licensed MIT */
@@ -166,27 +188,7 @@
 }( typeof global !== "undefined" ? global : this ));
 }).call(window);
 
-/*custom event polyfil*/
-(function () {
-    try {
-        new CustomEvent("IE has CustomEvent, but doesn't support constructor");
-    } catch (e) {
 
-        window.CustomEvent = function(event, params) {
-            var evt;
-            params = params || {
-                    bubbles: false,
-                    cancelable: false,
-                    detail: undefined
-                };
-            evt = document.createEvent("CustomEvent");
-            evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail);
-            return evt;
-        };
-
-        CustomEvent.prototype = Object.create(window.Event.prototype);
-    }
-})();
 
 /*loading css*/
 (function () {

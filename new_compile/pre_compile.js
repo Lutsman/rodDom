@@ -7502,10 +7502,15 @@ wow.init();
 /*custom script*/
 /*'use strict';*/
 var styleLoaded = false;
-$('body').one('styleLoaded', function (e) {
+
+
+
+
+document.body.addEventListener('styleLoaded', function(e) {
     styleLoaded = true;
     console.log('style loaded true');
 });
+
 
 $(document).ready(function () {
 
@@ -7515,10 +7520,10 @@ $(document).ready(function () {
 
 
         if (styleLoaded) {
-            initOwl();
             console.log('owl init');
+            initOwl();
         } else {
-            $('body').one('styleLoaded', function (e) {
+            document.body.addEventListener('styleLoaded', function(e) {
                 console.log('owl init');
                 initOwl();
             });
@@ -7528,24 +7533,26 @@ $(document).ready(function () {
 
         function initOwl() {
             setTimeout(function () {
-                $sliderSimple.owlCarousel({
-                    items: 1,
-                    autoplay: false,
-                    autoplayTimeout: 4000,
-                    navigation: true, // Show next and prev buttons
-                    slideSpeed: 300,
-                    paginationSpeed: 300,
-                    nav: true,
-                    dots: false,
-                    dotsEach: true,
-                    navText: false,
-                    loop: true,
-                    autoWidth: false,
-                    responsive: false,
-                    itemsScaleUp: false,
-                    onTranslated: function () {
-                        playVideo($('.owl-loaded .owl-item.active'));
-                    }
+                $sliderSimple.each(function () {
+                    $(this)..owlCarousel({
+                        items: 1,
+                        autoplay: false,
+                        autoplayTimeout: 4000,
+                        navigation: true, // Show next and prev buttons
+                        slideSpeed: 300,
+                        paginationSpeed: 300,
+                        nav: true,
+                        dots: false,
+                        dotsEach: true,
+                        navText: false,
+                        loop: true,
+                        autoWidth: false,
+                        responsive: false,
+                        itemsScaleUp: false,
+                        onTranslated: function () {
+                            playVideo($('.owl-loaded .owl-item.active'));
+                        }
+                    });
                 });
             }, 5000);
         }
