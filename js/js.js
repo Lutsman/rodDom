@@ -324,8 +324,12 @@ $(document).ready(function () {
             resetForm: true,
             type: 'post',
             /*beforeSubmit: function () {
-             $.fancybox.close();
+             //$.fancybox.close();
+                console.dir(arguments);
              },*/
+            /*beforeSend: function () {
+                console.dir(this);
+            },*/
             success: function () {
                 $.fancybox({
                     href: "#popupThanks",
@@ -620,11 +624,13 @@ $(document).ready(function () {
             return valid;
         }
         function sendRequest(form) {
+            //console.dir($.param(formDataArr));
             $.ajax({
                 type: form.method,
                 url: form.action,
                 data: $.param(formDataArr),
-                success: function () {
+                success: function (respond) {
+                    //console.log(respond);
                     hideTestBtn();
                     $.fancybox({
                         href: "#popupThanks",
