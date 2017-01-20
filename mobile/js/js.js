@@ -170,6 +170,56 @@ $(document).ready(function () {
             }
         });
 
+        /*success and error forms*/
+        $(document).on({
+            'postSuccess': function (e) {
+                $.fancybox({
+                    href: "#popupThanks",
+                    padding: 0,
+                    margin: 0,
+                    fitToView: false,
+                    width: '100%',
+                    height: 'auto',
+                    autoSize: false,
+                    scrolling: 'no',
+                    tpl: {
+                        closeBtn: '<span class="lightbox-close"></span>',
+                        next: '<span class="lightbox-next"></span>',
+                        prev: '<span class="lightbox-prev"></span>'
+                    },
+                    afterLoad: function () {
+                        $(document).trigger('popupOpened');
+                    },
+                    afterClose: function () {
+                        $(document).trigger('popupClosed');
+                    }
+                });
+            },
+            'postError': function (e) {
+                $.fancybox({
+                    href: "#popupError",
+                    padding: 0,
+                    margin: 0,
+                    fitToView: false,
+                    width: '100%',
+                    height: 'auto',
+                    autoSize: false,
+                    scrolling: 'no',
+                    tpl: {
+                        closeBtn: '<span class="lightbox-close"></span>',
+                        next: '<span class="lightbox-next"></span>',
+                        prev: '<span class="lightbox-prev"></span>'
+                    },
+                    afterLoad: function () {
+                        $(document).trigger('popupOpened');
+                    },
+                    afterClose: function () {
+                        $(document).trigger('popupClosed');
+                    }
+                });
+            }
+        });
+
         function closeFancyOnOverlay(e) {
             var target = e.target;
 
@@ -243,6 +293,7 @@ $(document).ready(function () {
             $('html, body').animate({scrollTop: destination - offset}, "slow", function () {
                 $targetEl.addClass('active')
                     .trigger('playVideo');
+                //alert('trigger play video');
             });
         }
     })();
@@ -258,44 +309,11 @@ $(document).ready(function () {
             clearForm: true,
             resetForm: true,
             type: 'post',
-            /*beforeSubmit: function () {
-             $.fancybox.close();
-             },*/
             success: function () {
-                $.fancybox({
-                    href: "#popupThanks",
-                    padding: 0,
-                    loop: false,
-                    tpl: {
-                        closeBtn: '<span class="lightbox-close"></span>',
-                        next: '<span class="lightbox-next"></span>',
-                        prev: '<span class="lightbox-prev"></span>'
-                    },
-                    afterLoad: function () {
-                        $(document).trigger('popupOpened');
-                    },
-                    afterClose: function () {
-                        $(document).trigger('popupClosed');
-                    }
-                });
+                $(document).trigger('postSuccess');
             },
             error: function () {
-                $.fancybox({
-                    href: "#popupError",
-                    padding: 0,
-                    loop: false,
-                    tpl: {
-                        closeBtn: '<span class="lightbox-close"></span>',
-                        next: '<span class="lightbox-next"></span>',
-                        prev: '<span class="lightbox-prev"></span>'
-                    },
-                    afterLoad: function () {
-                        $(document).trigger('popupOpened');
-                    },
-                    afterClose: function () {
-                        $(document).trigger('popupClosed');
-                    }
-                });
+                $(document).trigger('postError');
             }
         };
         $formNamePhone
@@ -478,40 +496,10 @@ $(document).ready(function () {
                 url: form.action,
                 data: $.param(formDataArr),
                 success: function () {
-                    $.fancybox({
-                        href: "#popupThanks",
-                        padding: 0,
-                        loop: false,
-                        tpl: {
-                            closeBtn: '<span class="lightbox-close"></span>',
-                            next: '<span class="lightbox-next"></span>',
-                            prev: '<span class="lightbox-prev"></span>'
-                        },
-                        afterLoad: function () {
-                            $(document).trigger('popupOpened');
-                        },
-                        afterClose: function () {
-                            $(document).trigger('popupClosed');
-                        }
-                    });
+                    $(document).trigger('postSuccess');
                 },
                 error: function () {
-                    $.fancybox({
-                        href: "#popupError",
-                        padding: 0,
-                        loop: false,
-                        tpl: {
-                            closeBtn: '<span class="lightbox-close"></span>',
-                            next: '<span class="lightbox-next"></span>',
-                            prev: '<span class="lightbox-prev"></span>'
-                        },
-                        afterLoad: function () {
-                            $(document).trigger('popupOpened');
-                        },
-                        afterClose: function () {
-                            $(document).trigger('popupClosed');
-                        }
-                    });
+                    $(document).trigger('postError');
                 }
             })
         }
@@ -753,16 +741,17 @@ $(document).ready(function () {
 
 /*html player*/
 (function () {
+    //alert('hello dolly');
     var $autoplayedVideo = $('[data-role="autoplay"]');
-    var $video = $('video');
+    //var $video = $('video');
 
     $(document).on({
         'playVideo': onPlayVideo,
         'pauseVideo': onPauseVideo
     });
 
-    $video.on('canplay', onCanPlay);
-    $autoplayedVideo.on('canplay', onPlayVideo);
+    //$video.on('canplay', onCanPlay);
+    $autoplayedVideo.one('canplay', onPlayVideo);
 
 
     function onCanPlay(e) {
@@ -771,7 +760,7 @@ $(document).ready(function () {
         //console.dir(e);
 
         target.setAttribute('data-ready', 'true');
-        //playVideo(target);
+        playVideo(target);
         //console.log('can play');
         //console.log(this);
     }
@@ -781,7 +770,8 @@ $(document).ready(function () {
     }*/
 
     function onPlayVideo(e) {
-        playVideo(e.target);
+        loadNPlay(e.target);
+        //playVideo(e.target);
     }
 
     function onPauseVideo(e) {
@@ -793,14 +783,19 @@ $(document).ready(function () {
 
         if (!$video.length) return;
 
+        console.log(parent);
+        console.log($video);
+        //alert('video knock out');
         //console.log($video);
         var timer = setTimeout(function () {
             $video.each(function () {
-                if (this.paused) {
+
+                this.play();
+                /*if (this.paused) {
                     this.play();
-                }
+                }*/
             });
-        }, 200);
+        }, 500);
     }
 
     function pauseVideo(parent) {
@@ -813,6 +808,16 @@ $(document).ready(function () {
                 this.pause();
             }
         });
+    }
+
+    function loadNPlay(parent) {
+        var $video = $(parent).is('video') ? $(parent) : $(parent).find('video');
+
+        $video.each(function () {
+            this.load();
+
+            $(this).one('canplay', playVideo.bind(this, this));
+        })
     }
 })();
 
