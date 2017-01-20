@@ -731,16 +731,18 @@ $(document).ready(function () {
 
                 myMap.geoObjects.add(placemark);
 
-                placemark.events.add('click', function (e) {
+                placemark.events.add(['click', 'touch'], function (e) {
                     e.preventDefault();
+                    console.log('click');
 
                     $(document).trigger('popupMapOpen');
                 });
-                placemark.events.add('touch', function (e) {
+                /*placemark.events.add('touch', function (e) {
                     e.preventDefault();
 
+                    console.log('touch');
                     $(document).trigger('popupMapOpen');
-                });
+                });*/
             }
         }
     })();
