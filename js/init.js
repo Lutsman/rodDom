@@ -193,7 +193,7 @@
 /*loading css*/
 (function () {
     var styleLoadedEvent = new CustomEvent('styleLoaded');
-    var styles = loadCSS('new_compile/compile.css', document.documentElement.querySelector('style'));
+    var styles = loadCSS('new_compile/compile.css', document.getElementById("loadcss")); //, document.documentElement.querySelector('script')
 
     onloadCSS(styles, function () {
         document.body.dispatchEvent(styleLoadedEvent);

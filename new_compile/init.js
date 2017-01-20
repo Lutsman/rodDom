@@ -1,1 +1,206 @@
-!function(){try{new CustomEvent("IE has CustomEvent, but doesn't support constructor")}catch(e){window.CustomEvent=function(e,t){var n;return t=t||{bubbles:!1,cancelable:!1,detail:void 0},n=document.createEvent("CustomEvent"),n.initCustomEvent(e,t.bubbles,t.cancelable,t.detail),n},CustomEvent.prototype=Object.create(window.Event.prototype)}}(),function(){!function(e){"use strict";var t=function(t,n,o){function a(e){return r.body?e():void setTimeout(function(){a(e)})}function l(){i.addEventListener&&i.removeEventListener("load",l),i.media=o||"all"}var d,r=e.document,i=r.createElement("link");if(n)d=n;else{var s=(r.body||r.getElementsByTagName("head")[0]).childNodes;d=s[s.length-1]}var c=r.styleSheets;i.rel="stylesheet",i.href=t,i.media="only x",a(function(){d.parentNode.insertBefore(i,n?d:d.nextSibling)});var u=function(e){for(var t=i.href,n=c.length;n--;)if(c[n].href===t)return e();setTimeout(function(){u(e)})};return i.addEventListener&&i.addEventListener("load",l),i.onloadcssdefined=u,u(l),i};"undefined"!=typeof exports?exports.loadCSS=t:e.loadCSS=t}("undefined"!=typeof global?global:this),function(e){if(e.loadCSS){var t=loadCSS.relpreload={};if(t.support=function(){try{return e.document.createElement("link").relList.supports("preload")}catch(t){return!1}},t.poly=function(){for(var t=e.document.getElementsByTagName("link"),n=0;n<t.length;n++){var o=t[n];"preload"===o.rel&&"style"===o.getAttribute("as")&&(e.loadCSS(o.href,o),o.rel=null)}},!t.support()){t.poly();var n=e.setInterval(t.poly,300);e.addEventListener&&e.addEventListener("load",function(){e.clearInterval(n)}),e.attachEvent&&e.attachEvent("onload",function(){e.clearInterval(n)})}}}(this),function(e){function t(e,t){function n(){!o&&t&&(o=!0,t.call(e))}var o;e.addEventListener&&e.addEventListener("load",n),e.attachEvent&&e.attachEvent("onload",n),"isApplicationInstalled"in navigator&&"onloadcssdefined"in e&&e.onloadcssdefined(n)}"undefined"!=typeof exports?exports.onloadCSS=t:e.onloadCSS=t}("undefined"!=typeof global?global:this)}.call(window),function(){var e=new CustomEvent("styleLoaded"),t=loadCSS("new_compile/compile.css",document.documentElement.querySelector("style"));onloadCSS(t,function(){document.body.dispatchEvent(e),document.body.classList.add("loaded"),console.dir(e),console.log("style loaded")})}();
+/*custom event polyfil*/
+(function () {
+    try {
+        new CustomEvent("IE has CustomEvent, but doesn't support constructor");
+    } catch (e) {
+
+        window.CustomEvent = function(event, params) {
+            var evt;
+            params = params || {
+                    bubbles: false,
+                    cancelable: false,
+                    detail: undefined
+                };
+            evt = document.createEvent("CustomEvent");
+            evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail);
+            return evt;
+        };
+
+        CustomEvent.prototype = Object.create(window.Event.prototype);
+    }
+})();
+
+/*CSS loader*/
+(function () {
+    /*! loadCSS: load a CSS file asynchronously. [c]2016 @scottjehl, Filament Group, Inc. Licensed MIT */
+    (function(w){
+        "use strict";
+        /* exported loadCSS */
+        var loadCSS = function( href, before, media ){
+            // Arguments explained:
+            // `href` [REQUIRED] is the URL for your CSS file.
+            // `before` [OPTIONAL] is the element the script should use as a reference for injecting our stylesheet <link> before
+            // By default, loadCSS attempts to inject the link after the last stylesheet or script in the DOM. However, you might desire a more specific location in your document.
+            // `media` [OPTIONAL] is the media type or query of the stylesheet. By default it will be 'all'
+            var doc = w.document;
+            var ss = doc.createElement( "link" );
+            var ref;
+            if( before ){
+                ref = before;
+            }
+            else {
+                var refs = ( doc.body || doc.getElementsByTagName( "head" )[ 0 ] ).childNodes;
+                ref = refs[ refs.length - 1];
+            }
+
+            var sheets = doc.styleSheets;
+            ss.rel = "stylesheet";
+            ss.href = href;
+            // temporarily set media to something inapplicable to ensure it'll fetch without blocking render
+            ss.media = "only x";
+
+            // wait until body is defined before injecting link. This ensures a non-blocking load in IE11.
+            function ready( cb ){
+                if( doc.body ){
+                    return cb();
+                }
+                setTimeout(function(){
+                    ready( cb );
+                });
+            }
+            // Inject link
+            // Note: the ternary preserves the existing behavior of "before" argument, but we could choose to change the argument to "after" in a later release and standardize on ref.nextSibling for all refs
+            // Note: `insertBefore` is used instead of `appendChild`, for safety re: http://www.paulirish.com/2011/surefire-dom-element-insertion/
+            ready( function(){
+                ref.parentNode.insertBefore( ss, ( before ? ref : ref.nextSibling ) );
+            });
+            // A method (exposed on return object for external use) that mimics onload by polling until document.styleSheets until it includes the new sheet.
+            var onloadcssdefined = function( cb ){
+                var resolvedHref = ss.href;
+                var i = sheets.length;
+                while( i-- ){
+                    if( sheets[ i ].href === resolvedHref ){
+                        return cb();
+                    }
+                }
+                setTimeout(function() {
+                    onloadcssdefined( cb );
+                });
+            };
+
+            function loadCB(){
+                if( ss.addEventListener ){
+                    ss.removeEventListener( "load", loadCB );
+                }
+                ss.media = media || "all";
+            }
+
+            // once loaded, set link's media back to `all` so that the stylesheet applies once it loads
+            if( ss.addEventListener ){
+                ss.addEventListener( "load", loadCB);
+            }
+            ss.onloadcssdefined = onloadcssdefined;
+            onloadcssdefined( loadCB );
+            return ss;
+        };
+        // commonjs
+        if( typeof exports !== "undefined" ){
+            exports.loadCSS = loadCSS;
+        }
+        else {
+            w.loadCSS = loadCSS;
+        }
+    }( typeof global !== "undefined" ? global : this ));
+
+    /*! CSS rel=preload polyfill. Depends on loadCSS function. [c]2016 @scottjehl, Filament Group, Inc. Licensed MIT  */
+    (function( w ){
+        // rel=preload support test
+        if( !w.loadCSS ){
+            return;
+        }
+        var rp = loadCSS.relpreload = {};
+        rp.support = function(){
+            try {
+                return w.document.createElement( "link" ).relList.supports( "preload" );
+            } catch (e) {
+                return false;
+            }
+        };
+
+        // loop preload links and fetch using loadCSS
+        rp.poly = function(){
+            var links = w.document.getElementsByTagName( "link" );
+            for( var i = 0; i < links.length; i++ ){
+                var link = links[ i ];
+                if( link.rel === "preload" && link.getAttribute( "as" ) === "style" ){
+                    w.loadCSS( link.href, link );
+                    link.rel = null;
+                }
+            }
+        };
+
+        // if link[rel=preload] is not supported, we must fetch the CSS manually using loadCSS
+        if( !rp.support() ){
+            rp.poly();
+            var run = w.setInterval( rp.poly, 300 );
+            if( w.addEventListener ){
+                w.addEventListener( "load", function(){
+                    w.clearInterval( run );
+                } );
+            }
+            if( w.attachEvent ){
+                w.attachEvent( "onload", function(){
+                    w.clearInterval( run );
+                } )
+            }
+        }
+    }( this ));
+
+    /*! onloadCSS: adds onload support for asynchronous stylesheets loaded with loadCSS. [c]2016 @zachleat, Filament Group, Inc. Licensed MIT */
+    /* global navigator */
+    /* exported onloadCSS */
+
+    (function (w) {
+        function onloadCSS( ss, callback ) {
+            var called;
+            function newcb(){
+                if( !called && callback ){
+                    called = true;
+                    callback.call( ss );
+                }
+            }
+            if( ss.addEventListener ){
+                ss.addEventListener( "load", newcb );
+            }
+            if( ss.attachEvent ){
+                ss.attachEvent( "onload", newcb );
+            }
+
+            // This code is for browsers that don’t support onload
+            // No support for onload (it'll bind but never fire):
+            //	* Android 4.3 (Samsung Galaxy S4, Browserstack)
+            //	* Android 4.2 Browser (Samsung Galaxy SIII Mini GT-I8200L)
+            //	* Android 2.3 (Pantech Burst P9070)
+
+            // Weak inference targets Android < 4.4
+            if( "isApplicationInstalled" in navigator && "onloadcssdefined" in ss ) {
+                ss.onloadcssdefined( newcb );
+            }
+        }
+
+        // commonjs
+        if( typeof exports !== "undefined" ){
+            exports.onloadCSS = onloadCSS;
+        }
+        else {
+            w.onloadCSS = onloadCSS;
+        }
+    }( typeof global !== "undefined" ? global : this ));
+}).call(window);
+
+
+
+/*loading css*/
+(function () {
+    var styleLoadedEvent = new CustomEvent('styleLoaded');
+    var styles = loadCSS('new_compile/compile.css', document.getElementById("loadcss")); //, document.documentElement.querySelector('script')
+
+    onloadCSS(styles, function () {
+        document.body.dispatchEvent(styleLoadedEvent);
+        document.body.classList.add('loaded');
+        console.dir(styleLoadedEvent);
+        console.log('style loaded');
+    });
+
+
+})();

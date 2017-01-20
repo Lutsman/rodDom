@@ -7503,6 +7503,7 @@ wow.init();
 /*'use strict';*/
 var styleLoaded = false;
 
+
 document.body.addEventListener('styleLoaded', function(e) {
     styleLoaded = true;
     console.log('style loaded true');
@@ -7525,8 +7526,6 @@ $(document).ready(function () {
                 initOwl();
             });
         }
-
-
 
         function initOwl() {
             setTimeout(function () {
@@ -7659,6 +7658,7 @@ $(document).ready(function () {
             padding: 0,
             margin: [0, 70,0,70],
             fitToView: false,
+            height: 'auto',
             tpl: {
                 closeBtn: '<span class="lightbox-close"></span>',
                 next: '<span class="lightbox-next"></span>',
@@ -7673,6 +7673,7 @@ $(document).ready(function () {
             padding: 0,
             margin: [0, 70,0,70],
             fitToView: false,
+            height: 'auto',
             tpl: {
                 closeBtn: '<span class="lightbox-close"></span>',
                 next: '<span class="lightbox-next"></span>',
@@ -7688,8 +7689,8 @@ $(document).ready(function () {
             prevEffect	: 'none',
             nextEffect	: 'none',
             padding: 0,
-            //autoHeight: true,
             fitToView: false,
+            height: 'auto',
             loop: false,
             helpers: {
                 overlay: {
@@ -7721,6 +7722,7 @@ $(document).ready(function () {
             padding: 0,
             loop: false,
             fitToView: false,
+            height: 'auto',
             tpl: {
                 closeBtn: '<span class="lightbox-close"></span>',
                 next: '<span class="lightbox-next"></span>',
@@ -7820,6 +7822,7 @@ $(document).ready(function () {
                         type: 'inline',
                         padding: 0,
                         fitToView: false,
+                        height: 'auto',
                         tpl: {
                             closeBtn: '<span class="lightbox-close"></span>',
                             next: '<span class="lightbox-next"></span>',
@@ -7894,6 +7897,8 @@ $(document).ready(function () {
                     href: "#popupThanks",
                     padding: 0,
                     loop: false,
+                    fitToView: false,
+                    height: 'auto',
                     tpl: {
                         closeBtn: '<span class="lightbox-close"></span>',
                         next: '<span class="lightbox-next"></span>',
@@ -7906,6 +7911,8 @@ $(document).ready(function () {
                     href: "#popupError",
                     padding: 0,
                     loop: false,
+                    fitToView: false,
+                    height: 'auto',
                     tpl: {
                         closeBtn: '<span class="lightbox-close"></span>',
                         next: '<span class="lightbox-next"></span>',
@@ -8195,6 +8202,8 @@ $(document).ready(function () {
                         href: "#popupThanks",
                         padding: 0,
                         loop: false,
+                        fitToView: false,
+                        height: 'auto',
                         tpl: {
                             closeBtn: '<span class="lightbox-close"></span>',
                             next: '<span class="lightbox-next"></span>',
@@ -8207,6 +8216,8 @@ $(document).ready(function () {
                         href: "#popupError",
                         padding: 0,
                         loop: false,
+                        fitToView: false,
+                        height: 'auto',
                         tpl: {
                             closeBtn: '<span class="lightbox-close"></span>',
                             next: '<span class="lightbox-next"></span>',
