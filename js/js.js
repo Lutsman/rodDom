@@ -48,7 +48,7 @@ $(document).ready(function () {
                         }
                     });
                 });
-            }, 5000);
+            }, 2000);
         }
 
 
@@ -316,17 +316,17 @@ $(document).ready(function () {
             success: function () {
                 $('body').trigger('gotoThanksPage');
                 /*$.fancybox({
-                    href: "#popupThanks",
-                    padding: 0,
-                    loop: false,
-                    fitToView: false,
-                    height: 'auto',
-                    tpl: {
-                        closeBtn: '<span class="lightbox-close"></span>',
-                        next: '<span class="lightbox-next"></span>',
-                        prev: '<span class="lightbox-prev"></span>'
-                    }
-                });*/
+                 href: "#popupThanks",
+                 padding: 0,
+                 loop: false,
+                 fitToView: false,
+                 height: 'auto',
+                 tpl: {
+                 closeBtn: '<span class="lightbox-close"></span>',
+                 next: '<span class="lightbox-next"></span>',
+                 prev: '<span class="lightbox-prev"></span>'
+                 }
+                 });*/
             },
             error: function () {
                 $.fancybox({
@@ -623,17 +623,17 @@ $(document).ready(function () {
                     $('body').trigger('gotoThanksPage');
 
                     /*$.fancybox({
-                        href: "#popupThanks",
-                        padding: 0,
-                        loop: false,
-                        fitToView: false,
-                        height: 'auto',
-                        tpl: {
-                            closeBtn: '<span class="lightbox-close"></span>',
-                            next: '<span class="lightbox-next"></span>',
-                            prev: '<span class="lightbox-prev"></span>'
-                        }
-                    });*/
+                     href: "#popupThanks",
+                     padding: 0,
+                     loop: false,
+                     fitToView: false,
+                     height: 'auto',
+                     tpl: {
+                     closeBtn: '<span class="lightbox-close"></span>',
+                     next: '<span class="lightbox-next"></span>',
+                     prev: '<span class="lightbox-prev"></span>'
+                     }
+                     });*/
                 },
                 error: function () {
                     $.fancybox({
