@@ -4,19 +4,28 @@
         header("Location: index.php");
         exit;
     }
-    mysql_connect("localhost", "roddom_usr", "bcyB08Nb") or die (mysql_error ());
-    mysql_select_db("roddom") or die(mysql_error()); 
-    mysql_query("SET NAMES 'utf8'"); 
-mysql_query("SET CHARACTER SET 'utf8'");
-mysql_query("SET SESSION collation_connection = 'utf8_general_ci'");
-    mysql_query("INSERT INTO orders (form,date,name,phone) VALUES ('".$_POST['whatForm']."', '".time()."', '".$_POST['name']."', '".$_POST['phone']."')");
-
     $messageBody ="";
     if($_POST["whatForm"] != ''){
         $messageBody = $_POST["whatForm"];
     }
+    
+    require_once $_SERVER['DOCUMENT_ROOT'].'/mobile-detect.php';
+    $detect = new Mobile_Detect;
+
+    $ver = 'десктопная';
+    if(!isset($_GET['full'])&&!$_SESSION['full']) {
+        if($detect->isTablet()) {
+            $ver = 'планшетная';
+            echo file_get_contents('tablet.html');
+        } elseif($detect->isMobile()||isset($_GET['m'])) {
+            $ver = 'мобильная';
+            echo file_get_contents('mobile.html');
+        }
+    }
+    if($ver == 'десктопная') echo file_get_contents('desktop.html');
+
     $headers = "Content-type: text/html; charset=utf-8 \r\n";
-    $subject = 'Сообщение с сайта ' . $_SERVER['SERVER_NAME'].' (десктоп) с формы:'.$messageBody;
+    $subject = 'Сообщение с сайта ' . $_SERVER['SERVER_NAME'].' ('.$ver.') с формы:'.$messageBody;
     // $messageBody = "";
     // $subject = '';
     $mess = '';
@@ -47,16 +56,35 @@ mysql_query("SET SESSION collation_connection = 'utf8_general_ci'");
 
 
     // подключаем файл класса для отправки почты
-    require 'class.phpmailer.php';
+    require $_SERVER['DOCUMENT_ROOT'].'/class.phpmailer.php';
 
     $mail = new PHPMailer();
     $mail->From = 'welcome@roddom-for-men.ru';               // от кого
     $mail->FromName = 'Выписка из роддома под ключ';        // от кого
-    $mail->AddAddress('lislab@yandex.ru','');
-    $mail->AddBCC('lislab@yandex.ru','');  // кому - адрес, Имя
+    //$mail->AddAddress('pr@svadba-dream.ru','');
+    //$mail->AddBCC('pr@svadba-dream.ru','');  // кому - адрес, Имя
     $mail->IsHTML(true);                        // выставляем формат письма HTML
     $mail->Subject = $subject; // тема письма
-    $mail->CharSet = "UTF-8";                   // кодировка
+    $mail->CharSet = "utf-8";                   // кодировка
+
+	define('cmfPart', 'main');
+	define('cmfDbPefix', 'site17_');
+    require $_SERVER['DOCUMENT_ROOT'].'/_system/config_sql.php';
+    try {
+		$db = new PDO(
+			'mysql:host='.mysql_host.';dbname='.mysql_db, 
+			mysql_user, 
+			mysql_password, 
+			array(
+			PDO::ATTR_PERSISTENT => 1,
+			PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING,
+			PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES UTF8'
+			));
+	}
+	catch(PDOException $e) {
+		echo $e;
+		exit;
+	}
 
     // если был файл, то прикрепляем его к письму
     if(isset($_FILES['uploaded_file1'])) {
@@ -64,19 +92,21 @@ mysql_query("SET SESSION collation_connection = 'utf8_general_ci'");
             $mail->AddAttachment($_FILES['uploaded_file1']['tmp_name'], $_FILES['uploaded_file1']['name']);
         }
     }
-    if (isset($_POST['cena']) && $_POST['cena'] != '') {
-    $mail->AddAddress('pr@svadba-dream.ru');  // кому - адрес, Имя
-        
-        
-    }
-        $fp = @fopen("test.txt","a");
-        fwrite($fp, $_POST['name']."\n".$_POST['phone']."\n");
-        fclose($fp);
+
+    $query = $db->prepare('SELECT email FROM `'.cmfDbPefix.'mail_list` WHERE `form` = \'yes\'');
+	$query->execute();
+	while ($row =  $query->fetch(PDO::FETCH_ASSOC)) {
+		$mail->AddAddress($row['email']);
+	}
+
+    //if (isset($_POST['cena']) && $_POST['cena'] != '') {
+    //$mail->AddAddress('pr@svadba-dream.ru');  // кому - адрес, Имя
+    //}
+
 
     $mail->Body = $mess;
+    $mail->Send();
 
-    if (!$mail->Send()) die ('Mailer Error: ' . $mail->ErrorInfo);
-
-
+    //if (!$mail->Send()) die ('Mailer Error: ' . $mail->ErrorInfo);
 
 ?>

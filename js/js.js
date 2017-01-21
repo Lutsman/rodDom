@@ -1,13 +1,12 @@
 /*custom script*/
-/*'use strict';*/
+/*'use strict'*/
+/*костыли для owl карусели*/
 var styleLoaded = false;
-
 
 document.body.addEventListener('styleLoaded', function(e) {
     styleLoaded = true;
     console.log('style loaded true');
 });
-
 
 $(document).ready(function () {
 
@@ -67,83 +66,6 @@ $(document).ready(function () {
                 });
             }, 1000);
         }
-
-
-        /*$(window).on('load', function () {
-         $sliderSimple.owlCarousel({
-         items: 1,
-         autoplay: false,
-         autoplayTimeout: 4000,
-         navigation: true, // Show next and prev buttons
-         slideSpeed: 300,
-         paginationSpeed: 300,
-         nav: true,
-         dots: false,
-         dotsEach: true,
-         navText: false,
-         loop: true,
-         autoWidth: false,
-         responsive: false,
-         itemsScaleUp: false,
-         onTranslated: function () {
-         playVideo($('.owl-loaded .owl-item.active'));
-         }
-         });
-         console.log('owl refresh');
-         });
-
-         $(window).on('refreshOwl', function () {
-         $sliderSimple.trigger('refresh.owl.carousel');
-         console.log('owl refresh');
-         });*/
-
-        /*$("#owl1").owlCarousel({
-         items: 1,
-         autoplay: false,
-         autoplayTimeout: 4000,
-         navigation: true, // Show next and prev buttons
-         slideSpeed: 300,
-         paginationSpeed: 300,
-         nav: true,
-         dots: true,
-         dotsEach: true,
-         navText: false,
-         loop: true,
-         autoWidth: false,
-         responsive: false,
-         itemsScaleUp: false,
-         });
-
-         $("#owl2").owlCarousel({
-         items: 1,
-         autoplay: false,
-         autoplayTimeout: 4000,
-         navigation: true, // Show next and prev buttons
-         slideSpeed: 300,
-         paginationSpeed: 300,
-         nav: true,
-         dots: true,
-         dotsEach: true,
-         navText: false,
-         loop: true,
-         autoWidth: false,
-         responsive: false,
-         itemsScaleUp: false,
-         onTranslated: function () {
-         slide = $('#owl2 .active .item');
-         if (!$(slide).hasClass('loaded')) {
-
-         $.ajax({
-         method: "POST",
-         url: "js/loadslide.php",
-         data: {'index': $(slide).data('slide')},
-         success: function (data) {
-         $(slide).html(data).addClass('loaded');
-         }
-         });
-         }
-         }
-         });*/
     })();
 
     /*Fancybox*/
@@ -392,7 +314,8 @@ $(document).ready(function () {
              console.dir(this);
              },*/
             success: function () {
-                $.fancybox({
+                $('body').trigger('gotoThanksPage');
+                /*$.fancybox({
                     href: "#popupThanks",
                     padding: 0,
                     loop: false,
@@ -403,7 +326,7 @@ $(document).ready(function () {
                         next: '<span class="lightbox-next"></span>',
                         prev: '<span class="lightbox-prev"></span>'
                     }
-                });
+                });*/
             },
             error: function () {
                 $.fancybox({
@@ -697,7 +620,9 @@ $(document).ready(function () {
                 success: function (respond) {
                     //console.log(respond);
                     hideTestBtn();
-                    $.fancybox({
+                    $('body').trigger('gotoThanksPage');
+
+                    /*$.fancybox({
                         href: "#popupThanks",
                         padding: 0,
                         loop: false,
@@ -708,7 +633,7 @@ $(document).ready(function () {
                             next: '<span class="lightbox-next"></span>',
                             prev: '<span class="lightbox-prev"></span>'
                         }
-                    });
+                    });*/
                 },
                 error: function () {
                     $.fancybox({
@@ -805,6 +730,22 @@ $(document).ready(function () {
      return;
      })
      })();*/
+
+    /*goto some page*/
+    (function () {
+        var thanksUrl = '/form-ok/index.php';
+        var userId = '123';
+
+        $('body').on('gotoThanksPage', function () {
+            var url = thanksUrl + '#' + userId;
+
+            goToNewUrl(url);
+        });
+
+        function goToNewUrl(windowPath) {
+            window.open(windowPath, '_self');
+        }
+    })();
 });
 
 /*global helpers*/
