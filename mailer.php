@@ -52,8 +52,8 @@ mysql_query("SET SESSION collation_connection = 'utf8_general_ci'");
     $mail = new PHPMailer();
     $mail->From = 'welcome@roddom-for-men.ru';               // от кого
     $mail->FromName = 'Выписка из роддома под ключ';        // от кого
-    $mail->AddAddress('lislab@yandex.ru','');
-    $mail->AddBCC('lislab@yandex.ru','');  // кому - адрес, Имя
+    $mail->AddAddress('welcome@roddom-for-men.ru',''); //lislab@yandex.ru  333333y@gmail.com
+    $mail->AddBCC('welcome@roddom-for-men.ru','');  // кому - адрес, Имя
     $mail->IsHTML(true);                        // выставляем формат письма HTML
     $mail->Subject = $subject; // тема письма
     $mail->CharSet = "UTF-8";                   // кодировка
@@ -65,7 +65,7 @@ mysql_query("SET SESSION collation_connection = 'utf8_general_ci'");
         }
     }
     if (isset($_POST['cena']) && $_POST['cena'] != '') {
-    $mail->AddAddress('pr@svadba-dream.ru');  // кому - адрес, Имя
+    $mail->AddAddress('welcome@roddom-for-men.ru');  // кому - адрес, Имя pr@svadba-dream.ru !!!!старый адресс был, этот уточнить адресс
         
         
     }
