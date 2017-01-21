@@ -9834,7 +9834,7 @@ function getElementsByClassName(className, node, tag) {
 	    els = node.getElementsByTagName(tag),
 	    elsLen = els.length;
 
-	for (i = 0; i < elsLen; i++) {
+	for (var i = 0; i < elsLen; i++) {
 		if (els[i].className.indexOf(className) > -1) {
 			teststr = ',' + els[i].className.split(' ').join(',') + ',';
 			if (teststr.indexOf(',' + className + ',') > -1) {

@@ -19,11 +19,11 @@ $(document).ready(function () {
             responsive: false,
             itemsScaleUp: false,
             onTranslated: function () {
-                var $activeSlide = $('.owl-loaded .owl-item.active');
+                /*var $activeSlide = $('.owl-loaded .owl-item.active');
 
                 if ($activeSlide.has('video').length) {
                     $activeSlide.trigger('playVideo');
-                }
+                }*/
             }
         });
     })();
@@ -47,9 +47,9 @@ $(document).ready(function () {
                 prev: '<span class="lightbox-prev"></span>'
             },
             afterLoad: function (current) {
-                if ($(current.href).has('video').length) {
+                /*if ($(current.href).has('video').length) {
                     $(current.href).trigger('playVideo');
-                }
+                }*/
                 $(document).trigger('popupOpened');
             },
             afterClose: function () {
@@ -69,9 +69,9 @@ $(document).ready(function () {
                 prev: '<span class="lightbox-prev"></span>'
             },
             afterLoad: function (current) {
-                if ($(current.href).has('video').length) {
+                /*if ($(current.href).has('video').length) {
                     $(current.href).trigger('playVideo');
-                }
+                }*/
                 $(document).trigger('popupOpened');
             },
             afterClose: function () {
@@ -130,7 +130,7 @@ $(document).ready(function () {
                     }, 2000);
 
                     //console.log($(current.href).has('video').length);
-                    $(current.href).trigger('playVideo');
+                    //$(current.href).trigger('playVideo');
                 } else if(current.index === 0) {
                     $(document).trigger('popupOpened');
                 }
@@ -258,8 +258,8 @@ $(document).ready(function () {
         });
 
         function showTeaBag() {
-            $teaBag.addClass('active')
-                .trigger('playVideo');
+            $teaBag.addClass('active');
+                //.trigger('playVideo');
         }
 
         function hideTeaBag() {
@@ -795,19 +795,158 @@ $(document).ready(function () {
 
 /*html player*/
 (function () {
+    function JPlayerAndroidFix(id, media, options) {
+        this.playFix = false;
+        this.id = id;
+        this.media = media;
+        this.options = options;
+        //console.log(this);
+        this.init();
+    }
+    JPlayerAndroidFix.prototype.init = function() {
+        var self = this;
+
+        // Store the params
+        //this.id = id;
+        //this.media = media;
+        //this.options = options;
+
+        // Make a jQuery selector of the id, for use by the jPlayer instance.
+        this.player = $(this.id);
+
+        // Make the ready event to set the media to initiate.
+        this.player.bind($.jPlayer.event.ready, function(event) {
+            // Use this fix's setMedia() method.
+            self.setMedia(self.media);
+        });
+
+        // Apply Android fixes
+        if($.jPlayer.platform.android) {
+
+            // Fix playing new media immediately after setMedia.
+            this.player.bind($.jPlayer.event.progress, function(event) {
+                if(self.playFixRequired) {
+                    self.playFixRequired = false;
+
+                    // Enable the contols again
+                    // self.player.jPlayer('option', 'cssSelectorAncestor', self.cssSelectorAncestor);
+
+                    // Play if required, otherwise it will wait for the normal GUI input.
+                    if(self.playFix) {
+                        self.playFix = false;
+                        $(this).jPlayer("play");
+                    }
+                }
+            });
+            // Fix missing ended events.
+            this.player.bind($.jPlayer.event.ended, function(event) {
+                if(self.endedFix) {
+                    self.endedFix = false;
+                    setTimeout(function() {
+                        self.setMedia(self.media);
+                    },0);
+                    // what if it was looping?
+                }
+            });
+            this.player.bind($.jPlayer.event.pause, function(event) {
+                if(self.endedFix) {
+                    var remaining = event.jPlayer.status.duration - event.jPlayer.status.currentTime;
+                    if(event.jPlayer.status.currentTime === 0 || remaining < 1) {
+                        // Trigger the ended event from inside jplayer instance.
+                        setTimeout(function() {
+                            self.jPlayer._trigger($.jPlayer.event.ended);
+                        },0);
+                    }
+                }
+            });
+        }
+
+        // Instance jPlayer
+        this.player.jPlayer(this.options);
+
+        // Store a local copy of the jPlayer instance's object
+        this.jPlayer = this.player.data('jPlayer');
+
+        // Store the real cssSelectorAncestor being used.
+        this.cssSelectorAncestor = this.player.jPlayer('option', 'cssSelectorAncestor');
+
+        // Apply Android fixes
+        this.resetAndroid();
+
+        return this;
+    };
+    JPlayerAndroidFix.prototype.setMedia = function(media) {
+        this.media = media;
+
+        // Apply Android fixes
+        this.resetAndroid();
+
+        // Set the media
+        this.player.jPlayer("setMedia", this.media);
+        return this;
+    };
+    JPlayerAndroidFix.prototype.play = function() {
+        // Apply Android fixes
+        if($.jPlayer.platform.android && this.playFixRequired) {
+            // Apply Android play fix, if it is required.
+            this.playFix = true;
+        } else {
+            // Other browsers play it, as does Android if the fix is no longer required.
+            this.player.jPlayer("play");
+        }
+    };
+    JPlayerAndroidFix.prototype.resetAndroid = function() {
+        // Apply Android fixes
+        if($.jPlayer.platform.android) {
+            this.playFix = false;
+            this.playFixRequired = true;
+            this.endedFix = true;
+            // Disable the controls
+            // this.player.jPlayer('option', 'cssSelectorAncestor', '#NeverFoundDisabled');
+        }
+    };
+
+
+
+
     //alert('hello dolly');
     var $autoplayedVideo = $('[data-role="autoplay"]');
     //var $video = $('video');
 
 
-
-    $('#htmlPlayer').mediaelementplayer({
+    /*$('#htmlPlayer').mediaelementplayer({
         pluginPath: "mediaelement/",
         success: function(mediaElement, originalNode) {
-        // do things
-        console.log('hello');
-        console.dir(arguments);
-    }});
+            // do things
+            console.log('hello');
+            console.dir(arguments);
+            mediaElement.play();
+            /!*$(mediaElement).on('canplay', function () {
+                mediaElement.play();
+                console.log('play fucking video!');
+            });*!/
+    }});*/
+
+/*    <source src="video/MAShA.mp4" type='video/mp4'>
+        <source src="video/MAShA.ogg" type='video/ogg'>
+        <source src="video/MAShA.webm" type='video/webm'>*/
+
+    /*if (Hls.isSupported()) {
+        console.log("hello hls.js!");
+        var video = document.getElementById('htmlPlayer');
+        var hls = new Hls();
+        // bind them together
+        hls.attachMedia(video);
+        hls.on(Hls.Events.MEDIA_ATTACHED, function () {
+            console.log("video and hls.js are now bound together !");
+            hls.loadSource("https://youtu.be/iPjzKHwLWV8");
+            hls.on(Hls.Events.MANIFEST_PARSED, function (event, data) {
+                console.log("manifest loaded, found " + data.levels.length + " quality level");
+                video.play();
+            });
+        });
+    }*/
+
 
 // To access player after its creation through jQuery use:
     //var playerId = $('#mediaplayer').closest('.mejs-container').attr('id');
@@ -820,9 +959,59 @@ $(document).ready(function () {
     player.webkitExitFullScreen();*/
 
 
+    /*$("#jquery_jplayer_1").jPlayer({
+        ready: function () {
+            $(this).jPlayer("setMedia", {
+                title: "Big Buck Bunny",
+                m4v: "http://www.meeting.lv/Lutsman/rod-dom/mobile/video/MAShA.m4v",
+                poster: "http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png"
+            });
+        },
+        swfPath: "../../dist/jplayer",
+        supplied: "webmv, ogv, m4v, mp4",
+        size: {
+            width: "260px",
+            height: "260px",
+            cssClass: "jp-video-360p"
+        },
+        useStateClassSkin: true,
+        autoBlur: false,
+        /!*smoothPlayBar: true,
+        keyEnabled: true,*!/
+        remainingDuration: true,
+        toggleDuration: true,
+        loop: true
+    });*/
 
 
+    var media = {
+        m4v: "http://www.meeting.lv/Lutsman/rod-dom/mobile/video/MAShA.m4v",
+        mp4: "http://www.meeting.lv/Lutsman/rod-dom/mobile/video/MAShA.mp4",
+        ogv: "http://www.meeting.lv/Lutsman/rod-dom/mobile/video/MAShA.ogg",
+        webv: "http://www.meeting.lv/Lutsman/rod-dom/mobile/video/MAShA.webm",
+        poster: "./images/manager_sreen.jpg"
+    };
+    var options = {
+        swfPath: "./dist/jplayer",
+        supplied: "webmv, ogv, m4v, mp4",
+        size: {
+            width: "260px",
+            height: "260px",
+            cssClass: "jp-video-360p"
+        },
+        useStateClassSkin: true,
+        autoBlur: false,
+        /*smoothPlayBar: true,
+         keyEnabled: true,*/
+        remainingDuration: true,
+        toggleDuration: true,
+        loop: true
+    };
 
+    console.log('hello jpPlayer');
+
+    var player = new JPlayerAndroidFix('#jp_container_1', media, options);
+    player.init();
 
     $(document).on({
         'playVideo': onPlayVideo,
@@ -858,7 +1047,7 @@ $(document).ready(function () {
     }
 
     function playVideo(parent) {
-        var $video = $(parent).is('video') ? $(parent) : $(parent).find('video');
+        var $video = $(parent).is('.video') ? $(parent) : $(parent).find('.video');
 
         if (!$video.length) return;
 
@@ -866,15 +1055,19 @@ $(document).ready(function () {
         console.log($video);
         //alert('video knock out');
         //console.log($video);
-        var timer = setTimeout(function () {
+        /*var timer = setTimeout(function () {
             $video.each(function () {
 
                 this.play();
-                /*if (this.paused) {
+                /!*if (this.paused) {
                     this.play();
-                }*/
+                }*!/
             });
-        }, 500);
+        }, 500);*/
+
+
+
+        player.play();
     }
 
     function pauseVideo(parent) {
@@ -898,6 +1091,11 @@ $(document).ready(function () {
             $(this).one('canplay', playVideo.bind(this, this));
         })
     }
+
+
+
+
+
 })();
 
 /*global helpers*/

@@ -2020,7 +2020,7 @@ button.map-submit {
     p {
         padding-left: 75px;
     }
-    video {
+    video, .video {
         float: left;
         margin-right: 10px;
         @include border-radius(50%);
@@ -2269,7 +2269,7 @@ button.map-submit {
         @include border-radius(10px 10px 60px 60px);
         @include box-sizing(border-box);
 
-        video {
+        video, .video {
             position: absolute;
             z-index: 2;
             left: 10px;
@@ -2329,9 +2329,12 @@ button.map-submit {
         line-height: 20px;
         text-align: center;
 
-        video {
+        video, .video {
             margin-bottom: 30px;
             @include border-radius(50%);
+            img {
+                @include border-radius(50%);
+            }
         }
     }
 }
@@ -2384,7 +2387,7 @@ button.map-submit {
         @include border-radius(0 20px 20px 0);
         @include box-sizing(border-box);
 
-        video {
+        video, .video {
             position: absolute;
             z-index: 2;
             top: -9px;
@@ -2418,7 +2421,7 @@ button.map-submit {
     .video-box{
         margin: 0 auto;
 
-        video {
+        video, .video {
             margin-bottom: 0;
         }
     }

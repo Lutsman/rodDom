@@ -4450,7 +4450,7 @@ button.map-submit {
   margin-bottom: 20px; }
   .avatar p {
     padding-left: 75px; }
-  .avatar video {
+  .avatar video, .avatar .video {
     float: left;
     margin-right: 10px;
     -moz-border-radius: 50%;
@@ -4701,7 +4701,7 @@ button.map-submit {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box; }
-    .manager-notification .tea-bag video {
+    .manager-notification .tea-bag video, .manager-notification .tea-bag .video {
       position: absolute;
       z-index: 2;
       left: 10px;
@@ -4754,11 +4754,15 @@ button.map-submit {
     margin: 0 auto 30px;
     line-height: 20px;
     text-align: center; }
-    .manager-message .video-box video {
+    .manager-message .video-box video, .manager-message .video-box .video {
       margin-bottom: 30px;
       -moz-border-radius: 50%;
       -webkit-border-radius: 50%;
       border-radius: 50%; }
+      .manager-message .video-box video img, .manager-message .video-box .video img {
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%; }
 
 .order-call__form {
   opacity: 0;
@@ -4811,7 +4815,7 @@ button.map-submit {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box; }
-    .calculate-cost span video {
+    .calculate-cost span video, .calculate-cost span .video {
       position: absolute;
       z-index: 2;
       top: -9px;
@@ -4837,7 +4841,7 @@ button.map-submit {
     margin-bottom: 20px; }
   .manager-thanks .video-box {
     margin: 0 auto; }
-    .manager-thanks .video-box video {
+    .manager-thanks .video-box video, .manager-thanks .video-box .video {
       margin-bottom: 0; }
 
 .thanks__video {
