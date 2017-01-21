@@ -27,6 +27,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <!--<style><?php echo file_get_contents($_SERVER['DOCUMENT_ROOT'].'/mobile/compile/compile.css'); ?></style>-->
 
+    <link rel="stylesheet" href="mediaelement/mediaelementplayer.css">
     <link rel="stylesheet" href="sass/style.css">
 </head>
 <body>
@@ -1652,7 +1653,7 @@
         <span class="tea-bag">
             Новое <br> сообщение
             <video width="85" height="85" preload="auto" loop>
-                <source src="video/MAShA.mp4">
+                <source src="video/MAShA.mp4" type='video/mp4'>
                 <source src="video/MAShA.ogg" type='video/ogg'>
                 <source src="video/MAShA.webm" type='video/webm'>
             </video>
@@ -1666,9 +1667,12 @@
     <a href="#popup__calculate-cost" data-role="lightbox-test">
         <span>
             Тест
-            <video width="76" height="76" preload="auto" loop data-role="autoplay">
+            <video width="76" height="76" preload="auto" loop data-role="autoplay"
+                id="htmlPlayer"
+                   class="html_player"
+            >
                 <source src="video/MAShA.m4v">
-                <source src="video/MAShA.mp4">
+                <source src="video/MAShA.mp4"type='video/mp4'>
                 <source src="video/MAShA.ogg" type='video/ogg'>
                 <source src="video/MAShA.webm" type='video/webm'>
             </video>
@@ -1691,6 +1695,7 @@
 <!--<script src="js/jquery.event.move.js"></script>
 <script src="js/jquery.event.swipe.js"></script>-->
 <!--<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.4/jquery.touchSwipe.js"></script>-->
+<script src="mediaelement/mediaelement-and-player.js"></script>
 <script src="js/forms.js"></script>
 <script src="js/jquery.maskedinput.min.js"></script>
 <script src="fancybox/jquery.fancybox.js"></script>

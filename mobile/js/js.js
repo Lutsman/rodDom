@@ -247,7 +247,7 @@ $(document).ready(function () {
     /*tea bag*/
     (function () {
         var $teaBag = $('#manager-message-bell');
-        var timer = setTimeout(showTeaBag, 10000);
+        var timer = setTimeout(showTeaBag, 0);
         //showTeaBag();
 
         $teaBag.on('click', function (e) {
@@ -272,14 +272,19 @@ $(document).ready(function () {
             $targetEl.removeClass('hidden');
             var destination = $targetEl.offset().top;
             var offset = $('.bottom-menu').height();
+            var isplayed = false;
 
             if (destination < 0) {
                 destination = 0;
             }
 
             $('html, body').animate({scrollTop: destination - offset}, "slow", function () {
+                if (isplayed) return;
+
+                isplayed = true;
                 $targetEl.addClass('active')
                     .trigger('playVideo');
+                console.log('play video');
                 //alert('trigger play video');
             });
         }
@@ -794,13 +799,38 @@ $(document).ready(function () {
     var $autoplayedVideo = $('[data-role="autoplay"]');
     //var $video = $('video');
 
+
+
+    $('#htmlPlayer').mediaelementplayer({
+        pluginPath: "mediaelement/",
+        success: function(mediaElement, originalNode) {
+        // do things
+        console.log('hello');
+        console.dir(arguments);
+    }});
+
+// To access player after its creation through jQuery use:
+    //var playerId = $('#mediaplayer').closest('.mejs-container').attr('id');
+    //var player = mejs.players[playerId];
+
+    //console.dir(player);
+// With iOS (iPhone), since it defaults always to QuickTime, you access the player directly;
+// i.e., if you wanna exit fullscreen on iPhone using the player, use this:
+    /*var player = $('#mediaplayer')[0];
+    player.webkitExitFullScreen();*/
+
+
+
+
+
+
     $(document).on({
         'playVideo': onPlayVideo,
         'pauseVideo': onPauseVideo
     });
 
     //$video.on('canplay', onCanPlay);
-    $autoplayedVideo.one('canplay', onPlayVideo);
+    //$autoplayedVideo.one('canplay', onPlayVideo);
 
 
     function onCanPlay(e) {
@@ -819,8 +849,8 @@ $(document).ready(function () {
     }*/
 
     function onPlayVideo(e) {
-        loadNPlay(e.target);
-        //playVideo(e.target);
+        //loadNPlay(e.target);
+        playVideo(e.target);
     }
 
     function onPauseVideo(e) {
