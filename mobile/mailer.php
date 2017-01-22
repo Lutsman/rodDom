@@ -5,8 +5,9 @@
         exit;
     }
     $messageBody ="";
+    $formLocation = '';
     if($_POST["whatForm"] != ''){
-        $messageBody = $_POST["whatForm"];
+        $formLocation = $messageBody = $_POST["whatForm"];
     }
     $headers = "Content-type: text/html; charset=utf-8 \r\n";
     $subject = 'Сообщение с сайта ' . $_SERVER['SERVER_NAME'].' (мобильная) с формы:'.$messageBody;
@@ -14,6 +15,9 @@
     // $subject = '';
     $mess = '';
     $mess .= '<hr>';
+    if($formLocation != '') {
+        $mess .= '<b>Форма:</b>' . $formLocation . '<br>';
+    }
     if(isset($_POST['info'])) {
         $subject = $_POST['info'];
     }
