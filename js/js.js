@@ -747,22 +747,31 @@ $(document).ready(function () {
         }
     })();
 
-    /*orientation change*/
-    (function () {
-        window.addEventListener('orientationchange', doOnOrientationChange);
-
-        function doOnOrientationChange() {
-            if (device.landscape()) {
-                $('html').removeClass('portrait')
-                    .addClass('landscape');
-            } else {
-                $('html').removeClass('landscape')
-                    .addClass('portrait');
-            }
-        }
-    })();
 });
 
+
+/*orientation change*/
+(function () {
+    var overlay = $('.mobile-overlay');
+
+    doOnOrientationChange();
+    window.addEventListener('orientationchange', doOnOrientationChange);
+
+    function doOnOrientationChange() {
+        //alert('landscape' + device.landscape());
+        if (device.landscape() && device.mobile()) {
+            overlay.fadeIn();
+            $('body').css('position', 'fixed');
+            /*$('html').removeClass('portrait')
+                .addClass('landscape');*/
+        } else if (device.portrait() && device.mobile()) {
+            overlay.fadeOut();
+            $('body').css('position', '');
+            /*$('html').removeClass('landscape')
+                .addClass('portrait');*/
+        }
+    }
+})();
 
 /*global helpers*/
 /*some unused function*/
