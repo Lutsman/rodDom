@@ -753,7 +753,7 @@ $(document).ready(function () {
 
 /*orientation change*/
 (function () {
-    var overlay = $('.mobile-overlay');
+    /*var overlay = $('.mobile-overlay');
 
     doOnOrientationChange();
     window.addEventListener('orientationchange', doOnOrientationChange);
@@ -771,7 +771,7 @@ $(document).ready(function () {
             $('html').removeClass('landscape')
                 .addClass('portrait');
         }
-    }
+    }*/
 })();
 
 /*global helpers*/
