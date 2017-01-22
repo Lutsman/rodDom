@@ -1,21 +1,22 @@
 /*custom script*/
 /*'use strict'*/
-/*костыли для owl карусели*/
-var styleLoaded = false;
+/*костыли для owl карусели для продакшена при асинхронной загрузке стилей*/
+/*var styleLoaded = false;
 
 document.body.addEventListener('styleLoaded', function(e) {
     styleLoaded = true;
     console.log('style loaded true');
-});
+});*/
 
 $(document).ready(function () {
 
     /*owl carusel*/
     (function () {
         var $sliderSimple = $('[data-role="slider"]');
+        initOwl();
 
-
-        if (styleLoaded) {
+        /*костыли для owl карусели для продакшена при асинхронной загрузке стилей*/
+        /*if (styleLoaded) {
             console.log('owl init');
             initOwl();
         } else {
@@ -23,7 +24,7 @@ $(document).ready(function () {
                 console.log('owl init');
                 initOwl();
             });
-        }
+        }*/
 
         function initOwl() {
             setTimeout(function () {
@@ -762,13 +763,13 @@ $(document).ready(function () {
         if (device.landscape() && device.mobile()) {
             overlay.fadeIn();
             $('body').css('position', 'fixed');
-            /*$('html').removeClass('portrait')
-                .addClass('landscape');*/
+            $('html').removeClass('portrait')
+                .addClass('landscape');
         } else if (device.portrait() && device.mobile()) {
             overlay.fadeOut();
             $('body').css('position', '');
-            /*$('html').removeClass('landscape')
-                .addClass('portrait');*/
+            $('html').removeClass('landscape')
+                .addClass('portrait');
         }
     }
 })();
