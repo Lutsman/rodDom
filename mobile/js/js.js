@@ -232,10 +232,10 @@ $(document).ready(function () {
                             prev: '<span class="lightbox-prev"></span>'
                         },
                         afterLoad: function () {
-                            $(document).trigger('popupOpened');
+                            //$(document).trigger('popupOpened');
                         },
                         afterClose: function () {
-                            $(document).trigger('popupClosed');
+                            //$(document).trigger('popupClosed');
                             isOpen = false;
                         }
                     });
