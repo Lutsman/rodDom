@@ -27,7 +27,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <!--<style><?php echo file_get_contents($_SERVER['DOCUMENT_ROOT'].'/mobile/compile/compile.css'); ?></style>-->
 
-    <link rel="stylesheet" href="mediaelement/mediaelementplayer.css">
+    <!--<link rel="stylesheet" href="mediaelement/mediaelementplayer.css">-->
     <link rel="stylesheet" href="sass/style.css">
 </head>
 <body>
@@ -48,7 +48,7 @@
      }); */
 </script>
 <div class="globalWrapper cf">
-    <div class="fullversion"><a href="/?full">Перейти на полную версию сайта</a></div>
+    <div class="fullversion top"><a href="/?full">Перейти на полную версию сайта</a></div>
     <div class="resizelist">
         <div class="menu-button" data-role="open-menu"><span>Меню</span></div>
         <ul class="list-menu" id="close-menu">
@@ -159,7 +159,7 @@
     </div>
 
     <!--Всплывающий блок-->
-    <div id="manager-message-1" class="manager-message hidden">
+    <div id="manager-message-1" class="manager-message translated">
         <div class="resize">
             <div class="image-box">
                 <div class="video-box">
@@ -973,15 +973,12 @@
         </div>
     </div>
     <div class="footer cf">
-        <div class="resize cf">
-            <div class="fll">
-                <p>Copyright ©  - Выписка из роддома под ключ</p>
-            </div>
-            <div class="cf"></div>
-            <p class="center">При использовании материалов ссылка на сайт обязательна</p>
+        <div class="resize cf center">
+            <p>Copyright ©  - Выписка из роддома под ключ</p>
+            <p>При использовании материалов ссылка на сайт обязательна</p>
         </div>
     </div>
-
+    <div class="fullversion bottom"><a href="/?full">Перейти на полную версию сайта</a></div>
 </div>
 
 
@@ -1734,9 +1731,6 @@
     </a>
 </div>
 
->
-
-
 <!--[if lt IE 9]>
 <script src="bower_components/html5shiv/es5-shim.min.js"></script>
 <script src="bower_components/html5shiv/html5shiv.min.js"></script>
@@ -1750,7 +1744,7 @@
 <script src="js/jquery.event.swipe.js"></script>-->
 <!--<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.4/jquery.touchSwipe.js"></script>-->
 <!--<script src="https://cdn.jsdelivr.net/hls.js/latest/hls.min.js"></script>-->
-<script src="mediaelement/mediaelement-and-player.js"></script>
+<!--<script src="mediaelement/mediaelement-and-player.js"></script>-->
 <script src="js/forms.js"></script>
 <script src="js/jquery.maskedinput.min.js"></script>
 <script src="fancybox/jquery.fancybox.js"></script>
@@ -1759,42 +1753,10 @@
 <script src="js/owl.carousel.js"></script>
 <script src="js/wow.js"></script>
 <script src="js/jquery.cookie.js"></script>
-<script type="text/javascript" src="dist/jplayer/jquery.jplayer.min.js"></script>
+<script src="dist/jplayer/jquery.jplayer.min.js"></script>
 <script src="js/js.js"></script>
 <!--<script src="js/js.v2.js"></script>-->
 <script src="js/timer.js"></script>
-
-<script type="text/javascript">
-    //<![CDATA[
-    /*$(document).ready(function(){
-
-        $("#jquery_jplayer_1").jPlayer({
-            ready: function () {
-                $(this).jPlayer("setMedia", {
-                    title: "Big Buck Bunny",
-                    m4v: "http://www.meeting.lv/Lutsman/rod-dom/mobile/video/MAShA.m4v",
-                    poster: "http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png"
-                });
-            },
-            swfPath: "../../dist/jplayer",
-            supplied: "m4v",
-            size: {
-                width: "640px",
-                height: "360px",
-                cssClass: "jp-video-360p"
-            },
-            useStateClassSkin: true,
-            autoBlur: false,
-            smoothPlayBar: true,
-            keyEnabled: true,
-            remainingDuration: true,
-            toggleDuration: true
-        });
-
-        //$('.jp-play').triggerHandler('click');
-    });*/
-    //]]>
-</script>
 
 <!--
 

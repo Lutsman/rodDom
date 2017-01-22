@@ -54,6 +54,12 @@ body, h1, h2, h3, h4, h5, h6, p {
     display: none;
 }
 
+.translated {
+    position: absolute;
+    left: 10000px;
+    top: -10000px;
+}
+
 div, nav, ul, form {
     &::after {
         content: '';
@@ -604,7 +610,7 @@ a.white {
 .firstscreen {
     background: url(../images/back_1.jpg) center top no-repeat;
     padding-bottom: 20px;
-    margin-top: 30px;
+    //margin-top: 30px;
     position: relative;
     text-align: center;
     -webkit-background-size: cover;
@@ -714,7 +720,7 @@ a.white {
 }
 
 .firstscreen h2 {
-    margin-top: 35px;
+    //margin-top: 35px;
     text-align: center;
     line-height: 1;
 }
@@ -1356,19 +1362,33 @@ a.white {
 
 .map .contacts a.phone {
     display: block;
+    position: relative;
+    z-index: 2;
     font-size: 15px;
     line-height: 1.3;
     min-height: 43px;
-    background-image: url(../images/sprite.png);
-    background-position: 7px -130px;
-    background-repeat: no-repeat;
     font-family: 'opensans-light_1';
     font-size: 26px;
-    margin-top: 22px;
-    margin-bottom: 10px;
+    //margin-top: 22px;
+    //margin-bottom: 10px;
     color: #fff;
     line-height: 1.2;
-    padding-left: 45px;
+    padding: 22px 0 10px 45px;
+    @include box-sizing(border-box);
+
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: 2;
+        top: 9px;
+        left: 7px;
+        width: 30px;
+        height: 50px;
+        background-image: url(../images/sprite.png);
+        background-position: 0 -130px;
+        background-repeat: no-repeat;
+    }
 }
 
 .map .contacts .free {
@@ -1432,11 +1452,21 @@ a.white {
 .footer .fll {
 
 }
-
-.footer .center p {
-    float: left;
-    line-height: 1.2;
+.footer .center {
+    //text-align: center;
+    //margin-top: 25px;
+    p {
+        text-align: center;
+        line-height: 1.2;
+    }
+    p + p {
+        margin-top: 25px;
+    }
 }
+/*.footer .center p {
+    text-align: center;
+    line-height: 1.2;
+}*/
 
 .footer .fll a {
     display: block;
@@ -1453,10 +1483,7 @@ a.white {
     color: #f9670f;
 }
 
-.footer .center {
-    text-align: left;
-    margin-top: 25px;
-}
+
 
 .share_block {
     margin-top: 7px;
@@ -1611,22 +1638,30 @@ a.white {
 
 .fullversion {
     text-align: center;
-    position: fixed;
+    //position: fixed;
     height: 35px;
-    top: 0;
-    left: 0;
-    right: 0;
+    //top: 0;
+    //left: 0;
+    //right: 0;
     padding: 2px 0;
-    z-index: 5000;
+    //z-index: 5000;
     line-height: 35px;
     font-size: 16px;
     background: #000;
-    border-bottom: 1px solid #fff;
-}
+    //border-bottom: 1px solid #fff;
 
-.fullversion a {
-    color: #fff;
-    text-decoration: underline;
+    &.top {
+        border-bottom: 1px solid #fff;
+    }
+
+    &.bottom {
+        border-top: 1px solid #fff;
+    }
+
+    a {
+        color: #fff;
+        text-decoration: underline;
+    }
 }
 
 .overlay-bg {
@@ -1641,7 +1676,8 @@ a.white {
 
 a.top-phone {
     display: inline-block;
-    margin-top: 35px;
+    //margin-top: 35px;
+    padding: 35px;
     font-size: 26px;
     color: #fff;
 }
