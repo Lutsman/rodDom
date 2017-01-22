@@ -12,8 +12,9 @@ mysql_query("SET SESSION collation_connection = 'utf8_general_ci'");
     mysql_query("INSERT INTO orders (form,date,name,phone) VALUES ('".$_POST['whatForm']."', '".time()."', '".$_POST['name']."', '".$_POST['phone']."')");
 
     $messageBody ="";
+    $formLocation = '';
     if($_POST["whatForm"] != ''){
-        $messageBody = $_POST["whatForm"];
+        $formLocation = $messageBody = $_POST["whatForm"];
     }
     $headers = "Content-type: text/html; charset=utf-8 \r\n";
     $subject = 'Сообщение с сайта ' . $_SERVER['SERVER_NAME'].' (десктоп) с формы:'.$messageBody;
@@ -21,6 +22,9 @@ mysql_query("SET SESSION collation_connection = 'utf8_general_ci'");
     // $subject = '';
     $mess = '';
     $mess .= '<hr>';
+    if($formLocation != '') {
+        $mess .= '<b>Форма:</b>' . $formLocation . '<br>';
+    }
     if(isset($_POST['info'])) {
         $subject = $_POST['info'];
     }
@@ -52,8 +56,8 @@ mysql_query("SET SESSION collation_connection = 'utf8_general_ci'");
     $mail = new PHPMailer();
     $mail->From = 'welcome@roddom-for-men.ru';               // от кого
     $mail->FromName = 'Выписка из роддома под ключ';        // от кого
-    $mail->AddAddress('welcome@roddom-for-men.ru',''); //lislab@yandex.ru  333333y@gmail.com
-    $mail->AddBCC('welcome@roddom-for-men.ru','');  // кому - адрес, Имя
+    $mail->AddAddress('lislab@yandex.ru',''); //lislab@yandex.ru  333333y@gmail.com welcome@roddom-for-men.ru
+    $mail->AddBCC('lislab@yandex.ru','');  // кому - адрес, Имя
     $mail->IsHTML(true);                        // выставляем формат письма HTML
     $mail->Subject = $subject; // тема письма
     $mail->CharSet = "UTF-8";                   // кодировка
@@ -65,7 +69,7 @@ mysql_query("SET SESSION collation_connection = 'utf8_general_ci'");
         }
     }
     if (isset($_POST['cena']) && $_POST['cena'] != '') {
-    $mail->AddAddress('welcome@roddom-for-men.ru');  // кому - адрес, Имя pr@svadba-dream.ru !!!!старый адресс был, этот уточнить адресс
+    $mail->AddAddress('lislab@yandex.ru');  // кому - адрес, Имя pr@svadba-dream.ru !!!!старый адресс был, этот уточнить адресс
         
         
     }

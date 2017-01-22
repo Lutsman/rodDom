@@ -731,7 +731,7 @@ $(document).ready(function () {
      })
      })();*/
 
-    /*goto some page*/
+    /*goto thanks page*/
     (function () {
         var thanksUrl = '/form-ok/index.php';
         var userId = '123';
@@ -746,7 +746,23 @@ $(document).ready(function () {
             window.open(windowPath, '_self');
         }
     })();
+
+    /*orientation change*/
+    (function () {
+        window.addEventListener('orientationchange', doOnOrientationChange);
+
+        function doOnOrientationChange() {
+            if (device.landscape()) {
+                $('html').removeClass('portrait')
+                    .addClass('landscape');
+            } else {
+                $('html').removeClass('landscape')
+                    .addClass('portrait');
+            }
+        }
+    })();
 });
+
 
 /*global helpers*/
 /*some unused function*/

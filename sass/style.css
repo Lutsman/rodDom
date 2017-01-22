@@ -5489,6 +5489,33 @@ div::after, nav::after, ul::after, form::after {
       -webkit-border-radius: 50%;
       border-radius: 50%; }
 
+/*оверлей для мобильного*/
+.mobile-overlay {
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  background-color: #000;
+  opacity: 0;
+  visibility: hidden; }
+
+.mobile.portrait .mobile-overlay {
+  /*position: fixed;
+  z-index: 99999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  background-color: #000;*/
+  opacity: 1;
+  visibility: visible; }
+.mobile.portrait body {
+  position: fixed; }
+
 /*Страница спасибо*/
 .manager-thanks {
   padding: 50px 0;
