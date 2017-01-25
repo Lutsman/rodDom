@@ -2921,7 +2921,7 @@ input[type=text] {
   -moz-box-sizing: border-box;
   -o-box-sizing: border-box; }
 
-input[type=submit], a.btn_all, button.map-submit {
+input[type=submit], a.btn_all, button.map-submit, input[type="button"] {
   width: 260px;
   height: 60px;
   line-height: 60px;
@@ -2947,7 +2947,8 @@ input[type=submit], a.btn_all, button.map-submit {
 
 input[type=submit]:hover,
 a.btn_all:hover,
-button.map-submit:hover {
+button.map-submit:hover,
+input[type="button"]:hover {
   text-decoration: none;
   background: rgba(255, 192, 0, 0.9);
   color: #333;
@@ -4845,9 +4846,7 @@ button.map-submit {
   width: 280px; }
 
 .manager-thanks {
-  padding: 50px 0;
-  background: url(../images/back-thanks_1.png) center center repeat-y;
-  background-size: cover; }
+  padding: 50px 0; }
   .manager-thanks .text-box p {
     line-height: 25px;
     opacity: 1; }
@@ -4859,9 +4858,10 @@ button.map-submit {
       margin-bottom: 0; }
 
 .thanks__video {
+  position: relative;
+  z-index: 2;
   padding: 70px 0 50px;
-  color: #fff;
-  background: url(../images/back5.jpg) center center repeat-y;
+  background: url(../images/back2.jpg) center center repeat-y;
   background-size: cover;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -4933,10 +4933,8 @@ button.map-submit {
     font-size: 16px;
     line-height: 40px;
     text-align: center; }
-  .thanks__form .buttons-box input[type="submit"] {
-    margin-bottom: 30px;
-    /*height: 40px;
-    line-height: 40px;*/ }
+  .thanks__form .buttons-box input[type="submit"], .thanks__form .buttons-box input[type="button"] {
+    margin-bottom: 30px; }
   .thanks__form .title {
     margin-bottom: 20px; }
 

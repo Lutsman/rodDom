@@ -1012,7 +1012,6 @@ div, nav, ul, form {
 /*Страница спасибо*/
 .manager-thanks {
     padding: 50px 0;
-    background: url("../images/back-thanks_1.png") center center no-repeat;;
 
     .text-box {
         width: 50%;
@@ -1035,9 +1034,12 @@ div, nav, ul, form {
 }
 
 .thanks__video {
+    position: relative;
+    z-index: 2;
     padding: 50px 0;
-    color: #fff;
-    background: url(../images/back8.jpg) center center no-repeat;
+    background: url(../images/back2.jpg) center center no-repeat;
+    background-size: cover;
+    @include box-sizing(border-box);
 
     .video__content {
         float: left;
@@ -1113,6 +1115,8 @@ div, nav, ul, form {
         }
     }
     .buttons-box {
+        text-align: center;
+
         a {
             display: inline-block;
         /*    margin-left: 30px;*/
@@ -1123,10 +1127,12 @@ div, nav, ul, form {
             line-height: 40px;
             text-align: center;
         }
-        input[type="submit"] {
+        input[type="submit"], input[type="button"] {
+            display: inline-block;
             margin-bottom: 40px;
-          /*  height: 40px;
-            line-height: 40px;*/
+        }
+        input[type="button"] {
+            margin-left: 30px;
         }
     }
 }

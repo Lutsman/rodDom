@@ -281,7 +281,7 @@ input[type=text] {
     -o-box-sizing: border-box;
 }
 
-input[type=submit], a.btn_all, button.map-submit {
+input[type=submit], a.btn_all, button.map-submit, input[type="button"] {
     width: 260px;
     height: 60px;
     line-height: 60px;
@@ -308,7 +308,8 @@ input[type=submit], a.btn_all, button.map-submit {
 
 input[type=submit]:hover,
 a.btn_all:hover,
-button.map-submit:hover {
+button.map-submit:hover,
+input[type="button"]:hover {
     text-decoration: none;
     background: rgba(255, 192, 0, 0.9);
     color: #333;
@@ -317,7 +318,8 @@ button.map-submit:hover {
 
 input[type=submit]:active,
 a.btn_all:active,
-button.map-submit:active {
+button.map-submit:active,
+input[type="button"]:active {
     text-decoration: none;
     background: rgba(255, 192, 0, 0.9);
     color: #333;
@@ -2442,8 +2444,6 @@ button.map-submit {
 }
 .manager-thanks {
     padding: 50px 0;
-    background: url(../images/back-thanks_1.png) center center repeat-y;
-    background-size: cover;
 
     .text-box {
 
@@ -2465,11 +2465,12 @@ button.map-submit {
 }
 
 .thanks__video {
-  padding: 70px 0 50px;
-  color: #fff;
-  background: url(../images/back5.jpg) center center repeat-y;
-  background-size: cover;
-  @include box-sizing(border-box);
+    position: relative;
+    z-index: 2;
+    padding: 70px 0 50px;
+    background: url(../images/back2.jpg) center center repeat-y;
+    background-size: cover;
+    @include box-sizing(border-box);
 
     .video__content {
         padding: 10px 0;
@@ -2541,6 +2542,7 @@ button.map-submit {
         }
     }
     .buttons-box {
+
         a {
             display: inline-block;
             /*    margin-left: 30px;*/
@@ -2551,10 +2553,8 @@ button.map-submit {
             line-height: 40px;
             text-align: center;
         }
-        input[type="submit"] {
+        input[type="submit"], input[type="button"] {
             margin-bottom: 30px;
-            /*height: 40px;
-            line-height: 40px;*/
         }
     }
     .title {

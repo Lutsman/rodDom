@@ -3129,7 +3129,7 @@ input[type=text]:not(#uptocall-phone) {
   -moz-box-sizing: border-box;
   -o-box-sizing: border-box; }
 
-input[type=submit], a.btn_all, button.map-submit {
+input[type=submit], a.btn_all, button.map-submit, input[type="button"] {
   width: 260px;
   height: 60px;
   line-height: 60px;
@@ -3153,13 +3153,13 @@ input[type=submit], a.btn_all, button.map-submit {
   -moz-border-radius: 7px;
   -o-border-radius: 7px; }
 
-input[type=submit]:hover, a.btn_all:hover, button.map-submit:hover {
+input[type=submit]:hover, a.btn_all:hover, button.map-submit:hover, input[type="button"]:hover {
   text-decoration: none;
   background: rgba(255, 192, 0, 0.9);
   color: #333;
   box-shadow: 0 -3px #8A6802 inset; }
 
-input[type=submit]:active, a.btn_all:active, button.map-submit:active {
+input[type=submit]:active, a.btn_all:active, button.map-submit:active, input[type="button"]:active {
   text-decoration: none;
   background: rgba(255, 192, 0, 0.9);
   color: #333;
@@ -5506,8 +5506,7 @@ div::after, nav::after, ul::after, form::after {
 
 /*Страница спасибо*/
 .manager-thanks {
-  padding: 50px 0;
-  background: url("../images/back-thanks_1.png") center center no-repeat; }
+  padding: 50px 0; }
   .manager-thanks .text-box {
     width: 50%; }
     .manager-thanks .text-box p {
@@ -5521,9 +5520,14 @@ div::after, nav::after, ul::after, form::after {
       margin-bottom: 0; }
 
 .thanks__video {
+  position: relative;
+  z-index: 2;
   padding: 50px 0;
-  color: #fff;
-  background: url(../images/back8.jpg) center center no-repeat; }
+  background: url(../images/back2.jpg) center center no-repeat;
+  background-size: cover;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
   .thanks__video .video__content {
     float: left;
     width: 304px;
@@ -5587,18 +5591,21 @@ div::after, nav::after, ul::after, form::after {
     padding: 30px; }
     .thanks__form .inputs-block > div {
       margin-bottom: 20px; }
-  .thanks__form .buttons-box a {
-    display: inline-block;
-    /*    margin-left: 30px;*/ }
-  .thanks__form .buttons-box p {
-    font-family: 'opensans-light_1', sans-serif;
-    font-size: 16px;
-    line-height: 40px;
+  .thanks__form .buttons-box {
     text-align: center; }
-  .thanks__form .buttons-box input[type="submit"] {
-    margin-bottom: 40px;
-    /*  height: 40px;
-      line-height: 40px;*/ }
+    .thanks__form .buttons-box a {
+      display: inline-block;
+      /*    margin-left: 30px;*/ }
+    .thanks__form .buttons-box p {
+      font-family: 'opensans-light_1', sans-serif;
+      font-size: 16px;
+      line-height: 40px;
+      text-align: center; }
+    .thanks__form .buttons-box input[type="submit"], .thanks__form .buttons-box input[type="button"] {
+      display: inline-block;
+      margin-bottom: 40px; }
+    .thanks__form .buttons-box input[type="button"] {
+      margin-left: 30px; }
 
 .thanks__organisation {
   margin-bottom: 30px;
