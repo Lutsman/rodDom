@@ -1685,8 +1685,9 @@ a.top-phone {
 
 .video__link {
     display: block;
-    width: 280px;
-    height: 158px;
+    width: 320px;
+    height: 180px;
+    margin-left: -20px;
     background: url("../images/video_screen_1.jpg") no-repeat;
     background-size: cover;
 }
@@ -2465,7 +2466,7 @@ button.map-submit {
 .thanks__video {
     position: relative;
     z-index: 2;
-    padding: 70px 0 50px;
+    padding: 70px 0 20px;
     background: url(../images/yellow_toys_bg.jpg);
     //background-size: cover;
     @include box-sizing(border-box);
