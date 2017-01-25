@@ -5523,8 +5523,7 @@ div::after, nav::after, ul::after, form::after {
   position: relative;
   z-index: 2;
   padding: 50px 0;
-  background: url(../images/back2.jpg) center center no-repeat;
-  background-size: cover;
+  background: url(../images/yellow_toys_bg.jpg);
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
