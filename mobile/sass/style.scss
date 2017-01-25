@@ -281,7 +281,7 @@ input[type=text] {
     -o-box-sizing: border-box;
 }
 
-input[type=submit], a.btn_all, button.map-submit, input[type="button"] {
+input[type=submit], a.btn_all, button.map-submit {
     width: 260px;
     height: 60px;
     line-height: 60px;
@@ -308,8 +308,7 @@ input[type=submit], a.btn_all, button.map-submit, input[type="button"] {
 
 input[type=submit]:hover,
 a.btn_all:hover,
-button.map-submit:hover,
-input[type="button"]:hover {
+button.map-submit:hover {
     text-decoration: none;
     background: rgba(255, 192, 0, 0.9);
     color: #333;
@@ -318,8 +317,7 @@ input[type="button"]:hover {
 
 input[type=submit]:active,
 a.btn_all:active,
-button.map-submit:active,
-input[type="button"]:active {
+button.map-submit:active {
     text-decoration: none;
     background: rgba(255, 192, 0, 0.9);
     color: #333;
@@ -2553,8 +2551,11 @@ button.map-submit {
             line-height: 40px;
             text-align: center;
         }
-        input[type="submit"], input[type="button"] {
+        input[type="submit"], a.btn_all {
             margin-bottom: 30px;
+        }
+        a.btn_all {
+            display: block;
         }
     }
     .title {
