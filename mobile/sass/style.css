@@ -2921,7 +2921,7 @@ input[type=text] {
   -moz-box-sizing: border-box;
   -o-box-sizing: border-box; }
 
-input[type=submit], a.btn_all, button.map-submit, input[type="button"] {
+input[type=submit], a.btn_all, button.map-submit {
   width: 260px;
   height: 60px;
   line-height: 60px;
@@ -2947,8 +2947,7 @@ input[type=submit], a.btn_all, button.map-submit, input[type="button"] {
 
 input[type=submit]:hover,
 a.btn_all:hover,
-button.map-submit:hover,
-input[type="button"]:hover {
+button.map-submit:hover {
   text-decoration: none;
   background: rgba(255, 192, 0, 0.9);
   color: #333;
@@ -4933,8 +4932,10 @@ button.map-submit {
     font-size: 16px;
     line-height: 40px;
     text-align: center; }
-  .thanks__form .buttons-box input[type="submit"], .thanks__form .buttons-box input[type="button"] {
+  .thanks__form .buttons-box input[type="submit"], .thanks__form .buttons-box a.btn_all {
     margin-bottom: 30px; }
+  .thanks__form .buttons-box a.btn_all {
+    display: block; }
   .thanks__form .title {
     margin-bottom: 20px; }
 
