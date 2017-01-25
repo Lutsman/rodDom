@@ -2466,8 +2466,8 @@ button.map-submit {
     position: relative;
     z-index: 2;
     padding: 70px 0 50px;
-    background: url(../images/back2.jpg) center center repeat-y;
-    background-size: cover;
+    background: url(../images/yellow_toys_bg.jpg);
+    //background-size: cover;
     @include box-sizing(border-box);
 
     .video__content {
