@@ -5506,7 +5506,7 @@ div::after, nav::after, ul::after, form::after {
 
 /*Страница спасибо*/
 .manager-thanks {
-  padding: 50px 0; }
+  padding: 85px 0; }
   .manager-thanks .text-box {
     width: 50%; }
     .manager-thanks .text-box p {
@@ -5546,7 +5546,7 @@ div::after, nav::after, ul::after, form::after {
     width: 636px; }
 
 .thanks__form-wrap {
-  padding: 50px 0; }
+  padding: 85px 0 50px; }
   .thanks__form-wrap h2 {
     margin-bottom: 15px;
     font-size: 50px;
@@ -5588,7 +5588,7 @@ div::after, nav::after, ul::after, form::after {
     max-width: 660px;
     height: auto; }
   .thanks__form .inputs-block {
-    padding: 30px; }
+    padding: 0 30px 30px; }
     .thanks__form .inputs-block > div {
       margin-bottom: 20px; }
   .thanks__form .buttons-box {
@@ -5603,9 +5603,10 @@ div::after, nav::after, ul::after, form::after {
       text-align: center; }
     .thanks__form .buttons-box input[type="submit"], .thanks__form .buttons-box a.btn_all {
       display: inline-block;
-      margin-bottom: 40px; }
+      margin-bottom: 80px; }
     .thanks__form .buttons-box a.btn_all {
-      margin-left: 30px;
+      margin-left: 45px;
+      margin-bottom: 120px;
       vertical-align: top; }
 
 .thanks__organisation {
